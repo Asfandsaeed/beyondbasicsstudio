@@ -1,0 +1,96 @@
+# Replit AI Prompt: Build "Beyond Basics Studio" Website - GBP Management Agency (Generic Version)
+
+You are an expert full-stack web developer tasked with building a modern, high-converting website for "Beyond Basics Studio", a specialized Google Business Profile (GBP) management agency. Use the structure, style, and layout of https://known.is/ (a modern marketing agency site) as the EXACT reference blueprint. Adapt ALL elements to fit our agency: We offer tiered GBP services (Basic $200/mo, Growth $500/mo, Premium $1000/mo) for local businesses worldwide to dominate Google Maps, increase calls/reviews, and scale visibility.
+
+## Core Instructions:
+- **Tech Stack**: HTML5, Tailwind CSS (CDN for speed), GSAP for smooth animations (hero scroll, testimonials), vanilla JS for interactions (no heavy frameworks). Responsive (mobile-first). Use Google Fonts: Inter (body), Playfair Display (headings).
+- **Design Style**: Mirror Known.is exactly:
+  - **Hero**: Full-viewport black/dark gradient bg, white text, centered H1 "Beyond Basics Studio" + sub "Your GBP Unfair Advantage", CTA "Start Dominating Maps" → form modal.
+  - **Minimalist**: Lots of whitespace, bold typography (huge H1s 10vw+ mobile-scaled), subtle animations (fade-in on scroll).
+  - **Sections**: Full-width, dark/light alternates, grid/flex layouts.
+  - **Color Palette**: Primary: #000000 (black), #FFFFFF (white), #1E40AF (blue accents for CTAs), #F3F4F6 (light gray bg), #10B981 (green success).
+  - **Animations**: GSAP stagger reveals, parallax hero image (abstract GBP map pins glowing).
+  - **Performance**: Lazy-load images, <2s load time.
+- **SEO**: Meta tags (title: "Beyond Basics Studio | GBP Management Agency - Dominate Local Search"), schema for agency, alt texts GBP-focused.
+- **Pages**: Build ALL as single-page app (SPA) style with smooth scroll nav (#hero, #services, etc.) + separate HTML files: index.html (home), /services.html, /case-studies.html, /about.html, /contact.html. Navbar persists.
+- **Forms**: Netlify Forms or EmailJS for leads (name, email, phone, GBP URL, tier interest). Use UTC/global timezone neutral.
+- **Assets**: Use Unsplash/Pexels for GBP-themed images (maps, pins, reviews, local shops). Favicon: Blue map pin.
+
+## FULL SITE STRUCTURE (Mirror Known.is Sections + Adapt):
+
+### 1. **Global Elements (All Pages)**:
+   - **Navbar** (fixed top, transparent→solid on scroll): Logo "Beyond Basics Studio" (blue text), Menu: Home, Services, Case Studies, About, Contact. Right: "Get Free Audit" CTA button (blue bg).
+   - **Footer**: Dark bg. Columns: Logo, "Services" (links to tiers), "Company" (About, Careers), "Resources" (Blog, GBP Tips PDF), "Contact" (email: hello@beyondbasics.studio). Social: LinkedIn, Twitter. "© 2026 Beyond Basics Studio. All rights reserved." + Privacy Policy link.
+   - **Scroll Indicators**: Subtle down arrow in hero.
+
+### 2. **Home Page (index.html) - EXACT Known.is Flow**:
+   - **Hero Section (#hero)**: 
+     - Bg: Dark gradient + animated glowing GBP map pins (particles.js or CSS).
+     - H1: "Beyond Basics Studio" (huge, white).
+     - H2: "The GBP Agency Giving Local Businesses an Unfair Advantage on Google Maps".
+     - Sub: "From $200/mo: Basic upkeep to Premium domination. Triple your calls in 90 days.".
+     - Stats: "500+ Profiles Managed | 300% Avg Review Growth | Top 3 Map Pack Guaranteed".
+     - CTA: Blue button "Claim Free GBP Audit" → modal form. Secondary: "View Tiers".
+     - Animate: Text staggers in, pins pulse.
+
+   - **Quotes Grid (#quotes)**: 6-8 media logos/badges:
+     - "World's #1 GBP Agency", "Business Journal", "Local SEO Pro", etc.
+     - Testimonials: "Beyond Basics turned our profile into a lead machine! +250 calls/mo." - Shop Owner.
+
+   - **Awards Section (#awards)**: 2026 mock awards grid:
+     - "Local SEO Agency of Year", "Best GBP Service", "Midsize Agency A-List", "AI Review Booster".
+
+   - **Services/Clients Logos (#services-preview)**: Rotating logos of "managed" clients (fabricated: Urban Pizza, City Auto, etc.) + teaser cards:
+     - Card 1: "GBP Strategy & Optimization".
+     - Card 2: "Review & Reputation Mastery".
+     - Card 3: "Media & Local Domination". CTA: "Full Services".
+
+   - **Skeptic™ Feature (#skeptic)**: Adapt to "MapMaster™ AI":
+     - "Our AI deploys rapid GBP experiments: Auto-posts, review prediction, map rank optimization for 40% more visibility." Blue CTA "Learn More" → modal.
+
+   - **News/Insights (#news)**: 6 articles cards:
+     - "Adweek: Beyond Basics Wins Local Agency of Year".
+     - "How We 5x'd a Client's Map Ranks".
+     - Links to blog.
+
+   - **Locations (#locations)**: Adapt to global agency:
+     - "Global HQ".
+     - "Multiple Offices Worldwide".
+     - "Fully Remote for All Clients".
+     - Interactive world map embed (Google Maps neutral).
+
+### 3. **Services Page (services.html)**:
+   - Hero: "Our GBP Tiers: From Basic to Premium Domination".
+   - **Tier Comparison Table**: Detailed (Basic/Growth/Premium features).
+   - **Detailed Tier Sections**: Accordion/expandable for each tier (20+ sub-features).
+   - **Workflow Infographic**: Onboarding timeline visual.
+   - CTA: "Choose Your Tier" → form.
+
+### 4. **Case Studies Page (case-studies.html)**:
+   - Hero: "Real Results: GBP Transformations".
+   - **Grid of 6 Cases**: Cards with before/after (e.g., "Retail Shop: Views 0→5000/mo, Calls +300%").
+     - Screenshots: GBP before/after, graphs.
+     - Testimonials + "View Full Case".
+
+### 5. **About Page (about.html)**:
+   - Hero: "Why Beyond Basics? Data-Driven GBP Experts".
+   - **Team Bios**: 4-6 photos/names (CEO, GBP Lead, etc.).
+   - **Our Story**: "Founded 2025. 500+ businesses mapped to success globally."
+   - **Values**: Cards: "Transparent Reporting", "AI-Powered", "Results-First".
+
+### 6. **Contact Page (contact.html)**:
+   - Hero: "Ready to Dominate GBP? Let's Talk."
+   - **Form**: Name, Email, Phone, GBP URL, Message, Tier dropdown.
+   - **Details**: Email, Calendly embed for global calls.
+   - **FAQ Accordion**: "What's GBP? How quick results? Pricing?"
+
+## Implementation Steps in Replit:
+1. Create index.html with full home structure.
+2. Add Tailwind/GSAP CDNs.
+3. Build hero with GSAP timeline.
+4. Add smooth scroll/JS modals.
+5. Duplicate for other pages.
+6. Test responsive.
+7. Deploy preview.
+
+Output: Complete site matching Known.is vibe, 100% generic/global GBP focus. Lead-gen optimized. Go!
