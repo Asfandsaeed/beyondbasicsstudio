@@ -1,0 +1,127 @@
+Google Business Profile (GBP) management agencies offer scalable services tailored to local SEO needs, with tiers structured around $200, $500, and $1000 monthly pricing as previously outlined. This expanded list provides 20x more detail through granular features, sub-tasks, deliverables, and best practices drawn from standard industry offerings, ensuring comprehensive coverage for businesses from startups to enterprises.
+
+## Tier 1: Basic ($200/month)
+This entry-level tier focuses on foundational maintenance to ensure GBP compliance and visibility, ideal for single-location businesses with limited budgets.
+
+- **Profile Monitoring & Audits**:
+  - Daily automated scans for NAP (Name, Address, Phone) inconsistencies across 50+ directories.
+  - Weekly manual audits checking business hours, holidays, services, attributes (e.g., "wheelchair accessible"), and labels.
+  - Alerts for suspensions, policy violations, or competitor sabotage attempts.
+  - Basic spam detection and reporting of fake reviews or unauthorized edits.
+
+- **Core Optimizations**:
+  - Primary and secondary category selection (up to 10 categories) with keyword research for relevance.
+  - Initial upload of 20+ high-quality photos (exterior, interior, logo, cover) optimized for mobile.
+  - Description writing (750 characters) incorporating local keywords and calls-to-action.
+  - URL linking to website, menu, booking page, or social profiles.
+  - Service area setup for non-physical locations (up to 20 areas).
+
+- **Content & Engagement**:
+  - 1-2 monthly Google Posts (updates, offers, events) with images and CTAs.
+  - Basic Q&A seeding (5 common questions answered proactively).
+  - Monthly insight checks (views, searches, actions) with simple PDF summary.
+
+- **Support & Compliance**:
+  - Email support (48-hour response).
+  - Monthly compliance report (1-page PDF).
+  - Ownership verification if needed (one-time).
+
+## Tier 2: Growth ($500/month)
+Building on Basic, this mid-tier adds proactive growth tactics like content velocity and review nurturing, suited for multi-service businesses aiming for top-3 map pack rankings.
+
+- **Everything in Tier 1, Plus**:
+
+- **Enhanced Monitoring & Reviews**:
+  - Daily manual profile checks plus automated tools (e.g., ReviewTrackers integration).
+  - Review monitoring across GBP, Facebook, Yelp (50+ reviews/month tracked).
+  - AI-generated response templates for 5-star/1-star reviews (personalized within 24 hours).
+  - Review request automation via email/SMS (up to 100 requests/month).
+  - Negative review triage and Google escalation if fraudulent.
+
+- **Advanced Optimizations**:
+  - Competitor gap analysis (10 rivals: categories, posts, reviews).
+  - Product/menu listings (up to 50 items with photos/pricing).
+  - Q&A management (monitor + answer 20+ user questions/month).
+  - Attributes expansion (20+ custom labels like "free WiFi," "gender-neutral restrooms").
+  - Local pack optimization (keywords from Google Suggest/Autocomplete).
+
+- **Content Strategy**:
+  - 4-8 Google Posts/month (mix of updates, offers, events, COVID-style alerts).
+  - Video uploads (2/month, up to 30 seconds).
+  - Event creation (4/year, e.g., webinars, holidays).
+  - Branded short name customization and logo refresh.
+
+- **Reporting & Insights**:
+  - Bi-weekly performance dashboard (views, clicks, calls, directions).
+  - Keyword ranking tracker (top 20 local terms).
+  - 5-page monthly report with benchmarks.
+
+- **Support**:
+  - Email + chat support (24-hour response).
+  - Quarterly strategy call (30 minutes).
+
+## Tier 3: Premium ($1000/month)
+The top tier delivers enterprise-level customization, multi-location scaling, and ROI-focused strategies for high-competition industries like retail chains or professional services.
+
+- **Everything in Tier 2, Plus**:
+
+- **Elite Monitoring & Multi-Location**:
+  - Real-time 24/7 monitoring with Slack/Teams alerts.
+  - Multi-location management (up to 50 profiles).
+  - Advanced spam defense (proactive edit blocking, duplicate suppression).
+  - Review gating compliance audits (legally safe incentive programs).
+
+- **Review & Reputation Mastery**:
+  - Custom review campaigns (200+ requests/month via multi-channel: SMS, QR codes, widgets).
+  - White-label review funnels (branded landing pages).
+  - Sentiment analysis on 100% of reviews with trend reports.
+  - Influencer/partner review drives (5/month).
+
+- **Comprehensive Optimizations**:
+  - Deep SEO audit (citations on 100+ sites, schema markup).
+  - Custom attribute stacking for voice search (e.g., "near me" queries).
+  - Product schema feeds for e-commerce integration.
+  - Heatmap analysis of photo performance and rotations.
+  - A/B testing of descriptions/posts (monthly).
+
+- **Content & Multimedia**:
+  - Unlimited Google Posts (12+/month) + video series (4/month).
+  - 360° virtual tours upload and optimization.
+  - Live stream event support.
+  - Personalized offers geo-targeted by ZIP code.
+
+- **Analytics & Strategy**:
+  - Custom KPI dashboard (Google Data Studio/Looker integration).
+  - Revenue attribution modeling (calls-to-sales tracking).
+  - 20-page monthly report + executive summary.
+  - Competitor benchmarking (50+ rivals, quarterly deep dive).
+
+- **Dedicated Support & Extras**:
+  - Personal account manager (weekly calls).
+  - Priority phone support (2-hour response).
+  - Citation building/cleanup (100+ directories).
+  - Website GBP widget integration.
+  - Crisis management (e.g., PR for negative viral reviews).
+  - Annual strategy overhaul.
+
+## Detailed Comparison Table
+
+| Category                  | Basic ($200/mo)                          | Growth ($500/mo)                                      | Premium ($1000/mo)                                    |
+|---------------------------|------------------------------------------|-------------------------------------------------------|-------------------------------------------------------|
+| **Profile Audits**       | Weekly manual + daily auto              | Daily manual + spam removal                          | Real-time 24/7 + multi-location                       |
+| **NAP/Compliance Checks**| 50 directories                          | 100+ directories + alerts                            | Full audit + suppression tools                        |
+| **Categories/Attributes**| 10 categories, basic labels             | 20+ attributes + competitor gaps                     | Custom stacking + voice search opt                    |
+| **Photos/Videos**        | 20 initial photos                       | 2 videos/month + rotations                           | Unlimited + 360° tours + heatmaps                     |
+| **Posts/Content**        | 1-2/month                               | 4-8/month + events                                   | Unlimited + geo-targeted + live streams               |
+| **Q&A Management**       | 5 seeded                                | 20+ monitored/answered                               | Proactive + AI monitoring                             |
+| **Products/Menu**        | None                                    | 50 listings                                          | Schema feeds + e-commerce                             |
+| **Review Monitoring**    | Basic tracking                          | 50+/month + templates                                | 200+ requests + sentiment analysis                    |
+| **Review Responses**     | None                                    | AI-personalized (24h)                                | Custom campaigns + white-label                        |
+| **Reporting**            | 1-page monthly PDF                      | Bi-weekly dashboard + 5-page report                   | Custom KPI + 20-page + revenue modeling               |
+| **Keyword Tracking**     | None                                    | Top 20 terms                                         | Full local pack + A/B testing                         |
+| **Competitor Analysis**  | None                                    | 10 rivals                                            | 50+ + quarterly deep dives                            |
+| **Multi-Location**       | Single only                             | Up to 5                                              | Up to 50                                              |
+| **Support Level**        | Email (48h)                             | Email/chat (24h) + quarterly call                    | Dedicated manager + phone (2h) + weekly calls         |
+| **Integrations**         | None                                    | Basic tools                                          | Data Studio + widgets + funnels                       |
+| **Citations/SEO Extras** | None                                    | Basic tweaks                                         | 100+ builds + schema + crisis mgmt                    |
+| **Deliverables/Mo**      | 1 report, 2 posts                       | 1 dashboard, 8 posts, 100 reqs                       | Unlimited content, full strategy, custom everything   |

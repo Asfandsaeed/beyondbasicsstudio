@@ -299,19 +299,19 @@ export default function Home({ onAuditClick }: { onAuditClick: () => void }) {
             {[
               {
                 name: "Basic", price: "$200", note: "/mo",
-                tagline: "Essentials done right.",
-                features: ["1 GBP Location", "4 Posts/month", "Profile optimisation", "Monthly report", "Review templates", "Email support"],
+                tagline: "Foundational maintenance. One location, consistent presence.",
+                features: ["Single GBP location", "1–2 Google Posts/month", "NAP monitoring (50 dirs)", "Weekly + daily auto audit", "Basic review monitoring", "1-page monthly report", "Email support (48h)"],
               },
               {
                 name: "Growth", price: "$500", note: "/mo",
                 badge: "Most Popular",
-                tagline: "The active edge.",
-                features: ["Up to 3 Locations", "Everything in Basic", "Active review generation", "16 Posts/month", "Local ads management", "Weekly reports", "Competitor tracking", "Priority support"],
+                tagline: "Proactive growth for businesses targeting top-3.",
+                features: ["Up to 5 locations", "Everything in Basic", "4–8 Posts + 2 videos/month", "Review automation (100 req/mo)", "AI response templates (24h)", "Competitor analysis (10 rivals)", "Bi-weekly dashboard + 5-page report", "Email/chat support (24h)"],
               },
               {
                 name: "Premium", price: "$1,000", note: "/mo",
-                tagline: "Total domination.",
-                features: ["Unlimited Locations", "Everything in Growth", "MapMaster™ AI", "Dedicated manager", "Daily posting", "Custom dashboard", "Monthly strategy call", "24/7 support"],
+                tagline: "Enterprise domination for high-competition markets.",
+                features: ["Up to 50 locations", "Everything in Growth", "Real-time 24/7 monitoring", "200+ review requests/month", "Sentiment analysis + white-label funnels", "12+ Posts + 360° tours", "100+ citations + schema markup", "Custom KPI dashboard + 20-page report", "Dedicated manager + phone support (2h)"],
               },
             ].map((plan, i) => (
               <FadeIn key={i} delay={i * 0.08}>

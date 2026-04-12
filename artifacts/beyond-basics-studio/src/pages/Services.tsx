@@ -53,10 +53,10 @@ export default function Services({ onAuditClick }: { onAuditClick: () => void })
           <FadeUp><p className="label mb-12">Feature Comparison</p></FadeUp>
           <FadeIn>
             <div className="overflow-x-auto">
-              <table className="w-full min-w-[560px]">
+              <table className="w-full min-w-[640px]">
                 <thead>
                   <tr className="border-b" style={{ borderColor: "var(--sp-rule)" }}>
-                    <th className="text-left pb-6 label w-1/2">Feature</th>
+                    <th className="text-left pb-6 label w-[38%]">Feature</th>
                     {["Basic · $200", "Growth · $500", "Premium · $1k"].map(h => (
                       <th key={h} className="pb-6 font-serif text-xl text-center" style={{ color: "var(--sp-black)" }}>{h}</th>
                     ))}
@@ -64,22 +64,26 @@ export default function Services({ onAuditClick }: { onAuditClick: () => void })
                 </thead>
                 <tbody>
                   {[
-                    ["GBP Locations", "1", "Up to 3", "Unlimited"],
-                    ["Monthly Posts", "4", "16", "Daily"],
-                    ["Profile Optimisation", "✓", "✓", "✓"],
-                    ["Review Response", "Templates", "Active", "AI-Powered"],
-                    ["Review Generation", "—", "✓", "✓"],
-                    ["Google Ads", "—", "✓", "✓"],
-                    ["Citation Building", "—", "20 dirs", "Unlimited"],
-                    ["MapMaster™ AI", "—", "—", "✓"],
-                    ["Dedicated Manager", "—", "—", "✓"],
-                    ["Reporting", "Monthly", "Weekly", "Custom"],
-                    ["Support", "Email", "Priority", "24/7"],
+                    ["Profile Audits", "Weekly + daily auto", "Daily + spam removal", "Real-time 24/7"],
+                    ["NAP Monitoring", "50 directories", "100+ directories", "Full + suppression"],
+                    ["Categories/Attributes", "10 categories", "20+ attributes", "Custom + voice search"],
+                    ["Photos / Video", "20+ initial photos", "2 videos/mo + rotations", "Unlimited + 360° tours"],
+                    ["Google Posts", "1–2/month", "4–8/month + events", "12+/month + live streams"],
+                    ["Q&A Management", "5 seeded", "20+ answered/month", "Proactive + AI"],
+                    ["Products / Menu", "—", "50 listings", "Schema + e-commerce"],
+                    ["Review Monitoring", "Basic tracking", "50+/mo + templates", "200+ requests + sentiment"],
+                    ["Review Responses", "—", "AI-personalized (24h)", "Custom + white-label"],
+                    ["Keyword Tracking", "—", "Top 20 local terms", "Full pack + A/B tests"],
+                    ["Competitor Analysis", "—", "10 rivals", "50+ + quarterly dives"],
+                    ["Multi-Location", "Single only", "Up to 5", "Up to 50"],
+                    ["Reporting", "1-page monthly", "Bi-weekly + 5-page", "Custom KPI + 20-page"],
+                    ["Support", "Email (48h)", "Email/chat (24h)", "Dedicated + phone (2h)"],
+                    ["Citations / SEO", "—", "Basic tweaks", "100+ builds + schema"],
                   ].map(([feat, b, g, p], i) => (
                     <tr key={i} className="border-b" style={{ borderColor: "var(--sp-rule)" }}>
                       <td className="py-4 font-sans text-sm" style={{ color: "var(--sp-gray)" }}>{feat}</td>
                       {[b, g, p].map((val, j) => (
-                        <td key={j} className="py-4 text-center font-sans text-sm" style={{ color: val === "—" ? "rgba(17,17,17,0.2)" : val === "✓" ? "var(--sp-black)" : "var(--sp-gray)" }}>{val}</td>
+                        <td key={j} className="py-4 text-center font-sans text-sm" style={{ color: val === "—" ? "rgba(17,17,17,0.2)" : "var(--sp-gray)" }}>{val}</td>
                       ))}
                     </tr>
                   ))}
@@ -96,12 +100,49 @@ export default function Services({ onAuditClick }: { onAuditClick: () => void })
           <FadeUp><p className="label mb-12">Plans</p></FadeUp>
           <div className="grid md:grid-cols-3 gap-px" style={{ backgroundColor: "var(--sp-rule)" }}>
             {[
-              { name: "Basic", price: "$200", note: "/mo", tagline: "Essentials done right. One location, consistent presence.",
-                features: ["1 GBP Location", "Full initial optimisation", "4 Google Posts/month", "Business hours & attributes", "Monthly performance report", "Review response templates", "Keyword optimisation", "Email support"] },
-              { name: "Growth", price: "$500", note: "/mo", badge: "Popular", tagline: "The active edge. Reviews, reach, and results.",
-                features: ["Up to 3 Locations", "Everything in Basic", "Active review generation", "16 Posts/month", "Local Google Ads", "Weekly reports", "Competitor gap analysis", "Photo management", "Priority support"] },
-              { name: "Premium", price: "$1,000", note: "/mo", tagline: "Total domination. Unlimited, AI-powered.",
-                features: ["Unlimited Locations", "Everything in Growth", "MapMaster™ AI engine", "Dedicated account manager", "Daily posting & updates", "Unlimited citations", "Monthly strategy call", "Custom dashboard", "24/7 priority support"] },
+              { name: "Basic", price: "$200", note: "/mo", tagline: "Foundational maintenance for single-location businesses.",
+                features: [
+                  "Single GBP location",
+                  "Full initial optimisation (20+ photos, description, URLs)",
+                  "Daily automated + weekly manual profile audit",
+                  "NAP monitoring across 50 directories",
+                  "1–2 Google Posts/month with images & CTAs",
+                  "Q&A seeding (5 proactive answers)",
+                  "Basic review monitoring",
+                  "Monthly 1-page PDF report",
+                  "Email support (48h response)",
+                ] },
+              { name: "Growth", price: "$500", note: "/mo", badge: "Popular", tagline: "Proactive growth for multi-service businesses targeting top-3.",
+                features: [
+                  "Up to 5 GBP locations",
+                  "Everything in Basic",
+                  "Daily manual checks + automated review tracking",
+                  "Review monitoring (50+/month) with AI response templates",
+                  "Review request automation — 100 requests/month",
+                  "Negative review triage & Google escalation",
+                  "4–8 Google Posts/month + 2 videos/month",
+                  "Product/menu listings (up to 50 items)",
+                  "Competitor gap analysis (10 rivals)",
+                  "Bi-weekly performance dashboard + 5-page report",
+                  "Top 20 local keyword tracker",
+                  "Email/chat support (24h) + quarterly strategy call",
+                ] },
+              { name: "Premium", price: "$1,000", note: "/mo", tagline: "Enterprise-level domination for high-competition markets.",
+                features: [
+                  "Up to 50 GBP locations",
+                  "Everything in Growth",
+                  "Real-time 24/7 monitoring with Slack/Teams alerts",
+                  "200+ review requests/month (SMS, QR, widgets)",
+                  "Sentiment analysis on 100% of reviews",
+                  "White-label review funnels + custom campaigns",
+                  "12+ Posts/month + video series (4/month)",
+                  "360° virtual tour upload & optimisation",
+                  "Deep SEO audit: schema markup + 100+ citations",
+                  "Custom KPI dashboard (Data Studio) + 20-page report",
+                  "Revenue attribution & competitor benchmarking (50+ rivals)",
+                  "Dedicated account manager — weekly calls + phone (2h)",
+                  "Crisis management for negative viral reviews",
+                ] },
             ].map((plan, i) => (
               <FadeIn key={i} delay={i * 0.08}>
                 <div className="section-light p-8 lg:p-10 flex flex-col" style={{ minHeight: "500px" }}>

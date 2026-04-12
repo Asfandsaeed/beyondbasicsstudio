@@ -134,7 +134,7 @@ export default function Contact() {
             { q: "What exactly is a Google Business Profile?", a: "Your GBP is what appears in Google Maps and local search results. A well-optimised GBP is the highest-ROI local marketing asset available — yet most businesses manage it poorly. We fix that." },
             { q: "How quickly will I see results?", a: "Most clients see measurable improvements in profile views and calls within 30 days. Map Pack ranking improvements typically happen within 60–90 days. We track everything and report transparently." },
             { q: "What are your pricing options?", a: "Three tiers: Basic ($200/mo), Growth ($500/mo), and Premium ($1,000/mo). All are month-to-month with no lock-in." },
-            { q: "Can you manage multiple locations?", a: "Yes. Growth covers up to 3 locations and Premium covers unlimited. We have clients on a single Premium plan managing 50+ locations." },
+            { q: "Can you manage multiple locations?", a: "Yes. Growth covers up to 5 locations and Premium covers up to 50. We have clients managing entire regional franchise networks on a single Premium plan." },
           ].map((item, i) => (
             <FadeIn key={i} delay={i * 0.05}><Accordion q={item.q} a={item.a} /></FadeIn>
           ))}

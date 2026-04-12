@@ -17,9 +17,9 @@ export default function Terms() {
               </thead>
               <tbody>
                 {[
-                  ["Basic", "$200/mo", "Profile monitoring, basic optimisations, 1–2 posts/mo."],
-                  ["Growth", "$500/mo", "+ Review management, 4–8 posts/mo, competitor audits."],
-                  ["Premium", "$1,000/mo", "+ Multi-location, unlimited content, custom analytics."],
+                  ["Basic", "$200/mo", "Single location. Daily auto + weekly manual audits. NAP monitoring (50 dirs). 1–2 posts/mo. Basic review monitoring. 1-page monthly report. Email support (48h)."],
+                  ["Growth", "$500/mo", "Up to 5 locations. Everything in Basic. 4–8 posts + 2 videos/mo. Review automation (100 req/mo). Competitor analysis (10 rivals). Bi-weekly dashboard. Email/chat support (24h)."],
+                  ["Premium", "$1,000/mo", "Up to 50 locations. Everything in Growth. Real-time 24/7 monitoring. 200+ review requests/mo. Sentiment analysis. 12+ posts + 360° tours. 100+ citations + schema. Custom KPI dashboard. Dedicated manager (2h phone support)."],
                 ].map(([tier, price, features]) => (
                   <tr key={tier} className="border-b" style={{ borderColor: "var(--sp-rule)" }}>
                     <td className="py-4 font-serif text-lg" style={{ color: "var(--sp-black)" }}>{tier}</td>
