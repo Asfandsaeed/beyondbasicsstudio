@@ -8,6 +8,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import AuditModal from "@/components/AuditModal";
 import CustomCursor from "@/components/CustomCursor";
+import CookieBanner from "@/components/CookieBanner";
 import Home from "@/pages/Home";
 import Services from "@/pages/Services";
 import CaseStudies from "@/pages/CaseStudies";
@@ -66,6 +67,7 @@ function App() {
           </main>
           <Footer />
           <AuditModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
+          <CookieBanner />
           <Toaster />
         </WouterRouter>
       </TooltipProvider>
