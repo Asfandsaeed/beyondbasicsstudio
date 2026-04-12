@@ -1,40 +1,50 @@
 import { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
-import { CheckCircle, ChevronDown, MapPin, Star, TrendingUp, Zap, Shield, BarChart3, Clock } from "lucide-react";
+import { ArrowRight, Plus, Minus } from "lucide-react";
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
-};
-const stagger = { visible: { transition: { staggerChildren: 0.1 } } };
+const ease = [0.16, 1, 0.3, 1];
 
-function Section({ children, className }: { children: React.ReactNode; className?: string }) {
+function FadeUp({ children, className, delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });
   return (
-    <motion.div ref={ref} initial="hidden" animate={inView ? "visible" : "hidden"} variants={stagger} className={className}>
+    <motion.div ref={ref} initial={{ opacity: 0, y: 32 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.9, ease, delay }} className={className}>
       {children}
     </motion.div>
   );
 }
-function FI({ children, className }: { children: React.ReactNode; className?: string }) {
-  return <motion.div variants={fadeUp} className={className}>{children}</motion.div>;
+function FadeIn({ children, className, delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, margin: "-40px" });
+  return (
+    <motion.div ref={ref} initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ duration: 0.8, ease: "easeOut", delay }} className={className}>
+      {children}
+    </motion.div>
+  );
 }
 
-function AccordionItem({ title, children }: { title: string; children: React.ReactNode }) {
+function Accordion({ q, a }: { q: string; a: string }) {
   const [open, setOpen] = useState(false);
   return (
-    <div className="border-b border-gray-200">
+    <div className="border-b" style={{ borderColor: "rgba(229,225,216,0.1)" }}>
       <button
         onClick={() => setOpen(!open)}
-        className="flex items-center justify-between w-full py-5 text-left group"
+        className="flex items-center justify-between w-full py-5 text-left gap-6 group"
       >
-        <span className="font-semibold text-gray-800 group-hover:text-blue-700 transition-colors">{title}</span>
-        <ChevronDown className={`w-5 h-5 text-gray-400 transition-transform duration-200 ${open ? "rotate-180" : ""}`} />
+        <span
+          className="font-display italic text-xl sm:text-2xl group-hover:opacity-70 transition-opacity duration-200"
+          style={{ color: "var(--sf-cream)" }}
+        >
+          {q}
+        </span>
+        {open
+          ? <Minus className="w-4 h-4 shrink-0 opacity-50" style={{ color: "var(--sf-cream)" }} />
+          : <Plus className="w-4 h-4 shrink-0 opacity-50" style={{ color: "var(--sf-cream)" }} />
+        }
       </button>
       {open && (
-        <div className="pb-5 text-gray-600 text-sm leading-relaxed">
-          {children}
+        <div className="pb-6 font-sans text-sm leading-relaxed" style={{ color: "rgba(229,225,216,0.5)" }}>
+          {a}
         </div>
       )}
     </div>
@@ -42,199 +52,196 @@ function AccordionItem({ title, children }: { title: string; children: React.Rea
 }
 
 export default function Services({ onAuditClick }: { onAuditClick: () => void }) {
-  const tiers = [
-    {
-      name: "Basic",
-      price: "$200/mo",
-      color: "border-gray-200",
-      badge: "",
-      features: [
-        "1 GBP Location",
-        "Initial profile optimization",
-        "4 Google Posts per month",
-        "Business hours management",
-        "Basic keyword optimization",
-        "Monthly performance report",
-        "Review response templates",
-        "Email support",
-      ],
-    },
-    {
-      name: "Growth",
-      price: "$500/mo",
-      color: "border-blue-500",
-      badge: "Most Popular",
-      features: [
-        "Up to 3 GBP Locations",
-        "Everything in Basic",
-        "Active review generation campaigns",
-        "16 Google Posts per month",
-        "Google Ads local campaigns",
-        "Competitor gap analysis",
-        "Weekly performance reports",
-        "Photo management & optimization",
-        "Priority email & chat support",
-        "Citation building (20 directories)",
-      ],
-    },
-    {
-      name: "Premium",
-      price: "$1,000/mo",
-      color: "border-emerald-500",
-      badge: "Full Domination",
-      features: [
-        "Unlimited GBP Locations",
-        "Everything in Growth",
-        "MapMaster™ AI engine",
-        "Dedicated account manager",
-        "Daily posting & updates",
-        "Advanced citation building",
-        "Schema markup implementation",
-        "Monthly strategy call",
-        "Custom performance dashboard",
-        "Local link building",
-        "Quarterly GBP audit",
-        "24/7 priority support",
-      ],
-    },
-  ];
-
   return (
-    <div>
+    <div style={{ backgroundColor: "var(--sf-dark)", color: "var(--sf-cream)" }}>
       {/* Hero */}
-      <section className="hero-gradient pt-32 pb-20 text-center">
-        <Section className="max-w-3xl mx-auto px-4 sm:px-6">
-          <FI>
-            <span className="text-blue-400 text-xs uppercase tracking-widest font-semibold">Services</span>
-            <h1 className="font-serif text-white mt-4 mb-5" style={{ fontSize: "clamp(2rem, 5vw, 3.5rem)" }}>
-              Our GBP Tiers: From Basic to Premium Domination
+      <section className="pt-36 pb-24 px-6 lg:px-10 border-b" style={{ borderColor: "rgba(229,225,216,0.1)" }}>
+        <div className="max-w-7xl mx-auto">
+          <FadeUp>
+            <p className="tag mb-6" style={{ color: "rgba(229,225,216,0.4)" }}>Services</p>
+            <h1
+              className="font-display font-semibold italic leading-tight"
+              style={{ fontSize: "clamp(2.5rem, 8vw, 7rem)", color: "var(--sf-cream)" }}
+            >
+              GBP Tiers: Basic<br />to Domination.
             </h1>
-            <p className="text-white/60 text-lg">
-              Every tier is built to move the needle. Choose based on your ambition.
+          </FadeUp>
+          <FadeIn delay={0.25}>
+            <p
+              className="font-sans text-base mt-8 max-w-lg"
+              style={{ color: "rgba(229,225,216,0.45)" }}
+            >
+              Every tier is engineered to move the needle. Choose based on your ambition — not your budget.
             </p>
-          </FI>
-        </Section>
+          </FadeIn>
+        </div>
       </section>
 
-      {/* Comparison Table */}
-      <section className="section-light py-20">
-        <Section className="max-w-6xl mx-auto px-4 sm:px-6">
-          <FI className="text-center mb-12">
-            <h2 className="text-gray-900 text-3xl font-serif">Feature Comparison</h2>
-          </FI>
-          <div className="overflow-x-auto rounded-2xl border border-gray-200 shadow-sm">
-            <table className="w-full text-sm">
-              <thead>
-                <tr className="bg-gray-50 border-b border-gray-200">
-                  <th className="text-left py-4 px-6 text-gray-600 font-semibold w-1/2">Feature</th>
-                  <th className="py-4 px-4 text-center text-gray-700 font-bold">Basic<br /><span className="font-normal text-gray-500">$200/mo</span></th>
-                  <th className="py-4 px-4 text-center text-blue-700 font-bold bg-blue-50">Growth<br /><span className="font-normal text-blue-500">$500/mo</span></th>
-                  <th className="py-4 px-4 text-center text-emerald-700 font-bold">Premium<br /><span className="font-normal text-emerald-500">$1,000/mo</span></th>
-                </tr>
-              </thead>
-              <tbody>
-                {[
-                  { feature: "GBP Locations", basic: "1", growth: "Up to 3", premium: "Unlimited" },
-                  { feature: "Monthly Posts", basic: "4", growth: "16", premium: "Daily" },
-                  { feature: "Profile Optimization", basic: true, growth: true, premium: true },
-                  { feature: "Review Response", basic: "Templates", growth: "Active", premium: "AI-Powered" },
-                  { feature: "Review Generation", basic: false, growth: true, premium: true },
-                  { feature: "Google Ads", basic: false, growth: true, premium: true },
-                  { feature: "Citation Building", basic: false, growth: "20 dirs", premium: "Unlimited" },
-                  { feature: "MapMaster™ AI", basic: false, growth: false, premium: true },
-                  { feature: "Dedicated Manager", basic: false, growth: false, premium: true },
-                  { feature: "Reporting", basic: "Monthly", growth: "Weekly", premium: "Custom Dashboard" },
-                  { feature: "Support", basic: "Email", growth: "Priority", premium: "24/7 Priority" },
-                ].map((row, i) => (
-                  <tr key={i} className={`border-b border-gray-100 ${i % 2 === 0 ? "bg-white" : "bg-gray-50/50"}`}>
-                    <td className="py-3.5 px-6 text-gray-700 font-medium">{row.feature}</td>
-                    {[row.basic, row.growth, row.premium].map((val, j) => (
-                      <td key={j} className={`py-3.5 px-4 text-center ${j === 1 ? "bg-blue-50/50" : ""}`}>
-                        {typeof val === "boolean" ? (
-                          val
-                            ? <CheckCircle className="w-4 h-4 text-emerald-500 mx-auto" />
-                            : <span className="text-gray-300">—</span>
-                        ) : (
-                          <span className="text-gray-700 font-medium">{val}</span>
-                        )}
-                      </td>
+      {/* Feature Table */}
+      <section className="py-24 px-6 lg:px-10 border-b" style={{ borderColor: "rgba(229,225,216,0.1)" }}>
+        <div className="max-w-7xl mx-auto">
+          <FadeUp>
+            <p className="tag mb-12" style={{ color: "rgba(229,225,216,0.4)" }}>Feature Comparison</p>
+          </FadeUp>
+          <FadeIn>
+            <div className="overflow-x-auto">
+              <table className="w-full min-w-[560px]">
+                <thead>
+                  <tr className="border-b" style={{ borderColor: "rgba(229,225,216,0.1)" }}>
+                    <th className="text-left pb-6 font-sans text-xs tracking-widest uppercase text-left w-1/2" style={{ color: "rgba(229,225,216,0.3)" }}>Feature</th>
+                    {["Basic · $200", "Growth · $500", "Premium · $1k"].map((h) => (
+                      <th key={h} className="pb-6 font-display italic text-xl text-center" style={{ color: "var(--sf-cream)" }}>{h}</th>
                     ))}
                   </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </Section>
+                </thead>
+                <tbody>
+                  {[
+                    ["GBP Locations", "1", "Up to 3", "Unlimited"],
+                    ["Monthly Posts", "4", "16", "Daily"],
+                    ["Profile Optimisation", "✓", "✓", "✓"],
+                    ["Review Response", "Templates", "Active", "AI-Powered"],
+                    ["Review Generation", "—", "✓", "✓"],
+                    ["Google Ads", "—", "✓", "✓"],
+                    ["Citation Building", "—", "20 dirs", "Unlimited"],
+                    ["MapMaster™ AI", "—", "—", "✓"],
+                    ["Dedicated Manager", "—", "—", "✓"],
+                    ["Reporting", "Monthly", "Weekly", "Custom"],
+                    ["Support", "Email", "Priority", "24/7"],
+                  ].map(([feat, b, g, p], i) => (
+                    <tr key={i} className="border-b" style={{ borderColor: "rgba(229,225,216,0.06)" }}>
+                      <td className="py-4 font-sans text-sm" style={{ color: "rgba(229,225,216,0.55)" }}>{feat}</td>
+                      {[b, g, p].map((val, j) => (
+                        <td key={j} className="py-4 text-center font-sans text-sm" style={{ color: val === "—" ? "rgba(229,225,216,0.15)" : val === "✓" ? "rgba(180,210,170,0.8)" : "rgba(229,225,216,0.7)" }}>
+                          {val}
+                        </td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </FadeIn>
+        </div>
       </section>
 
-      {/* Tier Detail Accordions */}
-      {tiers.map((tier, ti) => (
-        <section key={ti} className={ti % 2 === 0 ? "section-dark py-16" : "section-light py-16"}>
-          <Section className="max-w-3xl mx-auto px-4 sm:px-6">
-            <FI>
-              <div className="flex items-center justify-between mb-8">
-                <div>
-                  <h2 className={`text-3xl font-serif font-bold ${ti % 2 === 0 ? "text-white" : "text-gray-900"}`}>
-                    {tier.name} Plan
-                  </h2>
-                  <p className={`text-lg font-semibold mt-1 ${ti % 2 === 0 ? "text-blue-400" : "text-blue-700"}`}>{tier.price}</p>
+      {/* Tier Cards */}
+      <section className="py-24 px-6 lg:px-10 border-b" style={{ borderColor: "rgba(229,225,216,0.1)" }}>
+        <div className="max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-px" style={{ backgroundColor: "rgba(229,225,216,0.08)" }}>
+            {[
+              {
+                name: "Basic", price: "$200", note: "/mo",
+                tagline: "Essentials done right. One location, consistent presence.",
+                features: ["1 GBP Location", "Full initial optimisation", "4 Google Posts/month", "Business hours & attributes", "Monthly performance report", "Review response templates", "Keyword optimisation", "Email support"],
+              },
+              {
+                name: "Growth", price: "$500", note: "/mo", badge: "Most Popular",
+                tagline: "The active edge. Reviews, reach, and results.",
+                features: ["Up to 3 Locations", "Everything in Basic", "Active review generation", "16 Posts/month", "Local Google Ads", "Weekly reports", "Competitor gap analysis", "Photo management", "Priority support", "Citation building (20 dirs)"],
+              },
+              {
+                name: "Premium", price: "$1,000", note: "/mo",
+                tagline: "Total domination mode. Unlimited, AI-powered.",
+                features: ["Unlimited Locations", "Everything in Growth", "MapMaster™ AI engine", "Dedicated account manager", "Daily posting & updates", "Unlimited citations", "Schema markup", "Monthly strategy call", "Custom dashboard", "24/7 priority support"],
+              },
+            ].map((plan, i) => (
+              <FadeIn key={i} delay={i * 0.1}>
+                <div className="p-8 lg:p-10 flex flex-col" style={{ backgroundColor: "var(--sf-dark)", minHeight: "520px" }}>
+                  <div className="mb-8">
+                    <div className="flex items-center gap-3 mb-2">
+                      <span className="font-display font-semibold text-2xl italic" style={{ color: "var(--sf-cream)" }}>{plan.name}</span>
+                      {plan.badge && (
+                        <span className="font-sans text-xs tracking-widest uppercase px-2 py-0.5" style={{ backgroundColor: "rgba(229,225,216,0.08)", color: "rgba(229,225,216,0.5)" }}>
+                          {plan.badge}
+                        </span>
+                      )}
+                    </div>
+                    <p className="font-sans text-xs mb-6" style={{ color: "rgba(229,225,216,0.4)" }}>{plan.tagline}</p>
+                    <div className="flex items-baseline gap-1">
+                      <span className="font-display font-semibold leading-none" style={{ fontSize: "clamp(2.5rem, 5vw, 4rem)", color: "var(--sf-cream)" }}>{plan.price}</span>
+                      <span className="font-sans text-xs" style={{ color: "rgba(229,225,216,0.3)" }}>{plan.note}</span>
+                    </div>
+                  </div>
+                  <ul className="space-y-3 flex-1 border-t pt-6 mb-8" style={{ borderColor: "rgba(229,225,216,0.08)" }}>
+                    {plan.features.map((f) => (
+                      <li key={f} className="flex items-start gap-3 font-sans text-sm" style={{ color: "rgba(229,225,216,0.5)" }}>
+                        <span className="mt-2 w-0.5 h-0.5 rounded-full shrink-0 opacity-50" style={{ backgroundColor: "var(--sf-cream)" }} />
+                        {f}
+                      </li>
+                    ))}
+                  </ul>
+                  <button onClick={onAuditClick} className="btn-outline-cream w-full justify-center text-xs">
+                    Start {plan.name}
+                  </button>
                 </div>
-                {tier.badge && (
-                  <span className="bg-emerald-500 text-white text-xs font-bold px-4 py-1.5 rounded-full">{tier.badge}</span>
-                )}
-              </div>
-              <div className={ti % 2 === 0 ? "border-white/10 divide-white/10 [&>div]:border-white/10 [&>div>button]:text-white [&>div>div]:text-white/60" : ""}>
-                {[
-                  { q: "What's included in the initial setup?", a: "We begin with a comprehensive audit of your existing GBP, competitive landscape analysis, and a full optimization sprint — categories, attributes, business description, photos, and service areas." },
-                  { q: "How do you generate more reviews?", a: "We deploy proven post-transaction sequences via email and SMS, with Google's compliant review request methodology. Growth and Premium clients see an average 300% increase in monthly reviews within 60 days." },
-                  { q: "What does 'Map Pack' mean?", a: "The Map Pack is the 3-business block that appears at the top of Google search results for local queries. Being in the top 3 drives the majority of local business leads — we specialize in getting and keeping you there." },
-                  { q: "Can I upgrade or downgrade my plan?", a: "Absolutely. You can change tiers at any time with 30 days notice. Upgrades are activated immediately; downgrades take effect at your next billing cycle." },
-                  { q: "What reporting will I receive?", a: "You'll receive detailed performance reports covering: profile views, search impressions, direction requests, call clicks, photo views, review growth, and map rank position trends." },
-                  { q: "Do I need to provide anything?", a: "Just access to your GBP account and any brand assets you have. We handle everything else — no ongoing work required from you." },
-                ].map((item) => (
-                  <AccordionItem key={item.q} title={item.q}>{item.a}</AccordionItem>
-                ))}
-              </div>
-              <button
-                onClick={onAuditClick}
-                className="mt-8 bg-blue-700 hover:bg-blue-600 text-white font-semibold px-6 py-3 rounded-xl transition-colors text-sm"
-              >
-                Choose {tier.name} Plan
-              </button>
-            </FI>
-          </Section>
-        </section>
-      ))}
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Onboarding Timeline */}
-      <section className="section-light py-20">
-        <Section className="max-w-5xl mx-auto px-4 sm:px-6">
-          <FI className="text-center mb-14">
-            <h2 className="text-gray-900 text-3xl font-serif">How We Work</h2>
-            <p className="text-gray-500 mt-3">From zero to domination in 4 steps</p>
-          </FI>
-          <div className="relative">
-            <div className="absolute top-8 left-0 right-0 h-0.5 bg-gray-200 hidden md:block" />
-            <div className="grid md:grid-cols-5 gap-6 relative">
-              {[
-                { icon: BarChart3, label: "GBP Audit", step: "01", desc: "Full profile + competitor analysis" },
-                { icon: TrendingUp, label: "Strategy", step: "02", desc: "Custom domination roadmap" },
-                { icon: Zap, label: "Implement", step: "03", desc: "Full optimization & setup" },
-                { icon: Star, label: "Optimize", step: "04", desc: "Continuous testing & AI tuning" },
-                { icon: BarChart3, label: "Report", step: "05", desc: "Transparent results reporting" },
-              ].map((step, i) => (
-                <FI key={i} className="text-center">
-                  <div className="relative inline-flex items-center justify-center w-16 h-16 bg-blue-700 text-white rounded-2xl mx-auto mb-4">
-                    <step.icon className="w-7 h-7" />
-                    <span className="absolute -top-2 -right-2 w-6 h-6 bg-white border-2 border-blue-700 rounded-full text-blue-700 text-[10px] font-bold flex items-center justify-center">{step.step}</span>
-                  </div>
-                  <h3 className="text-gray-900 font-bold mb-1">{step.label}</h3>
-                  <p className="text-gray-500 text-sm">{step.desc}</p>
-                </FI>
-              ))}
-            </div>
+      <section className="py-24 px-6 lg:px-10 border-b" style={{ borderColor: "rgba(229,225,216,0.1)" }}>
+        <div className="max-w-7xl mx-auto">
+          <FadeUp>
+            <p className="tag mb-10" style={{ color: "rgba(229,225,216,0.4)" }}>How We Work</p>
+            <h2
+              className="font-display font-semibold italic leading-tight mb-16"
+              style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)", color: "var(--sf-cream)" }}
+            >
+              From zero to domination<br />in four steps.
+            </h2>
+          </FadeUp>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px" style={{ backgroundColor: "rgba(229,225,216,0.08)" }}>
+            {[
+              { step: "01", label: "GBP Audit", desc: "Full profile analysis, competitive landscape, and opportunity mapping." },
+              { step: "02", label: "Strategy", desc: "Custom domination roadmap built around your market and goals." },
+              { step: "03", label: "Implement", desc: "Full optimisation sprint across every profile signal and asset." },
+              { step: "04", label: "Optimise & Report", desc: "Continuous AI tuning and transparent monthly or weekly reporting." },
+            ].map((s, i) => (
+              <FadeIn key={i} delay={i * 0.1}>
+                <div className="p-8" style={{ backgroundColor: "var(--sf-dark)" }}>
+                  <span className="font-display text-5xl font-semibold italic opacity-20 block mb-6" style={{ color: "var(--sf-cream)" }}>
+                    {s.step}
+                  </span>
+                  <h3 className="font-display font-semibold italic text-2xl mb-3" style={{ color: "var(--sf-cream)" }}>
+                    {s.label}
+                  </h3>
+                  <p className="font-sans text-sm leading-relaxed" style={{ color: "rgba(229,225,216,0.45)" }}>
+                    {s.desc}
+                  </p>
+                </div>
+              </FadeIn>
+            ))}
           </div>
-        </Section>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-24 px-6 lg:px-10">
+        <div className="max-w-3xl mx-auto">
+          <FadeUp>
+            <p className="tag mb-8" style={{ color: "rgba(229,225,216,0.4)" }}>Questions</p>
+          </FadeUp>
+          {[
+            { q: "What's included in the initial setup?", a: "We begin with a comprehensive audit of your existing GBP, competitive analysis, and a full optimisation sprint — categories, attributes, business description, photos, and service areas — all within the first week." },
+            { q: "How do you generate more reviews?", a: "We deploy proven post-transaction sequences via email and SMS, using Google's compliant review request methodology. Growth and Premium clients see an average 300% increase in monthly reviews within 60 days." },
+            { q: "Can I upgrade or downgrade my plan?", a: "Absolutely. You can change tiers at any time with 30 days notice. Upgrades activate immediately; downgrades take effect at the next billing cycle. No penalties or lock-in." },
+            { q: "What reporting will I receive?", a: "Detailed performance reports covering: profile views, search impressions, direction requests, call clicks, photo views, review growth, and map rank trends — weekly or monthly depending on your tier." },
+            { q: "Do you guarantee results?", a: "We guarantee Top 3 Map Pack placement on Premium plans. We also offer a full refund if you see zero improvement in your first 60 days on any plan." },
+          ].map((item, i) => (
+            <FadeIn key={i} delay={i * 0.06}>
+              <Accordion q={item.q} a={item.a} />
+            </FadeIn>
+          ))}
+          <div className="mt-12">
+            <FadeIn>
+              <button onClick={onAuditClick} className="btn-cream">
+                Start with a Free Audit <ArrowRight className="w-3.5 h-3.5" />
+              </button>
+            </FadeIn>
+          </div>
+        </div>
       </section>
     </div>
   );

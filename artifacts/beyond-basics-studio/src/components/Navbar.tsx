@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
-import { Menu, X, MapPin } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 interface NavbarProps {
   onAuditClick: () => void;
@@ -12,46 +12,64 @@ export default function Navbar({ onAuditClick }: NavbarProps) {
   const [location] = useLocation();
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
+    const handleScroll = () => setScrolled(window.scrollY > 40);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navLinks = [
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [location]);
+
+  const links = [
     { href: "/", label: "Home" },
     { href: "/services", label: "Services" },
-    { href: "/case-studies", label: "Case Studies" },
+    { href: "/case-studies", label: "Work" },
     { href: "/about", label: "About" },
     { href: "/contact", label: "Contact" },
   ];
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-black/95 backdrop-blur-md border-b border-white/10 shadow-lg" : "bg-transparent"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        scrolled
+          ? "border-b"
+          : ""
       }`}
+      style={{
+        backgroundColor: scrolled ? "rgba(44,49,41,0.97)" : "transparent",
+        borderColor: "rgba(229,225,216,0.1)",
+        backdropFilter: scrolled ? "blur(12px)" : "none",
+      }}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 group">
-            <div className="w-8 h-8 bg-blue-700 rounded-md flex items-center justify-center group-hover:bg-blue-600 transition-colors">
-              <MapPin className="w-4 h-4 text-white" fill="white" />
-            </div>
-            <span className="font-bold text-white text-lg tracking-tight">
-              Beyond Basics<span className="text-blue-400"> Studio</span>
+          <Link href="/" className="group flex items-baseline gap-1.5">
+            <span
+              className="font-display text-xl md:text-2xl font-semibold leading-none tracking-tight"
+              style={{ color: "var(--sf-cream)" }}
+            >
+              BBS
+            </span>
+            <span
+              className="font-sans text-xs tracking-widest uppercase opacity-50"
+              style={{ color: "var(--sf-cream)" }}
+            >
+              Studio
             </span>
           </Link>
 
           {/* Desktop nav */}
-          <nav className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
+          <nav className="hidden md:flex items-center gap-10">
+            {links.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-sm font-medium transition-colors hover:text-white ${
-                  location === link.href ? "text-white" : "text-white/60"
+                className={`font-sans text-xs tracking-widest uppercase transition-opacity duration-200 ${
+                  location === link.href ? "opacity-100" : "opacity-40 hover:opacity-70"
                 }`}
+                style={{ color: "var(--sf-cream)" }}
               >
                 {link.label}
               </Link>
@@ -59,43 +77,46 @@ export default function Navbar({ onAuditClick }: NavbarProps) {
           </nav>
 
           {/* CTA */}
-          <div className="hidden md:flex items-center gap-4">
+          <div className="hidden md:block">
             <button
               onClick={onAuditClick}
-              className="bg-blue-700 hover:bg-blue-600 text-white text-sm font-semibold px-5 py-2.5 rounded-lg transition-all duration-200 hover:shadow-lg hover:shadow-blue-700/30"
+              className="btn-outline-cream text-xs"
+              style={{ color: "var(--sf-cream)", borderColor: "rgba(229,225,216,0.35)" }}
             >
-              Get Free Audit
+              Free Audit
             </button>
           </div>
 
-          {/* Mobile menu button */}
+          {/* Mobile */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="md:hidden text-white/80 hover:text-white p-1"
+            className="md:hidden opacity-70 hover:opacity-100 transition-opacity"
+            style={{ color: "var(--sf-cream)" }}
           >
-            {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {menuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
         </div>
       </div>
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="md:hidden bg-black/98 border-t border-white/10 px-4 pb-6 pt-4">
-          {navLinks.map((link) => (
+        <div
+          className="md:hidden border-t px-6 py-8 space-y-6"
+          style={{ backgroundColor: "var(--sf-dark)", borderColor: "rgba(229,225,216,0.1)" }}
+        >
+          {links.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              onClick={() => setMenuOpen(false)}
-              className={`block py-3 text-sm font-medium border-b border-white/5 transition-colors ${
-                location === link.href ? "text-white" : "text-white/60"
-              }`}
+              className="block font-display text-3xl font-semibold italic"
+              style={{ color: "var(--sf-cream)" }}
             >
               {link.label}
             </Link>
           ))}
           <button
             onClick={() => { onAuditClick(); setMenuOpen(false); }}
-            className="mt-4 w-full bg-blue-700 hover:bg-blue-600 text-white text-sm font-semibold px-5 py-3 rounded-lg transition-colors"
+            className="btn-outline-cream w-full justify-center mt-4"
           >
             Get Free Audit
           </button>

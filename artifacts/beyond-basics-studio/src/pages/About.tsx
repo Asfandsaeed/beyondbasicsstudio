@@ -1,189 +1,187 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { Shield, Zap, TrendingUp, Users, Target, Globe } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
-const fadeUp = { hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } } };
-const stagger = { visible: { transition: { staggerChildren: 0.1 } } };
-
-function Section({ children, className }: { children: React.ReactNode; className?: string }) {
+const ease = [0.16, 1, 0.3, 1];
+function FadeUp({ children, className, delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });
-  return <motion.div ref={ref} initial="hidden" animate={inView ? "visible" : "hidden"} variants={stagger} className={className}>{children}</motion.div>;
+  return <motion.div ref={ref} initial={{ opacity: 0, y: 32 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.9, ease, delay }} className={className}>{children}</motion.div>;
 }
-function FI({ children, className }: { children: React.ReactNode; className?: string }) {
-  return <motion.div variants={fadeUp} className={className}>{children}</motion.div>;
+function FadeIn({ children, className, delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, margin: "-40px" });
+  return <motion.div ref={ref} initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ duration: 0.8, ease: "easeOut", delay }} className={className}>{children}</motion.div>;
 }
 
 const team = [
-  {
-    name: "Marcus Chen",
-    role: "CEO & Founder",
-    bio: "Former Google local team lead with 10 years of algorithm expertise. Built Beyond Basics to give every local business the unfair advantage he saw only large brands enjoying.",
-    initials: "MC",
-    color: "bg-blue-700",
-  },
-  {
-    name: "Priya Sharma",
-    role: "Head of GBP Operations",
-    bio: "Managed over 1,200 GBP profiles across 40+ industries. She's the engine behind our 98% client retention rate.",
-    initials: "PS",
-    color: "bg-emerald-600",
-  },
-  {
-    name: "James O'Reilly",
-    role: "AI Strategy Director",
-    bio: "Built MapMaster™ from the ground up. Data scientist by training, local SEO obsessive by choice. Believes every data point is a clue to more visibility.",
-    initials: "JO",
-    color: "bg-purple-700",
-  },
-  {
-    name: "Sofia Mendez",
-    role: "Client Success Lead",
-    bio: "The reason our clients stay. Sofia ensures every client feels heard, sees results, and grows with us over the long term.",
-    initials: "SM",
-    color: "bg-rose-600",
-  },
+  { name: "Marcus Chen", role: "CEO & Founder", initials: "MC", bio: "Former Google local team lead with 10 years of algorithm expertise. Built Beyond Basics to give every local business the competitive intelligence only large brands enjoyed." },
+  { name: "Priya Sharma", role: "Head of GBP Operations", initials: "PS", bio: "Managed over 1,200 GBP profiles across 40+ industries. The engine behind our 98% client retention rate." },
+  { name: "James O'Reilly", role: "AI Strategy Director", initials: "JO", bio: "Built MapMaster™ from the ground up. Data scientist by training, local SEO obsessive by nature." },
+  { name: "Sofia Mendez", role: "Client Success Lead", initials: "SM", bio: "The reason clients stay. Sofia ensures every client feels heard, sees results, and grows with us long term." },
+];
+
+const values = [
+  { title: "Transparent Reporting", desc: "No smoke, no mirrors. Every metric is real, verifiable, and tied to your business growth." },
+  { title: "AI-Powered Precision", desc: "MapMaster™ runs 24/7, testing and optimising faster than any competitor can react." },
+  { title: "Results-First Culture", desc: "We celebrate outcomes — not activity. Our team is incentivised around your profile's actual performance." },
 ];
 
 export default function About({ onAuditClick }: { onAuditClick: () => void }) {
   return (
-    <div>
+    <div style={{ backgroundColor: "var(--sf-dark)", color: "var(--sf-cream)" }}>
       {/* Hero */}
-      <section className="hero-gradient pt-32 pb-20">
-        <Section className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <FI>
-            <span className="text-blue-400 text-xs uppercase tracking-widest font-semibold">About Us</span>
-            <h1 className="font-serif text-white mt-4 mb-6" style={{ fontSize: "clamp(2rem, 5vw, 3.5rem)" }}>
-              Data-Driven GBP Experts
+      <section className="pt-36 pb-24 px-6 lg:px-10 border-b" style={{ borderColor: "rgba(229,225,216,0.1)" }}>
+        <div className="max-w-7xl mx-auto">
+          <FadeUp>
+            <p className="tag mb-6" style={{ color: "rgba(229,225,216,0.4)" }}>About</p>
+            <h1
+              className="font-display font-semibold italic leading-tight"
+              style={{ fontSize: "clamp(2.5rem, 8vw, 7rem)", color: "var(--sf-cream)" }}
+            >
+              Data-driven GBP<br />experts since 2025.
             </h1>
-            <p className="text-white/60 text-xl max-w-2xl mx-auto leading-relaxed">
-              We exist because local businesses deserve the same competitive intelligence that enterprise brands take for granted.
-            </p>
-          </FI>
-        </Section>
+          </FadeUp>
+        </div>
       </section>
 
       {/* Story */}
-      <section className="section-light py-20">
-        <Section className="max-w-5xl mx-auto px-4 sm:px-6">
-          <div className="grid md:grid-cols-2 gap-16 items-center">
-            <FI>
-              <span className="text-blue-700 text-xs uppercase tracking-widest font-semibold">Our Story</span>
-              <h2 className="text-gray-900 text-3xl font-serif mt-3 mb-5">Founded on an Unfair Truth</h2>
-              <p className="text-gray-600 leading-relaxed mb-4">
-                In 2025, our founder Marcus Chen left his role on Google's local team having witnessed firsthand how a well-managed Google Business Profile could transform a local business — and how poorly most businesses managed theirs.
+      <section className="py-24 px-6 lg:px-10 border-b" style={{ borderColor: "rgba(229,225,216,0.1)" }}>
+        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 lg:gap-24 items-start">
+          <FadeUp>
+            <p className="tag mb-6" style={{ color: "rgba(229,225,216,0.4)" }}>Our Story</p>
+            <h2
+              className="font-display font-semibold italic leading-tight"
+              style={{ fontSize: "clamp(1.8rem, 4vw, 3rem)", color: "var(--sf-cream)" }}
+            >
+              Founded on an<br />unfair truth.
+            </h2>
+          </FadeUp>
+          <FadeIn delay={0.15}>
+            <div className="space-y-5">
+              <p className="font-sans text-sm leading-relaxed" style={{ color: "rgba(229,225,216,0.55)" }}>
+                In 2025, our founder Marcus Chen left his role on Google's local team after witnessing firsthand how a well-managed Google Business Profile could transform a local business — and how poorly most businesses managed theirs.
               </p>
-              <p className="text-gray-600 leading-relaxed mb-4">
-                The average local business leaves 70% of its Google Maps potential untouched. Not because they don't care — because they don't have the time, expertise, or tools to do it right.
+              <p className="font-sans text-sm leading-relaxed" style={{ color: "rgba(229,225,216,0.55)" }}>
+                The average local business leaves 70% of its Google Maps potential untouched. Not because they don't care — because they lack the time, expertise, and tools to do it right.
               </p>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="font-sans text-sm leading-relaxed" style={{ color: "rgba(229,225,216,0.55)" }}>
                 Beyond Basics Studio was built to fix that. Today we manage 500+ profiles across 30+ countries, delivering results that most business owners thought were impossible.
               </p>
-            </FI>
-            <FI>
-              <div className="bg-gradient-to-br from-gray-900 to-blue-950 rounded-2xl p-8 text-white">
-                <div className="grid grid-cols-2 gap-6">
-                  {[
-                    { value: "500+", label: "Profiles Managed", icon: Globe },
-                    { value: "30+", label: "Countries Served", icon: Target },
-                    { value: "98%", label: "Client Retention", icon: Users },
-                    { value: "2025", label: "Founded", icon: TrendingUp },
-                  ].map((stat, i) => (
-                    <div key={i} className="text-center">
-                      <stat.icon className="w-6 h-6 text-blue-400 mx-auto mb-2" />
-                      <div className="text-3xl font-bold font-serif">{stat.value}</div>
-                      <div className="text-white/50 text-sm mt-1">{stat.label}</div>
-                    </div>
-                  ))}
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* Stats */}
+      <section className="border-b" style={{ borderColor: "rgba(229,225,216,0.1)" }}>
+        <div className="max-w-7xl mx-auto px-6 lg:px-10">
+          <div className="grid grid-cols-2 md:grid-cols-4 divide-x" style={{ borderColor: "rgba(229,225,216,0.1)" }}>
+            {[
+              { value: "500+", label: "Profiles Managed" },
+              { value: "30+", label: "Countries Served" },
+              { value: "98%", label: "Client Retention" },
+              { value: "2025", label: "Year Founded" },
+            ].map((s, i) => (
+              <FadeIn key={i} delay={i * 0.08}>
+                <div className="py-10 px-6 first:pl-0">
+                  <p className="font-display font-semibold leading-none mb-2" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", color: "var(--sf-cream)" }}>
+                    {s.value}
+                  </p>
+                  <p className="font-sans text-xs tracking-widest uppercase" style={{ color: "rgba(229,225,216,0.35)" }}>{s.label}</p>
                 </div>
-              </div>
-            </FI>
+              </FadeIn>
+            ))}
           </div>
-        </Section>
+        </div>
       </section>
 
       {/* Team */}
-      <section className="section-dark py-20">
-        <Section className="max-w-6xl mx-auto px-4 sm:px-6">
-          <FI className="text-center mb-14">
-            <span className="text-blue-400 text-xs uppercase tracking-widest font-semibold">The Team</span>
-            <h2 className="text-white text-4xl font-serif mt-3">The People Behind Your Results</h2>
-          </FI>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <section className="py-24 px-6 lg:px-10 border-b" style={{ borderColor: "rgba(229,225,216,0.1)" }}>
+        <div className="max-w-7xl mx-auto">
+          <FadeUp>
+            <p className="tag mb-10" style={{ color: "rgba(229,225,216,0.4)" }}>The Team</p>
+          </FadeUp>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px" style={{ backgroundColor: "rgba(229,225,216,0.08)" }}>
             {team.map((member, i) => (
-              <FI key={i}>
-                <div className="bg-white/5 border border-white/10 rounded-2xl p-6 text-center card-hover cursor-default">
-                  <div className={`w-16 h-16 ${member.color} rounded-full flex items-center justify-center mx-auto mb-4`}>
-                    <span className="text-white font-bold text-xl">{member.initials}</span>
+              <FadeIn key={i} delay={i * 0.08}>
+                <div className="p-8 group" style={{ backgroundColor: "var(--sf-dark)" }}>
+                  {/* Avatar */}
+                  <div
+                    className="w-14 h-14 rounded-full flex items-center justify-center mb-6"
+                    style={{ backgroundColor: "rgba(229,225,216,0.08)", border: "1px solid rgba(229,225,216,0.12)" }}
+                  >
+                    <span className="font-display font-semibold italic text-lg" style={{ color: "var(--sf-cream)" }}>
+                      {member.initials}
+                    </span>
                   </div>
-                  <h3 className="text-white font-bold mb-0.5">{member.name}</h3>
-                  <p className="text-blue-400 text-xs font-semibold mb-3">{member.role}</p>
-                  <p className="text-white/50 text-sm leading-relaxed">{member.bio}</p>
+                  <h3 className="font-display font-semibold italic text-xl mb-0.5" style={{ color: "var(--sf-cream)" }}>
+                    {member.name}
+                  </h3>
+                  <p className="font-sans text-xs tracking-widest uppercase mb-4" style={{ color: "rgba(229,225,216,0.35)" }}>
+                    {member.role}
+                  </p>
+                  <p className="font-sans text-sm leading-relaxed" style={{ color: "rgba(229,225,216,0.45)" }}>
+                    {member.bio}
+                  </p>
                 </div>
-              </FI>
+              </FadeIn>
             ))}
           </div>
-        </Section>
+        </div>
       </section>
 
       {/* Values */}
-      <section className="section-light py-20">
-        <Section className="max-w-5xl mx-auto px-4 sm:px-6">
-          <FI className="text-center mb-14">
-            <span className="text-blue-700 text-xs uppercase tracking-widest font-semibold">What We Stand For</span>
-            <h2 className="text-gray-900 text-4xl font-serif mt-3">Our Core Values</h2>
-          </FI>
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
-              {
-                icon: Shield,
-                title: "Transparent Reporting",
-                desc: "No smoke and mirrors. Every metric we report is real, verifiable, and tied to your business growth. You always know exactly what you're paying for.",
-                color: "bg-blue-700",
-              },
-              {
-                icon: Zap,
-                title: "AI-Powered Precision",
-                desc: "Our MapMaster™ AI engine runs 24/7, constantly testing and optimizing your profile. We move faster than competitors can react.",
-                color: "bg-purple-700",
-              },
-              {
-                icon: TrendingUp,
-                title: "Results-First Culture",
-                desc: "We don't celebrate activity. We celebrate outcomes. Our entire team is incentivized around your profile's performance, not vanity metrics.",
-                color: "bg-emerald-600",
-              },
-            ].map((val, i) => (
-              <FI key={i}>
-                <div className="bg-white border border-gray-200 rounded-2xl p-8 card-hover cursor-default">
-                  <div className={`${val.color} w-12 h-12 rounded-xl flex items-center justify-center mb-5`}>
-                    <val.icon className="w-6 h-6 text-white" />
+      <section className="py-24 px-6 lg:px-10 border-b" style={{ borderColor: "rgba(229,225,216,0.1)" }}>
+        <div className="max-w-7xl mx-auto">
+          <FadeUp>
+            <p className="tag mb-10" style={{ color: "rgba(229,225,216,0.4)" }}>What We Stand For</p>
+          </FadeUp>
+          <div className="space-y-0">
+            {values.map((val, i) => (
+              <FadeIn key={i} delay={i * 0.08}>
+                <div
+                  className="grid md:grid-cols-3 gap-8 py-10 border-b items-start"
+                  style={{ borderColor: "rgba(229,225,216,0.1)" }}
+                >
+                  <div className="flex items-start gap-6">
+                    <span className="font-sans text-xs opacity-25" style={{ color: "var(--sf-cream)" }}>
+                      0{i + 1}
+                    </span>
+                    <h3 className="font-display font-semibold italic text-2xl sm:text-3xl" style={{ color: "var(--sf-cream)" }}>
+                      {val.title}
+                    </h3>
                   </div>
-                  <h3 className="text-gray-900 font-bold text-lg mb-3">{val.title}</h3>
-                  <p className="text-gray-500 text-sm leading-relaxed">{val.desc}</p>
+                  <div className="md:col-span-2">
+                    <p className="font-sans text-sm leading-relaxed" style={{ color: "rgba(229,225,216,0.5)" }}>
+                      {val.desc}
+                    </p>
+                  </div>
                 </div>
-              </FI>
+              </FadeIn>
             ))}
           </div>
-        </Section>
+        </div>
       </section>
 
       {/* CTA */}
-      <section className="hero-gradient py-24">
-        <Section className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
-          <FI>
-            <h2 className="font-serif text-white text-4xl mb-5">Work With the Best</h2>
-            <p className="text-white/60 text-lg mb-8">
-              Our team is ready to take your GBP from overlooked to unstoppable.
-            </p>
-            <button
-              onClick={onAuditClick}
-              className="bg-blue-700 hover:bg-blue-600 text-white font-bold px-10 py-4 rounded-xl transition-all duration-200 hover:shadow-xl hover:shadow-blue-700/40"
-            >
-              Get Your Free Audit
-            </button>
-          </FI>
-        </Section>
+      <section className="py-40 px-6 lg:px-10 text-center">
+        <FadeUp>
+          <h2
+            className="font-display font-semibold italic leading-tight mb-10"
+            style={{ fontSize: "clamp(2.5rem, 7vw, 6rem)", color: "var(--sf-cream)" }}
+          >
+            Work with the best.
+          </h2>
+        </FadeUp>
+        <FadeIn delay={0.2}>
+          <p className="font-sans text-base mb-10 max-w-md mx-auto" style={{ color: "rgba(229,225,216,0.45)" }}>
+            Our team is ready to take your GBP from overlooked to unstoppable.
+          </p>
+          <button onClick={onAuditClick} className="btn-cream">
+            Get Your Free Audit <ArrowRight className="w-3.5 h-3.5" />
+          </button>
+        </FadeIn>
       </section>
     </div>
   );
