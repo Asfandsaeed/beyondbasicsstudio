@@ -1,3 +1,5 @@
+import { FadeUp, FadeIn } from "@/components/Animate";
+
 export default function PrivacyPolicy() {
   const sections = [
     {
@@ -159,25 +161,31 @@ export default function PrivacyPolicy() {
       {/* Header */}
       <section className="section-dark border-b" style={{ borderColor: "var(--sp-rule-d)" }}>
         <div className="max-w-7xl mx-auto px-6 lg:px-12 pt-36 pb-20">
-          <p className="label mb-6" style={{ color: "rgba(247,244,240,0.35)" }}>Legal</p>
-          <h1
-            className="font-serif leading-tight"
-            style={{ fontSize: "clamp(2.5rem, 6vw, 5.5rem)", color: "var(--sp-white)" }}
-          >
-            Privacy Policy
-          </h1>
-          <p className="font-sans text-sm mt-5" style={{ color: "rgba(247,244,240,0.35)" }}>
-            Effective Date: April 12, 2026 · beyondbasicsstudio.com
-          </p>
+          <FadeIn><p className="label mb-6" style={{ color: "rgba(247,244,240,0.35)" }}>Legal</p></FadeIn>
+          <FadeUp>
+            <h1
+              className="font-serif leading-tight"
+              style={{ fontSize: "clamp(2.5rem, 6vw, 5.5rem)", color: "var(--sp-white)" }}
+            >
+              Privacy Policy
+            </h1>
+          </FadeUp>
+          <FadeIn delay={0.2}>
+            <p className="font-sans text-sm mt-5" style={{ color: "rgba(247,244,240,0.35)" }}>
+              Effective Date: April 12, 2026 · beyondbasicsstudio.com
+            </p>
+          </FadeIn>
         </div>
       </section>
 
       {/* Intro */}
       <section className="section-light border-b" style={{ borderColor: "var(--sp-rule)" }}>
         <div className="max-w-3xl mx-auto px-6 lg:px-12 py-16">
-          <p className="font-sans text-sm leading-relaxed" style={{ color: "var(--sp-gray)" }}>
-            At Beyond Basics Studio ("we," "us," or "our"), operating at beyondbasicsstudio.com (the "Site"), we prioritise your privacy. This Privacy Policy explains how we collect, use, disclose, and protect your personal information when you visit our Site, use our Google Business Profile (GBP) management services, or interact with us. By using our Site or services, you consent to these practices.
-          </p>
+          <FadeIn>
+            <p className="font-sans text-sm leading-relaxed" style={{ color: "var(--sp-gray)" }}>
+              At Beyond Basics Studio ("we," "us," or "our"), operating at beyondbasicsstudio.com (the "Site"), we prioritise your privacy. This Privacy Policy explains how we collect, use, disclose, and protect your personal information when you visit our Site, use our Google Business Profile (GBP) management services, or interact with us. By using our Site or services, you consent to these practices.
+            </p>
+          </FadeIn>
         </div>
       </section>
 
@@ -190,30 +198,34 @@ export default function PrivacyPolicy() {
               className="py-10 border-b"
               style={{ borderColor: "var(--sp-rule)" }}
             >
-              <h2
-                className="font-serif mb-6"
-                style={{ fontSize: "clamp(1.25rem, 2.5vw, 1.75rem)", color: "var(--sp-black)" }}
-              >
-                {section.title}
-              </h2>
-              {section.content}
+              <FadeUp>
+                <h2
+                  className="font-serif mb-6"
+                  style={{ fontSize: "clamp(1.25rem, 2.5vw, 1.75rem)", color: "var(--sp-black)" }}
+                >
+                  {section.title}
+                </h2>
+              </FadeUp>
+              <FadeIn delay={0.08}>{section.content}</FadeIn>
             </div>
           ))}
 
           {/* Contact */}
-          <div className="pt-10">
-            <p className="label mb-4">Contact</p>
-            <p className="font-sans text-sm leading-relaxed" style={{ color: "var(--sp-gray)" }}>
-              For any privacy-related questions or requests, reach us at{" "}
-              <a
-                href="mailto:hello@beyondbasicsstudio.com"
-                className="underline underline-offset-2 transition-opacity hover:opacity-60"
-                style={{ color: "var(--sp-black)" }}
-              >
-                hello@beyondbasicsstudio.com
-              </a>
-            </p>
-          </div>
+          <FadeIn>
+            <div className="pt-10">
+              <p className="label mb-4">Contact</p>
+              <p className="font-sans text-sm leading-relaxed" style={{ color: "var(--sp-gray)" }}>
+                For any privacy-related questions or requests, reach us at{" "}
+                <a
+                  href="mailto:hello@beyondbasicsstudio.com"
+                  className="underline underline-offset-2 transition-opacity hover:opacity-60"
+                  style={{ color: "var(--sp-black)" }}
+                >
+                  hello@beyondbasicsstudio.com
+                </a>
+              </p>
+            </div>
+          </FadeIn>
         </div>
       </section>
     </div>
