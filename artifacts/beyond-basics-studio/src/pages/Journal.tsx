@@ -342,6 +342,30 @@ export default function Journal({ onAuditClick }: { onAuditClick: () => void }) 
         </div>
       </section>
 
+      {/* Article index / sitemap */}
+      <section className="section-light border-t border-b" style={{ borderColor: "var(--sp-rule)" }}>
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 py-20">
+          <FadeIn><p className="label mb-10" style={{ color: "var(--sp-gray)" }}>Article Index</p></FadeIn>
+          <ul className="divide-y" style={{ borderColor: "var(--sp-rule)" }}>
+            {[...articles].reverse().map((article, i) => (
+              <li key={article.slug}>
+                <FadeIn delay={i * 0.04}>
+                  <button
+                    onClick={() => { handleSelect(article); }}
+                    className="group w-full text-left grid grid-cols-12 items-baseline gap-4 py-5 hover:opacity-60 transition-opacity duration-200"
+                  >
+                    <span className="col-span-1 font-sans text-xs" style={{ color: "var(--sp-gray)", opacity: 0.4 }}>{String(articles.length - i).padStart(2, "0")}</span>
+                    <span className="col-span-2 label" style={{ color: "var(--sp-gray)" }}>{article.tag}</span>
+                    <span className="col-span-7 font-serif text-base lg:text-lg leading-snug" style={{ color: "var(--sp-black)" }}>{article.title}</span>
+                    <span className="col-span-2 font-sans text-xs text-right" style={{ color: "var(--sp-gray)", opacity: 0.45 }}>{article.readTime}</span>
+                  </button>
+                </FadeIn>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="section-dark border-t" style={{ borderColor: "var(--sp-rule-d)" }}>
         <div className="max-w-7xl mx-auto px-6 lg:px-12 py-24">

@@ -38,8 +38,8 @@ export default function Footer() {
               links: [["Basic — $200/mo", "/services"], ["Growth — $500/mo", "/services"], ["Premium — $1k/mo", "/services"], ["Free Audit", "/contact"]],
             },
             {
-              heading: "Company",
-              links: [["About", "/about"], ["Work", "/case-studies"], ["Contact", "/contact"]],
+              heading: "Sitemap",
+              links: [["Home", "/"], ["Services", "/services"], ["Work", "/case-studies"], ["Journal", "/journal"], ["About", "/about"], ["Contact", "/contact"], ["Privacy Policy", "/privacy"], ["Terms", "/terms"]],
             },
             {
               heading: "Contact",
