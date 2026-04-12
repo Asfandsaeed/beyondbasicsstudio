@@ -100,13 +100,21 @@
 .section-cream { background-color: var(--sp-cream); color: var(--sp-black); }
 .section-dark  { background-color: var(--sp-ink);   color: var(--sp-white); }
 
-/* ── Green headings on light / cream sections ── */
-/* !important overrides React inline style={{ color: "..." }} */
+/* ── Green headings & display text on light / cream sections ── */
+/* Targets ALL font-serif display elements (h1/h2/h3, p, span, blockquote, etc.)  */
+/* !important overrides React inline style={{ color: "..." }}                      */
+
+/* Base: every serif element in a light/cream context gets brand green */
+.section-light .font-serif,
+.section-cream .font-serif { color: var(--sp-green) !important; }
+
+/* Heading hierarchy — progressively deeper green for larger headings */
 .section-light h1, .section-cream h1 { color: var(--sp-green-deep) !important; }
 .section-light h2, .section-cream h2 { color: var(--sp-green)      !important; }
 .section-light h3, .section-cream h3 { color: var(--sp-green-mid)  !important; }
 
-/* Navbar hero override — keep dark-background h1 on Home hero white */
+/* Dark sections: inherit white from the section background color */
+.section-dark .font-serif,
 .section-dark h1, .section-dark h2, .section-dark h3 { color: inherit; }
 
 /* ── Label / eyebrow ── */
