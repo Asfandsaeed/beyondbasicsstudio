@@ -3,6 +3,7 @@ import { Link } from "wouter";
 import { motion, useInView, useScroll, useTransform } from "framer-motion";
 import { ArrowRight, ArrowDown } from "lucide-react";
 import SchemaMarkup from "@/components/SchemaMarkup";
+import { articles } from "@/data/articles";
 
 const ease = [0.25, 0.1, 0.25, 1];
 
@@ -432,23 +433,33 @@ export default function Home({ onAuditClick }: { onAuditClick: () => void }) {
             className="grid md:grid-cols-3 gap-px border-t"
             style={{ backgroundColor: "var(--sp-rule)", borderColor: "var(--sp-rule)" }}
           >
-            {[
-              { tag: "Award", date: "Mar 2026", title: "Beyond Basics Wins Local Agency of Year 2026", desc: "For the second consecutive year, recognised for extraordinary GBP results across 30+ countries." },
-              { tag: "Case Study", date: "Feb 2026", title: "How We 5x'd a Client's Map Pack Rankings in 90 Days", desc: "The exact playbook behind our most dramatic ranking turnaround." },
-              { tag: "Strategy", date: "Jan 2026", title: "The GBP Optimisation Guide for 2026", desc: "Google's algorithm changed. Here's what actually moves the needle now." },
-            ].map((a, i) => (
-              <FadeIn key={i} delay={i * 0.07}>
-                <div className="section-light p-8 group cursor-default">
-                  <div className="flex items-center justify-between mb-6">
-                    <span className="label">{a.tag}</span>
-                    <span className="font-sans text-xs" style={{ color: "var(--sp-gray)", opacity: 0.5 }}>{a.date}</span>
+            {articles.slice(-3).reverse().map((a, i) => (
+              <FadeIn key={a.slug} delay={i * 0.07}>
+                <Link href="/journal">
+                  <div className="section-light px-8 py-8 group cursor-pointer h-full flex flex-col">
+                    <div className="mb-5">
+                      <span className="label block mb-1.5">{a.tag}</span>
+                      <span className="font-sans text-xs" style={{ color: "var(--sp-gray)", opacity: 0.5 }}>{a.date} · {a.readTime}</span>
+                    </div>
+                    <h3 className="font-serif text-lg lg:text-xl leading-snug mb-4 group-hover:opacity-60 transition-opacity duration-300 flex-1" style={{ color: "var(--sp-black)" }}>{a.title}</h3>
+                    <p className="font-sans text-sm leading-relaxed mb-6 line-clamp-3" style={{ color: "var(--sp-gray)" }}>{a.excerpt}</p>
+                    <div className="flex items-center gap-2">
+                      <span className="label" style={{ color: "var(--sp-black)" }}>Read Article</span>
+                      <ArrowRight className="w-3.5 h-3.5 opacity-40 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300" style={{ color: "var(--sp-black)" }} />
+                    </div>
                   </div>
-                  <h3 className="font-serif text-xl lg:text-2xl leading-snug mb-4 group-hover:opacity-60 transition-opacity duration-300" style={{ color: "var(--sp-black)" }}>{a.title}</h3>
-                  <p className="font-sans text-sm leading-relaxed" style={{ color: "var(--sp-gray)" }}>{a.desc}</p>
-                </div>
+                </Link>
               </FadeIn>
             ))}
           </div>
+          <FadeIn delay={0.2}>
+            <div className="flex justify-end mt-8">
+              <Link href="/journal" className="flex items-center gap-2 group label" style={{ color: "var(--sp-gray)" }}>
+                View all articles
+                <ArrowRight className="w-3.5 h-3.5 opacity-40 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300" />
+              </Link>
+            </div>
+          </FadeIn>
         </div>
       </section>
 
