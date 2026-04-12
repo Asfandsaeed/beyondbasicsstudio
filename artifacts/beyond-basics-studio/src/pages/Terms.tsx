@@ -1,4 +1,5 @@
 import { FadeUp, FadeIn } from "@/components/Animate";
+import SchemaMarkup from "@/components/SchemaMarkup";
 
 export default function Terms() {
   const sections = [
@@ -183,6 +184,32 @@ export default function Terms() {
 
   return (
     <div style={{ backgroundColor: "var(--sp-white)" }}>
+      <SchemaMarkup schema={[
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.beyondbasicsstudio.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Terms & Conditions", "item": "https://www.beyondbasicsstudio.com/terms" }
+          ]
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "url": "https://www.beyondbasicsstudio.com/terms",
+          "name": "Terms & Conditions — Beyond Basics Studio",
+          "description": "Terms and conditions governing the use of beyondbasicsstudio.com and Beyond Basics Studio GBP management services.",
+          "datePublished": "2026-04-12",
+          "dateModified": "2026-04-12",
+          "isPartOf": { "@type": "WebSite", "url": "https://www.beyondbasicsstudio.com/" },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Beyond Basics Studio",
+            "url": "https://www.beyondbasicsstudio.com/"
+          }
+        }
+      ]} />
+
       {/* Header */}
       <section className="section-dark border-b" style={{ borderColor: "var(--sp-rule-d)" }}>
         <div className="max-w-7xl mx-auto px-6 lg:px-12 pt-36 pb-20">

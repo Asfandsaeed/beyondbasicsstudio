@@ -1,4 +1,5 @@
 import { FadeUp, FadeIn } from "@/components/Animate";
+import SchemaMarkup from "@/components/SchemaMarkup";
 
 export default function PrivacyPolicy() {
   const sections = [
@@ -158,6 +159,32 @@ export default function PrivacyPolicy() {
 
   return (
     <div style={{ backgroundColor: "var(--sp-white)" }}>
+      <SchemaMarkup schema={[
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.beyondbasicsstudio.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Privacy Policy", "item": "https://www.beyondbasicsstudio.com/privacy" }
+          ]
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "url": "https://www.beyondbasicsstudio.com/privacy",
+          "name": "Privacy Policy — Beyond Basics Studio",
+          "description": "How Beyond Basics Studio collects, uses, and protects your personal data in accordance with GDPR and applicable privacy laws.",
+          "datePublished": "2026-04-12",
+          "dateModified": "2026-04-12",
+          "isPartOf": { "@type": "WebSite", "url": "https://www.beyondbasicsstudio.com/" },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Beyond Basics Studio",
+            "url": "https://www.beyondbasicsstudio.com/"
+          }
+        }
+      ]} />
+
       {/* Header */}
       <section className="section-dark border-b" style={{ borderColor: "var(--sp-rule-d)" }}>
         <div className="max-w-7xl mx-auto px-6 lg:px-12 pt-36 pb-20">

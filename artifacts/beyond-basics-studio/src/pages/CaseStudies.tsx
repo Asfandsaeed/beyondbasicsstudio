@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import SchemaMarkup from "@/components/SchemaMarkup";
 
 const ease = [0.25, 0.1, 0.25, 1];
 function FadeUp({ children, className, delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
@@ -26,6 +27,41 @@ const cases = [
 export default function CaseStudies({ onAuditClick }: { onAuditClick: () => void }) {
   return (
     <div style={{ backgroundColor: "var(--sp-white)" }}>
+      <SchemaMarkup schema={[
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.beyondbasicsstudio.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Case Studies", "item": "https://www.beyondbasicsstudio.com/case-studies" }
+          ]
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "url": "https://www.beyondbasicsstudio.com/case-studies",
+          "name": "GBP Case Studies & Client Results — Beyond Basics Studio",
+          "description": "Real before/after results from local businesses who dominated Google Maps with Beyond Basics Studio. Restaurants, dental practices, gyms, and more.",
+          "isPartOf": { "@type": "WebSite", "url": "https://www.beyondbasicsstudio.com/" }
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          "name": "Client Case Studies",
+          "itemListElement": cases.map((c, i) => ({
+            "@type": "ListItem",
+            "position": i + 1,
+            "item": {
+              "@type": "Article",
+              "headline": `${c.business} — ${c.highlight}`,
+              "description": `${c.type} in ${c.location}. Profile views: ${c.before.views} → ${c.after.views}. Map rank: ${c.before.rank} → ${c.after.rank}. Reviews: ${c.before.reviews} → ${c.after.reviews}. Calls: ${c.before.calls} → ${c.after.calls}.`,
+              "author": { "@type": "Organization", "name": "Beyond Basics Studio" },
+              "publisher": { "@type": "Organization", "name": "Beyond Basics Studio", "url": "https://www.beyondbasicsstudio.com/" }
+            }
+          }))
+        }
+      ]} />
+
       {/* Hero */}
       <section className="section-dark border-b" style={{ borderColor: "var(--sp-rule-d)" }}>
         <div className="max-w-7xl mx-auto px-6 lg:px-12 pt-36 pb-24">

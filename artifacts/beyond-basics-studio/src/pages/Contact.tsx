@@ -2,6 +2,7 @@ import { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { ArrowRight, Plus, Minus, CheckCircle } from "lucide-react";
+import SchemaMarkup from "@/components/SchemaMarkup";
 
 const ease = [0.25, 0.1, 0.25, 1];
 function FadeUp({ children, className, delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
@@ -38,6 +39,31 @@ export default function Contact() {
 
   return (
     <div style={{ backgroundColor: "var(--sp-white)" }}>
+      <SchemaMarkup schema={[
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.beyondbasicsstudio.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Contact", "item": "https://www.beyondbasicsstudio.com/contact" }
+          ]
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "ContactPage",
+          "url": "https://www.beyondbasicsstudio.com/contact",
+          "name": "Contact Beyond Basics Studio — Get Your Free GBP Audit",
+          "description": "Request a free Google Business Profile audit from Beyond Basics Studio. We'll identify exactly what's holding your local ranking back — within 24 hours.",
+          "isPartOf": { "@type": "WebSite", "url": "https://www.beyondbasicsstudio.com/" },
+          "mainEntity": {
+            "@type": "Organization",
+            "name": "Beyond Basics Studio",
+            "email": "hello@beyondbasicsstudio.com",
+            "url": "https://www.beyondbasicsstudio.com/"
+          }
+        }
+      ]} />
+
       {/* Hero */}
       <section className="section-dark border-b" style={{ borderColor: "var(--sp-rule-d)" }}>
         <div className="max-w-7xl mx-auto px-6 lg:px-12 pt-36 pb-24">

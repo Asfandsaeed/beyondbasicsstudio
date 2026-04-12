@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import SchemaMarkup from "@/components/SchemaMarkup";
 
 const ease = [0.25, 0.1, 0.25, 1];
 function FadeUp({ children, className, delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
@@ -24,6 +25,41 @@ const team = [
 export default function About({ onAuditClick }: { onAuditClick: () => void }) {
   return (
     <div style={{ backgroundColor: "var(--sp-white)" }}>
+      <SchemaMarkup schema={[
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.beyondbasicsstudio.com/" },
+            { "@type": "ListItem", "position": 2, "name": "About", "item": "https://www.beyondbasicsstudio.com/about" }
+          ]
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "AboutPage",
+          "url": "https://www.beyondbasicsstudio.com/about",
+          "name": "About Beyond Basics Studio — GBP Management Agency",
+          "description": "Beyond Basics Studio is a data-driven Google Business Profile agency founded in 2025. We bring enterprise-level GBP expertise to local businesses worldwide.",
+          "isPartOf": { "@type": "WebSite", "url": "https://www.beyondbasicsstudio.com/" }
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "Beyond Basics Studio",
+          "url": "https://www.beyondbasicsstudio.com/",
+          "logo": "https://www.beyondbasicsstudio.com/favicon.svg",
+          "foundingDate": "2025",
+          "email": "hello@beyondbasicsstudio.com",
+          "description": "Google Business Profile management agency delivering data-driven local SEO, review generation, and map pack domination for businesses worldwide.",
+          "employee": team.map(m => ({
+            "@type": "Person",
+            "name": m.name,
+            "jobTitle": m.role,
+            "worksFor": { "@type": "Organization", "name": "Beyond Basics Studio" }
+          }))
+        }
+      ]} />
+
       {/* Hero */}
       <section className="section-dark border-b" style={{ borderColor: "var(--sp-rule-d)" }}>
         <div className="max-w-7xl mx-auto px-6 lg:px-12 pt-36 pb-24">

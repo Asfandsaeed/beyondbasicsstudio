@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import { ArrowRight, Plus, Minus } from "lucide-react";
+import SchemaMarkup from "@/components/SchemaMarkup";
 
 const ease = [0.25, 0.1, 0.25, 1];
 function FadeUp({ children, className, delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
@@ -30,6 +31,62 @@ function Accordion({ q, a }: { q: string; a: string }) {
 export default function Services({ onAuditClick }: { onAuditClick: () => void }) {
   return (
     <div style={{ backgroundColor: "var(--sp-white)" }}>
+      <SchemaMarkup schema={[
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.beyondbasicsstudio.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://www.beyondbasicsstudio.com/services" }
+          ]
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "url": "https://www.beyondbasicsstudio.com/services",
+          "name": "GBP Management Services — Beyond Basics Studio",
+          "description": "Full-spectrum Google Business Profile management tiers: Basic ($200/mo), Growth ($500/mo), and Premium ($1,000/mo) for single to enterprise-level local businesses.",
+          "isPartOf": { "@type": "WebSite", "url": "https://www.beyondbasicsstudio.com/" }
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          "name": "GBP Management Service Tiers",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "item": {
+                "@type": "Service",
+                "name": "Basic GBP Management",
+                "description": "Single-location GBP maintenance. Daily automated + weekly manual audits, NAP monitoring across 50 directories, 1–2 Google Posts/month, Q&A seeding, basic review monitoring, 1-page monthly report, email support.",
+                "offers": { "@type": "Offer", "price": "200", "priceCurrency": "USD", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "200", "priceCurrency": "USD", "unitText": "month" } }
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "item": {
+                "@type": "Service",
+                "name": "Growth GBP Management",
+                "description": "Up to 5 locations. Includes everything in Basic plus 4–8 posts and 2 videos/month, review automation (100 requests/month), AI response templates, competitor gap analysis (10 rivals), bi-weekly dashboard, 5-page report.",
+                "offers": { "@type": "Offer", "price": "500", "priceCurrency": "USD", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "500", "priceCurrency": "USD", "unitText": "month" } }
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "item": {
+                "@type": "Service",
+                "name": "Premium GBP Management",
+                "description": "Up to 50 locations. Real-time 24/7 monitoring, 200+ review requests/month, sentiment analysis, white-label funnels, 12+ posts/month, 360° tours, 100+ citations + schema markup, custom KPI dashboard, dedicated account manager.",
+                "offers": { "@type": "Offer", "price": "1000", "priceCurrency": "USD", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "1000", "priceCurrency": "USD", "unitText": "month" } }
+              }
+            }
+          ]
+        }
+      ]} />
+
       {/* Hero */}
       <section className="section-dark border-b" style={{ borderColor: "var(--sp-rule-d)" }}>
         <div className="max-w-7xl mx-auto px-6 lg:px-12 pt-36 pb-24">

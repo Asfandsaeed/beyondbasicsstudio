@@ -2,6 +2,7 @@ import { useRef } from "react";
 import { Link } from "wouter";
 import { motion, useInView, useScroll, useTransform } from "framer-motion";
 import { ArrowRight, ArrowDown } from "lucide-react";
+import SchemaMarkup from "@/components/SchemaMarkup";
 
 const ease = [0.25, 0.1, 0.25, 1];
 
@@ -38,6 +39,61 @@ export default function Home({ onAuditClick }: { onAuditClick: () => void }) {
 
   return (
     <div style={{ backgroundColor: "var(--sp-white)" }}>
+      <SchemaMarkup schema={[
+        {
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "url": "https://www.beyondbasicsstudio.com/",
+          "name": "Beyond Basics Studio",
+          "description": "Google Business Profile management agency helping local businesses dominate Google Maps.",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://www.beyondbasicsstudio.com/?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "ProfessionalService",
+          "name": "Beyond Basics Studio",
+          "url": "https://www.beyondbasicsstudio.com/",
+          "logo": "https://www.beyondbasicsstudio.com/favicon.svg",
+          "image": "https://www.beyondbasicsstudio.com/opengraph.jpg",
+          "description": "Beyond Basics Studio is a Google Business Profile (GBP) management agency delivering data-driven local SEO, review generation, and map pack domination for businesses worldwide.",
+          "email": "hello@beyondbasicsstudio.com",
+          "foundingDate": "2025",
+          "areaServed": "Worldwide",
+          "serviceType": "Google Business Profile Management",
+          "priceRange": "$200–$1,000/month",
+          "sameAs": [],
+          "offers": [
+            {
+              "@type": "Offer",
+              "name": "Basic",
+              "price": "200",
+              "priceCurrency": "USD",
+              "description": "Foundational GBP maintenance for single-location businesses. Daily audits, NAP monitoring, 1–2 posts/month.",
+              "url": "https://www.beyondbasicsstudio.com/services"
+            },
+            {
+              "@type": "Offer",
+              "name": "Growth",
+              "price": "500",
+              "priceCurrency": "USD",
+              "description": "Proactive growth for businesses targeting top-3 map pack. Up to 5 locations, review automation, competitor analysis.",
+              "url": "https://www.beyondbasicsstudio.com/services"
+            },
+            {
+              "@type": "Offer",
+              "name": "Premium",
+              "price": "1000",
+              "priceCurrency": "USD",
+              "description": "Enterprise-level GBP domination. Up to 50 locations, 24/7 monitoring, dedicated account manager.",
+              "url": "https://www.beyondbasicsstudio.com/services"
+            }
+          ]
+        }
+      ]} />
 
       {/* ── HERO — full-bleed dark ── */}
       <section
