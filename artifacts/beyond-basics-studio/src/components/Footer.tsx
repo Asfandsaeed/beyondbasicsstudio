@@ -69,8 +69,11 @@ export default function Footer() {
             © 2026 Beyond Basics Studio. All rights reserved.
           </p>
           <div className="flex gap-6">
-              <Link href="/privacy" className="font-sans text-xs transition-opacity hover:opacity-60" style={{ color: "rgba(247,244,240,0.2)" }}>
+            <Link href="/privacy" className="font-sans text-xs transition-opacity hover:opacity-60" style={{ color: "rgba(247,244,240,0.2)" }}>
               Privacy Policy
+            </Link>
+            <Link href="/terms" className="font-sans text-xs transition-opacity hover:opacity-60" style={{ color: "rgba(247,244,240,0.2)" }}>
+              Terms &amp; Conditions
             </Link>
           </div>
         </div>
