@@ -9,7 +9,7 @@ export default function Footer() {
       {/* Big type statement */}
       <div className="px-6 lg:px-10 pt-16 pb-0 border-b" style={{ borderColor: "rgba(229,225,216,0.1)" }}>
         <p
-          className="font-display font-semibold italic leading-none tracking-tight overflow-hidden"
+          className="font-display font-semibold leading-none tracking-tight overflow-hidden"
           style={{
             color: "var(--sf-cream)",
             fontSize: "clamp(3rem, 10vw, 9rem)",
@@ -26,7 +26,7 @@ export default function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-10 lg:gap-16 mb-16">
           <div className="col-span-2 md:col-span-1">
             <p
-              className="font-display text-2xl font-semibold italic mb-4 leading-tight"
+              className="font-display text-2xl font-semibold mb-4 leading-tight"
               style={{ color: "var(--sf-cream)" }}
             >
               Beyond Basics<br />Studio

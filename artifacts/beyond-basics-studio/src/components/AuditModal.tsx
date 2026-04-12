@@ -57,7 +57,7 @@ export default function AuditModal({ isOpen, onClose }: AuditModalProps) {
           <div className="flex items-start justify-between mb-10">
             <div>
               <p className="tag mb-3" style={{ color: "var(--sf-cream)" }}>Free GBP Audit</p>
-              <h2 className="font-display text-3xl sm:text-4xl font-semibold italic leading-tight" style={{ color: "var(--sf-cream)" }}>
+              <h2 className="font-display text-3xl sm:text-4xl font-semibold leading-tight" style={{ color: "var(--sf-cream)" }}>
                 Let's see what you're<br />leaving on the table.
               </h2>
             </div>
@@ -78,7 +78,7 @@ export default function AuditModal({ isOpen, onClose }: AuditModalProps) {
               >
                 <CheckCircle className="w-7 h-7" style={{ color: "var(--sf-cream)" }} />
               </div>
-              <h3 className="font-display text-2xl font-semibold italic mb-3" style={{ color: "var(--sf-cream)" }}>
+              <h3 className="font-display text-2xl font-semibold mb-3" style={{ color: "var(--sf-cream)" }}>
                 We'll be in touch.
               </h3>
               <p className="font-sans text-sm mb-8" style={{ color: "rgba(229,225,216,0.5)" }}>

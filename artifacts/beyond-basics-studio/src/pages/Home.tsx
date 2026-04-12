@@ -121,7 +121,7 @@ export default function Home({ onAuditClick }: { onAuditClick: () => void }) {
               initial={{ y: "105%" }}
               animate={{ y: 0 }}
               transition={{ duration: 1.1, ease, delay: 0.16 }}
-              className="font-display font-bold italic leading-none"
+              className="font-display font-bold leading-none"
               style={{ fontSize: "clamp(4rem, 11vw, 10.5rem)", color: "var(--sf-cream)", lineHeight: 1.0, opacity: 0.8 }}
             >
               Basics Studio
@@ -230,7 +230,7 @@ export default function Home({ onAuditClick }: { onAuditClick: () => void }) {
           </FadeIn>
           <FadeUp>
             <blockquote
-              className="font-display font-semibold italic leading-tight"
+              className="font-display font-semibold leading-tight"
               style={{
                 fontSize: "clamp(1.6rem, 4vw, 3.2rem)",
                 color: "var(--sf-cream)",
@@ -257,7 +257,7 @@ export default function Home({ onAuditClick }: { onAuditClick: () => void }) {
             <FadeUp>
               <p className="tag mb-3" style={{ color: "rgba(229,225,216,0.45)" }}>What We Do</p>
               <h2
-                className="font-display font-semibold italic leading-tight"
+                className="font-display font-semibold leading-tight"
                 style={{ fontSize: "clamp(2rem, 5vw, 4rem)", color: "var(--sf-cream)" }}
               >
                 Full-spectrum<br />GBP mastery.
@@ -282,7 +282,7 @@ export default function Home({ onAuditClick }: { onAuditClick: () => void }) {
                   </span>
                   <div className="flex-1">
                     <h3
-                      className="font-display font-semibold italic text-2xl sm:text-3xl mb-3 group-hover:opacity-70 transition-opacity duration-300"
+                      className="font-display font-semibold text-2xl sm:text-3xl mb-3 group-hover:opacity-70 transition-opacity duration-300"
                       style={{ color: "var(--sf-cream)" }}
                     >
                       {service.title}
@@ -308,7 +308,7 @@ export default function Home({ onAuditClick }: { onAuditClick: () => void }) {
           <FadeUp>
             <p className="tag mb-6" style={{ color: "rgba(229,225,216,0.45)" }}>Proprietary Technology</p>
             <h2
-              className="font-display font-semibold italic leading-tight mb-8"
+              className="font-display font-semibold leading-tight mb-8"
               style={{ fontSize: "clamp(2rem, 5vw, 4rem)", color: "var(--sf-cream)" }}
             >
               MapMaster™ AI<br />works while<br />you sleep.
@@ -364,7 +364,7 @@ export default function Home({ onAuditClick }: { onAuditClick: () => void }) {
           <FadeUp>
             <p className="tag mb-4" style={{ color: "rgba(229,225,216,0.45)" }}>Pricing</p>
             <h2
-              className="font-display font-semibold italic leading-tight mb-16"
+              className="font-display font-semibold leading-tight mb-16"
               style={{ fontSize: "clamp(2rem, 5vw, 4rem)", color: "var(--sf-cream)" }}
             >
               No contracts.<br />No surprises.
@@ -454,7 +454,7 @@ export default function Home({ onAuditClick }: { onAuditClick: () => void }) {
         <div className="flex">
           <div className="flex gap-14 items-center animate-marquee whitespace-nowrap">
             {[...logos, ...logos].map((client, i) => (
-              <span key={i} className="font-display italic text-xl shrink-0" style={{ color: "rgba(229,225,216,0.12)" }}>
+              <span key={i} className="font-display text-xl shrink-0" style={{ color: "rgba(229,225,216,0.12)" }}>
                 {client}
               </span>
             ))}
@@ -472,7 +472,7 @@ export default function Home({ onAuditClick }: { onAuditClick: () => void }) {
             <FadeUp>
               <p className="tag mb-3" style={{ color: "rgba(229,225,216,0.45)" }}>Insights</p>
               <h2
-                className="font-display font-semibold italic leading-tight"
+                className="font-display font-semibold leading-tight"
                 style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)", color: "var(--sf-cream)" }}
               >
                 From the playbook.
@@ -496,7 +496,7 @@ export default function Home({ onAuditClick }: { onAuditClick: () => void }) {
                     <span className="font-sans text-xs" style={{ color: "rgba(229,225,216,0.25)" }}>{article.date}</span>
                   </div>
                   <h3
-                    className="font-display font-semibold italic text-2xl leading-snug mb-4 group-hover:opacity-70 transition-opacity duration-300"
+                    className="font-display font-semibold text-2xl leading-snug mb-4 group-hover:opacity-70 transition-opacity duration-300"
                     style={{ color: "var(--sf-cream)" }}
                   >
                     {article.title}
@@ -516,7 +516,7 @@ export default function Home({ onAuditClick }: { onAuditClick: () => void }) {
         <div className="max-w-5xl mx-auto text-center">
           <FadeUp>
             <h2
-              className="font-display font-semibold italic leading-tight mb-10"
+              className="font-display font-semibold leading-tight mb-10"
               style={{ fontSize: "clamp(2.5rem, 8vw, 7rem)", color: "var(--sf-cream)" }}
             >
               Ready to dominate<br />Google Maps?

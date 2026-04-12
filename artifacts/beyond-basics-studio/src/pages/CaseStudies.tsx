@@ -74,7 +74,7 @@ export default function CaseStudies({ onAuditClick }: { onAuditClick: () => void
           <FadeUp>
             <p className="tag mb-6" style={{ color: "rgba(229,225,216,0.4)" }}>Work</p>
             <h1
-              className="font-display font-semibold italic leading-tight"
+              className="font-display font-semibold leading-tight"
               style={{ fontSize: "clamp(2.5rem, 8vw, 7rem)", color: "var(--sf-cream)" }}
             >
               Real results.<br />No stock photos.
@@ -125,7 +125,7 @@ export default function CaseStudies({ onAuditClick }: { onAuditClick: () => void
                 {/* Info */}
                 <div className="md:col-span-2 p-8 lg:p-10" style={{ backgroundColor: "var(--sf-dark)" }}>
                   <div className="flex items-center gap-3 mb-2">
-                    <span className="font-display font-semibold italic text-2xl" style={{ color: "var(--sf-cream)" }}>{c.business}</span>
+                    <span className="font-display font-semibold text-2xl" style={{ color: "var(--sf-cream)" }}>{c.business}</span>
                     <span className="font-sans text-xs tracking-widest uppercase px-2 py-0.5" style={{ backgroundColor: "rgba(229,225,216,0.07)", color: "rgba(229,225,216,0.4)" }}>
                       {c.tier}
                     </span>
@@ -136,7 +136,7 @@ export default function CaseStudies({ onAuditClick }: { onAuditClick: () => void
                   <p className="font-sans text-xs mb-6" style={{ color: "rgba(180,210,170,0.7)" }}>
                     {c.duration} · {c.highlight}
                   </p>
-                  <blockquote className="font-display italic text-lg leading-snug mb-4" style={{ color: "var(--sf-cream)" }}>
+                  <blockquote className="font-display text-lg leading-snug mb-4" style={{ color: "var(--sf-cream)" }}>
                     "{c.quote}"
                   </blockquote>
                   <p className="font-sans text-xs" style={{ color: "rgba(229,225,216,0.35)" }}>
@@ -155,7 +155,7 @@ export default function CaseStudies({ onAuditClick }: { onAuditClick: () => void
                   ].map(([label, val]) => (
                     <div key={label} className="mb-4">
                       <p className="font-sans text-xs mb-0.5" style={{ color: "rgba(229,225,216,0.25)" }}>{label}</p>
-                      <p className="font-display font-semibold italic text-xl line-through decoration-1" style={{ color: "rgba(229,225,216,0.35)" }}>{val}</p>
+                      <p className="font-display font-semibold text-xl line-through decoration-1" style={{ color: "rgba(229,225,216,0.35)" }}>{val}</p>
                     </div>
                   ))}
                 </div>
@@ -176,7 +176,7 @@ export default function CaseStudies({ onAuditClick }: { onAuditClick: () => void
                   ].map(([label, val]) => (
                     <div key={label} className="mb-4">
                       <p className="font-sans text-xs mb-0.5" style={{ color: "rgba(229,225,216,0.35)" }}>{label}</p>
-                      <p className="font-display font-semibold italic text-xl" style={{ color: "var(--sf-cream)" }}>{val}</p>
+                      <p className="font-display font-semibold text-xl" style={{ color: "var(--sf-cream)" }}>{val}</p>
                     </div>
                   ))}
                 </div>
@@ -190,7 +190,7 @@ export default function CaseStudies({ onAuditClick }: { onAuditClick: () => void
       <section className="py-40 px-6 lg:px-10 text-center">
         <FadeUp>
           <h2
-            className="font-display font-semibold italic leading-tight mb-10"
+            className="font-display font-semibold leading-tight mb-10"
             style={{ fontSize: "clamp(2.5rem, 7vw, 6rem)", color: "var(--sf-cream)" }}
           >
             Your story<br />starts here.

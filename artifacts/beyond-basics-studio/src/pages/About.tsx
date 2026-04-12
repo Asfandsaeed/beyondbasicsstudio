@@ -36,7 +36,7 @@ export default function About({ onAuditClick }: { onAuditClick: () => void }) {
           <FadeUp>
             <p className="tag mb-6" style={{ color: "rgba(229,225,216,0.4)" }}>About</p>
             <h1
-              className="font-display font-semibold italic leading-tight"
+              className="font-display font-semibold leading-tight"
               style={{ fontSize: "clamp(2.5rem, 8vw, 7rem)", color: "var(--sf-cream)" }}
             >
               Data-driven GBP<br />experts since 2025.
@@ -51,7 +51,7 @@ export default function About({ onAuditClick }: { onAuditClick: () => void }) {
           <FadeUp>
             <p className="tag mb-6" style={{ color: "rgba(229,225,216,0.4)" }}>Our Story</p>
             <h2
-              className="font-display font-semibold italic leading-tight"
+              className="font-display font-semibold leading-tight"
               style={{ fontSize: "clamp(1.8rem, 4vw, 3rem)", color: "var(--sf-cream)" }}
             >
               Founded on an<br />unfair truth.
@@ -111,11 +111,11 @@ export default function About({ onAuditClick }: { onAuditClick: () => void }) {
                     className="w-14 h-14 rounded-full flex items-center justify-center mb-6"
                     style={{ backgroundColor: "rgba(229,225,216,0.08)", border: "1px solid rgba(229,225,216,0.12)" }}
                   >
-                    <span className="font-display font-semibold italic text-lg" style={{ color: "var(--sf-cream)" }}>
+                    <span className="font-display font-semibold text-lg" style={{ color: "var(--sf-cream)" }}>
                       {member.initials}
                     </span>
                   </div>
-                  <h3 className="font-display font-semibold italic text-xl mb-0.5" style={{ color: "var(--sf-cream)" }}>
+                  <h3 className="font-display font-semibold text-xl mb-0.5" style={{ color: "var(--sf-cream)" }}>
                     {member.name}
                   </h3>
                   <p className="font-sans text-xs tracking-widest uppercase mb-4" style={{ color: "rgba(229,225,216,0.35)" }}>
@@ -148,7 +148,7 @@ export default function About({ onAuditClick }: { onAuditClick: () => void }) {
                     <span className="font-sans text-xs opacity-25" style={{ color: "var(--sf-cream)" }}>
                       0{i + 1}
                     </span>
-                    <h3 className="font-display font-semibold italic text-2xl sm:text-3xl" style={{ color: "var(--sf-cream)" }}>
+                    <h3 className="font-display font-semibold text-2xl sm:text-3xl" style={{ color: "var(--sf-cream)" }}>
                       {val.title}
                     </h3>
                   </div>
@@ -168,7 +168,7 @@ export default function About({ onAuditClick }: { onAuditClick: () => void }) {
       <section className="py-40 px-6 lg:px-10 text-center">
         <FadeUp>
           <h2
-            className="font-display font-semibold italic leading-tight mb-10"
+            className="font-display font-semibold leading-tight mb-10"
             style={{ fontSize: "clamp(2.5rem, 7vw, 6rem)", color: "var(--sf-cream)" }}
           >
             Work with the best.

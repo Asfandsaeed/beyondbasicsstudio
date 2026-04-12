@@ -25,7 +25,7 @@ function Accordion({ q, a }: { q: string; a: string }) {
   return (
     <div className="border-b" style={{ borderColor: "rgba(229,225,216,0.1)" }}>
       <button onClick={() => setOpen(!open)} className="flex items-center justify-between w-full py-5 text-left gap-6 group">
-        <span className="font-display italic text-xl sm:text-2xl group-hover:opacity-70 transition-opacity" style={{ color: "var(--sf-cream)" }}>
+        <span className="font-display text-xl sm:text-2xl group-hover:opacity-70 transition-opacity" style={{ color: "var(--sf-cream)" }}>
           {q}
         </span>
         {open
@@ -52,7 +52,7 @@ export default function Contact() {
           <FadeUp>
             <p className="tag mb-6" style={{ color: "rgba(229,225,216,0.4)" }}>Contact</p>
             <h1
-              className="font-display font-semibold italic leading-tight"
+              className="font-display font-semibold leading-tight"
               style={{ fontSize: "clamp(2.5rem, 8vw, 7rem)", color: "var(--sf-cream)" }}
             >
               Let's talk<br />domination.
@@ -74,7 +74,7 @@ export default function Contact() {
                 >
                   <CheckCircle className="w-6 h-6" style={{ color: "rgba(180,210,170,0.8)" }} />
                 </div>
-                <h3 className="font-display font-semibold italic text-3xl mb-3" style={{ color: "var(--sf-cream)" }}>
+                <h3 className="font-display font-semibold text-3xl mb-3" style={{ color: "var(--sf-cream)" }}>
                   We'll be in touch.
                 </h3>
                 <p className="font-sans text-sm mb-8" style={{ color: "rgba(229,225,216,0.45)" }}>
@@ -168,7 +168,7 @@ export default function Contact() {
                 style={{ borderColor: "rgba(229,225,216,0.12)", backgroundColor: "#363b32" }}
               >
                 <p className="tag mb-4" style={{ color: "rgba(229,225,216,0.4)" }}>Prefer a call?</p>
-                <p className="font-display italic text-xl leading-snug mb-5" style={{ color: "var(--sf-cream)" }}>
+                <p className="font-display text-xl leading-snug mb-5" style={{ color: "var(--sf-cream)" }}>
                   Book a free 30-minute strategy session with our team.
                 </p>
                 <p className="font-sans text-sm" style={{ color: "rgba(229,225,216,0.4)" }}>

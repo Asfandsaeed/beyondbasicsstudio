@@ -32,7 +32,7 @@ function Accordion({ q, a }: { q: string; a: string }) {
         className="flex items-center justify-between w-full py-5 text-left gap-6 group"
       >
         <span
-          className="font-display italic text-xl sm:text-2xl group-hover:opacity-70 transition-opacity duration-200"
+          className="font-display text-xl sm:text-2xl group-hover:opacity-70 transition-opacity duration-200"
           style={{ color: "var(--sf-cream)" }}
         >
           {q}
@@ -60,7 +60,7 @@ export default function Services({ onAuditClick }: { onAuditClick: () => void })
           <FadeUp>
             <p className="tag mb-6" style={{ color: "rgba(229,225,216,0.4)" }}>Services</p>
             <h1
-              className="font-display font-semibold italic leading-tight"
+              className="font-display font-semibold leading-tight"
               style={{ fontSize: "clamp(2.5rem, 8vw, 7rem)", color: "var(--sf-cream)" }}
             >
               GBP Tiers: Basic<br />to Domination.
@@ -90,7 +90,7 @@ export default function Services({ onAuditClick }: { onAuditClick: () => void })
                   <tr className="border-b" style={{ borderColor: "rgba(229,225,216,0.1)" }}>
                     <th className="text-left pb-6 font-sans text-xs tracking-widest uppercase text-left w-1/2" style={{ color: "rgba(229,225,216,0.3)" }}>Feature</th>
                     {["Basic · $200", "Growth · $500", "Premium · $1k"].map((h) => (
-                      <th key={h} className="pb-6 font-display italic text-xl text-center" style={{ color: "var(--sf-cream)" }}>{h}</th>
+                      <th key={h} className="pb-6 font-display text-xl text-center" style={{ color: "var(--sf-cream)" }}>{h}</th>
                     ))}
                   </tr>
                 </thead>
@@ -149,7 +149,7 @@ export default function Services({ onAuditClick }: { onAuditClick: () => void })
                 <div className="p-8 lg:p-10 flex flex-col" style={{ backgroundColor: "var(--sf-dark)", minHeight: "520px" }}>
                   <div className="mb-8">
                     <div className="flex items-center gap-3 mb-2">
-                      <span className="font-display font-semibold text-2xl italic" style={{ color: "var(--sf-cream)" }}>{plan.name}</span>
+                      <span className="font-display font-semibold text-2xl" style={{ color: "var(--sf-cream)" }}>{plan.name}</span>
                       {plan.badge && (
                         <span className="font-sans text-xs tracking-widest uppercase px-2 py-0.5" style={{ backgroundColor: "rgba(229,225,216,0.08)", color: "rgba(229,225,216,0.5)" }}>
                           {plan.badge}
@@ -186,7 +186,7 @@ export default function Services({ onAuditClick }: { onAuditClick: () => void })
           <FadeUp>
             <p className="tag mb-10" style={{ color: "rgba(229,225,216,0.4)" }}>How We Work</p>
             <h2
-              className="font-display font-semibold italic leading-tight mb-16"
+              className="font-display font-semibold leading-tight mb-16"
               style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)", color: "var(--sf-cream)" }}
             >
               From zero to domination<br />in four steps.
@@ -201,10 +201,10 @@ export default function Services({ onAuditClick }: { onAuditClick: () => void })
             ].map((s, i) => (
               <FadeIn key={i} delay={i * 0.1}>
                 <div className="p-8" style={{ backgroundColor: "var(--sf-dark)" }}>
-                  <span className="font-display text-5xl font-semibold italic opacity-20 block mb-6" style={{ color: "var(--sf-cream)" }}>
+                  <span className="font-display text-5xl font-semibold opacity-20 block mb-6" style={{ color: "var(--sf-cream)" }}>
                     {s.step}
                   </span>
-                  <h3 className="font-display font-semibold italic text-2xl mb-3" style={{ color: "var(--sf-cream)" }}>
+                  <h3 className="font-display font-semibold text-2xl mb-3" style={{ color: "var(--sf-cream)" }}>
                     {s.label}
                   </h3>
                   <p className="font-sans text-sm leading-relaxed" style={{ color: "rgba(229,225,216,0.45)" }}>

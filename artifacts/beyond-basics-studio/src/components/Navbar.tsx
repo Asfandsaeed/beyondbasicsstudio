@@ -108,7 +108,7 @@ export default function Navbar({ onAuditClick }: NavbarProps) {
             <Link
               key={link.href}
               href={link.href}
-              className="block font-display text-3xl font-semibold italic"
+              className="block font-display text-3xl font-semibold"
               style={{ color: "var(--sf-cream)" }}
             >
               {link.label}
