@@ -31,20 +31,20 @@ function ArticleCard({ article, onClick, index }: { article: Article; onClick: (
     <FadeIn delay={index * 0.06}>
       <button
         onClick={onClick}
-        className="group w-full text-left border-b flex flex-col h-full py-10"
+        className="group w-full text-left border-b flex flex-col h-full px-6 py-10"
         style={{ borderColor: "var(--sp-rule)" }}
       >
-        <div className="flex items-center justify-between mb-5">
-          <span className="label" style={{ color: "var(--sp-gray)" }}>{article.tag}</span>
-          <span className="font-sans text-xs" style={{ color: "var(--sp-gray)", opacity: 0.5 }}>{article.date} · {article.readTime}</span>
+        <div className="mb-5">
+          <span className="label block mb-1.5" style={{ color: "var(--sp-gray)" }}>{article.tag}</span>
+          <span className="font-sans text-xs" style={{ color: "var(--sp-gray)", opacity: 0.45 }}>{article.date} · {article.readTime}</span>
         </div>
         <h2
           className="font-serif leading-snug mb-4 group-hover:opacity-60 transition-opacity duration-300 flex-1"
-          style={{ fontSize: "clamp(1.25rem, 2.2vw, 1.75rem)", color: "var(--sp-black)" }}
+          style={{ fontSize: "clamp(1.1rem, 1.8vw, 1.5rem)", color: "var(--sp-black)" }}
         >
           {article.title}
         </h2>
-        <p className="font-sans text-sm leading-relaxed mb-6" style={{ color: "var(--sp-gray)" }}>
+        <p className="font-sans text-sm leading-relaxed mb-6 line-clamp-3" style={{ color: "var(--sp-gray)" }}>
           {article.excerpt}
         </p>
         <div className="flex items-center gap-2">
