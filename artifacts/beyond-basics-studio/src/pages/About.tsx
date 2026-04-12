@@ -2,16 +2,16 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 
-const ease = [0.16, 1, 0.3, 1];
+const ease = [0.25, 0.1, 0.25, 1];
 function FadeUp({ children, className, delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
   const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-60px" });
-  return <motion.div ref={ref} initial={{ opacity: 0, y: 32 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.9, ease, delay }} className={className}>{children}</motion.div>;
+  const inView = useInView(ref, { once: true, margin: "-80px" });
+  return <motion.div ref={ref} initial={{ opacity: 0, y: 24 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.7, ease, delay }} className={className}>{children}</motion.div>;
 }
 function FadeIn({ children, className, delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
   const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-40px" });
-  return <motion.div ref={ref} initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ duration: 0.8, ease: "easeOut", delay }} className={className}>{children}</motion.div>;
+  const inView = useInView(ref, { once: true, margin: "-60px" });
+  return <motion.div ref={ref} initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ duration: 0.7, ease: "easeOut", delay }} className={className}>{children}</motion.div>;
 }
 
 const team = [
@@ -21,24 +21,15 @@ const team = [
   { name: "Sofia Mendez", role: "Client Success Lead", initials: "SM", bio: "The reason clients stay. Sofia ensures every client feels heard, sees results, and grows with us long term." },
 ];
 
-const values = [
-  { title: "Transparent Reporting", desc: "No smoke, no mirrors. Every metric is real, verifiable, and tied to your business growth." },
-  { title: "AI-Powered Precision", desc: "MapMaster™ runs 24/7, testing and optimising faster than any competitor can react." },
-  { title: "Results-First Culture", desc: "We celebrate outcomes — not activity. Our team is incentivised around your profile's actual performance." },
-];
-
 export default function About({ onAuditClick }: { onAuditClick: () => void }) {
   return (
-    <div style={{ backgroundColor: "var(--sf-dark)", color: "var(--sf-cream)" }}>
+    <div style={{ backgroundColor: "var(--sp-white)" }}>
       {/* Hero */}
-      <section className="pt-36 pb-24 px-6 lg:px-10 border-b" style={{ borderColor: "rgba(229,225,216,0.1)" }}>
-        <div className="max-w-7xl mx-auto">
+      <section className="section-dark border-b" style={{ borderColor: "var(--sp-rule-d)" }}>
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 pt-36 pb-24">
+          <FadeIn><p className="label mb-6" style={{ color: "rgba(247,244,240,0.35)" }}>About</p></FadeIn>
           <FadeUp>
-            <p className="tag mb-6" style={{ color: "rgba(229,225,216,0.4)" }}>About</p>
-            <h1
-              className="font-display font-semibold leading-tight"
-              style={{ fontSize: "clamp(2.5rem, 8vw, 7rem)", color: "var(--sf-cream)" }}
-            >
+            <h1 className="font-serif leading-tight" style={{ fontSize: "clamp(2.5rem, 7vw, 6.5rem)", color: "var(--sp-white)" }}>
               Data-driven GBP<br />experts since 2025.
             </h1>
           </FadeUp>
@@ -46,84 +37,65 @@ export default function About({ onAuditClick }: { onAuditClick: () => void }) {
       </section>
 
       {/* Story */}
-      <section className="py-24 px-6 lg:px-10 border-b" style={{ borderColor: "rgba(229,225,216,0.1)" }}>
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 lg:gap-24 items-start">
-          <FadeUp>
-            <p className="tag mb-6" style={{ color: "rgba(229,225,216,0.4)" }}>Our Story</p>
-            <h2
-              className="font-display font-semibold leading-tight"
-              style={{ fontSize: "clamp(1.8rem, 4vw, 3rem)", color: "var(--sf-cream)" }}
-            >
-              Founded on an<br />unfair truth.
-            </h2>
-          </FadeUp>
-          <FadeIn delay={0.15}>
-            <div className="space-y-5">
-              <p className="font-sans text-sm leading-relaxed" style={{ color: "rgba(229,225,216,0.55)" }}>
-                In 2025, our founder Marcus Chen left his role on Google's local team after witnessing firsthand how a well-managed Google Business Profile could transform a local business — and how poorly most businesses managed theirs.
-              </p>
-              <p className="font-sans text-sm leading-relaxed" style={{ color: "rgba(229,225,216,0.55)" }}>
-                The average local business leaves 70% of its Google Maps potential untouched. Not because they don't care — because they lack the time, expertise, and tools to do it right.
-              </p>
-              <p className="font-sans text-sm leading-relaxed" style={{ color: "rgba(229,225,216,0.55)" }}>
-                Beyond Basics Studio was built to fix that. Today we manage 500+ profiles across 30+ countries, delivering results that most business owners thought were impossible.
-              </p>
-            </div>
-          </FadeIn>
-        </div>
-      </section>
-
-      {/* Stats */}
-      <section className="border-b" style={{ borderColor: "rgba(229,225,216,0.1)" }}>
-        <div className="max-w-7xl mx-auto px-6 lg:px-10">
-          <div className="grid grid-cols-2 md:grid-cols-4 divide-x" style={{ borderColor: "rgba(229,225,216,0.1)" }}>
-            {[
-              { value: "500+", label: "Profiles Managed" },
-              { value: "30+", label: "Countries Served" },
-              { value: "98%", label: "Client Retention" },
-              { value: "2025", label: "Year Founded" },
-            ].map((s, i) => (
-              <FadeIn key={i} delay={i * 0.08}>
-                <div className="py-10 px-6 first:pl-0">
-                  <p className="font-display font-semibold leading-none mb-2" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", color: "var(--sf-cream)" }}>
-                    {s.value}
-                  </p>
-                  <p className="font-sans text-xs tracking-widest uppercase" style={{ color: "rgba(229,225,216,0.35)" }}>{s.label}</p>
-                </div>
-              </FadeIn>
-            ))}
+      <section className="section-light border-b" style={{ borderColor: "var(--sp-rule)" }}>
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 py-24 lg:py-32 grid md:grid-cols-12 gap-8">
+          <div className="md:col-span-4">
+            <FadeIn><p className="label mb-6">Our Story</p></FadeIn>
+            <FadeUp>
+              <h2 className="font-serif leading-tight" style={{ fontSize: "clamp(1.8rem, 3.5vw, 3rem)", color: "var(--sp-black)" }}>
+                Founded on an unfair truth.
+              </h2>
+            </FadeUp>
+          </div>
+          <div className="md:col-span-7 md:col-start-6">
+            <FadeIn delay={0.15}>
+              <div className="space-y-5">
+                {[
+                  "In 2025, our founder Marcus Chen left his role on Google's local team after witnessing firsthand how a well-managed Google Business Profile could transform a local business — and how poorly most businesses managed theirs.",
+                  "The average local business leaves 70% of its Google Maps potential untouched. Not because they don't care — because they lack the time, expertise, and tools to do it right.",
+                  "Beyond Basics Studio was built to fix that. Today we manage 500+ profiles across 30+ countries, delivering results that most business owners thought were impossible.",
+                ].map((p, i) => (
+                  <p key={i} className="font-sans text-sm leading-relaxed" style={{ color: "var(--sp-gray)" }}>{p}</p>
+                ))}
+              </div>
+            </FadeIn>
           </div>
         </div>
       </section>
 
+      {/* Stats */}
+      <section className="border-b" style={{ backgroundColor: "var(--sp-cream)", borderColor: "var(--sp-rule)" }}>
+        <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4" style={{ borderRight: "1px solid var(--sp-rule)" }}>
+          {[
+            { value: "500+", label: "Profiles Managed" },
+            { value: "30+", label: "Countries Served" },
+            { value: "98%", label: "Client Retention" },
+            { value: "2025", label: "Year Founded" },
+          ].map((s, i) => (
+            <FadeIn key={i} delay={i * 0.07}>
+              <div className="py-12 px-8 lg:px-12 border-l border-b md:border-b-0" style={{ borderColor: "var(--sp-rule)" }}>
+                <p className="font-serif leading-none mb-3" style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)", color: "var(--sp-black)" }}>{s.value}</p>
+                <p className="label">{s.label}</p>
+              </div>
+            </FadeIn>
+          ))}
+        </div>
+      </section>
+
       {/* Team */}
-      <section className="py-24 px-6 lg:px-10 border-b" style={{ borderColor: "rgba(229,225,216,0.1)" }}>
-        <div className="max-w-7xl mx-auto">
-          <FadeUp>
-            <p className="tag mb-10" style={{ color: "rgba(229,225,216,0.4)" }}>The Team</p>
-          </FadeUp>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px" style={{ backgroundColor: "rgba(229,225,216,0.08)" }}>
-            {team.map((member, i) => (
-              <FadeIn key={i} delay={i * 0.08}>
-                <div className="p-8 group" style={{ backgroundColor: "var(--sf-dark)" }}>
-                  {/* Avatar */}
-                  <div
-                    className="w-14 h-14 rounded-full flex items-center justify-center mb-6"
-                    style={{ backgroundColor: "rgba(229,225,216,0.08)", border: "1px solid rgba(229,225,216,0.12)" }}
-                  >
-                    <span className="font-display font-semibold text-lg" style={{ color: "var(--sf-cream)" }}>
-                      {member.initials}
-                    </span>
+      <section className="section-light border-b" style={{ borderColor: "var(--sp-rule)" }}>
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 py-24 lg:py-32">
+          <FadeUp><p className="label mb-12">The Team</p></FadeUp>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px" style={{ backgroundColor: "var(--sp-rule)" }}>
+            {team.map((m, i) => (
+              <FadeIn key={i} delay={i * 0.07}>
+                <div className="section-light p-8">
+                  <div className="w-12 h-12 border flex items-center justify-center mb-6" style={{ borderColor: "var(--sp-rule)" }}>
+                    <span className="font-serif text-sm" style={{ color: "var(--sp-black)" }}>{m.initials}</span>
                   </div>
-                  <h3 className="font-display font-semibold text-xl mb-0.5" style={{ color: "var(--sf-cream)" }}>
-                    {member.name}
-                  </h3>
-                  <p className="font-sans text-xs tracking-widest uppercase mb-4" style={{ color: "rgba(229,225,216,0.35)" }}>
-                    {member.role}
-                  </p>
-                  <p className="font-sans text-sm leading-relaxed" style={{ color: "rgba(229,225,216,0.45)" }}>
-                    {member.bio}
-                  </p>
+                  <h3 className="font-serif text-xl mb-0.5" style={{ color: "var(--sp-black)" }}>{m.name}</h3>
+                  <p className="label mb-4">{m.role}</p>
+                  <p className="font-sans text-sm leading-relaxed" style={{ color: "var(--sp-gray)" }}>{m.bio}</p>
                 </div>
               </FadeIn>
             ))}
@@ -132,56 +104,40 @@ export default function About({ onAuditClick }: { onAuditClick: () => void }) {
       </section>
 
       {/* Values */}
-      <section className="py-24 px-6 lg:px-10 border-b" style={{ borderColor: "rgba(229,225,216,0.1)" }}>
-        <div className="max-w-7xl mx-auto">
-          <FadeUp>
-            <p className="tag mb-10" style={{ color: "rgba(229,225,216,0.4)" }}>What We Stand For</p>
-          </FadeUp>
-          <div className="space-y-0">
-            {values.map((val, i) => (
-              <FadeIn key={i} delay={i * 0.08}>
-                <div
-                  className="grid md:grid-cols-3 gap-8 py-10 border-b items-start"
-                  style={{ borderColor: "rgba(229,225,216,0.1)" }}
-                >
-                  <div className="flex items-start gap-6">
-                    <span className="font-sans text-xs opacity-25" style={{ color: "var(--sf-cream)" }}>
-                      0{i + 1}
-                    </span>
-                    <h3 className="font-display font-semibold text-2xl sm:text-3xl" style={{ color: "var(--sf-cream)" }}>
-                      {val.title}
-                    </h3>
-                  </div>
-                  <div className="md:col-span-2">
-                    <p className="font-sans text-sm leading-relaxed" style={{ color: "rgba(229,225,216,0.5)" }}>
-                      {val.desc}
-                    </p>
-                  </div>
+      <section className="section-cream border-b" style={{ borderColor: "var(--sp-rule)" }}>
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 py-24">
+          <FadeUp><p className="label mb-12">What We Stand For</p></FadeUp>
+          {[
+            { title: "Transparent Reporting", desc: "No smoke, no mirrors. Every metric is real, verifiable, and tied to your business growth." },
+            { title: "AI-Powered Precision", desc: "MapMaster™ runs 24/7, testing and optimising faster than any competitor can react." },
+            { title: "Results-First Culture", desc: "We celebrate outcomes — not activity. Our team is incentivised around your profile's actual performance." },
+          ].map((v, i) => (
+            <FadeIn key={i} delay={i * 0.07}>
+              <div className="grid md:grid-cols-12 gap-8 py-8 border-b items-start" style={{ borderColor: "var(--sp-rule)" }}>
+                <div className="md:col-span-1">
+                  <span className="font-sans text-xs" style={{ color: "var(--sp-gray)", opacity: 0.4 }}>0{i + 1}</span>
                 </div>
-              </FadeIn>
-            ))}
-          </div>
+                <h3 className="md:col-span-4 font-serif text-2xl lg:text-3xl" style={{ color: "var(--sp-black)" }}>{v.title}</h3>
+                <p className="md:col-span-6 md:col-start-7 font-sans text-sm leading-relaxed self-center" style={{ color: "var(--sp-gray)" }}>{v.desc}</p>
+              </div>
+            </FadeIn>
+          ))}
         </div>
       </section>
 
       {/* CTA */}
-      <section className="py-40 px-6 lg:px-10 text-center">
-        <FadeUp>
-          <h2
-            className="font-display font-semibold leading-tight mb-10"
-            style={{ fontSize: "clamp(2.5rem, 7vw, 6rem)", color: "var(--sf-cream)" }}
-          >
-            Work with the best.
-          </h2>
-        </FadeUp>
-        <FadeIn delay={0.2}>
-          <p className="font-sans text-base mb-10 max-w-md mx-auto" style={{ color: "rgba(229,225,216,0.45)" }}>
-            Our team is ready to take your GBP from overlooked to unstoppable.
-          </p>
-          <button onClick={onAuditClick} className="btn-cream">
-            Get Your Free Audit <ArrowRight className="w-3.5 h-3.5" />
-          </button>
-        </FadeIn>
+      <section className="section-dark">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 py-32 lg:py-48">
+          <FadeUp>
+            <h2 className="font-serif leading-tight mb-10 max-w-3xl" style={{ fontSize: "clamp(2.5rem, 6vw, 6rem)", color: "var(--sp-white)" }}>
+              Work with the best.
+            </h2>
+          </FadeUp>
+          <FadeIn delay={0.2}>
+            <p className="font-sans text-sm mb-10 max-w-md" style={{ color: "rgba(247,244,240,0.4)" }}>Our team is ready to take your GBP from overlooked to unstoppable.</p>
+            <button onClick={onAuditClick} className="btn btn-white">Get Your Free Audit <ArrowRight className="w-3.5 h-3.5" /></button>
+          </FadeIn>
+        </div>
       </section>
     </div>
   );

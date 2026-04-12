@@ -3,90 +3,70 @@ import { motion, useInView } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { ArrowRight, Plus, Minus, CheckCircle } from "lucide-react";
 
-const ease = [0.16, 1, 0.3, 1];
+const ease = [0.25, 0.1, 0.25, 1];
 function FadeUp({ children, className, delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
   const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-60px" });
-  return <motion.div ref={ref} initial={{ opacity: 0, y: 32 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.9, ease, delay }} className={className}>{children}</motion.div>;
+  const inView = useInView(ref, { once: true, margin: "-80px" });
+  return <motion.div ref={ref} initial={{ opacity: 0, y: 24 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.7, ease, delay }} className={className}>{children}</motion.div>;
 }
 function FadeIn({ children, className, delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
   const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-40px" });
-  return <motion.div ref={ref} initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ duration: 0.8, ease: "easeOut", delay }} className={className}>{children}</motion.div>;
+  const inView = useInView(ref, { once: true, margin: "-60px" });
+  return <motion.div ref={ref} initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ duration: 0.7, ease: "easeOut", delay }} className={className}>{children}</motion.div>;
 }
 
-interface FormValues {
-  name: string; email: string; phone: string;
-  gbpUrl: string; message: string; tier: string;
-}
+interface FormValues { name: string; email: string; phone: string; gbpUrl: string; message: string; tier: string; }
 
 function Accordion({ q, a }: { q: string; a: string }) {
   const [open, setOpen] = useState(false);
   return (
-    <div className="border-b" style={{ borderColor: "rgba(229,225,216,0.1)" }}>
+    <div className="border-b" style={{ borderColor: "var(--sp-rule)" }}>
       <button onClick={() => setOpen(!open)} className="flex items-center justify-between w-full py-5 text-left gap-6 group">
-        <span className="font-display text-xl sm:text-2xl group-hover:opacity-70 transition-opacity" style={{ color: "var(--sf-cream)" }}>
-          {q}
-        </span>
-        {open
-          ? <Minus className="w-4 h-4 shrink-0 opacity-40" style={{ color: "var(--sf-cream)" }} />
-          : <Plus className="w-4 h-4 shrink-0 opacity-40" style={{ color: "var(--sf-cream)" }} />
-        }
+        <span className="font-serif text-xl sm:text-2xl group-hover:opacity-60 transition-opacity" style={{ color: "var(--sp-black)" }}>{q}</span>
+        {open ? <Minus className="w-4 h-4 shrink-0" style={{ color: "var(--sp-gray)" }} /> : <Plus className="w-4 h-4 shrink-0" style={{ color: "var(--sp-gray)" }} />}
       </button>
-      {open && <div className="pb-6 font-sans text-sm leading-relaxed" style={{ color: "rgba(229,225,216,0.5)" }}>{a}</div>}
+      {open && <div className="pb-6 font-sans text-sm leading-relaxed" style={{ color: "var(--sp-gray)" }}>{a}</div>}
     </div>
   );
 }
 
 export default function Contact() {
   const { register, handleSubmit, formState: { errors, isSubmitting, isSubmitSuccessful }, reset } = useForm<FormValues>();
-  const onSubmit = async (_: FormValues) => { await new Promise(r => setTimeout(r, 1100)); };
-
+  const onSubmit = async (_: FormValues) => { await new Promise(r => setTimeout(r, 1000)); };
   const inputCls = "w-full bg-transparent border-b py-3 font-sans text-sm outline-none transition-colors duration-200 placeholder:opacity-25";
+  const inputStyle = { color: "var(--sp-black)", borderColor: "var(--sp-rule)" };
 
   return (
-    <div style={{ backgroundColor: "var(--sf-dark)", color: "var(--sf-cream)" }}>
+    <div style={{ backgroundColor: "var(--sp-white)" }}>
       {/* Hero */}
-      <section className="pt-36 pb-24 px-6 lg:px-10 border-b" style={{ borderColor: "rgba(229,225,216,0.1)" }}>
-        <div className="max-w-7xl mx-auto">
+      <section className="section-dark border-b" style={{ borderColor: "var(--sp-rule-d)" }}>
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 pt-36 pb-24">
+          <FadeIn><p className="label mb-6" style={{ color: "rgba(247,244,240,0.35)" }}>Contact</p></FadeIn>
           <FadeUp>
-            <p className="tag mb-6" style={{ color: "rgba(229,225,216,0.4)" }}>Contact</p>
-            <h1
-              className="font-display font-semibold leading-tight"
-              style={{ fontSize: "clamp(2.5rem, 8vw, 7rem)", color: "var(--sf-cream)" }}
-            >
+            <h1 className="font-serif leading-tight" style={{ fontSize: "clamp(2.5rem, 7vw, 6.5rem)", color: "var(--sp-white)" }}>
               Let's talk<br />domination.
             </h1>
           </FadeUp>
         </div>
       </section>
 
-      {/* Contact section */}
-      <section className="py-24 px-6 lg:px-10 border-b" style={{ borderColor: "rgba(229,225,216,0.1)" }}>
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 lg:gap-24">
+      {/* Contact */}
+      <section className="section-light border-b" style={{ borderColor: "var(--sp-rule)" }}>
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 py-24 lg:py-32 grid md:grid-cols-2 gap-16 lg:gap-24">
           {/* Form */}
           <FadeUp>
             {isSubmitSuccessful ? (
-              <div className="py-16">
-                <div
-                  className="w-12 h-12 rounded-full flex items-center justify-center mb-6"
-                  style={{ backgroundColor: "rgba(229,225,216,0.08)" }}
-                >
-                  <CheckCircle className="w-6 h-6" style={{ color: "rgba(180,210,170,0.8)" }} />
+              <div className="py-12">
+                <div className="w-10 h-10 border flex items-center justify-center mb-6" style={{ borderColor: "var(--sp-rule)" }}>
+                  <CheckCircle className="w-5 h-5" style={{ color: "var(--sp-black)" }} />
                 </div>
-                <h3 className="font-display font-semibold text-3xl mb-3" style={{ color: "var(--sf-cream)" }}>
-                  We'll be in touch.
-                </h3>
-                <p className="font-sans text-sm mb-8" style={{ color: "rgba(229,225,216,0.45)" }}>
-                  Expect a response within 24 hours with your personalised GBP strategy.
-                </p>
-                <button onClick={() => reset()} className="btn-outline-cream text-xs">
-                  Send Another
-                </button>
+                <h3 className="font-serif text-3xl mb-3" style={{ color: "var(--sp-black)" }}>We'll be in touch.</h3>
+                <p className="font-sans text-sm mb-8" style={{ color: "var(--sp-gray)" }}>Expect a response within 24 hours with your personalised GBP strategy.</p>
+                <button onClick={() => reset()} className="btn btn-outline">Send Another</button>
               </div>
             ) : (
               <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
-                <p className="tag mb-4" style={{ color: "rgba(229,225,216,0.4)" }}>Send us a message</p>
+                <p className="label mb-4">Send us a message</p>
                 {[
                   { label: "Full Name", key: "name" as const, type: "text", placeholder: "Jane Smith", required: true },
                   { label: "Email Address", key: "email" as const, type: "email", placeholder: "jane@business.com", required: true },
@@ -94,86 +74,52 @@ export default function Contact() {
                   { label: "GBP Profile URL", key: "gbpUrl" as const, type: "text", placeholder: "maps.google.com/...", required: true },
                 ].map(({ label, key, type, placeholder, required }) => (
                   <div key={key}>
-                    <label className="tag block mb-1" style={{ color: "rgba(229,225,216,0.35)" }}>{label}</label>
-                    <input
-                      {...register(key, required ? { required: "Required" } : {})}
-                      type={type}
-                      placeholder={placeholder}
-                      className={inputCls}
-                      style={{ color: "var(--sf-cream)", borderColor: "rgba(229,225,216,0.15)" }}
-                    />
-                    {errors[key] && <p className="font-sans text-xs mt-1" style={{ color: "#d4726a" }}>{errors[key]?.message}</p>}
+                    <label className="label block mb-1">{label}</label>
+                    <input {...register(key, required ? { required: "Required" } : {})} type={type} placeholder={placeholder} className={inputCls} style={inputStyle} />
+                    {errors[key] && <p className="font-sans text-xs mt-1 text-red-500">{errors[key]?.message}</p>}
                   </div>
                 ))}
-
                 <div>
-                  <label className="tag block mb-1" style={{ color: "rgba(229,225,216,0.35)" }}>Tier Interest</label>
-                  <select
-                    {...register("tier")}
-                    className={inputCls}
-                    style={{ color: "var(--sf-cream)", borderColor: "rgba(229,225,216,0.15)", backgroundColor: "transparent" }}
-                  >
-                    <option value="" style={{ backgroundColor: "var(--sf-dark)" }}>Select a tier...</option>
-                    <option value="basic" style={{ backgroundColor: "var(--sf-dark)" }}>Basic — $200/mo</option>
-                    <option value="growth" style={{ backgroundColor: "var(--sf-dark)" }}>Growth — $500/mo</option>
-                    <option value="premium" style={{ backgroundColor: "var(--sf-dark)" }}>Premium — $1,000/mo</option>
-                    <option value="unsure" style={{ backgroundColor: "var(--sf-dark)" }}>Not sure yet</option>
+                  <label className="label block mb-1">Tier Interest</label>
+                  <select {...register("tier")} className={inputCls} style={{ ...inputStyle, backgroundColor: "transparent" }}>
+                    <option value="">Select a tier...</option>
+                    <option value="basic">Basic — $200/mo</option>
+                    <option value="growth">Growth — $500/mo</option>
+                    <option value="premium">Premium — $1,000/mo</option>
+                    <option value="unsure">Not sure yet</option>
                   </select>
                 </div>
-
                 <div>
-                  <label className="tag block mb-1" style={{ color: "rgba(229,225,216,0.35)" }}>Message</label>
-                  <textarea
-                    {...register("message")}
-                    rows={4}
-                    placeholder="Tell us about your business and goals..."
-                    className={inputCls}
-                    style={{ color: "var(--sf-cream)", borderColor: "rgba(229,225,216,0.15)", resize: "none" }}
-                  />
+                  <label className="label block mb-1">Message</label>
+                  <textarea {...register("message")} rows={4} placeholder="Tell us about your business and goals..." className={inputCls} style={{ ...inputStyle, resize: "none" }} />
                 </div>
-
-                <div>
-                  <button type="submit" disabled={isSubmitting} className="btn-cream disabled:opacity-50">
-                    {isSubmitting ? "Sending..." : <><span>Send Message</span><ArrowRight className="w-3.5 h-3.5" /></>}
-                  </button>
-                  <p className="font-sans text-xs mt-4" style={{ color: "rgba(229,225,216,0.2)" }}>
-                    We respond to all inquiries within 24 hours.
-                  </p>
-                </div>
+                <button type="submit" disabled={isSubmitting} className="btn btn-black disabled:opacity-50">
+                  {isSubmitting ? "Sending..." : <><span>Send Message</span><ArrowRight className="w-3.5 h-3.5" /></>}
+                </button>
               </form>
             )}
           </FadeUp>
 
           {/* Info */}
-          <FadeIn delay={0.2}>
+          <FadeIn delay={0.15}>
             <div className="space-y-12">
               <div>
-                <p className="tag mb-6" style={{ color: "rgba(229,225,216,0.4)" }}>Contact Details</p>
-                <div className="space-y-5">
-                  {[
-                    { label: "Email", value: "hello@beyondbasics.studio" },
-                    { label: "Headquarters", value: "Global — serving clients worldwide" },
-                    { label: "Response Time", value: "Within 24 hours" },
-                  ].map((item) => (
-                    <div key={item.label}>
-                      <p className="tag mb-1" style={{ color: "rgba(229,225,216,0.3)" }}>{item.label}</p>
-                      <p className="font-sans text-sm" style={{ color: "rgba(229,225,216,0.7)" }}>{item.value}</p>
-                    </div>
-                  ))}
-                </div>
+                <p className="label mb-6">Contact Details</p>
+                {[
+                  { label: "Email", value: "hello@beyondbasics.studio" },
+                  { label: "Headquarters", value: "Global — serving clients worldwide" },
+                  { label: "Response Time", value: "Within 24 hours" },
+                ].map((item) => (
+                  <div key={item.label} className="py-4 border-b" style={{ borderColor: "var(--sp-rule)" }}>
+                    <p className="label mb-1">{item.label}</p>
+                    <p className="font-sans text-sm" style={{ color: "var(--sp-black)" }}>{item.value}</p>
+                  </div>
+                ))}
               </div>
-
-              <div
-                className="border p-8"
-                style={{ borderColor: "rgba(229,225,216,0.12)", backgroundColor: "#363b32" }}
-              >
-                <p className="tag mb-4" style={{ color: "rgba(229,225,216,0.4)" }}>Prefer a call?</p>
-                <p className="font-display text-xl leading-snug mb-5" style={{ color: "var(--sf-cream)" }}>
-                  Book a free 30-minute strategy session with our team.
-                </p>
-                <p className="font-sans text-sm" style={{ color: "rgba(229,225,216,0.4)" }}>
-                  calendly.com/beyondbasics
-                </p>
+              <div className="border p-8" style={{ borderColor: "var(--sp-rule)", backgroundColor: "var(--sp-cream)" }}>
+                <p className="label mb-4">Prefer a call?</p>
+                <p className="font-serif text-xl leading-snug mb-5" style={{ color: "var(--sp-black)" }}>Book a free 30-minute strategy session with our team.</p>
+                <p className="font-sans text-sm" style={{ color: "var(--sp-gray)" }}>calendly.com/beyondbasics</p>
               </div>
             </div>
           </FadeIn>
@@ -181,21 +127,17 @@ export default function Contact() {
       </section>
 
       {/* FAQ */}
-      <section className="py-24 px-6 lg:px-10">
-        <div className="max-w-3xl mx-auto">
-          <FadeUp>
-            <p className="tag mb-8" style={{ color: "rgba(229,225,216,0.4)" }}>Questions</p>
-          </FadeUp>
+      <section className="section-cream">
+        <div className="max-w-3xl mx-auto px-6 lg:px-12 py-24">
+          <FadeUp><p className="label mb-12">Questions</p></FadeUp>
           {[
             { q: "What exactly is a Google Business Profile?", a: "Your GBP is what appears in Google Maps and local search results. A well-optimised GBP is the highest-ROI local marketing asset available — yet most businesses manage it poorly. We fix that." },
             { q: "How quickly will I see results?", a: "Most clients see measurable improvements in profile views and calls within 30 days. Map Pack ranking improvements typically happen within 60–90 days. We track everything and report transparently." },
-            { q: "What are your pricing options?", a: "Three tiers: Basic ($200/mo) for single-location upkeep, Growth ($500/mo) for active review management and ads across up to 3 locations, and Premium ($1,000/mo) for full AI-powered domination. All month-to-month." },
-            { q: "Can you manage multiple locations?", a: "Yes. Growth covers up to 3 locations and Premium covers unlimited. We have clients on a single Premium plan managing 50+ locations, each with its own tailored strategy." },
+            { q: "What are your pricing options?", a: "Three tiers: Basic ($200/mo), Growth ($500/mo), and Premium ($1,000/mo). All are month-to-month with no lock-in." },
+            { q: "Can you manage multiple locations?", a: "Yes. Growth covers up to 3 locations and Premium covers unlimited. We have clients on a single Premium plan managing 50+ locations." },
             { q: "Do you guarantee results?", a: "We guarantee Top 3 Map Pack placement on Premium. We also offer a full refund if you see zero improvement in your first 60 days on any plan." },
           ].map((item, i) => (
-            <FadeIn key={i} delay={i * 0.06}>
-              <Accordion q={item.q} a={item.a} />
-            </FadeIn>
+            <FadeIn key={i} delay={i * 0.05}><Accordion q={item.q} a={item.a} /></FadeIn>
           ))}
         </div>
       </section>

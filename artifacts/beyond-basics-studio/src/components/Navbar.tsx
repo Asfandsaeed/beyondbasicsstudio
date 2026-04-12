@@ -9,15 +9,18 @@ interface NavbarProps {
 export default function Navbar({ onAuditClick }: NavbarProps) {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [darkHero, setDarkHero] = useState(false);
   const [location] = useLocation();
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 40);
+    const handleScroll = () => setScrolled(window.scrollY > 60);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Pages with dark hero — nav needs light text initially
   useEffect(() => {
+    setDarkHero(location === "/");
     setMenuOpen(false);
   }, [location]);
 
@@ -29,32 +32,33 @@ export default function Navbar({ onAuditClick }: NavbarProps) {
     { href: "/contact", label: "Contact" },
   ];
 
+  const onDark = darkHero && !scrolled;
+  const textColor = onDark ? "rgba(247,244,240,0.85)" : "var(--sp-black)";
+  const activeLinkStyle = onDark ? "opacity-100" : "opacity-100";
+  const inactiveLinkStyle = onDark ? "opacity-40 hover:opacity-70" : "opacity-40 hover:opacity-70";
+
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled
-          ? "border-b"
-          : ""
-      }`}
+      className="fixed top-0 left-0 right-0 z-50 transition-all duration-500"
       style={{
-        backgroundColor: scrolled ? "rgba(44,49,41,0.97)" : "transparent",
-        borderColor: "rgba(229,225,216,0.1)",
-        backdropFilter: scrolled ? "blur(12px)" : "none",
+        backgroundColor: scrolled ? "rgba(247,244,240,0.97)" : "transparent",
+        borderBottom: scrolled ? "1px solid var(--sp-rule)" : "none",
+        backdropFilter: scrolled ? "blur(16px)" : "none",
       }}
     >
-      <div className="max-w-7xl mx-auto px-6 lg:px-10">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <Link href="/" className="group flex items-baseline gap-1.5">
+          <Link href="/" className="flex items-baseline gap-2">
             <span
-              className="font-display text-xl md:text-2xl font-semibold leading-none tracking-tight"
-              style={{ color: "var(--sf-cream)" }}
+              className="font-serif text-xl tracking-tight leading-none"
+              style={{ color: textColor }}
             >
               BBS
             </span>
             <span
-              className="font-sans text-xs tracking-widest uppercase opacity-50"
-              style={{ color: "var(--sf-cream)" }}
+              className="font-sans text-xs tracking-widest uppercase"
+              style={{ color: onDark ? "rgba(247,244,240,0.35)" : "var(--sp-gray)" }}
             >
               Studio
             </span>
@@ -67,9 +71,9 @@ export default function Navbar({ onAuditClick }: NavbarProps) {
                 key={link.href}
                 href={link.href}
                 className={`font-sans text-xs tracking-widest uppercase transition-opacity duration-200 ${
-                  location === link.href ? "opacity-100" : "opacity-40 hover:opacity-70"
+                  location === link.href ? activeLinkStyle : inactiveLinkStyle
                 }`}
-                style={{ color: "var(--sf-cream)" }}
+                style={{ color: textColor }}
               >
                 {link.label}
               </Link>
@@ -80,18 +84,21 @@ export default function Navbar({ onAuditClick }: NavbarProps) {
           <div className="hidden md:block">
             <button
               onClick={onAuditClick}
-              className="btn-outline-cream text-xs"
-              style={{ color: "var(--sf-cream)", borderColor: "rgba(229,225,216,0.35)" }}
+              className="btn btn-outline-white"
+              style={!onDark ? {
+                color: "var(--sp-black)",
+                borderColor: "rgba(17,17,17,0.3)",
+              } : {}}
             >
               Free Audit
             </button>
           </div>
 
-          {/* Mobile */}
+          {/* Mobile toggle */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="md:hidden opacity-70 hover:opacity-100 transition-opacity"
-            style={{ color: "var(--sf-cream)" }}
+            className="md:hidden"
+            style={{ color: textColor }}
           >
             {menuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
@@ -101,24 +108,21 @@ export default function Navbar({ onAuditClick }: NavbarProps) {
       {/* Mobile menu */}
       {menuOpen && (
         <div
-          className="md:hidden border-t px-6 py-8 space-y-6"
-          style={{ backgroundColor: "var(--sf-dark)", borderColor: "rgba(229,225,216,0.1)" }}
+          className="md:hidden px-6 pt-6 pb-8 space-y-5 border-t"
+          style={{ backgroundColor: "var(--sp-white)", borderColor: "var(--sp-rule)" }}
         >
           {links.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="block font-display text-3xl font-semibold"
-              style={{ color: "var(--sf-cream)" }}
+              className="block font-serif text-3xl"
+              style={{ color: "var(--sp-black)" }}
             >
               {link.label}
             </Link>
           ))}
-          <button
-            onClick={() => { onAuditClick(); setMenuOpen(false); }}
-            className="btn-outline-cream w-full justify-center mt-4"
-          >
-            Get Free Audit
+          <button onClick={() => { onAuditClick(); setMenuOpen(false); }} className="btn btn-black w-full justify-center mt-4">
+            Free Audit
           </button>
         </div>
       )}

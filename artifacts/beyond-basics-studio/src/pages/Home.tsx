@@ -1,297 +1,227 @@
 import { useRef } from "react";
 import { Link } from "wouter";
 import { motion, useInView, useScroll, useTransform } from "framer-motion";
-import { ArrowRight, ArrowDown, MapPin } from "lucide-react";
+import { ArrowRight, ArrowDown } from "lucide-react";
 
-/* ── Helpers ── */
-const ease = [0.16, 1, 0.3, 1];
+const ease = [0.25, 0.1, 0.25, 1];
 
 function FadeUp({ children, className, delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
   const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-60px" });
+  const inView = useInView(ref, { once: true, margin: "-80px" });
   return (
-    <motion.div
-      ref={ref}
-      initial={{ opacity: 0, y: 36 }}
-      animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.9, ease, delay }}
-      className={className}
-    >
+    <motion.div ref={ref} initial={{ opacity: 0, y: 24 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.7, ease, delay }} className={className}>
       {children}
     </motion.div>
   );
 }
-
 function FadeIn({ children, className, delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
   const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-40px" });
+  const inView = useInView(ref, { once: true, margin: "-60px" });
   return (
-    <motion.div
-      ref={ref}
-      initial={{ opacity: 0 }}
-      animate={inView ? { opacity: 1 } : {}}
-      transition={{ duration: 0.8, ease: "easeOut", delay }}
-      className={className}
-    >
+    <motion.div ref={ref} initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ duration: 0.7, ease: "easeOut", delay }} className={className}>
       {children}
     </motion.div>
   );
 }
 
-const stats = [
-  { value: "500+", label: "Profiles Managed" },
-  { value: "300%", label: "Avg Review Growth" },
-  { value: "90", label: "Days to Top 3" },
-  { value: "98%", label: "Client Retention" },
-];
-
-const logos = [
-  "Urban Pizza", "City Auto", "Summit Dental", "Harbor Café",
-  "Metro Fitness", "Peak Real Estate", "Blue Ridge Bakery",
-  "Coastal Law Group", "Sunset Spa", "Northside Gym",
-];
-
 const services = [
-  {
-    index: "01",
-    title: "GBP Strategy & Optimization",
-    desc: "Full profile overhaul, category precision, attribute configuration, and continuous performance monitoring for maximum map visibility.",
-  },
-  {
-    index: "02",
-    title: "Review & Reputation Mastery",
-    desc: "Systematic review generation, AI-powered response management, and reputation monitoring. Most clients see 300% growth in 60 days.",
-  },
-  {
-    index: "03",
-    title: "Media & Local Domination",
-    desc: "Professional photo management, Google Posts strategy, Q&A optimization, and citation building for sustained Map Pack dominance.",
-  },
+  { n: "01", title: "GBP Strategy & Optimisation", desc: "Full profile overhaul — category precision, attribute configuration, and continuous performance monitoring for maximum map visibility." },
+  { n: "02", title: "Review & Reputation Mastery", desc: "Systematic review generation and AI-powered responses. Clients typically see 300% growth within 60 days." },
+  { n: "03", title: "Content & Local Domination", desc: "Professional photo management, Google Posts strategy, Q&A optimisation, and citation building for sustained Map Pack dominance." },
 ];
 
 export default function Home({ onAuditClick }: { onAuditClick: () => void }) {
   const heroRef = useRef(null);
   const { scrollYProgress } = useScroll({ target: heroRef, offset: ["start start", "end start"] });
-  const heroY = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
-  const heroOpacity = useTransform(scrollYProgress, [0, 0.6], [1, 0]);
+  const heroY = useTransform(scrollYProgress, [0, 1], ["0%", "18%"]);
+  const heroOpacity = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
 
   return (
-    <div style={{ backgroundColor: "var(--sf-dark)", color: "var(--sf-cream)" }}>
-      {/* ── Hero ── */}
+    <div style={{ backgroundColor: "var(--sp-white)" }}>
+
+      {/* ── HERO — full-bleed dark ── */}
       <section
         ref={heroRef}
         className="relative h-screen flex flex-col overflow-hidden"
-        style={{ minHeight: "600px" }}
+        style={{ backgroundColor: "var(--sp-ink)", minHeight: "600px" }}
       >
-        {/* Top meta row — pinned below navbar */}
+        {/* Top meta strip */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.9, delay: 0.4 }}
-          className="relative z-10 flex items-center gap-6 px-6 lg:px-10"
-          style={{ paddingTop: "6.5rem", borderBottom: "1px solid rgba(229,225,216,0.1)", paddingBottom: "1.25rem" }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          className="flex items-center justify-between px-6 lg:px-12"
+          style={{ paddingTop: "5.5rem", paddingBottom: "1.5rem", borderBottom: "1px solid var(--sp-rule-d)" }}
         >
-          <span className="tag" style={{ color: "rgba(229,225,216,0.45)" }}>GBP Management Agency</span>
-          <span style={{ color: "rgba(229,225,216,0.2)", fontSize: 12 }}>—</span>
-          <span className="tag" style={{ color: "rgba(229,225,216,0.45)" }}>Est. 2025</span>
-          <div className="flex items-center gap-1.5 ml-auto">
-            <div className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: "rgba(229,225,216,0.5)" }} />
-            <span className="tag" style={{ color: "rgba(229,225,216,0.35)" }}>500+ Profiles Active</span>
-          </div>
+          <p className="label" style={{ color: "rgba(247,244,240,0.4)" }}>GBP Management Agency</p>
+          <p className="label" style={{ color: "rgba(247,244,240,0.3)" }}>Est. 2025 — Worldwide</p>
         </motion.div>
 
-        {/* Headline — takes up the available space */}
+        {/* Headline */}
         <motion.div
           style={{ y: heroY, opacity: heroOpacity }}
-          className="relative z-10 flex-1 flex flex-col justify-center px-6 lg:px-10"
+          className="flex-1 flex flex-col justify-center px-6 lg:px-12"
         >
-          <div className="overflow-hidden">
+          <div className="overflow-hidden mb-1">
             <motion.h1
-              initial={{ y: "105%" }}
+              initial={{ y: "110%" }}
               animate={{ y: 0 }}
-              transition={{ duration: 1.1, ease, delay: 0.1 }}
-              className="font-display font-bold leading-none"
-              style={{ fontSize: "clamp(4rem, 11vw, 10.5rem)", color: "var(--sf-cream)", lineHeight: 1.0 }}
+              transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
+              className="font-serif leading-none"
+              style={{ fontSize: "clamp(3.5rem, 10vw, 10rem)", color: "var(--sp-white)" }}
             >
               Beyond
             </motion.h1>
           </div>
           <div className="overflow-hidden">
             <motion.h1
-              initial={{ y: "105%" }}
+              initial={{ y: "110%" }}
               animate={{ y: 0 }}
-              transition={{ duration: 1.1, ease, delay: 0.16 }}
-              className="font-display font-bold leading-none"
-              style={{ fontSize: "clamp(4rem, 11vw, 10.5rem)", color: "var(--sf-cream)", lineHeight: 1.0, opacity: 0.8 }}
+              transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.17 }}
+              className="font-serif leading-none"
+              style={{ fontSize: "clamp(3.5rem, 10vw, 10rem)", color: "rgba(247,244,240,0.45)" }}
             >
               Basics Studio
             </motion.h1>
           </div>
         </motion.div>
 
-        {/* Bottom row — tagline + CTA */}
+        {/* Bottom strip — tagline + CTA */}
         <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, ease, delay: 0.55 }}
-          className="relative z-10 flex flex-col sm:flex-row sm:items-center justify-between gap-6 px-6 lg:px-10 pb-10"
-          style={{ borderTop: "1px solid rgba(229,225,216,0.1)", paddingTop: "1.5rem" }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className="flex flex-col sm:flex-row sm:items-center justify-between gap-5 px-6 lg:px-12 pb-10"
+          style={{ paddingTop: "1.5rem", borderTop: "1px solid var(--sp-rule-d)" }}
         >
-          <p
-            className="font-sans leading-relaxed max-w-sm"
-            style={{ fontSize: "0.9rem", color: "rgba(229,225,216,0.5)" }}
-          >
+          <p className="font-sans text-sm max-w-xs leading-relaxed" style={{ color: "rgba(247,244,240,0.45)" }}>
             The GBP agency giving local businesses an unfair advantage on Google Maps. From $200/mo.
           </p>
           <div className="flex items-center gap-3 shrink-0">
-            <button onClick={onAuditClick} className="btn-cream">
+            <button onClick={onAuditClick} className="btn btn-white">
               Free Audit <ArrowRight className="w-3.5 h-3.5" />
             </button>
-            <Link href="/services" className="btn-outline-cream hidden sm:inline-flex">
-              View Tiers
+            <Link href="/services" className="btn btn-outline-white">
+              Our Services
             </Link>
           </div>
         </motion.div>
+
+        {/* Scroll indicator */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 1.2 }}
+          className="absolute bottom-24 left-1/2 -translate-x-1/2 animate-bounce-y"
+        >
+          <ArrowDown className="w-4 h-4" style={{ color: "rgba(247,244,240,0.25)" }} />
+        </motion.div>
       </section>
 
-      {/* ── Stats bar ── */}
-      <section
-        className="border-y"
-        style={{ borderColor: "rgba(229,225,216,0.1)" }}
-      >
-        <div
-          className="grid grid-cols-2 md:grid-cols-4 gap-px"
-          style={{ backgroundColor: "rgba(229,225,216,0.1)" }}
-        >
-          {stats.map((stat, i) => (
-            <FadeIn key={i} delay={i * 0.08}>
-              <div className="py-10 px-8 lg:px-12" style={{ backgroundColor: "var(--sf-dark)" }}>
+      {/* ── INTRO text ── */}
+      <section className="section-light border-b" style={{ borderColor: "var(--sp-rule)" }}>
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 py-24 lg:py-32">
+          <div className="grid md:grid-cols-12 gap-8">
+            <div className="md:col-span-2">
+              <FadeIn>
+                <p className="label mt-2">About</p>
+              </FadeIn>
+            </div>
+            <div className="md:col-span-8">
+              <FadeUp>
                 <p
-                  className="font-display font-bold leading-none mb-3"
-                  style={{ fontSize: "clamp(2.2rem, 5vw, 4rem)", color: "var(--sf-cream)" }}
+                  className="font-serif leading-tight"
+                  style={{ fontSize: "clamp(1.5rem, 3.5vw, 2.75rem)", color: "var(--sp-black)" }}
+                >
+                  We manage Google Business Profiles for ambitious local businesses — bringing the same rigour and craft that global brands rely on, available from $200/mo.
+                </p>
+              </FadeUp>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── STATS ── */}
+      <section className="border-b" style={{ backgroundColor: "var(--sp-cream)", borderColor: "var(--sp-rule)" }}>
+        <div
+          className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4"
+          style={{ borderRight: "1px solid var(--sp-rule)" }}
+        >
+          {[
+            { value: "500+", label: "Profiles Managed" },
+            { value: "300%", label: "Avg Review Growth" },
+            { value: "90", label: "Days to Top 3" },
+            { value: "98%", label: "Client Retention" },
+          ].map((stat, i) => (
+            <FadeIn key={i} delay={i * 0.07}>
+              <div
+                className="py-12 px-8 lg:px-12 border-l border-b md:border-b-0"
+                style={{ borderColor: "var(--sp-rule)" }}
+              >
+                <p
+                  className="font-serif leading-none mb-3"
+                  style={{ fontSize: "clamp(2.5rem, 5vw, 4.5rem)", color: "var(--sp-black)" }}
                 >
                   {stat.value}
                 </p>
-                <p className="font-sans text-xs tracking-widest uppercase" style={{ color: "rgba(229,225,216,0.38)" }}>
-                  {stat.label}
-                </p>
+                <p className="label">{stat.label}</p>
               </div>
             </FadeIn>
           ))}
         </div>
       </section>
 
-      {/* ── Marquee social proof ── */}
-      <section
-        className="py-6 border-b overflow-hidden"
-        style={{ borderColor: "rgba(229,225,216,0.1)" }}
-      >
+      {/* ── TICKER ── */}
+      <section className="border-b py-4 overflow-hidden" style={{ backgroundColor: "var(--sp-ink)", borderColor: "var(--sp-rule-d)" }}>
         <div className="flex">
-          <div className="flex gap-12 items-center animate-marquee whitespace-nowrap">
+          <div className="flex gap-14 items-center animate-marquee whitespace-nowrap">
             {[
-              "World's #1 GBP Agency",
-              "✦",
-              "Business Journal",
-              "✦",
-              "Local SEO Pro",
-              "✦",
-              "Google Verified Partner",
-              "✦",
-              "Map Pack Masters",
-              "✦",
-              "Agency of the Year 2026",
-              "✦",
-              "World's #1 GBP Agency",
-              "✦",
-              "Business Journal",
-              "✦",
-              "Local SEO Pro",
-              "✦",
-              "Google Verified Partner",
-              "✦",
-              "Map Pack Masters",
-              "✦",
-              "Agency of the Year 2026",
-              "✦",
-            ].map((item, i) => (
-              <span key={i} className="font-sans text-xs tracking-widest uppercase shrink-0" style={{ color: "rgba(229,225,216,0.25)" }}>
-                {item}
-              </span>
+              "GBP Strategy", "—", "Review Growth", "—", "Map Pack Domination",
+              "—", "Google Posts", "—", "AI-Powered Optimisation", "—",
+              "500+ Profiles Active", "—", "Worldwide", "—",
+              "GBP Strategy", "—", "Review Growth", "—", "Map Pack Domination",
+              "—", "Google Posts", "—", "AI-Powered Optimisation", "—",
+              "500+ Profiles Active", "—", "Worldwide", "—",
+            ].map((t, i) => (
+              <span key={i} className="label shrink-0" style={{ color: "rgba(247,244,240,0.3)" }}>{t}</span>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── Testimonial ── */}
-      <section className="py-28 px-6 lg:px-10">
-        <div className="max-w-5xl mx-auto">
-          <FadeIn>
-            <p className="tag mb-12" style={{ color: "rgba(229,225,216,0.45)" }}>Client Voice</p>
-          </FadeIn>
-          <FadeUp>
-            <blockquote
-              className="font-display font-semibold leading-tight"
-              style={{
-                fontSize: "clamp(1.6rem, 4vw, 3.2rem)",
-                color: "var(--sf-cream)",
-              }}
-            >
-              "Beyond Basics turned our profile into a lead machine. We went from 8 calls a month to over 250 — in 60 days."
-            </blockquote>
-          </FadeUp>
-          <FadeIn delay={0.2}>
-            <p className="mt-6 font-sans text-sm" style={{ color: "rgba(229,225,216,0.4)" }}>
-              — Maria T., Owner, Urban Pizza · Growth Plan
-            </p>
-          </FadeIn>
-        </div>
-      </section>
-
-      {/* ── Services ── */}
-      <section
-        className="border-t"
-        style={{ borderColor: "rgba(229,225,216,0.1)" }}
-      >
-        <div className="max-w-7xl mx-auto px-6 lg:px-10 py-20">
+      {/* ── SERVICES ── */}
+      <section className="section-light border-b" style={{ borderColor: "var(--sp-rule)" }}>
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 py-24 lg:py-32">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-16">
             <FadeUp>
-              <p className="tag mb-3" style={{ color: "rgba(229,225,216,0.45)" }}>What We Do</p>
+              <p className="label mb-4">What We Do</p>
               <h2
-                className="font-display font-semibold leading-tight"
-                style={{ fontSize: "clamp(2rem, 5vw, 4rem)", color: "var(--sf-cream)" }}
+                className="font-serif leading-tight"
+                style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)", color: "var(--sp-black)" }}
               >
-                Full-spectrum<br />GBP mastery.
+                Full-spectrum GBP<br />mastery.
               </h2>
             </FadeUp>
             <FadeIn>
-              <Link href="/services" className="btn-outline-cream shrink-0">
+              <Link href="/services" className="btn btn-outline shrink-0">
                 All Services <ArrowRight className="w-3.5 h-3.5" />
               </Link>
             </FadeIn>
           </div>
 
-          <div className="space-y-0">
-            {services.map((service, i) => (
-              <FadeIn key={i} delay={i * 0.08}>
+          <div className="border-t" style={{ borderColor: "var(--sp-rule)" }}>
+            {services.map((s, i) => (
+              <FadeIn key={i} delay={i * 0.07}>
                 <div
-                  className="flex items-start gap-8 py-8 border-b group cursor-default"
-                  style={{ borderColor: "rgba(229,225,216,0.1)" }}
+                  className="grid grid-cols-12 gap-6 py-8 border-b group cursor-default"
+                  style={{ borderColor: "var(--sp-rule)" }}
                 >
-                  <span className="font-sans text-xs opacity-30 w-8 shrink-0 pt-1" style={{ color: "var(--sf-cream)" }}>
-                    {service.index}
-                  </span>
-                  <div className="flex-1">
-                    <h3
-                      className="font-display font-semibold text-2xl sm:text-3xl mb-3 group-hover:opacity-70 transition-opacity duration-300"
-                      style={{ color: "var(--sf-cream)" }}
-                    >
-                      {service.title}
-                    </h3>
-                    <p className="font-sans text-sm leading-relaxed max-w-2xl" style={{ color: "rgba(229,225,216,0.45)" }}>
-                      {service.desc}
-                    </p>
+                  <span className="col-span-1 font-sans text-xs pt-1" style={{ color: "var(--sp-gray)", opacity: 0.5 }}>{s.n}</span>
+                  <h3 className="col-span-5 font-serif text-2xl lg:text-3xl group-hover:opacity-60 transition-opacity duration-300" style={{ color: "var(--sp-black)" }}>{s.title}</h3>
+                  <p className="col-span-5 col-start-8 font-sans text-sm leading-relaxed self-center" style={{ color: "var(--sp-gray)" }}>{s.desc}</p>
+                  <div className="col-span-1 flex justify-end items-center">
+                    <ArrowRight className="w-4 h-4 opacity-20 group-hover:opacity-50 transition-opacity" style={{ color: "var(--sp-black)" }} />
                   </div>
-                  <ArrowRight className="w-4 h-4 shrink-0 mt-1 opacity-20 group-hover:opacity-60 transition-opacity duration-300" style={{ color: "var(--sf-cream)" }} />
                 </div>
               </FadeIn>
             ))}
@@ -299,144 +229,130 @@ export default function Home({ onAuditClick }: { onAuditClick: () => void }) {
         </div>
       </section>
 
-      {/* ── MapMaster AI ── */}
-      <section
-        className="py-28 px-6 lg:px-10"
-        style={{ backgroundColor: "#363b32" }}
-      >
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 lg:gap-24 items-center">
+      {/* ── TESTIMONIAL ── */}
+      <section className="section-dark border-b" style={{ borderColor: "var(--sp-rule-d)" }}>
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 py-24 lg:py-36">
+          <FadeIn>
+            <p className="label mb-12" style={{ color: "rgba(247,244,240,0.35)" }}>Client Voice</p>
+          </FadeIn>
           <FadeUp>
-            <p className="tag mb-6" style={{ color: "rgba(229,225,216,0.45)" }}>Proprietary Technology</p>
-            <h2
-              className="font-display font-semibold leading-tight mb-8"
-              style={{ fontSize: "clamp(2rem, 5vw, 4rem)", color: "var(--sf-cream)" }}
+            <blockquote
+              className="font-serif leading-tight max-w-4xl"
+              style={{ fontSize: "clamp(1.5rem, 3.5vw, 3rem)", color: "var(--sp-white)" }}
             >
-              MapMaster™ AI<br />works while<br />you sleep.
-            </h2>
-            <p className="font-sans text-sm leading-relaxed mb-8" style={{ color: "rgba(229,225,216,0.5)" }}>
-              Our proprietary AI engine runs 24/7 — auto-scheduling posts for peak engagement, scoring review opportunities, and optimizing map rank signals that deliver 40% more visibility on average.
+              "Beyond Basics turned our profile into a lead machine. We went from 8 calls a month to over 250 — in 60 days."
+            </blockquote>
+          </FadeUp>
+          <FadeIn delay={0.2}>
+            <p className="font-sans text-sm mt-8" style={{ color: "rgba(247,244,240,0.35)" }}>
+              Maria T., Owner — Urban Pizza · Growth Plan
             </p>
-            <button onClick={onAuditClick} className="btn-cream">
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* ── MAPMASTER AI ── */}
+      <section className="section-cream border-b" style={{ borderColor: "var(--sp-rule)" }}>
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 py-24 lg:py-32 grid md:grid-cols-2 gap-16 lg:gap-24 items-center">
+          <FadeUp>
+            <p className="label mb-6">Proprietary Technology</p>
+            <h2 className="font-serif leading-tight mb-6" style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)", color: "var(--sp-black)" }}>
+              MapMaster™ AI works while you sleep.
+            </h2>
+            <p className="font-sans text-sm leading-relaxed mb-8" style={{ color: "var(--sp-gray)" }}>
+              Our proprietary engine runs 24/7 — auto-scheduling posts for peak engagement, scoring review opportunities, and optimising signals that deliver 40% more visibility on average.
+            </p>
+            <button onClick={onAuditClick} className="btn btn-black">
               See It in Action <ArrowRight className="w-3.5 h-3.5" />
             </button>
           </FadeUp>
 
           <FadeIn delay={0.15}>
-            <div
-              className="border p-8 space-y-1"
-              style={{ borderColor: "rgba(229,225,216,0.12)", backgroundColor: "rgba(44,49,41,0.5)" }}
-            >
-              <p className="tag mb-6" style={{ color: "rgba(229,225,216,0.4)" }}>Live Rank Monitor · Urban Pizza</p>
+            <div className="border bg-white" style={{ borderColor: "var(--sp-rule)" }}>
+              <div className="px-6 py-4 border-b" style={{ borderColor: "var(--sp-rule)" }}>
+                <p className="label">Live Rank Monitor — Urban Pizza</p>
+              </div>
               {[
                 { keyword: "pizza near me", before: "#14", after: "#2", delta: "+12" },
                 { keyword: "italian restaurant", before: "#9", after: "#1", delta: "+8" },
                 { keyword: "best lunch downtown", before: "#22", after: "#3", delta: "+19" },
               ].map((row) => (
-                <div
-                  key={row.keyword}
-                  className="flex items-center justify-between py-4 border-b"
-                  style={{ borderColor: "rgba(229,225,216,0.07)" }}
-                >
-                  <span className="font-sans text-sm" style={{ color: "rgba(229,225,216,0.5)" }}>{row.keyword}</span>
-                  <div className="flex items-center gap-6">
-                    <span className="font-sans text-xs opacity-30 line-through" style={{ color: "var(--sf-cream)" }}>{row.before}</span>
-                    <span className="font-sans text-xs font-medium" style={{ color: "rgba(180,210,170,0.8)" }}>{row.delta}</span>
-                    <span className="font-display font-semibold text-lg" style={{ color: "var(--sf-cream)" }}>{row.after}</span>
+                <div key={row.keyword} className="flex items-center justify-between px-6 py-4 border-b" style={{ borderColor: "var(--sp-rule)" }}>
+                  <span className="font-sans text-sm" style={{ color: "var(--sp-gray)" }}>{row.keyword}</span>
+                  <div className="flex items-center gap-5">
+                    <span className="font-sans text-xs line-through" style={{ color: "var(--sp-gray)", opacity: 0.5 }}>{row.before}</span>
+                    <span className="font-sans text-xs font-medium" style={{ color: "#2d6a4f" }}>{row.delta}</span>
+                    <span className="font-serif text-xl" style={{ color: "var(--sp-black)" }}>{row.after}</span>
                   </div>
                 </div>
               ))}
-              <div className="pt-5">
-                <p className="font-sans text-xs" style={{ color: "rgba(180,210,170,0.7)" }}>
-                  Average 40% visibility increase within 90 days
-                </p>
+              <div className="px-6 py-4">
+                <p className="font-sans text-xs" style={{ color: "#2d6a4f" }}>Avg 40% visibility increase within 90 days</p>
               </div>
             </div>
           </FadeIn>
         </div>
       </section>
 
-      {/* ── Pricing ── */}
-      <section
-        className="py-28 px-6 lg:px-10 border-t"
-        style={{ borderColor: "rgba(229,225,216,0.1)" }}
-      >
-        <div className="max-w-7xl mx-auto">
+      {/* ── PRICING ── */}
+      <section className="section-light border-b" style={{ borderColor: "var(--sp-rule)" }}>
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 py-24 lg:py-32">
           <FadeUp>
-            <p className="tag mb-4" style={{ color: "rgba(229,225,216,0.45)" }}>Pricing</p>
-            <h2
-              className="font-display font-semibold leading-tight mb-16"
-              style={{ fontSize: "clamp(2rem, 5vw, 4rem)", color: "var(--sf-cream)" }}
-            >
-              No contracts.<br />No surprises.
+            <p className="label mb-4">Pricing</p>
+            <h2 className="font-serif leading-tight mb-16" style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)", color: "var(--sp-black)" }}>
+              No contracts. No surprises.
             </h2>
           </FadeUp>
-
-          <div className="grid md:grid-cols-3 gap-px" style={{ backgroundColor: "rgba(229,225,216,0.1)" }}>
+          <div
+            className="grid md:grid-cols-3 gap-px"
+            style={{ backgroundColor: "var(--sp-rule)" }}
+          >
             {[
               {
-                name: "Basic",
-                price: "$200",
-                note: "per month",
+                name: "Basic", price: "$200", note: "/mo",
                 tagline: "Essentials done right.",
                 features: ["1 GBP Location", "4 Posts/month", "Profile optimisation", "Monthly report", "Review templates", "Email support"],
               },
               {
-                name: "Growth",
-                price: "$500",
-                note: "per month",
-                tagline: "The active edge.",
+                name: "Growth", price: "$500", note: "/mo",
                 badge: "Most Popular",
+                tagline: "The active edge.",
                 features: ["Up to 3 Locations", "Everything in Basic", "Active review generation", "16 Posts/month", "Local ads management", "Weekly reports", "Competitor tracking", "Priority support"],
               },
               {
-                name: "Premium",
-                price: "$1,000",
-                note: "per month",
+                name: "Premium", price: "$1,000", note: "/mo",
                 tagline: "Total domination.",
                 features: ["Unlimited Locations", "Everything in Growth", "MapMaster™ AI", "Dedicated manager", "Daily posting", "Custom dashboard", "Monthly strategy call", "24/7 support"],
               },
             ].map((plan, i) => (
-              <FadeIn key={i} delay={i * 0.1}>
-                <div
-                  className="p-8 lg:p-10 flex flex-col h-full"
-                  style={{ backgroundColor: "var(--sf-dark)" }}
-                >
+              <FadeIn key={i} delay={i * 0.08}>
+                <div className="section-light p-8 lg:p-10 flex flex-col h-full">
                   <div className="mb-8">
-                    <div className="flex items-center gap-3 mb-4">
-                      <span className="font-display text-xl font-semibold" style={{ color: "var(--sf-cream)" }}>{plan.name}</span>
+                    <div className="flex items-center gap-3 mb-3">
+                      <span className="font-serif text-2xl" style={{ color: "var(--sp-black)" }}>{plan.name}</span>
                       {plan.badge && (
-                        <span
-                          className="font-sans text-xs tracking-widest uppercase px-2 py-0.5"
-                          style={{ backgroundColor: "rgba(229,225,216,0.1)", color: "rgba(229,225,216,0.6)" }}
-                        >
+                        <span className="label px-2 py-0.5 border" style={{ borderColor: "var(--sp-rule)", color: "var(--sp-gray)" }}>
                           {plan.badge}
                         </span>
                       )}
                     </div>
-                    <p className="font-sans text-xs mb-6" style={{ color: "rgba(229,225,216,0.4)" }}>{plan.tagline}</p>
-                    <div className="flex items-baseline gap-1.5">
-                      <span className="font-display font-semibold leading-none" style={{ fontSize: "clamp(2.5rem, 6vw, 4.5rem)", color: "var(--sf-cream)" }}>
-                        {plan.price}
-                      </span>
-                      <span className="font-sans text-xs" style={{ color: "rgba(229,225,216,0.35)" }}>{plan.note}</span>
+                    <p className="font-sans text-xs mb-5" style={{ color: "var(--sp-gray)" }}>{plan.tagline}</p>
+                    <div className="flex items-baseline gap-1">
+                      <span className="font-serif leading-none" style={{ fontSize: "clamp(2.5rem, 5vw, 4rem)", color: "var(--sp-black)" }}>{plan.price}</span>
+                      <span className="font-sans text-xs" style={{ color: "var(--sp-gray)" }}>{plan.note}</span>
                     </div>
                   </div>
-
-                  <div
-                    className="flex-1 border-t pt-6 mb-8"
-                    style={{ borderColor: "rgba(229,225,216,0.1)" }}
-                  >
+                  <div className="flex-1 border-t pt-6 mb-8" style={{ borderColor: "var(--sp-rule)" }}>
                     <ul className="space-y-3">
                       {plan.features.map((f) => (
-                        <li key={f} className="flex items-start gap-3 font-sans text-sm" style={{ color: "rgba(229,225,216,0.55)" }}>
-                          <span className="mt-1.5 w-1 h-1 rounded-full shrink-0" style={{ backgroundColor: "rgba(229,225,216,0.4)" }} />
+                        <li key={f} className="flex items-start gap-3 font-sans text-sm" style={{ color: "var(--sp-gray)" }}>
+                          <span className="mt-2 w-1 h-px shrink-0 inline-block" style={{ backgroundColor: "var(--sp-gray)" }} />
                           {f}
                         </li>
                       ))}
                     </ul>
                   </div>
-
-                  <button onClick={onAuditClick} className="btn-outline-cream w-full justify-center text-xs">
+                  <button onClick={onAuditClick} className="btn btn-outline w-full justify-center">
                     Start {plan.name}
                   </button>
                 </div>
@@ -446,64 +362,44 @@ export default function Home({ onAuditClick }: { onAuditClick: () => void }) {
         </div>
       </section>
 
-      {/* ── Client Logos ── */}
-      <section
-        className="py-6 border-t border-b overflow-hidden"
-        style={{ borderColor: "rgba(229,225,216,0.1)" }}
-      >
+      {/* ── CLIENTS MARQUEE ── */}
+      <section className="border-b py-5 overflow-hidden" style={{ backgroundColor: "var(--sp-cream)", borderColor: "var(--sp-rule)" }}>
         <div className="flex">
-          <div className="flex gap-14 items-center animate-marquee whitespace-nowrap">
-            {[...logos, ...logos].map((client, i) => (
-              <span key={i} className="font-display text-xl shrink-0" style={{ color: "rgba(229,225,216,0.12)" }}>
-                {client}
-              </span>
+          <div className="flex gap-16 items-center animate-marquee whitespace-nowrap">
+            {["Urban Pizza", "Summit Dental", "City Auto", "Harbor Café", "Metro Fitness", "Peak Real Estate", "Blue Ridge Bakery", "Coastal Law Group",
+              "Urban Pizza", "Summit Dental", "City Auto", "Harbor Café", "Metro Fitness", "Peak Real Estate", "Blue Ridge Bakery", "Coastal Law Group"].map((c, i) => (
+              <span key={i} className="font-serif text-2xl shrink-0" style={{ color: "rgba(17,17,17,0.1)" }}>{c}</span>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── Insights ── */}
-      <section
-        className="py-28 px-6 lg:px-10 border-b"
-        style={{ borderColor: "rgba(229,225,216,0.1)" }}
-      >
-        <div className="max-w-7xl mx-auto">
-          <div className="flex items-end justify-between mb-16">
-            <FadeUp>
-              <p className="tag mb-3" style={{ color: "rgba(229,225,216,0.45)" }}>Insights</p>
-              <h2
-                className="font-display font-semibold leading-tight"
-                style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)", color: "var(--sf-cream)" }}
-              >
-                From the playbook.
-              </h2>
-            </FadeUp>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-px" style={{ backgroundColor: "rgba(229,225,216,0.08)" }}>
+      {/* ── INSIGHTS ── */}
+      <section className="section-light border-b" style={{ borderColor: "var(--sp-rule)" }}>
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 py-24 lg:py-32">
+          <FadeUp>
+            <p className="label mb-4">Insights</p>
+            <h2 className="font-serif leading-tight mb-16" style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)", color: "var(--sp-black)" }}>
+              From the playbook.
+            </h2>
+          </FadeUp>
+          <div
+            className="grid md:grid-cols-3 gap-px border-t"
+            style={{ backgroundColor: "var(--sp-rule)", borderColor: "var(--sp-rule)" }}
+          >
             {[
-              { tag: "Award", date: "Mar 2026", title: "Beyond Basics Wins Local Agency of Year 2026", desc: "For the second consecutive year, recognised for extraordinary GBP results." },
-              { tag: "Case Study", date: "Feb 2026", title: "How We 5x'd a Client's Map Pack Rankings in 90 Days", desc: "The exact strategy behind our most dramatic ranking turnaround." },
-              { tag: "Strategy", date: "Jan 2026", title: "The GBP Optimisation Playbook for 2026", desc: "Google's algorithm changed. Here's what actually moves the needle today." },
-            ].map((article, i) => (
-              <FadeIn key={i} delay={i * 0.08}>
-                <div
-                  className="p-8 group cursor-default"
-                  style={{ backgroundColor: "var(--sf-dark)" }}
-                >
+              { tag: "Award", date: "Mar 2026", title: "Beyond Basics Wins Local Agency of Year 2026", desc: "For the second consecutive year, recognised for extraordinary GBP results across 30+ countries." },
+              { tag: "Case Study", date: "Feb 2026", title: "How We 5x'd a Client's Map Pack Rankings in 90 Days", desc: "The exact playbook behind our most dramatic ranking turnaround." },
+              { tag: "Strategy", date: "Jan 2026", title: "The GBP Optimisation Guide for 2026", desc: "Google's algorithm changed. Here's what actually moves the needle now." },
+            ].map((a, i) => (
+              <FadeIn key={i} delay={i * 0.07}>
+                <div className="section-light p-8 group cursor-default">
                   <div className="flex items-center justify-between mb-6">
-                    <span className="tag" style={{ color: "rgba(229,225,216,0.35)" }}>{article.tag}</span>
-                    <span className="font-sans text-xs" style={{ color: "rgba(229,225,216,0.25)" }}>{article.date}</span>
+                    <span className="label">{a.tag}</span>
+                    <span className="font-sans text-xs" style={{ color: "var(--sp-gray)", opacity: 0.5 }}>{a.date}</span>
                   </div>
-                  <h3
-                    className="font-display font-semibold text-2xl leading-snug mb-4 group-hover:opacity-70 transition-opacity duration-300"
-                    style={{ color: "var(--sf-cream)" }}
-                  >
-                    {article.title}
-                  </h3>
-                  <p className="font-sans text-sm leading-relaxed" style={{ color: "rgba(229,225,216,0.4)" }}>
-                    {article.desc}
-                  </p>
+                  <h3 className="font-serif text-xl lg:text-2xl leading-snug mb-4 group-hover:opacity-60 transition-opacity duration-300" style={{ color: "var(--sp-black)" }}>{a.title}</h3>
+                  <p className="font-sans text-sm leading-relaxed" style={{ color: "var(--sp-gray)" }}>{a.desc}</p>
                 </div>
               </FadeIn>
             ))}
@@ -511,22 +407,22 @@ export default function Home({ onAuditClick }: { onAuditClick: () => void }) {
         </div>
       </section>
 
-      {/* ── Final CTA ── */}
-      <section className="py-40 px-6 lg:px-10">
-        <div className="max-w-5xl mx-auto text-center">
+      {/* ── FINAL CTA ── */}
+      <section className="section-dark">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 py-32 lg:py-48">
           <FadeUp>
             <h2
-              className="font-display font-semibold leading-tight mb-10"
-              style={{ fontSize: "clamp(2.5rem, 8vw, 7rem)", color: "var(--sf-cream)" }}
+              className="font-serif leading-tight mb-10 max-w-4xl"
+              style={{ fontSize: "clamp(2.5rem, 7vw, 7rem)", color: "var(--sp-white)" }}
             >
-              Ready to dominate<br />Google Maps?
+              Ready to dominate Google Maps?
             </h2>
           </FadeUp>
-          <FadeIn delay={0.25}>
-            <p className="font-sans text-base mb-10 max-w-lg mx-auto" style={{ color: "rgba(229,225,216,0.45)" }}>
-              Your audit is free. Your results are real. Join 500+ local businesses who chose to go beyond basics.
+          <FadeIn delay={0.2}>
+            <p className="font-sans text-sm leading-relaxed mb-10 max-w-md" style={{ color: "rgba(247,244,240,0.45)" }}>
+              Your audit is free. Your results are real. Join 500+ local businesses who chose to go Beyond Basics.
             </p>
-            <button onClick={onAuditClick} className="btn-cream text-sm">
+            <button onClick={onAuditClick} className="btn btn-white">
               Claim Free Audit <ArrowRight className="w-3.5 h-3.5" />
             </button>
           </FadeIn>
