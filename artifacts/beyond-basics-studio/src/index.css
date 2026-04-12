@@ -76,7 +76,7 @@
 /* ── Base ── */
 @layer base {
   * { @apply border-border; }
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: auto; }
   body {
     @apply font-sans antialiased;
     background-color: var(--sp-white);
