@@ -170,7 +170,6 @@ export default function Services({ onAuditClick }: { onAuditClick: () => void })
             { q: "How do you generate more reviews?", a: "We deploy proven post-transaction sequences via email and SMS, using Google's compliant review request methodology. Growth and Premium clients see an average 300% increase in monthly reviews within 60 days." },
             { q: "Can I upgrade or downgrade my plan?", a: "Absolutely. You can change tiers at any time with 30 days notice. Upgrades activate immediately; downgrades take effect at the next billing cycle. No penalties or lock-in." },
             { q: "What reporting will I receive?", a: "Detailed performance reports covering: profile views, search impressions, direction requests, call clicks, photo views, review growth, and map rank trends — weekly or monthly depending on your tier." },
-            { q: "Do you guarantee results?", a: "We guarantee Top 3 Map Pack placement on Premium plans. We also offer a full refund if you see zero improvement in your first 60 days on any plan." },
           ].map((item, i) => (
             <FadeIn key={i} delay={i * 0.05}><Accordion q={item.q} a={item.a} /></FadeIn>
           ))}

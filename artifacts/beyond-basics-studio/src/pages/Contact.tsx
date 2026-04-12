@@ -135,7 +135,6 @@ export default function Contact() {
             { q: "How quickly will I see results?", a: "Most clients see measurable improvements in profile views and calls within 30 days. Map Pack ranking improvements typically happen within 60–90 days. We track everything and report transparently." },
             { q: "What are your pricing options?", a: "Three tiers: Basic ($200/mo), Growth ($500/mo), and Premium ($1,000/mo). All are month-to-month with no lock-in." },
             { q: "Can you manage multiple locations?", a: "Yes. Growth covers up to 3 locations and Premium covers unlimited. We have clients on a single Premium plan managing 50+ locations." },
-            { q: "Do you guarantee results?", a: "We guarantee Top 3 Map Pack placement on Premium. We also offer a full refund if you see zero improvement in your first 60 days on any plan." },
           ].map((item, i) => (
             <FadeIn key={i} delay={i * 0.05}><Accordion q={item.q} a={item.a} /></FadeIn>
           ))}

@@ -67,21 +67,10 @@ export default function Home({ onAuditClick }: { onAuditClick: () => void }) {
               initial={{ y: "110%" }}
               animate={{ y: 0 }}
               transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
-              className="font-serif leading-none"
-              style={{ fontSize: "clamp(3.5rem, 10vw, 10rem)", color: "var(--sp-white)" }}
+              className="font-serif leading-tight"
+              style={{ fontSize: "clamp(2.2rem, 6vw, 6.5rem)", color: "var(--sp-white)" }}
             >
-              Beyond
-            </motion.h1>
-          </div>
-          <div className="overflow-hidden">
-            <motion.h1
-              initial={{ y: "110%" }}
-              animate={{ y: 0 }}
-              transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.17 }}
-              className="font-serif leading-none"
-              style={{ fontSize: "clamp(3.5rem, 10vw, 10rem)", color: "rgba(247,244,240,0.45)" }}
-            >
-              Basics Studio
+              Stop Losing Customers to Competitors Who Show Up First on Google Maps.
             </motion.h1>
           </div>
         </motion.div>
