@@ -28,6 +28,7 @@ export default function Navbar({ onAuditClick }: NavbarProps) {
     { href: "/", label: "Home" },
     { href: "/services", label: "Services" },
     { href: "/case-studies", label: "Work" },
+    { href: "/journal", label: "Journal" },
     { href: "/about", label: "About" },
     { href: "/contact", label: "Contact" },
   ];
