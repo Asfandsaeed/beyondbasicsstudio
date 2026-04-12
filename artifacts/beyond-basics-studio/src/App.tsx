@@ -13,6 +13,7 @@ import Services from "@/pages/Services";
 import CaseStudies from "@/pages/CaseStudies";
 import About from "@/pages/About";
 import Contact from "@/pages/Contact";
+import PrivacyPolicy from "@/pages/PrivacyPolicy";
 import NotFound from "@/pages/not-found";
 
 const queryClient = new QueryClient();
@@ -25,6 +26,7 @@ function Router({ onAuditClick }: { onAuditClick: () => void }) {
       <Route path="/case-studies" component={() => <CaseStudies onAuditClick={onAuditClick} />} />
       <Route path="/about" component={() => <About onAuditClick={onAuditClick} />} />
       <Route path="/contact" component={() => <Contact />} />
+      <Route path="/privacy" component={() => <PrivacyPolicy />} />
       <Route component={NotFound} />
     </Switch>
   );
