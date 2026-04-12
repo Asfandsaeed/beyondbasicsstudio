@@ -41,6 +41,11 @@
   --sp-rule:   #E0DDD8;   /* hairline dividers on light bg */
   --sp-rule-d: rgba(255,255,255,0.1);  /* hairline on dark bg */
 
+  /* Brand green palette — deep forest green identity */
+  --sp-green-deep: #163D2A;   /* darkest: display h1 on light backgrounds */
+  --sp-green:      #1A4D35;   /* brand green: h2 and primary serif headings */
+  --sp-green-mid:  #226040;   /* medium: h3 and supporting headings */
+
   /* Tailwind HSL mappings (light theme) */
   --background: 40 18% 96%;     /* #F7F4F0 */
   --foreground:  0  0% 7%;      /* #111111 */
@@ -94,6 +99,15 @@
 .section-light { background-color: var(--sp-white); color: var(--sp-black); }
 .section-cream { background-color: var(--sp-cream); color: var(--sp-black); }
 .section-dark  { background-color: var(--sp-ink);   color: var(--sp-white); }
+
+/* ── Green headings on light / cream sections ── */
+/* !important overrides React inline style={{ color: "..." }} */
+.section-light h1, .section-cream h1 { color: var(--sp-green-deep) !important; }
+.section-light h2, .section-cream h2 { color: var(--sp-green)      !important; }
+.section-light h3, .section-cream h3 { color: var(--sp-green-mid)  !important; }
+
+/* Navbar hero override — keep dark-background h1 on Home hero white */
+.section-dark h1, .section-dark h2, .section-dark h3 { color: inherit; }
 
 /* ── Label / eyebrow ── */
 .label {
