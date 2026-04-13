@@ -18,9 +18,10 @@ export default function Navbar({ onAuditClick }: NavbarProps) {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Pages with dark hero — nav needs light text initially
+  // All pages have a dark hero — nav needs light text until scrolled
+  const DARK_HERO_PAGES = ["/", "/services", "/case-studies", "/about", "/contact", "/journal", "/privacy", "/terms", "/sitemap"];
   useEffect(() => {
-    setDarkHero(location === "/");
+    setDarkHero(DARK_HERO_PAGES.includes(location));
     setMenuOpen(false);
   }, [location]);
 

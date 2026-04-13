@@ -68,7 +68,7 @@ export default function CaseStudies({ onAuditClick }: { onAuditClick: () => void
           <FadeIn><p className="label mb-6" style={{ color: "rgba(247,244,240,0.35)" }}>Work</p></FadeIn>
           <FadeUp>
             <h1 className="font-serif leading-tight" style={{ fontSize: "clamp(2.5rem, 7vw, 6.5rem)", color: "var(--sp-white)" }}>
-              Real results.<br />No stock photos.
+              Proof,<br />not pitches.
             </h1>
           </FadeUp>
           <FadeIn delay={0.2}>
