@@ -2,6 +2,7 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import SchemaMarkup from "@/components/SchemaMarkup";
+import { usePageMeta } from "@/hooks/usePageMeta";
 
 const ease = [0.25, 0.1, 0.25, 1];
 function FadeUp({ children, className, delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
@@ -25,6 +26,7 @@ const cases = [
 ];
 
 export default function CaseStudies({ onAuditClick }: { onAuditClick: () => void }) {
+  usePageMeta({ title: "Work — Beyond Basics Studio", description: "Proof, not pitches. Actual before/after results from real clients who chose to stop being invisible on Google Maps.", ogImage: "work.jpg", url: "/case-studies" });
   return (
     <div style={{ backgroundColor: "var(--sp-white)" }}>
       <SchemaMarkup schema={[

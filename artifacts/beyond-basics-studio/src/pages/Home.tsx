@@ -4,6 +4,7 @@ import { motion, useInView, useScroll, useTransform } from "framer-motion";
 import { ArrowRight, ArrowDown } from "lucide-react";
 import SchemaMarkup from "@/components/SchemaMarkup";
 import { articles } from "@/data/articles";
+import { usePageMeta } from "@/hooks/usePageMeta";
 
 const ease = [0.25, 0.1, 0.25, 1];
 
@@ -33,6 +34,7 @@ const services = [
 ];
 
 export default function Home({ onAuditClick }: { onAuditClick: () => void }) {
+  usePageMeta({ title: "Beyond Basics Studio — GBP Management Agency", description: "Stop losing customers to competitors who show up first on Google Maps. Beyond Basics Studio dominates Google Maps from $200/mo.", ogImage: "home.jpg", url: "/" });
   const heroRef = useRef(null);
   const { scrollYProgress } = useScroll({ target: heroRef, offset: ["start start", "end start"] });
   const heroY = useTransform(scrollYProgress, [0, 1], ["0%", "18%"]);

@@ -3,6 +3,7 @@ import { motion, useInView } from "framer-motion";
 import { ArrowRight, ArrowLeft } from "lucide-react";
 import { articles, Article } from "@/data/articles";
 import SchemaMarkup from "@/components/SchemaMarkup";
+import { usePageMeta } from "@/hooks/usePageMeta";
 
 const ease = [0.25, 0.1, 0.25, 1];
 
@@ -205,6 +206,7 @@ function ArticleView({ article, onBack, onNext, nextArticle }: {
 }
 
 export default function Journal({ onAuditClick }: { onAuditClick: () => void }) {
+  usePageMeta({ title: "Journal — Beyond Basics Studio", description: "From the Playbook. 10 expert articles on Google Business Profile strategy, local SEO, review growth, and Map Pack domination.", ogImage: "journal.jpg", url: "/journal" });
   const [selected, setSelected] = useState<Article | null>(null);
 
   const handleSelect = (article: Article) => {

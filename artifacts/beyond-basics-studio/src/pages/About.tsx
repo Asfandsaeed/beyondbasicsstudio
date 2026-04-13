@@ -2,6 +2,7 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import SchemaMarkup from "@/components/SchemaMarkup";
+import { usePageMeta } from "@/hooks/usePageMeta";
 
 const ease = [0.25, 0.1, 0.25, 1];
 function FadeUp({ children, className, delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
@@ -23,6 +24,7 @@ const team = [
 ];
 
 export default function About({ onAuditClick }: { onAuditClick: () => void }) {
+  usePageMeta({ title: "About — Beyond Basics Studio", description: "Data-driven GBP experts since 2025. The team behind 500+ managed profiles and a 98% client retention rate.", ogImage: "about.jpg", url: "/about" });
   return (
     <div style={{ backgroundColor: "var(--sp-white)" }}>
       <SchemaMarkup schema={[

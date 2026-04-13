@@ -2,6 +2,7 @@ import { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import { ArrowRight, Plus, Minus } from "lucide-react";
 import SchemaMarkup from "@/components/SchemaMarkup";
+import { usePageMeta } from "@/hooks/usePageMeta";
 
 const ease = [0.25, 0.1, 0.25, 1];
 function FadeUp({ children, className, delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
@@ -29,6 +30,7 @@ function Accordion({ q, a }: { q: string; a: string }) {
 }
 
 export default function Services({ onAuditClick }: { onAuditClick: () => void }) {
+  usePageMeta({ title: "Services — Beyond Basics Studio", description: "GBP tiers from Basic to Domination. Every tier is engineered to move the needle. Choose based on your ambition — not your budget.", ogImage: "services.jpg", url: "/services" });
   return (
     <div style={{ backgroundColor: "var(--sp-white)" }}>
       <SchemaMarkup schema={[

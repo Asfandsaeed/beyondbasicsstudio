@@ -3,6 +3,7 @@ import { motion, useInView } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { ArrowRight, Plus, Minus, CheckCircle } from "lucide-react";
 import SchemaMarkup from "@/components/SchemaMarkup";
+import { usePageMeta } from "@/hooks/usePageMeta";
 
 const ease = [0.25, 0.1, 0.25, 1];
 function FadeUp({ children, className, delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
@@ -32,6 +33,7 @@ function Accordion({ q, a }: { q: string; a: string }) {
 }
 
 export default function Contact() {
+  usePageMeta({ title: "Contact — Beyond Basics Studio", description: "Let's talk domination. Get your free GBP audit and start your journey to the top of Google Maps.", ogImage: "contact.jpg", url: "/contact" });
   const { register, handleSubmit, formState: { errors, isSubmitting, isSubmitSuccessful }, reset } = useForm<FormValues>();
   const onSubmit = async (_: FormValues) => { await new Promise(r => setTimeout(r, 1000)); };
   const inputCls = "w-full bg-transparent border-b py-3 font-sans text-sm outline-none transition-colors duration-200 placeholder:opacity-25";
