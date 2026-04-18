@@ -3,6 +3,8 @@ import { Link } from "wouter";
 import { motion, useInView } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { articles } from "@/data/articles";
+import { usePageMeta } from "@/hooks/usePageMeta";
+import SchemaMarkup from "@/components/SchemaMarkup";
 
 const ease = [0.25, 0.1, 0.25, 1];
 
@@ -19,7 +21,8 @@ function FadeIn({ children, delay = 0 }: { children: React.ReactNode; delay?: nu
 const mainPages = [
   { label: "Home", href: "/", desc: "GBP management agency overview" },
   { label: "Services", href: "/services", desc: "Pricing tiers — Basic, Growth, Premium" },
-  { label: "Work", href: "/case-studies", desc: "Real client case studies and results" },
+  { label: "Work", href: "/case-studies", desc: "Before/after stats across 6 client verticals" },
+  { label: "Customers", href: "/customers", desc: "30 full narrative case studies from real clients" },
   { label: "Journal", href: "/journal", desc: "Expert articles on GBP strategy and local SEO" },
   { label: "About", href: "/about", desc: "Our story, team, and mission" },
   { label: "Contact", href: "/contact", desc: "Get in touch or book a free audit" },
@@ -74,6 +77,7 @@ function SitemapGroup({
 }
 
 export default function Sitemap() {
+  usePageMeta({ title: "Sitemap — Beyond Basics Studio", description: "A complete index of all pages, service tiers, articles, and legal documents on beyondbasicsstudio.com.", ogImage: "home.jpg", url: "/sitemap" });
   const articleItems = [...articles].reverse().map((a) => ({
     label: a.title,
     href: "/journal",
@@ -82,6 +86,24 @@ export default function Sitemap() {
 
   return (
     <div style={{ backgroundColor: "var(--sp-white)" }}>
+      <SchemaMarkup schema={[
+        {
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "url": "https://www.beyondbasicsstudio.com/sitemap",
+          "name": "Sitemap — Beyond Basics Studio",
+          "description": "A complete index of all pages, service tiers, articles, and legal documents on beyondbasicsstudio.com.",
+          "isPartOf": { "@type": "WebSite", "url": "https://www.beyondbasicsstudio.com/" },
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.beyondbasicsstudio.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Sitemap", "item": "https://www.beyondbasicsstudio.com/sitemap" },
+          ],
+        },
+      ]} />
       {/* Hero */}
       <section className="section-dark border-b" style={{ borderColor: "var(--sp-rule-d)" }}>
         <div className="max-w-7xl mx-auto px-6 lg:px-12 pt-36 pb-24">

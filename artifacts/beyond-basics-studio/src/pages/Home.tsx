@@ -5,6 +5,7 @@ import { ArrowRight, ArrowDown } from "lucide-react";
 import SchemaMarkup from "@/components/SchemaMarkup";
 import { articles } from "@/data/articles";
 import { usePageMeta } from "@/hooks/usePageMeta";
+import { featuredCustomers } from "@/data/customers";
 
 const ease = [0.25, 0.1, 0.25, 1];
 
@@ -459,6 +460,57 @@ export default function Home({ onAuditClick }: { onAuditClick: () => void }) {
               <Link href="/journal" className="flex items-center gap-2 group label" style={{ color: "var(--sp-gray)" }}>
                 View all articles
                 <ArrowRight className="w-3.5 h-3.5 opacity-40 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300" />
+              </Link>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* ── FEATURED CUSTOMERS ── */}
+      <section className="section-cream border-b" style={{ borderColor: "var(--sp-rule)" }}>
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 py-24 lg:py-32">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+            <FadeUp>
+              <p className="label mb-4">Customers</p>
+              <h2 className="font-serif leading-tight" style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)", color: "var(--sp-black)" }}>
+                Real businesses.<br />Real results.
+              </h2>
+            </FadeUp>
+            <FadeIn delay={0.15}>
+              <Link href="/customers" className="flex items-center gap-2 group label shrink-0" style={{ color: "var(--sp-gray)" }}>
+                All 30 stories
+                <ArrowRight className="w-3.5 h-3.5 opacity-40 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300" />
+              </Link>
+            </FadeIn>
+          </div>
+
+          <div className="space-y-px border-t" style={{ borderColor: "var(--sp-rule)" }}>
+            {featuredCustomers.map((c, i) => (
+              <FadeIn key={c.id} delay={i * 0.04}>
+                <Link href="/customers">
+                  <div className="grid md:grid-cols-12 gap-6 py-6 border-b group hover:opacity-70 transition-opacity duration-200" style={{ borderColor: "var(--sp-rule)" }}>
+                    <div className="md:col-span-4 flex items-center gap-3">
+                      <span className="font-serif text-xl" style={{ color: "var(--sp-black)" }}>{c.business}</span>
+                      <span className="font-sans text-xs" style={{ color: "var(--sp-gray)" }}>{c.type}</span>
+                    </div>
+                    <div className="md:col-span-5">
+                      <p className="font-serif text-base leading-snug" style={{ color: "var(--sp-ink)" }}>"{c.quote1}"</p>
+                      <p className="font-sans text-xs mt-1" style={{ color: "var(--sp-gray)" }}>— {c.owner}</p>
+                    </div>
+                    <div className="md:col-span-3 flex items-center justify-end gap-3">
+                      <p className="font-sans text-xs text-right" style={{ color: "#163d2a" }}>{c.highlight}</p>
+                      <ArrowRight className="w-3.5 h-3.5 shrink-0 opacity-25 group-hover:opacity-70 group-hover:translate-x-1 transition-all duration-200" style={{ color: "var(--sp-black)" }} />
+                    </div>
+                  </div>
+                </Link>
+              </FadeIn>
+            ))}
+          </div>
+
+          <FadeIn delay={0.2}>
+            <div className="flex justify-center mt-12">
+              <Link href="/customers" className="btn btn-black">
+                Read all 30 stories <ArrowRight className="w-3.5 h-3.5" />
               </Link>
             </div>
           </FadeIn>

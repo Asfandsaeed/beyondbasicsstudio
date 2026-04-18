@@ -38,6 +38,7 @@ export default function Footer() {
                 ["Home", "/"],
                 ["Services", "/services"],
                 ["Work", "/case-studies"],
+                ["Customers", "/customers"],
                 ["Journal", "/journal"],
                 ["About", "/about"],
                 ["Contact", "/contact"],

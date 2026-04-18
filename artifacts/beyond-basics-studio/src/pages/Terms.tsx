@@ -1,7 +1,9 @@
 import { FadeUp, FadeIn } from "@/components/Animate";
 import SchemaMarkup from "@/components/SchemaMarkup";
+import { usePageMeta } from "@/hooks/usePageMeta";
 
 export default function Terms() {
+  usePageMeta({ title: "Terms & Conditions — Beyond Basics Studio", description: "Terms of use for Beyond Basics Studio's GBP management services. Understand your rights and our obligations.", ogImage: "home.jpg", url: "/terms" });
   const sections = [
     {
       title: "1. Services Overview",

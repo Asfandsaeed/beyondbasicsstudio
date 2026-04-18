@@ -1,7 +1,9 @@
 import { FadeUp, FadeIn } from "@/components/Animate";
 import SchemaMarkup from "@/components/SchemaMarkup";
+import { usePageMeta } from "@/hooks/usePageMeta";
 
 export default function PrivacyPolicy() {
+  usePageMeta({ title: "Privacy Policy — Beyond Basics Studio", description: "How Beyond Basics Studio collects, uses, and protects your personal and business data.", ogImage: "home.jpg", url: "/privacy" });
   const sections = [
     {
       title: "1. Information We Collect",

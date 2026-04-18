@@ -18,6 +18,7 @@ import PrivacyPolicy from "@/pages/PrivacyPolicy";
 import Terms from "@/pages/Terms";
 import Journal from "@/pages/Journal";
 import Sitemap from "@/pages/Sitemap";
+import Customers from "@/pages/Customers";
 import NotFound from "@/pages/not-found";
 
 const queryClient = new QueryClient();
@@ -48,6 +49,7 @@ function Router({ onAuditClick }: { onAuditClick: () => void }) {
       <Route path="/journal" component={() => <Journal onAuditClick={onAuditClick} />} />
       <Route path="/privacy" component={() => <PrivacyPolicy />} />
       <Route path="/terms" component={() => <Terms />} />
+      <Route path="/customers" component={() => <Customers onAuditClick={onAuditClick} />} />
       <Route path="/sitemap" component={() => <Sitemap />} />
       <Route component={NotFound} />
     </Switch>
