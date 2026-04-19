@@ -238,7 +238,7 @@ export default function Contact() {
               <div className="border p-8" style={{ borderColor: "var(--sp-rule)", backgroundColor: "var(--sp-cream)" }}>
                 <p className="label mb-4">Prefer a call?</p>
                 <p className="font-serif text-xl leading-snug mb-5" style={{ color: "var(--sp-black)" }}>Book a free 30-minute strategy session with our team.</p>
-                <p className="font-sans text-sm" style={{ color: "var(--sp-gray)" }}>calendly.com/beyondbasics</p>
+                <a href="https://calendly.com/beyondbasicsstudio/30min" target="_blank" rel="noopener noreferrer" className="font-sans text-sm" style={{ color: "var(--sp-gray)" }}>calendly.com/beyondbasicsstudio/30min</a>
               </div>
             </div>
           </FadeIn>
