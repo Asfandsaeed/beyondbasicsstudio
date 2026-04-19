@@ -264,7 +264,7 @@ export default function Home({ onAuditClick }: { onAuditClick: () => void }) {
                   className="grid grid-cols-12 gap-6 py-8 border-b group cursor-default"
                   style={{ borderColor: "var(--sp-rule)" }}
                 >
-                  <span className="col-span-1 font-sans text-xs pt-1" style={{ color: "var(--sp-gray)", opacity: 0.5 }}>{s.n}</span>
+                  <span className="col-span-1 font-sans text-xs pt-1" style={{ color: "var(--sp-gray)" }}>{s.n}</span>
                   <h3 className="col-span-5 font-serif text-2xl lg:text-3xl group-hover:opacity-60 transition-opacity duration-300" style={{ color: "var(--sp-black)" }}>{s.title}</h3>
                   <p className="col-span-5 col-start-8 font-sans text-sm leading-relaxed self-center" style={{ color: "var(--sp-gray)" }}>{s.desc}</p>
                   <div className="col-span-1 flex justify-end items-center">
@@ -328,7 +328,7 @@ export default function Home({ onAuditClick }: { onAuditClick: () => void }) {
                 <div key={row.keyword} className="flex items-center justify-between px-6 py-4 border-b" style={{ borderColor: "var(--sp-rule)" }}>
                   <span className="font-sans text-sm" style={{ color: "var(--sp-gray)" }}>{row.keyword}</span>
                   <div className="flex items-center gap-5">
-                    <span className="font-sans text-xs line-through" style={{ color: "var(--sp-gray)", opacity: 0.5 }}>{row.before}</span>
+                    <span className="font-sans text-xs line-through" style={{ color: "var(--sp-gray)" }}>{row.before}</span>
                     <span className="font-sans text-xs font-medium" style={{ color: "#2d6a4f" }}>{row.delta}</span>
                     <span className="font-serif text-xl" style={{ color: "var(--sp-black)" }}>{row.after}</span>
                   </div>
@@ -441,7 +441,7 @@ export default function Home({ onAuditClick }: { onAuditClick: () => void }) {
                   <div className="section-light px-8 py-8 group cursor-pointer h-full flex flex-col">
                     <div className="mb-5">
                       <span className="label block mb-1.5">{a.tag}</span>
-                      <span className="font-sans text-xs" style={{ color: "var(--sp-gray)", opacity: 0.5 }}>{a.date} · {a.readTime}</span>
+                      <span className="font-sans text-xs" style={{ color: "var(--sp-gray)" }}>{a.date} · {a.readTime}</span>
                     </div>
                     <h3 className="font-serif text-lg lg:text-xl leading-snug mb-4 group-hover:opacity-60 transition-opacity duration-300 flex-1" style={{ color: "var(--sp-black)" }}>{a.title}</h3>
                     <p className="font-sans text-sm leading-relaxed mb-6 line-clamp-3" style={{ color: "var(--sp-gray)" }}>{a.excerpt}</p>

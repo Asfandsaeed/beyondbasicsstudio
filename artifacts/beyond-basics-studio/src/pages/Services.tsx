@@ -142,7 +142,7 @@ export default function Services({ onAuditClick }: { onAuditClick: () => void })
                     <tr key={i} className="border-b" style={{ borderColor: "var(--sp-rule)" }}>
                       <td className="py-4 font-sans text-sm" style={{ color: "var(--sp-gray)" }}>{feat}</td>
                       {[b, g, p].map((val, j) => (
-                        <td key={j} className="py-4 text-center font-sans text-sm" style={{ color: val === "—" ? "rgba(17,17,17,0.2)" : "var(--sp-gray)" }}>{val}</td>
+                        <td key={j} className="py-4 text-center font-sans text-sm" style={{ color: "var(--sp-gray)" }}>{val}</td>
                       ))}
                     </tr>
                   ))}

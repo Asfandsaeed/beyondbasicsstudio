@@ -37,7 +37,7 @@ function ArticleCard({ article, onClick, index }: { article: Article; onClick: (
       >
         <div className="mb-5">
           <span className="label block mb-1.5">{article.tag}</span>
-          <span className="font-sans text-xs" style={{ color: "var(--sp-gray)", opacity: 0.45 }}>{article.date} · {article.readTime}</span>
+          <span className="font-sans text-xs" style={{ color: "var(--sp-gray)" }}>{article.date} · {article.readTime}</span>
         </div>
         <h2
           className="font-serif leading-snug mb-4 group-hover:opacity-60 transition-opacity duration-300 flex-1"
@@ -301,12 +301,12 @@ export default function Journal({ onAuditClick }: { onAuditClick: () => void }) 
             >
               <div className="grid md:grid-cols-12 gap-8 items-start">
                 <div className="md:col-span-1">
-                  <span className="font-sans text-xs" style={{ color: "var(--sp-gray)", opacity: 0.4 }}>{featured.number}</span>
+                  <span className="font-sans text-xs" style={{ color: "var(--sp-gray)" }}>{featured.number}</span>
                 </div>
                 <div className="md:col-span-7">
                   <div className="flex items-center gap-4 mb-5">
                     <span className="label">{featured.tag}</span>
-                    <span className="font-sans text-xs" style={{ color: "var(--sp-gray)", opacity: 0.5 }}>{featured.date}</span>
+                    <span className="font-sans text-xs" style={{ color: "var(--sp-gray)" }}>{featured.date}</span>
                   </div>
                   <h2
                     className="font-serif leading-tight group-hover:opacity-60 transition-opacity duration-300 mb-4"
@@ -356,10 +356,10 @@ export default function Journal({ onAuditClick }: { onAuditClick: () => void }) 
                     onClick={() => { handleSelect(article); }}
                     className="group w-full text-left grid grid-cols-12 items-baseline gap-4 py-5 hover:opacity-60 transition-opacity duration-200"
                   >
-                    <span className="col-span-1 font-sans text-xs" style={{ color: "var(--sp-gray)", opacity: 0.4 }}>{String(articles.length - i).padStart(2, "0")}</span>
+                    <span className="col-span-1 font-sans text-xs" style={{ color: "var(--sp-gray)" }}>{String(articles.length - i).padStart(2, "0")}</span>
                     <span className="col-span-2 label">{article.tag}</span>
                     <span className="col-span-7 font-serif text-base lg:text-lg leading-snug" style={{ color: "var(--sp-black)" }}>{article.title}</span>
-                    <span className="col-span-2 font-sans text-xs text-right" style={{ color: "var(--sp-gray)", opacity: 0.45 }}>{article.readTime}</span>
+                    <span className="col-span-2 font-sans text-xs text-right" style={{ color: "var(--sp-gray)" }}>{article.readTime}</span>
                   </button>
                 </FadeIn>
               </li>

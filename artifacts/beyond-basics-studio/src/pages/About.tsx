@@ -153,7 +153,7 @@ export default function About({ onAuditClick }: { onAuditClick: () => void }) {
             <FadeIn key={i} delay={i * 0.07}>
               <div className="grid md:grid-cols-12 gap-8 py-8 border-b items-start" style={{ borderColor: "var(--sp-rule)" }}>
                 <div className="md:col-span-1">
-                  <span className="font-sans text-xs" style={{ color: "var(--sp-gray)", opacity: 0.4 }}>0{i + 1}</span>
+                  <span className="font-sans text-xs" style={{ color: "var(--sp-gray)" }}>0{i + 1}</span>
                 </div>
                 <h3 className="md:col-span-4 font-serif text-2xl lg:text-3xl" style={{ color: "var(--sp-black)" }}>{v.title}</h3>
                 <p className="md:col-span-6 md:col-start-7 font-sans text-sm leading-relaxed self-center" style={{ color: "var(--sp-gray)" }}>{v.desc}</p>
