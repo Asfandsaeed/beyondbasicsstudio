@@ -32,7 +32,7 @@ export default function Footer() {
 
           {/* Pages */}
           <div>
-            <p className="label mb-5" style={{ color: "rgba(247,244,240,0.65)" }}>Pages</p>
+            <p className="label mb-5" style={{ color: "rgba(247,244,240,0.65)" }}>Explore</p>
             <ul className="space-y-3">
               {[
                 ["Home", "/"],
