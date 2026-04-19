@@ -57,6 +57,17 @@ export default defineConfig({
   build: {
     outDir: path.resolve(import.meta.dirname, "dist/public"),
     emptyOutDir: true,
+    target: "es2020",
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          "vendor-react": ["react", "react-dom"],
+          "vendor-motion": ["framer-motion"],
+          "vendor-query": ["@tanstack/react-query"],
+          "vendor-ui": ["@studio-freight/lenis", "wouter", "lucide-react"],
+        },
+      },
+    },
   },
   server: {
     port,

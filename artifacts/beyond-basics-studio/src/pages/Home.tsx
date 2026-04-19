@@ -416,7 +416,7 @@ export default function Home({ onAuditClick }: { onAuditClick: () => void }) {
           <div className="flex gap-16 items-center animate-marquee whitespace-nowrap">
             {["Urban Pizza", "Summit Dental", "City Auto", "Harbor Café", "Metro Fitness", "Peak Real Estate", "Blue Ridge Bakery", "Coastal Law Group",
               "Urban Pizza", "Summit Dental", "City Auto", "Harbor Café", "Metro Fitness", "Peak Real Estate", "Blue Ridge Bakery", "Coastal Law Group"].map((c, i) => (
-              <span key={i} className="font-serif text-2xl shrink-0" style={{ color: "var(--sp-gray)" }}>{c}</span>
+              <span key={i} className="font-serif text-2xl shrink-0" style={{ color: "#737373" }}>{c}</span>
             ))}
           </div>
         </div>

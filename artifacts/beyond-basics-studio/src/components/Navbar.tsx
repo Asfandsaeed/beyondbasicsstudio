@@ -36,9 +36,8 @@ export default function Navbar({ onAuditClick }: NavbarProps) {
   ];
 
   const onDark = darkHero && !scrolled;
-  const textColor = onDark ? "rgba(247,244,240,0.85)" : "var(--sp-black)";
-  const activeLinkStyle = onDark ? "opacity-100" : "opacity-100";
-  const inactiveLinkStyle = onDark ? "opacity-40 hover:opacity-70" : "opacity-40 hover:opacity-70";
+  const activeColor = onDark ? "rgba(247,244,240,0.95)" : "var(--sp-black)";
+  const inactiveColor = onDark ? "rgba(247,244,240,0.55)" : "rgba(17,17,17,0.60)";
 
   return (
     <header
@@ -55,7 +54,7 @@ export default function Navbar({ onAuditClick }: NavbarProps) {
           <Link href="/" className="flex items-baseline gap-2">
             <span
               className="font-serif text-xl tracking-tight leading-none"
-              style={{ color: textColor }}
+              style={{ color: activeColor }}
             >
               BBS
             </span>
@@ -73,10 +72,8 @@ export default function Navbar({ onAuditClick }: NavbarProps) {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`font-sans text-xs tracking-widest uppercase transition-opacity duration-200 ${
-                  location === link.href ? activeLinkStyle : inactiveLinkStyle
-                }`}
-                style={{ color: textColor }}
+                className="font-sans text-xs tracking-widest uppercase transition-colors duration-200"
+                style={{ color: location === link.href ? activeColor : inactiveColor }}
               >
                 {link.label}
               </Link>
@@ -101,7 +98,7 @@ export default function Navbar({ onAuditClick }: NavbarProps) {
           <button
             onClick={() => setMenuOpen(!menuOpen)}
             className="md:hidden"
-            style={{ color: textColor }}
+            style={{ color: activeColor }}
             aria-label={menuOpen ? "Close menu" : "Open menu"}
             aria-expanded={menuOpen}
           >
