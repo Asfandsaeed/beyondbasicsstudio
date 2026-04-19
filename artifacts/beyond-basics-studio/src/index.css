@@ -68,7 +68,7 @@
   --input:      40  8% 87%;
   --ring:        0  0% 30%;
 
-  --app-font-sans:  'Inter', system-ui, sans-serif;
+  --app-font-sans:  'Satoshi', system-ui, sans-serif;
   --app-font-serif: 'DM Serif Display', Georgia, serif;
   --app-font-mono:  Menlo, monospace;
   --radius: 0rem;
@@ -95,7 +95,7 @@
 
 /* ── Font helpers ── */
 .font-serif  { font-family: 'DM Serif Display', Georgia, serif; }
-.font-sans   { font-family: 'Inter', system-ui, sans-serif; }
+.font-sans   { font-family: 'Satoshi', system-ui, sans-serif; }
 
 /* ── Section backgrounds ── */
 .section-light { background-color: var(--sp-white); color: var(--sp-black); }
@@ -121,7 +121,7 @@
 
 /* ── Label / eyebrow ── */
 .label {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Satoshi', system-ui, sans-serif;
   font-size: 0.6875rem;
   font-weight: 500;
   letter-spacing: 0.12em;
@@ -141,7 +141,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Satoshi', system-ui, sans-serif;
   font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.08em;
