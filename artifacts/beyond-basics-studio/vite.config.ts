@@ -2,6 +2,7 @@ import { defineConfig, type Plugin } from "vite";
 import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 import path from "path";
+import fs from "fs";
 import runtimeErrorOverlay from "@replit/vite-plugin-runtime-error-modal";
 
 const rawPort = process.env.PORT;
@@ -24,6 +25,34 @@ if (!basePath) {
   throw new Error(
     "BASE_PATH environment variable is required but was not provided.",
   );
+}
+
+/**
+ * Injects the pre-generated noscript-content.html as a <noscript> block
+ * at the end of <body>. Invisible to regular visitors (JS is always on),
+ * but fully readable by any non-JS fetcher: LLM crawlers, curl, search bots.
+ *
+ * The file is built by scripts/generate-content.ts (runs as prebuild).
+ * Contains: navigation links, all page text, all customer story summaries,
+ * all article sections, team, pricing, FAQ, and contact info.
+ */
+function injectNoscriptContent(): Plugin {
+  return {
+    name: "inject-noscript-content",
+    apply: "build",
+    transformIndexHtml(html: string): string {
+      const p = path.resolve(import.meta.dirname, "public", "noscript-content.html");
+      if (!fs.existsSync(p)) return html;
+      const content = fs.readFileSync(p, "utf8");
+      // Inject BEFORE <div id="root"> so the content appears early in the byte
+      // stream. Even if a fetcher truncates a large response, the nav links and
+      // key sections are visible before the JS React shell.
+      return html.replace(
+        '<div id="root">',
+        `<noscript id="bbs-crawler-noscript">\n${content}\n</noscript>\n<div id="root">`,
+      );
+    },
+  };
 }
 
 /**
@@ -59,6 +88,7 @@ export default defineConfig({
   plugins: [
     react(),
     tailwindcss(),
+    injectNoscriptContent(),
     asyncStylesheetPlugin(),
     runtimeErrorOverlay(),
     ...(process.env.NODE_ENV !== "production" &&

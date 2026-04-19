@@ -568,3 +568,122 @@ const txt = lines(
 
 writeFileSync(join(PUBLIC, "llms-full.txt"), txt, "utf8");
 console.log("✓ public/llms-full.txt written");
+
+// ─── Write noscript-content.html ─────────────────────────────────────────────
+// Injected into <noscript> in the page <body> by the Vite build plugin.
+// Visible to every non-JS fetcher (LLM crawlers, curl, etc.).
+// Keeps the full-text content in llms-full.txt, but surfaces enough
+// structured HTML — with real <a> links — for crawlers to understand the site.
+
+const BASE = "https://asfandsaeed.github.io/beyondbasicsstudio";
+
+const esc = (s: string) =>
+  s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+
+const noscript = `
+<section id="bbs-crawler-content" aria-label="Site content for non-JS crawlers">
+<header>
+  <h1>Beyond Basics Studio — Google Business Profile Management Agency</h1>
+  <p>${esc(SITE.description)}</p>
+  <p>Email: ${esc(SITE.email)} | Offices: ${esc(SITE.offices.join(" · "))} | Founded: ${SITE.founded}</p>
+</header>
+
+<nav aria-label="Site navigation">
+  <ul>
+    <li><a href="${BASE}/">Home</a></li>
+    <li><a href="${BASE}/services">Services &amp; Pricing</a></li>
+    <li><a href="${BASE}/case-studies">Case Studies</a></li>
+    <li><a href="${BASE}/customers">Customer Stories</a></li>
+    <li><a href="${BASE}/journal">Journal</a></li>
+    <li><a href="${BASE}/about">About</a></li>
+    <li><a href="${BASE}/contact">Contact</a></li>
+    <li><a href="${BASE}/llms-full.txt">Full site content (plain text — all pages, articles, customer stories)</a></li>
+    <li><a href="${BASE}/content.json">Full site content (structured JSON)</a></li>
+  </ul>
+</nav>
+
+<section id="bbs-home">
+  <h2>Home</h2>
+  <p>Stop Losing Customers to Competitors Who Show Up First on Google Maps.</p>
+  <p>We manage, optimise, and dominate Google Business Profiles for local businesses ready to lead their market.</p>
+  <ul>
+    <li>500+ Active Clients</li>
+    <li>300% Average Review Growth</li>
+    <li>12× Average Call Increase</li>
+    <li>Top 3 Map Pack position within 90 days on average</li>
+  </ul>
+</section>
+
+<section id="bbs-services">
+  <h2><a href="${BASE}/services">Services &amp; Pricing</a></h2>
+  <p>All plans are month-to-month, no lock-in. Upgrades and downgrades available anytime with 30 days notice.</p>
+${SERVICES.map((s) => `  <article>
+    <h3>${esc(s.name)} — ${esc(s.price)} (${esc(s.locations)})${(s as any).badge ? " — " + esc((s as any).badge) : ""}</h3>
+    <p>${esc(s.tagline)}</p>
+    <ul>${s.features.map((f) => `<li>${esc(f)}</li>`).join("")}</ul>
+  </article>`).join("\n")}
+</section>
+
+<section id="bbs-case-studies">
+  <h2><a href="${BASE}/case-studies">Case Studies</a></h2>
+  <p>Actual before/after results from real clients.</p>
+${CASE_STUDIES.map((c) => `  <article>
+    <h3>${esc(c.business)} (${esc(c.type)}, ${esc(c.location)})</h3>
+    <p>Tier: ${esc(c.tier)} | Duration: ${esc(c.duration)} | Highlight: ${esc(c.highlight)}</p>
+    <p>Before: Views ${esc(c.before.views)}, Rank ${esc(c.before.rank)}, Reviews ${esc(c.before.reviews)}, Calls ${esc(c.before.calls)}</p>
+    <p>After: Views ${esc(c.after.views)}, Rank ${esc(c.after.rank)}, Reviews ${esc(c.after.reviews)}, Calls ${esc(c.after.calls)}</p>
+    <blockquote>${esc(c.quote)} — ${esc(c.author)}</blockquote>
+  </article>`).join("\n")}
+</section>
+
+<section id="bbs-customers">
+  <h2><a href="${BASE}/customers">Customer Stories (30 stories)</a></h2>
+  <p>Every story is real. Every business, every number, every quote.</p>
+${customers.map((c) => `  <article>
+    <h3>${esc(c.business)} (${esc(c.type)}, ${esc(c.location)}) — ${esc(c.tier)} tier</h3>
+    <p><strong>${esc(c.subtitle)}</strong>: ${esc(c.highlight)}</p>
+    <p>${esc(c.intro)}</p>
+    <p>${esc(c.story)}</p>
+    <blockquote>${esc(c.quote1)}</blockquote>
+    ${c.quote2 ? `<blockquote>${esc(c.quote2)}</blockquote>` : ""}
+    <ul>${c.stats.map((s) => `<li>${esc(s.label)}: ${esc(s.value)}</li>`).join("")}</ul>
+  </article>`).join("\n")}
+</section>
+
+<section id="bbs-journal">
+  <h2><a href="${BASE}/journal">Journal</a></h2>
+${articles.map((a) => `  <article>
+    <h3><a href="${BASE}/journal/${a.slug}">${esc(a.title)}</a></h3>
+    <p>${esc(a.date)} · ${esc(a.tag)} · ${esc(a.readTime)}</p>
+    <p>${esc(a.subtitle)}</p>
+    <p>${esc(a.excerpt)}</p>
+${a.sections.map((s) => `    ${s.heading ? `<h4>${esc(s.heading)}</h4>` : ""}
+    <p>${esc(s.body)}</p>`).join("\n")}
+  </article>`).join("\n")}
+</section>
+
+<section id="bbs-about">
+  <h2><a href="${BASE}/about">About</a></h2>
+  <p>In 2021, our founder Marcus Chen left his role on Google's local team after witnessing firsthand how a well-managed Google Business Profile could transform a local business — and how poorly most businesses managed theirs.</p>
+  <p>The average local business leaves 70% of its Google Maps potential untouched. Beyond Basics Studio was built to fix that. Today we manage 500+ profiles across 30+ countries.</p>
+  <ul>
+    <li>500+ Profiles Managed</li><li>30+ Countries Served</li><li>98% Client Retention</li><li>Founded 2021</li>
+  </ul>
+  <ul>
+${TEAM.map((m) => `    <li><strong>${esc(m.name)}</strong>, ${esc(m.role)}: ${esc(m.bio)}</li>`).join("\n")}
+  </ul>
+</section>
+
+<section id="bbs-contact">
+  <h2><a href="${BASE}/contact">Contact</a></h2>
+  <p>Email: <a href="mailto:${esc(SITE.email)}">${esc(SITE.email)}</a></p>
+  <p>Free 30-min strategy call: <a href="https://calendly.com/beyondbasicsstudio/30min">https://calendly.com/beyondbasicsstudio/30min</a></p>
+  <p>Offices: ${esc(SITE.offices.join(" · "))}</p>
+  <p>Response time: Within 24 hours</p>
+${CONTACT_FAQ.map((f) => `  <details><summary>${esc(f.q)}</summary><p>${esc(f.a)}</p></details>`).join("\n")}
+</section>
+</section>
+`.trim();
+
+writeFileSync(join(PUBLIC, "noscript-content.html"), noscript, "utf8");
+console.log("✓ public/noscript-content.html written");

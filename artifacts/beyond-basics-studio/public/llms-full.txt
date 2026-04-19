@@ -1,6 +1,6 @@
 # Beyond Basics Studio — Complete Site Content for LLMs
 
-> Generated: 2026-04-19T21:18:35.659Z
+> Generated: 2026-04-19T21:26:59.645Z
 > Source: beyondbasicsstudio.com/content.json (structured JSON version)
 > This file contains 100% of the site's text content — all pages, all articles in full, all customer stories.
 
