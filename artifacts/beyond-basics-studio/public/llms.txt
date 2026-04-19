@@ -1,0 +1,37 @@
+# Beyond Basics Studio
+
+> Beyond Basics Studio is a Google Business Profile (GBP) management agency founded in 2021, operating across San Francisco, Toronto, London, Dubai, and Beirut. We help local businesses dominate Google Maps and local search results through expert GBP optimisation, management, and strategy.
+
+## What We Do
+
+We manage and optimise Google Business Profiles for local businesses, franchises, and multi-location brands. Our work directly improves visibility on Google Maps, increases customer calls and foot traffic, and outranks competitors in the local 3-pack.
+
+## Services
+
+- **Basic** ($200/month) — GBP setup & optimisation, weekly posts, review monitoring, monthly reporting
+- **Growth** ($500/month) — Everything in Basic + photo strategy, Q&A management, competitor tracking, bi-weekly calls
+- **Premium** ($1,000/month) — Everything in Growth + multi-location management, priority support, dedicated account manager, custom strategy sessions
+
+## Pages
+
+- [Home](https://www.beyondbasicsstudio.com/) — Overview of the agency, hero message, key services, testimonials, and CTA
+- [Services](https://www.beyondbasicsstudio.com/services) — Full breakdown of our three service tiers and what each includes
+- [Case Studies / Work](https://www.beyondbasicsstudio.com/case-studies) — Client results and transformation stories
+- [Customers](https://www.beyondbasicsstudio.com/customers) — Testimonials and client social proof
+- [Journal](https://www.beyondbasicsstudio.com/journal) — Articles and insights on GBP management, local SEO, and Google Maps strategy
+- [About](https://www.beyondbasicsstudio.com/about) — Our story, mission, and team
+- [Contact](https://www.beyondbasicsstudio.com/contact) — Get in touch or book a free GBP audit
+
+## Contact
+
+- Email: hello@beyondbasics.studio
+- Free GBP Audit: https://www.beyondbasicsstudio.com/contact
+- Offices: San Francisco · Toronto · London · Dubai · Beirut
+
+## Brand Voice
+
+Minimal, editorial, direct. We write like a boutique Parisian agency that also understands ROI. No fluff — just results.
+
+## Optional: Full Content
+
+- [Sitemap](https://www.beyondbasicsstudio.com/sitemap.xml)
