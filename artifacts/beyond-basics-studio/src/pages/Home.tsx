@@ -110,7 +110,10 @@ export default function Home({ onAuditClick }: { onAuditClick: () => void }) {
           style={{ paddingTop: "5.5rem", paddingBottom: "1.5rem", borderBottom: "1px solid var(--sp-rule-d)" }}
         >
           <p className="label" style={{ color: "rgba(247,244,240,0.75)" }}>GBP Management Agency</p>
-          <p className="label" style={{ color: "rgba(247,244,240,0.65)" }}>Est. 2021 — SF · Toronto · London · Dubai · Beirut</p>
+          <p className="label" style={{ color: "rgba(247,244,240,0.65)" }}>
+            <span className="hidden sm:inline">Est. 2021 — SF · Toronto · London · Dubai · Beirut</span>
+            <span className="sm:hidden">Est. 2021</span>
+          </p>
         </div>
 
         {/* Headline — scroll parallax preserved, entrance animation removed for LCP */}
