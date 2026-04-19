@@ -86,6 +86,32 @@ export default function Services({ onAuditClick }: { onAuditClick: () => void })
               }
             }
           ]
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What's included in the initial setup?",
+              "acceptedAnswer": { "@type": "Answer", "text": "We begin with a comprehensive audit of your existing GBP, competitive analysis, and a full optimisation sprint — categories, attributes, business description, photos, and service areas — all within the first week." }
+            },
+            {
+              "@type": "Question",
+              "name": "How do you generate more reviews?",
+              "acceptedAnswer": { "@type": "Answer", "text": "We deploy proven post-transaction sequences via email and SMS, using Google's compliant review request methodology. Growth and Premium clients see an average 300% increase in monthly reviews within 60 days." }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I upgrade or downgrade my plan?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. You can change tiers at any time with 30 days notice. Upgrades activate immediately; downgrades take effect at the next billing cycle. No penalties or lock-in." }
+            },
+            {
+              "@type": "Question",
+              "name": "What reporting will I receive?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Detailed performance reports covering: profile views, search impressions, direction requests, call clicks, photo views, review growth, and map rank trends — weekly or monthly depending on your tier." }
+            },
+          ]
         }
       ]} />
 

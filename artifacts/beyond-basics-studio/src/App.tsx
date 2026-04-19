@@ -10,6 +10,7 @@ import AuditModal from "@/components/AuditModal";
 import CustomCursor from "@/components/CustomCursor";
 import CookieBanner from "@/components/CookieBanner";
 import Home from "@/pages/Home";
+import SchemaMarkup from "@/components/SchemaMarkup";
 
 const Services = lazy(() => import("@/pages/Services"));
 const CaseStudies = lazy(() => import("@/pages/CaseStudies"));
@@ -47,6 +48,7 @@ function Router({ onAuditClick }: { onAuditClick: () => void }) {
         <Route path="/case-studies" component={() => <CaseStudies onAuditClick={onAuditClick} />} />
         <Route path="/about" component={() => <About onAuditClick={onAuditClick} />} />
         <Route path="/contact" component={() => <Contact />} />
+        <Route path="/journal/:slug" component={() => <Journal onAuditClick={onAuditClick} />} />
         <Route path="/journal" component={() => <Journal onAuditClick={onAuditClick} />} />
         <Route path="/privacy" component={() => <PrivacyPolicy />} />
         <Route path="/terms" component={() => <Terms />} />
@@ -91,6 +93,44 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
+          <SchemaMarkup schema={[
+            {
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "@id": "https://asfandsaeed.github.io/beyondbasicsstudio/#website",
+              "url": "https://asfandsaeed.github.io/beyondbasicsstudio/",
+              "name": "Beyond Basics Studio",
+              "description": "Google Business Profile management agency — helping local businesses dominate Google Maps from $200/mo.",
+              "publisher": { "@id": "https://asfandsaeed.github.io/beyondbasicsstudio/#organization" },
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "@id": "https://asfandsaeed.github.io/beyondbasicsstudio/#organization",
+              "name": "Beyond Basics Studio",
+              "url": "https://asfandsaeed.github.io/beyondbasicsstudio/",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://asfandsaeed.github.io/beyondbasicsstudio/favicon.svg",
+                "width": 512,
+                "height": 512,
+              },
+              "description": "Beyond Basics Studio is a data-driven Google Business Profile agency founded in 2025. We manage 500+ GBP profiles worldwide.",
+              "foundingDate": "2025",
+              "areaServed": "Worldwide",
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "contactType": "customer service",
+                "email": "hello@beyondbasicsstudio.com",
+                "availableLanguage": "English",
+              },
+              "offers": [
+                { "@type": "Offer", "name": "Basic GBP Management", "price": "200", "priceCurrency": "USD" },
+                { "@type": "Offer", "name": "Growth GBP Management", "price": "500", "priceCurrency": "USD" },
+                { "@type": "Offer", "name": "Premium GBP Management", "price": "1000", "priceCurrency": "USD" },
+              ],
+            },
+          ]} />
           <ScrollToTop />
           <CustomCursor />
           <Navbar onAuditClick={() => setModalOpen(true)} />

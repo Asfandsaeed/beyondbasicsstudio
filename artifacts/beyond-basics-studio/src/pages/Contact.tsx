@@ -90,6 +90,32 @@ export default function Contact() {
             "email": "hello@beyondbasicsstudio.com",
             "url": "https://www.beyondbasicsstudio.com/"
           }
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What exactly is a Google Business Profile?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Your GBP is what appears in Google Maps and local search results. A well-optimised GBP is the highest-ROI local marketing asset available — yet most businesses manage it poorly. We fix that." }
+            },
+            {
+              "@type": "Question",
+              "name": "How quickly will I see results?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Most clients see measurable improvements in profile views and calls within 30 days. Map Pack ranking improvements typically happen within 60–90 days. We track everything and report transparently." }
+            },
+            {
+              "@type": "Question",
+              "name": "What are your pricing options?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Three tiers: Basic ($200/mo), Growth ($500/mo), and Premium ($1,000/mo). All are month-to-month with no lock-in." }
+            },
+            {
+              "@type": "Question",
+              "name": "Can you manage multiple locations?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Yes. Growth covers up to 5 locations and Premium covers up to 50. We have clients managing entire regional franchise networks on a single Premium plan." }
+            },
+          ]
         }
       ]} />
 

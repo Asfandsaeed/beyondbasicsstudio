@@ -1,12 +1,13 @@
 import { useEffect } from "react";
 
-const BASE = "https://asfandsaeed.github.io/beyondbasicsstudio";
+const SITE_BASE = "https://asfandsaeed.github.io/beyondbasicsstudio";
 
 interface PageMeta {
   title: string;
   description: string;
-  ogImage: string;
+  ogImage?: string;
   url?: string;
+  updateBrowserUrl?: boolean;
 }
 
 function setMeta(property: string, content: string) {
@@ -29,21 +30,40 @@ function setNameMeta(name: string, content: string) {
   el.content = content;
 }
 
-export function usePageMeta({ title, description, ogImage, url }: PageMeta) {
+function setCanonical(href: string) {
+  let el = document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
+  if (!el) {
+    el = document.createElement("link");
+    el.setAttribute("rel", "canonical");
+    document.head.appendChild(el);
+  }
+  el.href = href;
+}
+
+export function usePageMeta({ title, description, ogImage, url, updateBrowserUrl = false }: PageMeta) {
   useEffect(() => {
     document.title = title;
     setNameMeta("description", description);
 
-    const fullImage = `${BASE}/og/${ogImage}`;
-    const fullUrl = url ? `${BASE}${url}` : BASE;
+    const fullUrl = url ? `${SITE_BASE}${url}` : SITE_BASE;
+
+    if (ogImage) {
+      const fullImage = `${SITE_BASE}/og/${ogImage}`;
+      setMeta("og:image", fullImage);
+      setNameMeta("twitter:image", fullImage);
+    }
 
     setMeta("og:title", title);
     setMeta("og:description", description);
-    setMeta("og:image", fullImage);
     setMeta("og:url", fullUrl);
-
     setNameMeta("twitter:title", title);
     setNameMeta("twitter:description", description);
-    setNameMeta("twitter:image", fullImage);
-  }, [title, description, ogImage, url]);
+
+    setCanonical(fullUrl);
+
+    if (updateBrowserUrl && url) {
+      const base = (import.meta.env.BASE_URL as string).replace(/\/$/, "");
+      history.replaceState(null, "", base + url);
+    }
+  }, [title, description, ogImage, url, updateBrowserUrl]);
 }
