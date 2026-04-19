@@ -90,7 +90,7 @@ function CustomerCard({ c, index }: { c: CustomerCase; index: number }) {
               <div className="pb-12 grid md:grid-cols-12 gap-8 md:gap-12">
                 {/* Story */}
                 <div className="md:col-span-7">
-                  <p className="font-sans text-xs mb-6 uppercase tracking-widest" style={{ color: "var(--sp-gray)", opacity: 0.5 }}>{c.owner}</p>
+                  <p className="font-sans text-xs mb-6 uppercase tracking-widest" style={{ color: "var(--sp-gray)" }}>{c.owner}</p>
                   {c.story.split("\n\n").map((para, i) => (
                     <p key={i} className="font-sans text-sm leading-relaxed mb-4" style={{ color: "var(--sp-gray)" }}>{para}</p>
                   ))}

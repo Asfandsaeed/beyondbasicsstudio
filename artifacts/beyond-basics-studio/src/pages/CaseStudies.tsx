@@ -121,11 +121,11 @@ export default function CaseStudies({ onAuditClick }: { onAuditClick: () => void
 
                   {/* Before */}
                   <div className="md:col-span-3 section-cream p-8">
-                    <p className="label mb-5" style={{ color: "var(--sp-gray)", opacity: 0.6 }}>Before</p>
+                    <p className="label mb-5" style={{ color: "var(--sp-gray)" }}>Before</p>
                     {[["Profile Views", c.before.views], ["Map Rank", c.before.rank], ["Reviews", c.before.reviews], ["Monthly Calls", c.before.calls]].map(([label, val]) => (
                       <div key={label} className="mb-4">
-                        <p className="font-sans text-xs mb-0.5" style={{ color: "var(--sp-gray)", opacity: 0.6 }}>{label}</p>
-                        <p className="font-serif text-xl line-through decoration-1" style={{ color: "var(--sp-gray)", opacity: 0.6 }}>{val}</p>
+                        <p className="font-sans text-xs mb-0.5" style={{ color: "var(--sp-gray)" }}>{label}</p>
+                        <p className="font-serif text-xl line-through decoration-1" style={{ color: "var(--sp-gray)" }}>{val}</p>
                       </div>
                     ))}
                   </div>

@@ -150,7 +150,7 @@ export default function AuditModal({ isOpen, onClose }: AuditModalProps) {
                 <button type="submit" disabled={isSubmitting} className="btn btn-black w-full justify-center disabled:opacity-50">
                   {isSubmitting ? "Sending..." : <><span>Get My Free Audit</span><ArrowRight className="w-3.5 h-3.5" /></>}
                 </button>
-                <p className="font-sans text-xs text-center mt-4" style={{ color: "var(--sp-gray)", opacity: 0.6 }}>
+                <p className="font-sans text-xs text-center mt-4" style={{ color: "var(--sp-gray)" }}>
                   No commitment. Results within 24–48 hours.
                 </p>
               </div>

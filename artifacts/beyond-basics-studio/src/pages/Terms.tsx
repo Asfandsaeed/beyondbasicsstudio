@@ -118,7 +118,7 @@ export default function Terms() {
           <p className="font-sans text-sm leading-relaxed mb-3" style={{ color: "var(--sp-gray)" }}>
             You warrant that you are the authorised owner or manager of the GBP profile(s) and that your use of our services complies with Google's policies.
           </p>
-          <p className="font-sans text-sm leading-relaxed uppercase tracking-wide text-xs" style={{ color: "var(--sp-gray)", opacity: 0.6 }}>
+          <p className="font-sans text-sm leading-relaxed uppercase tracking-wide text-xs" style={{ color: "var(--sp-gray)" }}>
             No other warranties — express or implied — are made.
           </p>
         </>
