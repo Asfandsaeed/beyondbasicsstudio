@@ -9,8 +9,8 @@ import Footer from "@/components/Footer";
 import AuditModal from "@/components/AuditModal";
 import CustomCursor from "@/components/CustomCursor";
 import CookieBanner from "@/components/CookieBanner";
+import Home from "@/pages/Home";
 
-const Home = lazy(() => import("@/pages/Home"));
 const Services = lazy(() => import("@/pages/Services"));
 const CaseStudies = lazy(() => import("@/pages/CaseStudies"));
 const About = lazy(() => import("@/pages/About"));
@@ -62,6 +62,10 @@ function App() {
   const [modalOpen, setModalOpen] = useState(false);
 
   useEffect(() => {
+    // Skip Lenis on touch/mobile — native scroll is smoother and avoids forced reflows
+    const isTouchDevice = window.matchMedia("(hover: none) and (pointer: coarse)").matches;
+    if (isTouchDevice) return;
+
     const lenis = new Lenis({
       duration: 1.2,
       easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
