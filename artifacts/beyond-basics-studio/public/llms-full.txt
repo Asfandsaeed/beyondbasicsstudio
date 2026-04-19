@@ -1,0 +1,349 @@
+# Beyond Basics Studio — Full Site Content for LLMs
+
+> This file contains the complete text content of every page on beyondbasicsstudio.com, written for AI language models that cannot execute JavaScript. The site is a React SPA; this file provides all content in plain text so LLMs can read and reason about it without crawling.
+
+---
+
+## SITE OVERVIEW
+
+**Company:** Beyond Basics Studio
+**Type:** Google Business Profile (GBP) Management Agency
+**Founded:** 2021
+**Offices:** San Francisco · Toronto · London · Dubai · Beirut
+**Email:** hello@beyondbasics.studio
+**Calendly:** https://calendly.com/beyondbasicsstudio/30min
+**Website:** https://www.beyondbasicsstudio.com/
+**Pricing:** Basic $200/mo · Growth $500/mo · Premium $1,000/mo (month-to-month, no lock-in)
+
+---
+
+## PAGE: Home (/)
+
+**URL:** https://www.beyondbasicsstudio.com/
+**Title:** Beyond Basics Studio — GBP Management Agency
+**Description:** Stop losing customers to competitors who show up first on Google Maps. Beyond Basics Studio dominates Google Maps from $200/mo.
+
+### Hero
+Headline: "Stop Losing Customers to Competitors Who Show Up First on Google Maps."
+Subheadline: "We manage, optimise, and dominate Google Business Profiles for local businesses ready to lead their market."
+
+### Services Overview
+01. GBP Strategy & Optimisation — Full profile overhaul — category precision, attribute configuration, and continuous performance monitoring for maximum map visibility.
+02. Review & Reputation Mastery — Systematic review generation and AI-powered responses. Clients typically see 300% growth within 60 days.
+03. Content & Local Domination — Professional photo management, Google Posts strategy, Q&A optimisation, and citation building for sustained Map Pack dominance.
+
+### Stats
+- 500+ Active Clients
+- 300% Avg Review Growth
+- 12× Avg Call Increase
+- 90 Days to Top 3
+
+### Key Message
+"The average local business leaves 70% of its Google Maps potential untouched. We fix that."
+
+---
+
+## PAGE: Services (/services)
+
+**URL:** https://www.beyondbasicsstudio.com/services
+**Title:** Services — Beyond Basics Studio
+**Description:** GBP tiers from Basic to Domination. Every tier is engineered to move the needle.
+
+### Pricing Tiers
+
+#### Basic — $200/month
+- 1 location
+- Tagline: "Foundational maintenance for single-location businesses."
+- Full profile setup and optimisation
+- Daily automated + weekly manual audits
+- NAP monitoring across 50+ directories
+- 1–2 Google Posts per month
+- Q&A seeding
+- Basic review monitoring
+- 1-page monthly report
+- Email support
+
+#### Growth — $500/month (Most Popular)
+- Up to 5 locations
+- Tagline: "Proactive growth for multi-service businesses targeting top-3."
+- Everything in Basic, plus:
+- 4–8 posts + 2 videos per month
+- Review automation (100 requests/month)
+- AI response templates
+- Competitor gap analysis (10 rivals)
+- Bi-weekly dashboard
+- 5-page performance report
+- White-label review funnels + custom campaigns
+
+#### Premium — $1,000/month
+- Up to 50 locations
+- Tagline: "Enterprise-level GBP domination for multi-location brands."
+- Everything in Growth, plus:
+- Real-time 24/7 monitoring
+- 200+ review requests/month
+- Sentiment analysis
+- White-label funnels
+- 12+ posts/month
+- 360° tours
+- 100+ citations + schema markup
+- Custom KPI dashboard
+- Dedicated account manager
+
+### How It Works
+01. GBP Audit — Full profile analysis, competitive landscape, and opportunity mapping.
+02. Strategy — Custom domination roadmap built around your market and goals.
+03. Implement — Full optimisation sprint across every profile signal and asset.
+04. Optimise — Continuous AI tuning and transparent monthly reporting.
+
+### FAQ
+Q: What's included in the initial setup?
+A: We begin with a comprehensive audit of your existing GBP, competitive analysis, and a full optimisation sprint — categories, attributes, business description, photos, and service areas — all within the first week.
+
+Q: How do you generate more reviews?
+A: We deploy proven post-transaction sequences via email and SMS, using Google's compliant review request methodology. Growth and Premium clients see an average 300% increase in monthly reviews within 60 days.
+
+Q: Can I upgrade or downgrade my plan?
+A: Absolutely. You can change tiers at any time with 30 days notice. Upgrades activate immediately; downgrades take effect at the next billing cycle. No penalties or lock-in.
+
+Q: What reporting will I receive?
+A: Detailed performance reports covering: profile views, search impressions, direction requests, call clicks, photo views, review growth, and map rank trends — weekly or monthly depending on your tier.
+
+---
+
+## PAGE: Work / Case Studies (/case-studies)
+
+**URL:** https://www.beyondbasicsstudio.com/case-studies
+**Title:** Work — Beyond Basics Studio
+**Description:** Proof, not pitches. Actual before/after results from real clients.
+
+### Aggregate Stats
+- 500+ Active Clients
+- 300% Avg Review Growth
+- 12× Avg Call Increase
+- 90 Days to Top 3
+
+### Case Studies
+
+**Urban Pizza** (Restaurant, Chicago IL) — Growth tier, 90 days
+- Before: 180 views/mo, rank #14, 12 reviews, 8 calls/mo
+- After: 5,200 views/mo, rank #2, 214 reviews, 268 calls/mo
+- Highlight: +3,250% profile views
+- Quote: "We went from 8 calls a month to 268. Best investment we've ever made." — Maria T., Owner
+
+**Summit Dental** (Healthcare, Denver CO) — Premium tier, 60 days
+- Before: 320 views/mo, rank #9, 28 reviews, 22 calls/mo
+- After: 8,100 views/mo, rank #1, 312 reviews, 190 calls/mo
+- Highlight: #1 in Local Map Pack
+- Quote: "From page-2 obscurity to the top spot. New patients up 750%." — Dr. James R., Practice Owner
+
+**City Auto Repair** (Automotive, Austin TX) — Growth tier, 120 days
+- Before: 95 views/mo, rank #11, 6 reviews, 5 calls/mo
+- After: 3,800 views/mo, rank #3, 187 reviews, 145 calls/mo
+- Highlight: +2,800% call volume
+- Quote: "I thought GBP was just a listing. It's now my biggest revenue driver." — Carlos M., Owner
+
+**Harbor Café** (Café & Bakery, Portland OR) — Premium tier, 75 days
+- Before: 210 views/mo, rank #7, 19 reviews, 12 calls/mo
+- After: 6,400 views/mo, rank #1, 401 reviews, 98 calls/mo
+- Highlight: 400+ Google Reviews
+- Quote: "Our weekend wait times doubled. Best problem we've ever had." — Sarah L., Co-owner
+
+**Metro Fitness** (Gym & Fitness, Miami FL) — Premium tier, 90 days
+- Before: 440 views/mo, rank #8, 31 reviews, 18 calls/mo
+- After: 9,200 views/mo, rank #2, 560 reviews, 312 calls/mo
+- Highlight: 5× membership signups
+- Quote: "New membership signups from Google Maps increased 5x. The ROI is insane." — Derek J., Marketing Director
+
+**Peak Real Estate** (Real Estate, Seattle WA) — Growth tier, 105 days
+- Before: 120 views/mo, rank #15, 8 reviews, 4 calls/mo
+- After: 4,100 views/mo, rank #3, 143 reviews, 89 calls/mo
+- Highlight: 4 direct Map Pack closes
+- Quote: "We closed 4 listings in one month that came directly from Google Maps." — Amanda P., Principal Agent
+
+---
+
+## PAGE: Customers (/customers)
+
+**URL:** https://www.beyondbasicsstudio.com/customers
+**Title:** Customers — Beyond Basics Studio
+**Description:** 30 real stories of local businesses that stopped being invisible on Google Maps.
+
+### Aggregate Stats
+- 30+ Detailed Case Studies
+- 18 Industries Covered
+- 340% Avg Inquiry Increase
+- $1.2M Single Client Storm Season
+
+### Customer Stories (Selection)
+
+**Apex Pizza** (Restaurant, Chicago IL) — Growth tier
+- Stats: 4,200 monthly profile views, +3× direction requests, 18 new reviews in 60 days, booked solid within 90 days
+- Story: Marco DiSalvo had been making great pizza since 2013 but was invisible online. Beyond Basics rebuilt the profile — new atmospheric photos weekly, all missing fields completed, posting cadence synced to Google's freshness signals. Month 3: 4,200 profile views from 200.
+- Quote: "People started calling and saying, 'I saw your place on Google and had to try it.' That had never happened before. I make great pizza. I just didn't exist on the internet."
+
+**ClearFlow Plumbing** (Plumbing, Austin TX) — Growth tier
+- Stats: Map Pack #1, 5× emergency call increase, +180% revenue in 90 days, 6 high-intent keywords in top 3
+- Story: Dave Hutchins had 22 years of experience but duplicate listings, inconsistent NAP data, and zero Q&A. We killed duplicates, corrected data across every major directory, and seeded 30+ hyper-local Q&A entries. Within 11 weeks: #1 for "leak repair Austin."
+- Quote: "I had to turn down work last March. Twenty-two years. Never happened once before."
+
+**Silverline Dental** (Dental Group, Multi-site) — Premium tier
+- Stats: +250% direction requests, 50+ directories corrected, +35% inbound calls in 8 weeks, 2 new Map Pack entries
+- Quote: "It was like someone turned the lights back on. Same shop. Same guys. Same work. Just suddenly visible again."
+
+**Blossom & Brew Salon** (Hair Salon, Portland OR) — Growth tier
+- Stats: Map Pack #2, +190% booking inquiries via GBP, 85 new reviews in 10 weeks, +22% avg booking value
+- Story: The salon at #1 wasn't better — it was just more strategically visible. We reverse-engineered the top competitor's visual pattern and executed it better, stacked attributes, launched weekly seasonal posts, and built review response templates that sounded like the owner.
+- Quote: "I stopped feeling invisible. Google finally sees us the way our regulars always have."
+
+**TrustFlow Law Group** (Legal, Atlanta GA) — Growth tier
+- Stats: +340% case inquiry submissions, 30+ Q&A entries indexed, 15+ new case leads/month, top 3 voice search ranking
+- Story: Their GBP was functional but hollow — nothing built for voice search. We unlocked every relevant attribute, built 30+ Q&A entries in natural speech, rewrote every service description, and added offer posts.
+- Quote: "We thought voice search was for pizza orders. Apparently people shop for lawyers that way too."
+
+---
+
+## PAGE: Journal (/journal)
+
+**URL:** https://www.beyondbasicsstudio.com/journal
+**Title:** Journal — Beyond Basics Studio
+**Description:** Insights, research, and case studies on GBP management and local SEO.
+
+### Articles
+
+**"How We Achieved 347% Review Growth for 127 Local Businesses in 90 Days Using GBP Automation"**
+- Date: Nov 20, 2025 · 9 min read
+- Slug: /journal/347-percent-review-growth
+- Excerpt: Between January and April of last year, across 127 local businesses, we grew aggregate Google review counts by 347%. Not impressions. Not clicks. Actual, verified, customer-written reviews. Here's what actually happened — and how you replicate it.
+
+**"The 2026 Google Map Pack Algorithm: 17 Changes Local Businesses Must Adapt To Immediately"**
+- Date: Dec 05, 2025 · 11 min read
+- Slug: /journal/2026-map-pack-algorithm
+- Excerpt: After 18 months tracking 300 profiles across 22 industries, here are the 17 changes that matter. The algorithm is rewarding active, engaged, consistent businesses with accurate information, recent customer feedback, and genuine community presence.
+
+**"Why 92% of GBP Profiles Fail: Our 5-Point Audit Checklist That Fixed 500+ Profiles"**
+- Date: Dec 20, 2025 · 8 min read
+- Slug: /journal/92-percent-gbp-profiles-fail
+- Excerpt: Ninety-two percent of the Google Business Profiles we've audited contain at least one issue severe enough to meaningfully suppress local search performance. Here's the five-point checklist that changed that for 500+ businesses.
+
+**"GBP Categories Master List: How We Ranked Clients #1 Using Hidden Secondary Categories"**
+- Date: Jan 16, 2026 · 7 min read
+- Slug: /journal/gbp-categories-master-list
+- Excerpt: Not all GBP categories are visible in the standard selection interface. There's a longer, more specific list in Google's backend. Here's how we've used it to drive 180%+ visibility gains for our clients.
+
+**"From 0 to 5,000 Monthly Views: Case Study of a Restaurant's GBP Transformation"**
+- Date: Jan 30, 2026 · 8 min read
+- Slug: /journal/martas-kitchen-case-study
+- Excerpt: In October 2023, Marta's Kitchen received 174 views on their Google Business Profile. By October 2024, that number was 5,340. A 2,969% increase over 12 months. This is the full story — month by month — with the actual numbers.
+
+**"The AI Review Response System That Boosts Ratings 0.8 Stars Without Writing a Word"**
+- Date: Feb 14, 2026 · 7 min read
+- Slug: /journal/ai-review-response-system
+- Excerpt: Between July 2023 and December 2024, across 89 client profiles, average star ratings increased by 0.8 stars using our MapMaster AI review response system. None of it came from generating reviews. All of it came from how businesses responded to the ones they had.
+
+**"Multi-Location GBP Domination: Managing 50 Profiles Without Losing Control"**
+- Date: Feb 28, 2026 · 8 min read
+- Slug: /journal/multi-location-gbp-domination
+- Excerpt: Managing one profile well requires attention. Managing ten requires systems. Managing 50 requires systems and governance. The difference between those two things is what most brands discover the hard way.
+
+**"Google Posts ROI Revealed: Which Content Types Drive 4× More Calls (Data from 300 Profiles)"**
+- Date: Mar 12, 2026 · 7 min read
+- Slug: /journal/google-posts-roi
+- Excerpt: Before we ran this analysis, most of our team had intuitive beliefs about which Google Post types perform best. We were wrong about the relative magnitude of the differences, and completely wrong about which post type drives phone call conversions.
+
+---
+
+## PAGE: About (/about)
+
+**URL:** https://www.beyondbasicsstudio.com/about
+**Title:** About — Beyond Basics Studio
+**Description:** Data-driven GBP experts since 2021. The team behind 500+ managed profiles and a 98% client retention rate.
+
+### Hero
+"Data-driven GBP experts since 2021."
+
+### Our Story
+In 2021, our founder Marcus Chen left his role on Google's local team after witnessing firsthand how a well-managed Google Business Profile could transform a local business — and how poorly most businesses managed theirs.
+
+The average local business leaves 70% of its Google Maps potential untouched. Not because they don't care — because they lack the time, expertise, and tools to do it right.
+
+Beyond Basics Studio was built to fix that. Today we manage 500+ profiles across 30+ countries, delivering results that most business owners thought were impossible.
+
+### Stats
+- 500+ Profiles Managed
+- 30+ Countries Served
+- 98% Client Retention
+- Founded 2021
+
+### The Team
+
+**Marcus Chen** — CEO & Founder
+Former Google local team lead with 10 years of algorithm expertise. Built Beyond Basics to give every local business the competitive intelligence only large brands enjoyed.
+
+**Priya Sharma** — Head of GBP Operations
+Managed over 1,200 GBP profiles across 40+ industries. The engine behind our 98% client retention rate.
+
+**James O'Reilly** — AI Strategy Director
+Built MapMaster™ from the ground up. Data scientist by training, local SEO obsessive by nature.
+
+**Sofia Mendez** — Client Success Lead
+The reason clients stay. Sofia ensures every client feels heard, sees results, and grows with us long term.
+
+### What We Stand For
+01. Transparent Reporting — No smoke, no mirrors. Every metric is real, verifiable, and tied to your business growth.
+02. AI-Powered Precision — MapMaster™ runs 24/7, testing and optimising faster than any competitor can react.
+03. Results-First Culture — We celebrate outcomes — not activity. Our team is incentivised around your profile's actual performance.
+
+---
+
+## PAGE: Contact (/contact)
+
+**URL:** https://www.beyondbasicsstudio.com/contact
+**Title:** Contact — Beyond Basics Studio
+**Description:** Let's talk domination. Get your free GBP audit and start your journey to the top of Google Maps.
+
+### Hero
+"Let's talk domination."
+
+### Contact Details
+- Email: hello@beyondbasics.studio
+- Offices: San Francisco · Toronto · London · Dubai · Beirut
+- Response Time: Within 24 hours
+- Free 30-minute strategy call: https://calendly.com/beyondbasicsstudio/30min
+
+### Contact Form Fields
+- Full Name (required)
+- Email Address (required)
+- Phone (optional)
+- GBP Profile URL (required)
+- Tier Interest: Basic $200/mo · Growth $500/mo · Premium $1,000/mo · Not sure yet
+- Message (optional)
+
+### FAQ
+Q: What exactly is a Google Business Profile?
+A: Your GBP is what appears in Google Maps and local search results. A well-optimised GBP is the highest-ROI local marketing asset available — yet most businesses manage it poorly. We fix that.
+
+Q: How quickly will I see results?
+A: Most clients see measurable improvements in profile views and calls within 30 days. Map Pack ranking improvements typically happen within 60–90 days. We track everything and report transparently.
+
+Q: What are your pricing options?
+A: Three tiers: Basic ($200/mo), Growth ($500/mo), and Premium ($1,000/mo). All are month-to-month with no lock-in.
+
+Q: Can you manage multiple locations?
+A: Yes. Growth covers up to 5 locations and Premium covers up to 50. We have clients managing entire regional franchise networks on a single Premium plan.
+
+---
+
+## TECHNOLOGY & PROPRIETORY TOOLS
+
+**MapMaster™** — Beyond Basics Studio's proprietary AI platform. Runs 24/7, continuously testing and optimising GBP signals including review responses, post cadence, photo strategy, Q&A seeding, and category architecture. Powers the review response system that increased average star ratings by 0.8 across 89 client profiles.
+
+---
+
+## SITEMAP
+- https://www.beyondbasicsstudio.com/
+- https://www.beyondbasicsstudio.com/services
+- https://www.beyondbasicsstudio.com/case-studies
+- https://www.beyondbasicsstudio.com/customers
+- https://www.beyondbasicsstudio.com/journal
+- https://www.beyondbasicsstudio.com/about
+- https://www.beyondbasicsstudio.com/contact

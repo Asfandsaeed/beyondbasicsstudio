@@ -8,30 +8,42 @@ We manage and optimise Google Business Profiles for local businesses, franchises
 
 ## Services
 
-- **Basic** ($200/month) — GBP setup & optimisation, weekly posts, review monitoring, monthly reporting
-- **Growth** ($500/month) — Everything in Basic + photo strategy, Q&A management, competitor tracking, bi-weekly calls
-- **Premium** ($1,000/month) — Everything in Growth + multi-location management, priority support, dedicated account manager, custom strategy sessions
+- **Basic** ($200/month) — Single location. GBP setup and optimisation, daily audits, NAP monitoring across 50+ directories, 1–2 Google Posts/month, Q&A seeding, review monitoring, monthly report, email support.
+- **Growth** ($500/month, most popular) — Up to 5 locations. Everything in Basic + 4–8 posts and 2 videos/month, review automation (100 requests/month), AI response templates, competitor gap analysis, bi-weekly dashboard, 5-page report.
+- **Premium** ($1,000/month) — Up to 50 locations. Everything in Growth + real-time 24/7 monitoring, 200+ review requests/month, sentiment analysis, white-label funnels, 12+ posts/month, 360° tours, 100+ citations, dedicated account manager.
+
+All plans are month-to-month with no lock-in. Upgrades and downgrades available at any time with 30 days notice.
+
+## Key Stats
+- 500+ profiles managed
+- 30+ countries served
+- 98% client retention rate
+- Avg 300% review growth
+- Avg 12× call volume increase
+- Top 3 Map Pack position within 90 days (average)
 
 ## Pages
 
-- [Home](https://www.beyondbasicsstudio.com/) — Overview of the agency, hero message, key services, testimonials, and CTA
-- [Services](https://www.beyondbasicsstudio.com/services) — Full breakdown of our three service tiers and what each includes
-- [Case Studies / Work](https://www.beyondbasicsstudio.com/case-studies) — Client results and transformation stories
-- [Customers](https://www.beyondbasicsstudio.com/customers) — Testimonials and client social proof
-- [Journal](https://www.beyondbasicsstudio.com/journal) — Articles and insights on GBP management, local SEO, and Google Maps strategy
-- [About](https://www.beyondbasicsstudio.com/about) — Our story, mission, and team
-- [Contact](https://www.beyondbasicsstudio.com/contact) — Get in touch or book a free GBP audit
+- [Home](https://www.beyondbasicsstudio.com/) — Agency overview, services, hero message, stats, and CTA
+- [Services](https://www.beyondbasicsstudio.com/services) — Full pricing and feature breakdown for all three tiers
+- [Work / Case Studies](https://www.beyondbasicsstudio.com/case-studies) — Before/after results from 6 featured clients across restaurant, dental, auto, café, gym, and real estate
+- [Customers](https://www.beyondbasicsstudio.com/customers) — 30 detailed client stories across 18 industries with quotes and stats
+- [Journal](https://www.beyondbasicsstudio.com/journal) — 8+ long-form articles on GBP strategy, algorithm changes, review automation, and local SEO
+- [About](https://www.beyondbasicsstudio.com/about) — Founding story, team (4 members), values, and company stats
+- [Contact](https://www.beyondbasicsstudio.com/contact) — Contact form, email, office locations, 30-min Calendly booking, FAQ
 
 ## Contact
 
 - Email: hello@beyondbasics.studio
 - Free GBP Audit: https://www.beyondbasicsstudio.com/contact
+- Free 30-min strategy call: https://calendly.com/beyondbasicsstudio/30min
 - Offices: San Francisco · Toronto · London · Dubai · Beirut
 
 ## Brand Voice
 
-Minimal, editorial, direct. We write like a boutique Parisian agency that also understands ROI. No fluff — just results.
+Minimal, editorial, direct. No fluff — just results.
 
-## Optional: Full Content
+## Optional: Full Content (all pages as plain text)
 
-- [Sitemap](https://www.beyondbasicsstudio.com/sitemap.xml)
+- [Full site content for LLMs](https://www.beyondbasicsstudio.com/llms-full.txt)
+- [XML Sitemap](https://www.beyondbasicsstudio.com/sitemap.xml)
