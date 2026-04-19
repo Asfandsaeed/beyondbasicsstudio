@@ -32,8 +32,8 @@
     <!-- Critical CSS: inlined — zero render-blocking, font available at parse time -->
     <style>
       *, *::before, *::after { box-sizing: border-box; }
-      html { -webkit-text-size-adjust: 100%; }
-      body { margin: 0; background: #0D0D0D; }
+      html { -webkit-text-size-adjust: 100%; overflow-x: hidden; }
+      body { margin: 0; background: #0D0D0D; overflow-x: hidden; }
 
       /* Self-hosted DM Serif Display — loaded via preload above, no network wait */
       @font-face {
