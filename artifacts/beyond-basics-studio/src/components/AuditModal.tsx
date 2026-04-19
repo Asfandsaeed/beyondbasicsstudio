@@ -116,6 +116,9 @@ export default function AuditModal({ isOpen, onClose }: AuditModalProps) {
                   <input
                     {...register(key, {
                       ...(required ? { required: "Required" } : {}),
+                      ...(key === "email" ? {
+                        pattern: { value: /.+@.+\..+/, message: "Please enter a valid email address" },
+                      } : {}),
                       ...(key === "gbpUrl" ? {
                         validate: (val) => {
                           if (!val) return true;
