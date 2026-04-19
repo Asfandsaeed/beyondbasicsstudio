@@ -1,0 +1,77 @@
+export const homeFeaturedArticles = [
+  {
+    slug: "200-basic-plan-breakdown",
+    tag: "Pricing",
+    date: "Apr 08, 2026",
+    readTime: "7 min read",
+    title: "The $200/mo GBP Tier That Outperforms $5K Agency Packages: Our Basic Plan Breakdown",
+    excerpt: "We are about to make an argument that is not in our financial interest to make. Most local businesses do not need a $5,000-per-month local SEO retainer. They need about $200 worth of well-executed monthly GBP management — and for many of them, that $200 will drive better results.",
+  },
+  {
+    slug: "suspend-proof-your-gbp",
+    tag: "Guide",
+    date: "Mar 25, 2026",
+    readTime: "8 min read",
+    title: "How to Suspend-Proof Your GBP: Lessons from Recovering 43 Suspended Profiles",
+    excerpt: "Of all the things that happen in local SEO, a GBP suspension is the one that produces the most panic per square inch. Since 2021, we've managed recovery for 43 suspended profiles with a 91% success rate. Here's what those suspensions taught us about prevention.",
+  },
+  {
+    slug: "google-posts-roi",
+    tag: "Research",
+    date: "Mar 12, 2026",
+    readTime: "7 min read",
+    title: "Google Posts ROI Revealed: Which Content Types Drive 4X More Calls (Data from 300 Profiles)",
+    excerpt: "Before we ran this analysis, most of our team had intuitive beliefs about which Google Post types perform best. We were wrong about the relative magnitude of the differences, and completely wrong about which post type drives phone call conversions.",
+  },
+];
+
+export const homeFeaturedCustomers = [
+  {
+    id: "apex-pizza",
+    business: "Apex Pizza",
+    owner: "Marco DiSalvo",
+    type: "Restaurant",
+    highlight: "4,200 monthly views (from 200)",
+    quote1: "People started calling and saying, 'I saw your place on Google and had to try it.' That had never happened before. I make great pizza. I just didn't exist on the internet.",
+  },
+  {
+    id: "clearflow-plumbing",
+    business: "ClearFlow Plumbing",
+    owner: "Dave Hutchins",
+    type: "Plumbing",
+    highlight: "#1 for 'leak repair Austin' + 5× emergency calls",
+    quote1: "I had to turn down work last March. Twenty-two years. Never happened once before.",
+  },
+  {
+    id: "silverline-dental",
+    business: "Silverline Dental",
+    owner: "Dr. Priya Nambiar",
+    type: "Dental Group",
+    highlight: "All 3 locations hit 4.8 stars + 220 new reviews",
+    quote1: "New patients now mention our rating when they book. They say that number out loud on the phone. That never happened before.",
+  },
+  {
+    id: "precision-auto-tech",
+    business: "Precision Auto Tech",
+    owner: "Ray Kowalski",
+    type: "Auto Repair",
+    highlight: "250% direction requests in 60 days",
+    quote1: "It was like someone turned the lights back on. Same shop. Same guys. Same work. Just suddenly visible again.",
+  },
+  {
+    id: "blossom-brew-salon",
+    business: "Blossom & Brew Salon",
+    owner: "Jen Morales",
+    type: "Hair Salon",
+    highlight: "#2 Map Pack + 190% booking inquiries",
+    quote1: "I stopped feeling invisible. Google finally sees us the way our regulars always have.",
+  },
+  {
+    id: "trustflow-law",
+    business: "TrustFlow Law Group",
+    owner: "Alex Drummond",
+    type: "Legal",
+    highlight: "340% case inquiry increase via voice search",
+    quote1: "We thought voice search was for pizza orders. Apparently people shop for lawyers that way too.",
+  },
+];

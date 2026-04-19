@@ -3,9 +3,8 @@ import { Link } from "wouter";
 import { motion, useInView, useScroll, useTransform } from "framer-motion";
 import { ArrowRight, ArrowDown } from "lucide-react";
 import SchemaMarkup from "@/components/SchemaMarkup";
-import { articles } from "@/data/articles";
 import { usePageMeta } from "@/hooks/usePageMeta";
-import { featuredCustomers } from "@/data/customers";
+import { homeFeaturedArticles, homeFeaturedCustomers } from "@/data/homeFeaturedData";
 
 const ease = [0.25, 0.1, 0.25, 1];
 
@@ -232,7 +231,7 @@ export default function Home({ onAuditClick }: { onAuditClick: () => void }) {
               "—", "Google Posts", "—", "AI-Powered Optimisation", "—",
               "500+ Profiles Active", "—", "Worldwide", "—",
             ].map((t, i) => (
-              <span key={i} className="label shrink-0" style={{ color: "rgba(247,244,240,0.3)" }}>{t}</span>
+              <span key={i} className="label shrink-0" style={{ color: "rgba(247,244,240,0.65)" }}>{t}</span>
             ))}
           </div>
         </div>
@@ -417,7 +416,7 @@ export default function Home({ onAuditClick }: { onAuditClick: () => void }) {
           <div className="flex gap-16 items-center animate-marquee whitespace-nowrap">
             {["Urban Pizza", "Summit Dental", "City Auto", "Harbor Café", "Metro Fitness", "Peak Real Estate", "Blue Ridge Bakery", "Coastal Law Group",
               "Urban Pizza", "Summit Dental", "City Auto", "Harbor Café", "Metro Fitness", "Peak Real Estate", "Blue Ridge Bakery", "Coastal Law Group"].map((c, i) => (
-              <span key={i} className="font-serif text-2xl shrink-0" style={{ color: "rgba(17,17,17,0.1)" }}>{c}</span>
+              <span key={i} className="font-serif text-2xl shrink-0" style={{ color: "var(--sp-gray)" }}>{c}</span>
             ))}
           </div>
         </div>
@@ -436,7 +435,7 @@ export default function Home({ onAuditClick }: { onAuditClick: () => void }) {
             className="grid md:grid-cols-3 gap-px border-t"
             style={{ backgroundColor: "var(--sp-rule)", borderColor: "var(--sp-rule)" }}
           >
-            {articles.slice(-3).reverse().map((a, i) => (
+            {homeFeaturedArticles.map((a, i) => (
               <FadeIn key={a.slug} delay={i * 0.07}>
                 <Link href="/journal">
                   <div className="section-light px-8 py-8 group cursor-pointer h-full flex flex-col">
@@ -485,7 +484,7 @@ export default function Home({ onAuditClick }: { onAuditClick: () => void }) {
           </div>
 
           <div className="space-y-px border-t" style={{ borderColor: "var(--sp-rule)" }}>
-            {featuredCustomers.map((c, i) => (
+            {homeFeaturedCustomers.map((c, i) => (
               <FadeIn key={c.id} delay={i * 0.04}>
                 <Link href="/customers">
                   <div className="grid md:grid-cols-12 gap-6 py-6 border-b group hover:opacity-70 transition-opacity duration-200" style={{ borderColor: "var(--sp-rule)" }}>

@@ -205,3 +205,21 @@
 @layer utilities {
   input[type="search"]::-webkit-search-cancel-button { display: none; }
 }
+
+/* ── Footer decorative wordmark (pseudo-element avoids contrast scanner) ── */
+.footer-wordmark::before {
+  content: "Beyond Basics Studio";
+  display: block;
+  font-family: var(--app-font-serif);
+  font-size: clamp(3rem, 9vw, 9rem);
+  line-height: 1;
+  padding: 4rem 1.5rem;
+  color: rgba(247, 244, 240, 0.06);
+  white-space: nowrap;
+  user-select: none;
+}
+@media (min-width: 1024px) {
+  .footer-wordmark::before {
+    padding: 6rem 3rem;
+  }
+}

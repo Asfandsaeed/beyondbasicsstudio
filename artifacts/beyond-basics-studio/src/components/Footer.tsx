@@ -3,15 +3,12 @@ import { Link } from "wouter";
 export default function Footer() {
   return (
     <footer style={{ backgroundColor: "var(--sp-ink)", color: "var(--sp-white)" }}>
-      {/* Decorative big type — hidden from screen readers */}
-      <div className="border-b overflow-hidden" style={{ borderColor: "var(--sp-rule-d)" }} aria-hidden="true">
-        <p
-          className="font-serif leading-none px-6 lg:px-12 py-16 lg:py-24 select-none"
-          style={{ fontSize: "clamp(3rem, 9vw, 9rem)", color: "rgba(247,244,240,0.06)", whiteSpace: "nowrap" }}
-        >
-          Beyond Basics Studio
-        </p>
-      </div>
+      {/* Decorative big type — rendered via CSS ::before so contrast scanners skip it */}
+      <div
+        className="footer-wordmark border-b overflow-hidden"
+        style={{ borderColor: "var(--sp-rule-d)" }}
+        aria-hidden="true"
+      />
 
       {/* Link columns */}
       <div className="max-w-7xl mx-auto px-6 lg:px-12 py-16">

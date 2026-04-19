@@ -12,7 +12,6 @@ export default function CookieBanner() {
   useEffect(() => {
     const stored = localStorage.getItem(STORAGE_KEY);
     if (!stored) {
-      // Small delay so it doesn't flash instantly on load
       const t = setTimeout(() => setVisible(true), 600);
       return () => clearTimeout(t);
     }
@@ -48,16 +47,16 @@ export default function CookieBanner() {
               {/* Text */}
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-3 mb-2">
-                  <p className="label" style={{ color: "rgba(247,244,240,0.45)" }}>
+                  <p className="label" style={{ color: "rgba(247,244,240,0.75)" }}>
                     Cookies &amp; Privacy
                   </p>
                 </div>
-                <p className="font-sans text-sm leading-relaxed" style={{ color: "rgba(247,244,240,0.5)" }}>
+                <p className="font-sans text-sm leading-relaxed" style={{ color: "rgba(247,244,240,0.75)" }}>
                   We use essential, analytics, and marketing cookies to improve your experience and understand how our site is used.{" "}
                   <button
                     onClick={() => setExpanded(!expanded)}
                     className="underline underline-offset-2 transition-opacity hover:opacity-70"
-                    style={{ color: "rgba(247,244,240,0.5)" }}
+                    style={{ color: "rgba(247,244,240,0.75)" }}
                   >
                     {expanded ? "Show less" : "Learn more"}
                   </button>
@@ -85,20 +84,20 @@ export default function CookieBanner() {
                             style={{ borderColor: "var(--sp-rule-d)" }}
                           >
                             <div className="flex items-center justify-between mb-2">
-                              <span className="font-sans text-xs font-medium" style={{ color: "rgba(247,244,240,0.7)" }}>{c.title}</span>
+                              <span className="font-sans text-xs font-medium" style={{ color: "rgba(247,244,240,0.9)" }}>{c.title}</span>
                               {c.always && (
-                                <span className="label text-[10px] px-1.5 py-0.5 border" style={{ borderColor: "var(--sp-rule-d)", color: "rgba(247,244,240,0.3)" }}>
+                                <span className="label text-[10px] px-1.5 py-0.5 border" style={{ borderColor: "var(--sp-rule-d)", color: "rgba(247,244,240,0.7)" }}>
                                   Always on
                                 </span>
                               )}
                             </div>
-                            <p className="font-sans text-xs leading-relaxed" style={{ color: "rgba(247,244,240,0.35)" }}>{c.desc}</p>
+                            <p className="font-sans text-xs leading-relaxed" style={{ color: "rgba(247,244,240,0.7)" }}>{c.desc}</p>
                           </div>
                         ))}
                       </div>
-                      <p className="font-sans text-xs mt-4" style={{ color: "rgba(247,244,240,0.25)" }}>
+                      <p className="font-sans text-xs mt-4" style={{ color: "rgba(247,244,240,0.65)" }}>
                         For full details see our{" "}
-                        <Link href="/privacy" className="underline underline-offset-2 hover:opacity-70" style={{ color: "rgba(247,244,240,0.35)" }}>
+                        <Link href="/privacy" className="underline underline-offset-2 hover:opacity-70" style={{ color: "rgba(247,244,240,0.75)" }}>
                           Privacy Policy
                         </Link>
                         .
@@ -124,7 +123,7 @@ export default function CookieBanner() {
                 </button>
                 <button
                   onClick={decline}
-                  className="ml-1 opacity-25 hover:opacity-60 transition-opacity"
+                  className="ml-1 opacity-60 hover:opacity-90 transition-opacity"
                   style={{ color: "var(--sp-white)" }}
                   aria-label="Dismiss"
                 >
