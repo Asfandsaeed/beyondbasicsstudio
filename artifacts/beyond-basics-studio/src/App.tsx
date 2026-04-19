@@ -115,9 +115,9 @@ function App() {
                 "width": 512,
                 "height": 512,
               },
-              "description": "Beyond Basics Studio is a data-driven Google Business Profile agency founded in 2025. We manage 500+ GBP profiles worldwide.",
-              "foundingDate": "2025",
-              "areaServed": "Worldwide",
+              "description": "Beyond Basics Studio is a data-driven Google Business Profile agency founded in 2021. We manage 500+ GBP profiles across San Francisco, Toronto, London, Dubai, and Beirut.",
+              "foundingDate": "2021",
+              "areaServed": "San Francisco, Toronto, London, Dubai, Beirut",
               "contactPoint": {
                 "@type": "ContactPoint",
                 "contactType": "customer service",

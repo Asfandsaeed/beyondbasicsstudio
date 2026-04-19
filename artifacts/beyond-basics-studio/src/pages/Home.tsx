@@ -62,10 +62,10 @@ export default function Home({ onAuditClick }: { onAuditClick: () => void }) {
           "url": "https://www.beyondbasicsstudio.com/",
           "logo": "https://www.beyondbasicsstudio.com/favicon.svg",
           "image": "https://www.beyondbasicsstudio.com/opengraph.jpg",
-          "description": "Beyond Basics Studio is a Google Business Profile (GBP) management agency delivering data-driven local SEO, review generation, and map pack domination for businesses worldwide.",
+          "description": "Beyond Basics Studio is a Google Business Profile (GBP) management agency delivering data-driven local SEO, review generation, and map pack domination for businesses across San Francisco, Toronto, London, Dubai, and Beirut.",
           "email": "hello@beyondbasicsstudio.com",
-          "foundingDate": "2025",
-          "areaServed": "Worldwide",
+          "foundingDate": "2021",
+          "areaServed": "San Francisco, Toronto, London, Dubai, Beirut",
           "serviceType": "Google Business Profile Management",
           "priceRange": "$200–$1,000/month",
           "sameAs": [],
@@ -110,7 +110,7 @@ export default function Home({ onAuditClick }: { onAuditClick: () => void }) {
           style={{ paddingTop: "5.5rem", paddingBottom: "1.5rem", borderBottom: "1px solid var(--sp-rule-d)" }}
         >
           <p className="label" style={{ color: "rgba(247,244,240,0.75)" }}>GBP Management Agency</p>
-          <p className="label" style={{ color: "rgba(247,244,240,0.65)" }}>Est. 2025 — Worldwide</p>
+          <p className="label" style={{ color: "rgba(247,244,240,0.65)" }}>Est. 2021 — SF · Toronto · London · Dubai · Beirut</p>
         </div>
 
         {/* Headline — scroll parallax preserved, entrance animation removed for LCP */}
@@ -218,10 +218,10 @@ export default function Home({ onAuditClick }: { onAuditClick: () => void }) {
             {[
               "GBP Strategy", "—", "Review Growth", "—", "Map Pack Domination",
               "—", "Google Posts", "—", "AI-Powered Optimisation", "—",
-              "500+ Profiles Active", "—", "Worldwide", "—",
+              "500+ Profiles Active", "—", "SF · Toronto · London · Dubai · Beirut", "—",
               "GBP Strategy", "—", "Review Growth", "—", "Map Pack Domination",
               "—", "Google Posts", "—", "AI-Powered Optimisation", "—",
-              "500+ Profiles Active", "—", "Worldwide", "—",
+              "500+ Profiles Active", "—", "SF · Toronto · London · Dubai · Beirut", "—",
             ].map((t, i) => (
               <span key={i} className="label shrink-0" style={{ color: "rgba(247,244,240,0.65)" }}>{t}</span>
             ))}

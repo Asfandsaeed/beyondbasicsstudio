@@ -226,7 +226,7 @@ export default function Contact() {
                 <p className="label mb-6">Contact Details</p>
                 {[
                   { label: "Email", value: "hello@beyondbasics.studio" },
-                  { label: "Headquarters", value: "Global — serving clients worldwide" },
+                  { label: "Offices", value: "San Francisco · Toronto · London · Dubai · Beirut" },
                   { label: "Response Time", value: "Within 24 hours" },
                 ].map((item) => (
                   <div key={item.label} className="py-4 border-b" style={{ borderColor: "var(--sp-rule)" }}>

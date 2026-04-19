@@ -428,7 +428,7 @@ export default function Journal({ onAuditClick }: { onAuditClick: () => void }) 
           </FadeUp>
           <FadeIn delay={0.2}>
             <p className="font-sans text-sm leading-relaxed mt-8 max-w-md" style={{ color: "rgba(247,244,240,0.5)" }}>
-              Expert articles on Google Business Profile strategy, local SEO, review growth, and Map Pack domination — from the team managing 500+ profiles worldwide.
+              Expert articles on Google Business Profile strategy, local SEO, review growth, and Map Pack domination — from the team managing 500+ profiles across San Francisco, Toronto, London, Dubai, and Beirut.
             </p>
           </FadeIn>
         </div>

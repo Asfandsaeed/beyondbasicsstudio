@@ -24,7 +24,7 @@ const team = [
 ];
 
 export default function About({ onAuditClick }: { onAuditClick: () => void }) {
-  usePageMeta({ title: "About — Beyond Basics Studio", description: "Data-driven GBP experts since 2025. The team behind 500+ managed profiles and a 98% client retention rate.", ogImage: "about.jpg", url: "/about" });
+  usePageMeta({ title: "About — Beyond Basics Studio", description: "Data-driven GBP experts since 2021. The team behind 500+ managed profiles and a 98% client retention rate.", ogImage: "about.jpg", url: "/about" });
   return (
     <div style={{ backgroundColor: "var(--sp-white)" }}>
       <SchemaMarkup schema={[
@@ -41,7 +41,7 @@ export default function About({ onAuditClick }: { onAuditClick: () => void }) {
           "@type": "AboutPage",
           "url": "https://www.beyondbasicsstudio.com/about",
           "name": "About Beyond Basics Studio — GBP Management Agency",
-          "description": "Beyond Basics Studio is a data-driven Google Business Profile agency founded in 2025. We bring enterprise-level GBP expertise to local businesses worldwide.",
+          "description": "Beyond Basics Studio is a data-driven Google Business Profile agency founded in 2021. We bring enterprise-level GBP expertise to local businesses across San Francisco, Toronto, London, Dubai, and Beirut.",
           "isPartOf": { "@type": "WebSite", "url": "https://www.beyondbasicsstudio.com/" }
         },
         {
@@ -50,9 +50,9 @@ export default function About({ onAuditClick }: { onAuditClick: () => void }) {
           "name": "Beyond Basics Studio",
           "url": "https://www.beyondbasicsstudio.com/",
           "logo": "https://www.beyondbasicsstudio.com/favicon.svg",
-          "foundingDate": "2025",
+          "foundingDate": "2021",
           "email": "hello@beyondbasicsstudio.com",
-          "description": "Google Business Profile management agency delivering data-driven local SEO, review generation, and map pack domination for businesses worldwide.",
+          "description": "Google Business Profile management agency delivering data-driven local SEO, review generation, and map pack domination for businesses across San Francisco, Toronto, London, Dubai, and Beirut.",
           "employee": team.map(m => ({
             "@type": "Person",
             "name": m.name,
@@ -68,7 +68,7 @@ export default function About({ onAuditClick }: { onAuditClick: () => void }) {
           <FadeIn><p className="label mb-6" style={{ color: "rgba(247,244,240,0.7)" }}>About</p></FadeIn>
           <FadeUp>
             <h1 className="font-serif leading-tight" style={{ fontSize: "clamp(2.5rem, 7vw, 6.5rem)", color: "var(--sp-white)" }}>
-              Data-driven GBP<br />experts since 2025.
+              Data-driven GBP<br />experts since 2021.
             </h1>
           </FadeUp>
         </div>
@@ -89,7 +89,7 @@ export default function About({ onAuditClick }: { onAuditClick: () => void }) {
             <FadeIn delay={0.15}>
               <div className="space-y-5">
                 {[
-                  "In 2025, our founder Marcus Chen left his role on Google's local team after witnessing firsthand how a well-managed Google Business Profile could transform a local business — and how poorly most businesses managed theirs.",
+                  "In 2021, our founder Marcus Chen left his role on Google's local team after witnessing firsthand how a well-managed Google Business Profile could transform a local business — and how poorly most businesses managed theirs.",
                   "The average local business leaves 70% of its Google Maps potential untouched. Not because they don't care — because they lack the time, expertise, and tools to do it right.",
                   "Beyond Basics Studio was built to fix that. Today we manage 500+ profiles across 30+ countries, delivering results that most business owners thought were impossible.",
                 ].map((p, i) => (
@@ -108,7 +108,7 @@ export default function About({ onAuditClick }: { onAuditClick: () => void }) {
             { value: "500+", label: "Profiles Managed" },
             { value: "30+", label: "Countries Served" },
             { value: "98%", label: "Client Retention" },
-            { value: "2025", label: "Year Founded" },
+            { value: "2021", label: "Year Founded" },
           ].map((s, i) => (
             <FadeIn key={i} delay={i * 0.07}>
               <div className="py-12 px-8 lg:px-12 border-l border-b md:border-b-0" style={{ borderColor: "var(--sp-rule)" }}>
