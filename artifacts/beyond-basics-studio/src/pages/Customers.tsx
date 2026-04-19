@@ -204,7 +204,7 @@ export default function Customers({ onAuditClick }: { onAuditClick: () => void }
           </FadeIn>
           <FadeUp>
             <h1 className="font-serif leading-tight" style={{ fontSize: "clamp(2.5rem, 7vw, 6.5rem)", color: "var(--sp-white)" }}>
-              Thirty stories.<br />Zero stock photos.
+              Thirty stories.<br />Zero guesswork.
             </h1>
           </FadeUp>
           <FadeIn delay={0.2}>
