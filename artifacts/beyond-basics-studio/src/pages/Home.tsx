@@ -104,41 +104,33 @@ export default function Home({ onAuditClick }: { onAuditClick: () => void }) {
         className="relative h-screen flex flex-col overflow-hidden"
         style={{ backgroundColor: "var(--sp-ink)", minHeight: "600px" }}
       >
-        {/* Top meta strip */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
+        {/* Top meta strip — no entrance animation (above fold, visible immediately) */}
+        <div
           className="flex items-center justify-between px-6 lg:px-12"
           style={{ paddingTop: "5.5rem", paddingBottom: "1.5rem", borderBottom: "1px solid var(--sp-rule-d)" }}
         >
           <p className="label" style={{ color: "rgba(247,244,240,0.75)" }}>GBP Management Agency</p>
           <p className="label" style={{ color: "rgba(247,244,240,0.65)" }}>Est. 2025 — Worldwide</p>
-        </motion.div>
+        </div>
 
-        {/* Headline */}
+        {/* Headline — scroll parallax preserved, entrance animation removed for LCP */}
         <motion.div
           style={{ y: heroY, opacity: heroOpacity }}
           className="flex-1 flex flex-col justify-center px-6 lg:px-12"
         >
-          <div className="overflow-hidden mb-1">
-            <motion.h1
-              initial={{ y: "110%" }}
-              animate={{ y: 0 }}
-              transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
-              className="font-serif leading-tight"
-              style={{ fontSize: "clamp(2.2rem, 6vw, 6.5rem)", color: "var(--sp-white)" }}
-            >
-              Stop Losing Customers to Competitors Who Show Up First on Google Maps.
-            </motion.h1>
-          </div>
+          <h1
+            className="font-serif leading-tight"
+            style={{ fontSize: "clamp(2.2rem, 6vw, 6.5rem)", color: "var(--sp-white)" }}
+          >
+            Stop Losing Customers to Competitors Who Show Up First on Google Maps.
+          </h1>
         </motion.div>
 
         {/* Bottom strip — tagline + CTA */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
+          transition={{ duration: 0.6, delay: 0.15 }}
           className="flex flex-col sm:flex-row sm:items-center justify-between gap-5 px-6 lg:px-12 pb-10"
           style={{ paddingTop: "1.5rem", borderTop: "1px solid var(--sp-rule-d)" }}
         >

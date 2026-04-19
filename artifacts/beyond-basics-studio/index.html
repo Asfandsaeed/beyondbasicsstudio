@@ -26,24 +26,106 @@
     <meta name="twitter:description" content="Your GBP Unfair Advantage. Dominate Google Maps from $200/mo." />
     <meta name="twitter:image" content="https://asfandsaeed.github.io/beyondbasicsstudio/og/home.jpg" />
 
-    <!-- Fonts: preconnect first, then load async (non-render-blocking) -->
+    <!-- Preload self-hosted DM Serif Display — available before any JS runs -->
+    <link rel="preload" href="%BASE_URL%fonts/dm-serif-display.woff2" as="font" type="font/woff2" crossorigin />
+
+    <!-- Critical CSS: inlined — zero render-blocking, font available at parse time -->
+    <style>
+      *, *::before, *::after { box-sizing: border-box; }
+      html { -webkit-text-size-adjust: 100%; }
+      body { margin: 0; background: #0D0D0D; }
+
+      /* Self-hosted DM Serif Display — loaded via preload above, no network wait */
+      @font-face {
+        font-family: 'DM Serif Display';
+        src: url('fonts/dm-serif-display.woff2') format('woff2');
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      /* Static shell — shown before React hydrates */
+      #bbs-shell-nav {
+        position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+        display: flex; align-items: center; justify-content: space-between;
+        padding: 1.25rem 1.5rem;
+        background: transparent;
+      }
+      #bbs-shell-logo {
+        font-family: system-ui, -apple-system, sans-serif;
+        font-size: 0.65rem; letter-spacing: 0.18em;
+        text-transform: uppercase; color: #F7F4F0; font-weight: 600;
+      }
+      #bbs-shell-logo span { font-weight: 400; color: rgba(247,244,240,0.5); margin-left: 0.35rem; }
+      #bbs-shell-hero {
+        background: #0D0D0D; height: 100vh; height: 100dvh; min-height: 600px;
+        display: flex; flex-direction: column; overflow: hidden;
+      }
+      #bbs-shell-meta {
+        display: flex; justify-content: space-between; align-items: center;
+        padding: 5.5rem 1.5rem 1.5rem;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+      }
+      #bbs-shell-meta span {
+        font-family: system-ui, -apple-system, sans-serif;
+        font-size: 0.65rem; letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+      #bbs-shell-headline {
+        flex: 1; display: flex; align-items: center; padding: 0 1.5rem;
+      }
+      #bbs-lcp {
+        font-family: 'DM Serif Display', Georgia, 'Times New Roman', serif;
+        font-size: clamp(2.2rem, 6vw, 6.5rem);
+        color: #F7F4F0; line-height: 1.1; margin: 0; font-weight: 400;
+      }
+
+      @media (min-width: 1024px) {
+        #bbs-shell-meta { padding-left: 3rem; padding-right: 3rem; }
+        #bbs-shell-headline { padding-left: 3rem; padding-right: 3rem; }
+        #bbs-shell-nav { padding-left: 3rem; padding-right: 3rem; }
+      }
+    </style>
+
+    <!-- Inter: async (body text — not the LCP element) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap"
       rel="stylesheet"
       media="print"
       onload="this.media='all'"
     />
     <noscript>
-      <link
-        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500&display=swap"
-        rel="stylesheet"
-      />
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
     </noscript>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <!--
+        Static hero shell — painted by the browser immediately at HTML parse time.
+        React replaces this on mount. This gives near-instant FCP and LCP
+        without waiting for any JavaScript.
+        aria-hidden so screen readers skip the duplicate (they'll read the React version).
+      -->
+      <div aria-hidden="true">
+        <nav id="bbs-shell-nav">
+          <div id="bbs-shell-logo">BBS<span>STUDIO</span></div>
+        </nav>
+        <section id="bbs-shell-hero">
+          <div id="bbs-shell-meta">
+            <span style="color:rgba(247,244,240,0.75)">GBP Management Agency</span>
+            <span style="color:rgba(247,244,240,0.65)">Est. 2025 — Worldwide</span>
+          </div>
+          <div id="bbs-shell-headline">
+            <!-- LCP element — visible immediately, correct font from preload -->
+            <h1 id="bbs-lcp">
+              Stop Losing Customers to Competitors Who Show Up First on Google Maps.
+            </h1>
+          </div>
+        </section>
+      </div>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
