@@ -80,16 +80,18 @@ function RelatedArticleRow({ article, index }: { article: Article; index: number
     <FadeIn delay={index * 0.08}>
       <Link href={`/journal/${article.slug}`}>
         <div
-          className="group grid md:grid-cols-12 gap-4 py-6 border-b hover:opacity-60 transition-opacity duration-200 cursor-pointer"
+          className="group py-6 border-b hover:opacity-60 transition-opacity duration-200 cursor-pointer
+            grid grid-cols-[auto_1fr_auto] gap-x-3 gap-y-1.5
+            md:grid-cols-12 md:gap-4 md:items-baseline"
           style={{ borderColor: "var(--sp-rule)" }}
         >
-          <span className="md:col-span-1 label" style={{ color: "var(--sp-gray)" }}>{article.number}</span>
-          <span className="md:col-span-2 label">{article.tag}</span>
-          <span className="md:col-span-7 font-serif text-base lg:text-lg leading-snug" style={{ color: "var(--sp-black)" }}>{article.title}</span>
-          <div className="md:col-span-2 flex items-center justify-end gap-2">
+          <span className="font-sans text-xs self-start md:col-span-1 md:self-auto" style={{ color: "var(--sp-gray)" }}>{article.number}</span>
+          <span className="label self-start md:col-span-2 md:self-auto">{article.tag}</span>
+          <div className="flex items-center justify-end gap-2 self-start md:col-span-2 md:order-last md:self-auto">
             <span className="font-sans text-xs hidden md:inline" style={{ color: "var(--sp-gray)" }}>{article.readTime}</span>
             <ArrowRight className="w-3.5 h-3.5 opacity-30 group-hover:opacity-80 transition-opacity" style={{ color: "var(--sp-black)" }} />
           </div>
+          <span className="col-span-3 md:col-span-7 font-serif text-base lg:text-lg leading-snug" style={{ color: "var(--sp-black)" }}>{article.title}</span>
         </div>
       </Link>
     </FadeIn>
@@ -497,13 +499,15 @@ export default function Journal({ onAuditClick }: { onAuditClick: () => void }) 
                 <FadeIn delay={i * 0.04}>
                   <Link href={`/journal/${article.slug}`}>
                     <div
-                      className="group w-full text-left grid grid-cols-12 items-baseline gap-4 py-5 hover:opacity-60 transition-opacity duration-200 cursor-pointer"
+                      className="group w-full text-left py-5 hover:opacity-60 transition-opacity duration-200 cursor-pointer
+                        grid grid-cols-[auto_1fr_auto] gap-x-3 gap-y-1.5
+                        md:grid-cols-12 md:gap-4 md:items-baseline"
                       onClick={() => setManualSelected(article)}
                     >
-                      <span className="col-span-1 font-sans text-xs" style={{ color: "var(--sp-gray)" }}>{String(articles.length - i).padStart(2, "0")}</span>
-                      <span className="col-span-2 label">{article.tag}</span>
-                      <span className="col-span-7 font-serif text-base lg:text-lg leading-snug" style={{ color: "var(--sp-black)" }}>{article.title}</span>
-                      <span className="col-span-2 font-sans text-xs text-right" style={{ color: "var(--sp-gray)" }}>{article.readTime}</span>
+                      <span className="font-sans text-xs self-start md:col-span-1 md:self-auto" style={{ color: "var(--sp-gray)" }}>{String(articles.length - i).padStart(2, "0")}</span>
+                      <span className="label self-start md:col-span-2 md:self-auto">{article.tag}</span>
+                      <span className="font-sans text-xs text-right self-start md:col-span-2 md:order-last md:self-auto" style={{ color: "var(--sp-gray)" }}>{article.readTime}</span>
+                      <span className="col-span-3 md:col-span-7 font-serif text-base lg:text-lg leading-snug" style={{ color: "var(--sp-black)" }}>{article.title}</span>
                     </div>
                   </Link>
                 </FadeIn>
