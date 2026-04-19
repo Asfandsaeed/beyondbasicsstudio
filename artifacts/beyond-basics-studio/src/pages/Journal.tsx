@@ -36,7 +36,7 @@ function ArticleCard({ article, onClick, index }: { article: Article; onClick: (
         style={{ borderColor: "var(--sp-rule)" }}
       >
         <div className="mb-5">
-          <span className="label block mb-1.5" style={{ color: "var(--sp-gray)" }}>{article.tag}</span>
+          <span className="label block mb-1.5">{article.tag}</span>
           <span className="font-sans text-xs" style={{ color: "var(--sp-gray)", opacity: 0.45 }}>{article.date} · {article.readTime}</span>
         </div>
         <h2
@@ -162,13 +162,13 @@ function ArticleView({ article, onBack, onNext, nextArticle }: {
         <section className="border-t section-cream" style={{ borderColor: "var(--sp-rule)" }}>
           <div className="max-w-7xl mx-auto px-6 lg:px-12 py-16">
             <FadeIn>
-              <p className="label mb-8" style={{ color: "var(--sp-gray)" }}>Next Article</p>
+              <p className="label mb-8">Next Article</p>
               <button
                 onClick={onNext}
                 className="group text-left w-full sm:max-w-2xl flex items-start justify-between gap-8"
               >
                 <div>
-                  <span className="label block mb-3" style={{ color: "var(--sp-gray)" }}>{nextArticle.tag}</span>
+                  <span className="label block mb-3">{nextArticle.tag}</span>
                   <h3
                     className="font-serif leading-snug group-hover:opacity-60 transition-opacity duration-300"
                     style={{ fontSize: "clamp(1.25rem, 2.5vw, 2rem)", color: "var(--sp-black)" }}
@@ -293,7 +293,7 @@ export default function Journal({ onAuditClick }: { onAuditClick: () => void }) 
       {/* Featured */}
       <section className="section-light border-b" style={{ borderColor: "var(--sp-rule)" }}>
         <div className="max-w-7xl mx-auto px-6 lg:px-12 py-20">
-          <FadeIn><p className="label mb-10" style={{ color: "var(--sp-gray)" }}>Latest</p></FadeIn>
+          <FadeIn><p className="label mb-10">Latest</p></FadeIn>
           <FadeUp>
             <button
               onClick={() => handleSelect(featured)}
@@ -305,7 +305,7 @@ export default function Journal({ onAuditClick }: { onAuditClick: () => void }) 
                 </div>
                 <div className="md:col-span-7">
                   <div className="flex items-center gap-4 mb-5">
-                    <span className="label" style={{ color: "var(--sp-gray)" }}>{featured.tag}</span>
+                    <span className="label">{featured.tag}</span>
                     <span className="font-sans text-xs" style={{ color: "var(--sp-gray)", opacity: 0.5 }}>{featured.date}</span>
                   </div>
                   <h2
@@ -333,7 +333,7 @@ export default function Journal({ onAuditClick }: { onAuditClick: () => void }) 
       {/* All articles */}
       <section className="section-cream">
         <div className="max-w-7xl mx-auto px-6 lg:px-12 py-20">
-          <FadeIn><p className="label mb-2" style={{ color: "var(--sp-gray)" }}>All Articles</p></FadeIn>
+          <FadeIn><p className="label mb-2">All Articles</p></FadeIn>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-px mt-4" style={{ backgroundColor: "var(--sp-rule)" }}>
             {rest.map((article, i) => (
               <div key={article.slug} className="section-cream">
@@ -347,7 +347,7 @@ export default function Journal({ onAuditClick }: { onAuditClick: () => void }) 
       {/* Article index / sitemap */}
       <section className="section-light border-t border-b" style={{ borderColor: "var(--sp-rule)" }}>
         <div className="max-w-7xl mx-auto px-6 lg:px-12 py-20">
-          <FadeIn><p className="label mb-10" style={{ color: "var(--sp-gray)" }}>Article Index</p></FadeIn>
+          <FadeIn><p className="label mb-10">Article Index</p></FadeIn>
           <ul className="divide-y" style={{ borderColor: "var(--sp-rule)" }}>
             {[...articles].reverse().map((article, i) => (
               <li key={article.slug}>
@@ -357,7 +357,7 @@ export default function Journal({ onAuditClick }: { onAuditClick: () => void }) 
                     className="group w-full text-left grid grid-cols-12 items-baseline gap-4 py-5 hover:opacity-60 transition-opacity duration-200"
                   >
                     <span className="col-span-1 font-sans text-xs" style={{ color: "var(--sp-gray)", opacity: 0.4 }}>{String(articles.length - i).padStart(2, "0")}</span>
-                    <span className="col-span-2 label" style={{ color: "var(--sp-gray)" }}>{article.tag}</span>
+                    <span className="col-span-2 label">{article.tag}</span>
                     <span className="col-span-7 font-serif text-base lg:text-lg leading-snug" style={{ color: "var(--sp-black)" }}>{article.title}</span>
                     <span className="col-span-2 font-sans text-xs text-right" style={{ color: "var(--sp-gray)", opacity: 0.45 }}>{article.readTime}</span>
                   </button>

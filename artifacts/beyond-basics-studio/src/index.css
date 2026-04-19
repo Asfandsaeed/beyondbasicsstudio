@@ -37,7 +37,8 @@
   --sp-cream:  #EDE9E2;   /* slightly darker cream, alternating sections */
   --sp-black:  #111111;   /* primary text, dark sections background */
   --sp-ink:    #0D0D0D;   /* deepest dark for full-bleed hero */
-  --sp-gray:   #888888;   /* secondary / muted text */
+  --sp-gray:   #888888;   /* secondary / muted text — use on dark backgrounds */
+  --sp-label:  #666666;   /* eyebrow/label text — meets WCAG AA on cream & light backgrounds */
   --sp-rule:   #E0DDD8;   /* hairline dividers on light bg */
   --sp-rule-d: rgba(255,255,255,0.1);  /* hairline on dark bg */
 
@@ -124,8 +125,11 @@
   font-weight: 500;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--sp-gray);
+  color: var(--sp-label); /* #666666 — WCAG AA on cream (#EDE9E2) and light (#F7F4F0) */
 }
+
+/* On dark sections, restore a lighter gray — #888888 passes on dark bg */
+.section-dark .label { color: var(--sp-gray); }
 
 /* ── Divider lines ── */
 .rule-light { border-top: 1px solid var(--sp-rule); }

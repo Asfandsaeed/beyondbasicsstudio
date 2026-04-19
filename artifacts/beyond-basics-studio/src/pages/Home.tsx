@@ -379,7 +379,7 @@ export default function Home({ onAuditClick }: { onAuditClick: () => void }) {
                     <div className="flex items-center gap-3 mb-3">
                       <span className="font-serif text-2xl" style={{ color: "var(--sp-black)" }}>{plan.name}</span>
                       {plan.badge && (
-                        <span className="label px-2 py-0.5 border" style={{ borderColor: "var(--sp-rule)", color: "var(--sp-gray)" }}>
+                        <span className="label px-2 py-0.5 border" style={{ borderColor: "var(--sp-rule)" }}>
                           {plan.badge}
                         </span>
                       )}
@@ -456,7 +456,7 @@ export default function Home({ onAuditClick }: { onAuditClick: () => void }) {
           </div>
           <FadeIn delay={0.2}>
             <div className="flex justify-end mt-8">
-              <Link href="/journal" className="flex items-center gap-2 group label" style={{ color: "var(--sp-gray)" }}>
+              <Link href="/journal" className="flex items-center gap-2 group label">
                 View all articles
                 <ArrowRight className="w-3.5 h-3.5 opacity-40 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300" />
               </Link>
@@ -476,7 +476,7 @@ export default function Home({ onAuditClick }: { onAuditClick: () => void }) {
               </h2>
             </FadeUp>
             <FadeIn delay={0.15}>
-              <Link href="/customers" className="flex items-center gap-2 group label shrink-0" style={{ color: "var(--sp-gray)" }}>
+              <Link href="/customers" className="flex items-center gap-2 group label shrink-0">
                 All 30 stories
                 <ArrowRight className="w-3.5 h-3.5 opacity-40 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300" />
               </Link>
