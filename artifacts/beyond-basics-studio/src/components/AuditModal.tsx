@@ -2,7 +2,7 @@ import { useCallback, useEffect, useState } from "react";
 import { X, CheckCircle, AlertCircle, ArrowRight } from "lucide-react";
 import { useForm } from "react-hook-form";
 
-const FORMSPREE_ID = import.meta.env.VITE_FORMSPREE_ID as string | undefined;
+const FORMSPREE_AUDIT_ID = (import.meta.env.VITE_FORMSPREE_AUDIT_ID || import.meta.env.VITE_FORMSPREE_ID) as string | undefined;
 
 interface FormValues {
   name: string; email: string; phone: string;
@@ -29,13 +29,13 @@ export default function AuditModal({ isOpen, onClose }: AuditModalProps) {
 
   const onSubmit = async (data: FormValues) => {
     setSubmitState("idle");
-    if (!FORMSPREE_ID) {
+    if (!FORMSPREE_AUDIT_ID) {
       await new Promise(r => setTimeout(r, 600));
       setSubmitState("success");
       return;
     }
     try {
-      const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+      const res = await fetch(`https://formspree.io/f/${FORMSPREE_AUDIT_ID}`, {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({ ...data, _subject: "New Free GBP Audit Request" }),
