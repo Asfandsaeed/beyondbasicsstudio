@@ -1,4 +1,4 @@
-import { defineConfig } from "vite";
+import { defineConfig, type Plugin } from "vite";
 import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 import path from "path";
@@ -26,11 +26,40 @@ if (!basePath) {
   );
 }
 
+/**
+ * Converts Vite's render-blocking <link rel="stylesheet"> to a non-blocking
+ * preload link with onload fallback. This lets the static HTML shell paint
+ * immediately without waiting for the 110KB CSS bundle to download.
+ *
+ * React (main.tsx) waits for the CSS to apply before mounting, preventing
+ * any flash of unstyled content.
+ */
+function asyncStylesheetPlugin(): Plugin {
+  return {
+    name: "async-stylesheet",
+    apply: "build",
+    transformIndexHtml(html: string): string {
+      return html.replace(
+        /(<link rel="stylesheet" crossorigin href="([^"]+\.css)"[^>]*>)/g,
+        (fullTag) => {
+          // Strip trailing > or /> then re-add with onload
+          const base = fullTag.replace(/\s*\/?>$/, "");
+          const asyncTag = base
+            .replace('rel="stylesheet"', 'rel="preload" as="style"')
+            + ` onload="this.rel='stylesheet'">`;
+          return `${asyncTag}\n    <noscript>${fullTag}</noscript>`;
+        },
+      );
+    },
+  };
+}
+
 export default defineConfig({
   base: basePath,
   plugins: [
     react(),
     tailwindcss(),
+    asyncStylesheetPlugin(),
     runtimeErrorOverlay(),
     ...(process.env.NODE_ENV !== "production" &&
     process.env.REPL_ID !== undefined
