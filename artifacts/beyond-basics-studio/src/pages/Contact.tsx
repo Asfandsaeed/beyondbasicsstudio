@@ -5,7 +5,7 @@ import { ArrowRight, Plus, Minus, CheckCircle, AlertCircle } from "lucide-react"
 import SchemaMarkup from "@/components/SchemaMarkup";
 import { usePageMeta } from "@/hooks/usePageMeta";
 
-const FORMSPREE_ID = import.meta.env.VITE_FORMSPREE_FORM_ID as string | undefined;
+const FORMSPREE_ID = import.meta.env.VITE_FORMSPREE_ID as string | undefined;
 
 const ease = [0.25, 0.1, 0.25, 1];
 function FadeUp({ children, className, delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
@@ -39,6 +39,7 @@ export default function Contact() {
 
   const { register, handleSubmit, formState: { errors, isSubmitting }, reset } = useForm<FormValues>();
   const [submitState, setSubmitState] = useState<"idle" | "success" | "error">("idle");
+
   const inputCls = "w-full bg-transparent border-b py-3 font-sans text-sm outline-none transition-colors duration-200 placeholder:opacity-25";
   const inputStyle = { color: "var(--sp-black)", borderColor: "var(--sp-rule)" };
 
