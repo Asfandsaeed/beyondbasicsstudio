@@ -1,6 +1,8 @@
-import { useEffect } from "react";
-import { X, CheckCircle, ArrowRight } from "lucide-react";
+import { useCallback, useEffect, useState } from "react";
+import { X, CheckCircle, AlertCircle, ArrowRight } from "lucide-react";
 import { useForm } from "react-hook-form";
+
+const FORMSPREE_ID = import.meta.env.VITE_FORMSPREE_ID as string | undefined;
 
 interface FormValues {
   name: string; email: string; phone: string;
@@ -13,12 +15,40 @@ interface AuditModalProps {
 }
 
 export default function AuditModal({ isOpen, onClose }: AuditModalProps) {
-  const { register, handleSubmit, formState: { errors, isSubmitting, isSubmitSuccessful }, reset } = useForm<FormValues>();
+  const { register, handleSubmit, formState: { errors, isSubmitting }, reset } = useForm<FormValues>();
+  const [submitState, setSubmitState] = useState<"idle" | "success" | "error">("idle");
+
+  const handleClose = useCallback(() => {
+    reset();
+    setSubmitState("idle");
+    onClose();
+  }, [reset, onClose]);
 
   useEffect(() => { document.body.style.overflow = isOpen ? "hidden" : ""; return () => { document.body.style.overflow = ""; }; }, [isOpen]);
-  useEffect(() => { const fn = (e: KeyboardEvent) => { if (e.key === "Escape") onClose(); }; window.addEventListener("keydown", fn); return () => window.removeEventListener("keydown", fn); }, [onClose]);
+  useEffect(() => { const fn = (e: KeyboardEvent) => { if (e.key === "Escape") handleClose(); }; window.addEventListener("keydown", fn); return () => window.removeEventListener("keydown", fn); }, [handleClose]);
 
-  const onSubmit = async (_: FormValues) => { await new Promise(r => setTimeout(r, 1000)); };
+  const onSubmit = async (data: FormValues) => {
+    setSubmitState("idle");
+    if (!FORMSPREE_ID) {
+      await new Promise(r => setTimeout(r, 600));
+      setSubmitState("success");
+      return;
+    }
+    try {
+      const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({ ...data, _subject: "New Free GBP Audit Request" }),
+      });
+      if (res.ok) {
+        setSubmitState("success");
+      } else {
+        setSubmitState("error");
+      }
+    } catch {
+      setSubmitState("error");
+    }
+  };
 
   if (!isOpen) return null;
 
@@ -30,7 +60,7 @@ export default function AuditModal({ isOpen, onClose }: AuditModalProps) {
       <div
         className="absolute inset-0"
         style={{ backgroundColor: "rgba(13,13,13,0.7)", backdropFilter: "blur(6px)" }}
-        onClick={onClose}
+        onClick={handleClose}
       />
       <div
         className="relative w-full sm:max-w-lg sm:mx-4 max-h-[92vh] overflow-y-auto"
@@ -44,19 +74,19 @@ export default function AuditModal({ isOpen, onClose }: AuditModalProps) {
                 See what you're leaving on the table.
               </h2>
             </div>
-            <button onClick={onClose} className="mt-1 ml-4 opacity-30 hover:opacity-70 transition-opacity" style={{ color: "var(--sp-black)" }}>
+            <button onClick={handleClose} className="mt-1 ml-4 opacity-30 hover:opacity-70 transition-opacity" style={{ color: "var(--sp-black)" }}>
               <X className="w-5 h-5" />
             </button>
           </div>
 
-          {isSubmitSuccessful ? (
+          {submitState === "success" ? (
             <div className="text-center py-10">
               <div className="w-12 h-12 border flex items-center justify-center mx-auto mb-5" style={{ borderColor: "var(--sp-rule)" }}>
                 <CheckCircle className="w-5 h-5" style={{ color: "var(--sp-black)" }} />
               </div>
               <h3 className="font-serif text-2xl mb-3" style={{ color: "var(--sp-black)" }}>We'll be in touch.</h3>
               <p className="font-sans text-sm mb-8" style={{ color: "var(--sp-gray)" }}>Expect your audit within 24 hours.</p>
-              <button onClick={() => { reset(); onClose(); }} className="btn btn-outline">Close</button>
+              <button onClick={handleClose} className="btn btn-outline">Close</button>
             </div>
           ) : (
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
@@ -94,6 +124,13 @@ export default function AuditModal({ isOpen, onClose }: AuditModalProps) {
                   <option value="unsure">Not sure yet</option>
                 </select>
               </div>
+
+              {submitState === "error" && (
+                <div className="flex items-center gap-2 font-sans text-sm text-red-500">
+                  <AlertCircle className="w-4 h-4 shrink-0" />
+                  <span>Something went wrong. Please try again or email us directly.</span>
+                </div>
+              )}
 
               <div className="pt-4">
                 <button type="submit" disabled={isSubmitting} className="btn btn-black w-full justify-center disabled:opacity-50">
