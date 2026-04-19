@@ -1,9 +1,11 @@
 import { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import { useForm } from "react-hook-form";
-import { ArrowRight, Plus, Minus, CheckCircle } from "lucide-react";
+import { ArrowRight, Plus, Minus, CheckCircle, AlertCircle } from "lucide-react";
 import SchemaMarkup from "@/components/SchemaMarkup";
 import { usePageMeta } from "@/hooks/usePageMeta";
+
+const FORMSPREE_ID = import.meta.env.VITE_FORMSPREE_FORM_ID as string | undefined;
 
 const ease = [0.25, 0.1, 0.25, 1];
 function FadeUp({ children, className, delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
@@ -17,7 +19,7 @@ function FadeIn({ children, className, delay = 0 }: { children: React.ReactNode;
   return <motion.div ref={ref} initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ duration: 0.7, ease: "easeOut", delay }} className={className}>{children}</motion.div>;
 }
 
-interface FormValues { name: string; email: string; phone: string; gbpUrl: string; message: string; tier: string; }
+interface FormValues { name: string; email: string; phone?: string; gbpUrl: string; message?: string; tier: string; }
 
 function Accordion({ q, a }: { q: string; a: string }) {
   const [open, setOpen] = useState(false);
@@ -34,10 +36,34 @@ function Accordion({ q, a }: { q: string; a: string }) {
 
 export default function Contact() {
   usePageMeta({ title: "Contact — Beyond Basics Studio", description: "Let's talk domination. Get your free GBP audit and start your journey to the top of Google Maps.", ogImage: "contact.jpg", url: "/contact" });
-  const { register, handleSubmit, formState: { errors, isSubmitting, isSubmitSuccessful }, reset } = useForm<FormValues>();
-  const onSubmit = async (_: FormValues) => { await new Promise(r => setTimeout(r, 1000)); };
+
+  const { register, handleSubmit, formState: { errors, isSubmitting }, reset } = useForm<FormValues>();
+  const [submitState, setSubmitState] = useState<"idle" | "success" | "error">("idle");
   const inputCls = "w-full bg-transparent border-b py-3 font-sans text-sm outline-none transition-colors duration-200 placeholder:opacity-25";
   const inputStyle = { color: "var(--sp-black)", borderColor: "var(--sp-rule)" };
+
+  const onSubmit = async (data: FormValues) => {
+    setSubmitState("idle");
+    if (!FORMSPREE_ID) {
+      await new Promise(r => setTimeout(r, 600));
+      setSubmitState("success");
+      return;
+    }
+    try {
+      const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify(data),
+      });
+      if (res.ok) {
+        setSubmitState("success");
+      } else {
+        setSubmitState("error");
+      }
+    } catch {
+      setSubmitState("error");
+    }
+  };
 
   return (
     <div style={{ backgroundColor: "var(--sp-white)" }}>
@@ -81,20 +107,38 @@ export default function Contact() {
       {/* Contact */}
       <section className="section-light border-b" style={{ borderColor: "var(--sp-rule)" }}>
         <div className="max-w-7xl mx-auto px-6 lg:px-12 py-24 lg:py-32 grid md:grid-cols-2 gap-16 lg:gap-24">
+
           {/* Form */}
           <FadeUp>
-            {isSubmitSuccessful ? (
+            {submitState === "success" ? (
               <div className="py-12">
                 <div className="w-10 h-10 border flex items-center justify-center mb-6" style={{ borderColor: "var(--sp-rule)" }}>
                   <CheckCircle className="w-5 h-5" style={{ color: "var(--sp-black)" }} />
                 </div>
                 <h3 className="font-serif text-3xl mb-3" style={{ color: "var(--sp-black)" }}>We'll be in touch.</h3>
-                <p className="font-sans text-sm mb-8" style={{ color: "var(--sp-gray)" }}>Expect a response within 24 hours with your personalised GBP strategy.</p>
-                <button onClick={() => reset()} className="btn btn-outline">Send Another</button>
+                <p className="font-sans text-sm mb-8" style={{ color: "var(--sp-gray)" }}>
+                  Your message is on its way. Expect a response within 24 hours with your personalised GBP strategy.
+                </p>
+                <button onClick={() => { setSubmitState("idle"); reset(); }} className="btn btn-outline">
+                  Send Another
+                </button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
+              <form onSubmit={handleSubmit(onSubmit)} noValidate className="space-y-8">
                 <p className="label mb-4">Send us a message</p>
+
+                {submitState === "error" && (
+                  <div className="flex items-start gap-3 p-4 border" style={{ borderColor: "var(--sp-rule)", backgroundColor: "var(--sp-cream)" }}>
+                    <AlertCircle className="w-4 h-4 shrink-0 mt-0.5" style={{ color: "var(--sp-black)" }} />
+                    <p className="font-sans text-sm" style={{ color: "var(--sp-gray)" }}>
+                      Something went wrong. Please try again or email us at{" "}
+                      <a href="mailto:hello@beyondbasicsstudio.com" className="underline underline-offset-2" style={{ color: "var(--sp-black)" }}>
+                        hello@beyondbasicsstudio.com
+                      </a>.
+                    </p>
+                  </div>
+                )}
+
                 {[
                   { label: "Full Name", key: "name" as const, type: "text", placeholder: "Jane Smith", required: true },
                   { label: "Email Address", key: "email" as const, type: "email", placeholder: "jane@business.com", required: true },
@@ -102,27 +146,47 @@ export default function Contact() {
                   { label: "GBP Profile URL", key: "gbpUrl" as const, type: "text", placeholder: "maps.google.com/...", required: true },
                 ].map(({ label, key, type, placeholder, required }) => (
                   <div key={key}>
-                    <label className="label block mb-1">{label}</label>
-                    <input {...register(key, required ? { required: "Required" } : {})} type={type} placeholder={placeholder} className={inputCls} style={inputStyle} />
-                    {errors[key] && <p className="font-sans text-xs mt-1 text-red-500">{errors[key]?.message}</p>}
+                    <label htmlFor={`field-${key}`} className="label block mb-1">{label}</label>
+                    <input
+                      id={`field-${key}`}
+                      {...register(key, required ? { required: "This field is required" } : {})}
+                      type={type}
+                      placeholder={placeholder}
+                      className={inputCls}
+                      style={inputStyle}
+                      autoComplete={key === "email" ? "email" : key === "name" ? "name" : key === "phone" ? "tel" : "off"}
+                    />
+                    {errors[key] && (
+                      <p className="font-sans text-xs mt-1" style={{ color: "#c0392b" }} role="alert">{errors[key]?.message}</p>
+                    )}
                   </div>
                 ))}
+
                 <div>
-                  <label className="label block mb-1">Tier Interest</label>
-                  <select {...register("tier")} className={inputCls} style={{ ...inputStyle, backgroundColor: "transparent" }}>
+                  <label htmlFor="field-tier" className="label block mb-1">Tier Interest</label>
+                  <select id="field-tier" {...register("tier")} className={inputCls} style={{ ...inputStyle, backgroundColor: "transparent" }}>
                     <option value="">Select a tier...</option>
-                    <option value="basic">Basic — $200/mo</option>
-                    <option value="growth">Growth — $500/mo</option>
-                    <option value="premium">Premium — $1,000/mo</option>
+                    <option value="basic">Basic — $200/mo (1 location)</option>
+                    <option value="growth">Growth — $500/mo (up to 5)</option>
+                    <option value="premium">Premium — $1,000/mo (up to 50)</option>
                     <option value="unsure">Not sure yet</option>
                   </select>
                 </div>
+
                 <div>
-                  <label className="label block mb-1">Message</label>
-                  <textarea {...register("message")} rows={4} placeholder="Tell us about your business and goals..." className={inputCls} style={{ ...inputStyle, resize: "none" }} />
+                  <label htmlFor="field-message" className="label block mb-1">Message (optional)</label>
+                  <textarea
+                    id="field-message"
+                    {...register("message")}
+                    rows={4}
+                    placeholder="Tell us about your business and goals..."
+                    className={inputCls}
+                    style={{ ...inputStyle, resize: "none" }}
+                  />
                 </div>
+
                 <button type="submit" disabled={isSubmitting} className="btn btn-black disabled:opacity-50">
-                  {isSubmitting ? "Sending..." : <><span>Send Message</span><ArrowRight className="w-3.5 h-3.5" /></>}
+                  {isSubmitting ? "Sending…" : <><span>Send Message</span><ArrowRight className="w-3.5 h-3.5" /></>}
                 </button>
               </form>
             )}
