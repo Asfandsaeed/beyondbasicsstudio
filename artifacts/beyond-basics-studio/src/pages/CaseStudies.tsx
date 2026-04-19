@@ -67,7 +67,7 @@ export default function CaseStudies({ onAuditClick }: { onAuditClick: () => void
       {/* Hero */}
       <section className="section-dark border-b" style={{ borderColor: "var(--sp-rule-d)" }}>
         <div className="max-w-7xl mx-auto px-6 lg:px-12 pt-36 pb-24">
-          <FadeIn><p className="label mb-6" style={{ color: "rgba(247,244,240,0.35)" }}>Work</p></FadeIn>
+          <FadeIn><p className="label mb-6" style={{ color: "rgba(247,244,240,0.7)" }}>Work</p></FadeIn>
           <FadeUp>
             <h1 className="font-serif leading-tight" style={{ fontSize: "clamp(2.5rem, 7vw, 6.5rem)", color: "var(--sp-white)" }}>
               Proof,<br />not pitches.

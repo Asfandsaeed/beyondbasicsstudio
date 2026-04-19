@@ -99,11 +99,11 @@ function ArticleView({ article, onBack, onNext, nextArticle }: {
               <span className="label">Journal</span>
             </button>
             <div className="flex items-center gap-4 mb-6">
-              <span className="label" style={{ color: "rgba(247,244,240,0.35)" }}>{article.tag}</span>
-              <span className="label" style={{ color: "rgba(247,244,240,0.2)" }}>·</span>
-              <span className="label" style={{ color: "rgba(247,244,240,0.35)" }}>{article.date}</span>
-              <span className="label" style={{ color: "rgba(247,244,240,0.2)" }}>·</span>
-              <span className="label" style={{ color: "rgba(247,244,240,0.35)" }}>{article.readTime}</span>
+              <span className="label" style={{ color: "rgba(247,244,240,0.7)" }}>{article.tag}</span>
+              <span className="label" style={{ color: "rgba(247,244,240,0.55)" }}>·</span>
+              <span className="label" style={{ color: "rgba(247,244,240,0.7)" }}>{article.date}</span>
+              <span className="label" style={{ color: "rgba(247,244,240,0.55)" }}>·</span>
+              <span className="label" style={{ color: "rgba(247,244,240,0.7)" }}>{article.readTime}</span>
             </div>
             <h1
               className="font-serif leading-tight mb-5 max-w-4xl"
@@ -197,7 +197,7 @@ function ArticleView({ article, onBack, onNext, nextArticle }: {
             </button>
           </FadeIn>
           <FadeIn delay={0.1}>
-            <span className="font-serif text-2xl" style={{ color: "rgba(247,244,240,0.12)" }}>BBS</span>
+            <span className="font-serif text-2xl" style={{ color: "rgba(247,244,240,0.12)" }} aria-hidden="true">BBS</span>
           </FadeIn>
         </div>
       </section>
@@ -276,7 +276,7 @@ export default function Journal({ onAuditClick }: { onAuditClick: () => void }) 
       {/* Hero */}
       <section className="section-dark border-b" style={{ borderColor: "var(--sp-rule-d)" }}>
         <div className="max-w-7xl mx-auto px-6 lg:px-12 pt-36 pb-24">
-          <FadeIn><p className="label mb-6" style={{ color: "rgba(247,244,240,0.35)" }}>Journal</p></FadeIn>
+          <FadeIn><p className="label mb-6" style={{ color: "rgba(247,244,240,0.7)" }}>Journal</p></FadeIn>
           <FadeUp>
             <h1 className="font-serif leading-tight" style={{ fontSize: "clamp(2.5rem, 7vw, 6.5rem)", color: "var(--sp-white)" }}>
               From the<br />Playbook.

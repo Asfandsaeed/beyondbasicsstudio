@@ -61,7 +61,7 @@ export default function Navbar({ onAuditClick }: NavbarProps) {
             </span>
             <span
               className="font-sans text-xs tracking-widest uppercase"
-              style={{ color: onDark ? "rgba(247,244,240,0.35)" : "var(--sp-gray)" }}
+              style={{ color: onDark ? "rgba(247,244,240,0.75)" : "var(--sp-gray)" }}
             >
               Studio
             </span>
@@ -102,6 +102,8 @@ export default function Navbar({ onAuditClick }: NavbarProps) {
             onClick={() => setMenuOpen(!menuOpen)}
             className="md:hidden"
             style={{ color: textColor }}
+            aria-label={menuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={menuOpen}
           >
             {menuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>

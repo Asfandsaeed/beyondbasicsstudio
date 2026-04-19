@@ -113,8 +113,8 @@ export default function Home({ onAuditClick }: { onAuditClick: () => void }) {
           className="flex items-center justify-between px-6 lg:px-12"
           style={{ paddingTop: "5.5rem", paddingBottom: "1.5rem", borderBottom: "1px solid var(--sp-rule-d)" }}
         >
-          <p className="label" style={{ color: "rgba(247,244,240,0.4)" }}>GBP Management Agency</p>
-          <p className="label" style={{ color: "rgba(247,244,240,0.3)" }}>Est. 2025 — Worldwide</p>
+          <p className="label" style={{ color: "rgba(247,244,240,0.75)" }}>GBP Management Agency</p>
+          <p className="label" style={{ color: "rgba(247,244,240,0.65)" }}>Est. 2025 — Worldwide</p>
         </motion.div>
 
         {/* Headline */}
@@ -143,7 +143,7 @@ export default function Home({ onAuditClick }: { onAuditClick: () => void }) {
           className="flex flex-col sm:flex-row sm:items-center justify-between gap-5 px-6 lg:px-12 pb-10"
           style={{ paddingTop: "1.5rem", borderTop: "1px solid var(--sp-rule-d)" }}
         >
-          <p className="font-sans text-sm max-w-xs leading-relaxed" style={{ color: "rgba(247,244,240,0.45)" }}>
+          <p className="font-sans text-sm max-w-xs leading-relaxed" style={{ color: "rgba(247,244,240,0.75)" }}>
             The GBP agency giving local businesses an unfair advantage on Google Maps. From $200/mo.
           </p>
           <div className="flex items-center gap-3 shrink-0">
@@ -221,7 +221,7 @@ export default function Home({ onAuditClick }: { onAuditClick: () => void }) {
       </section>
 
       {/* ── TICKER ── */}
-      <section className="border-b py-4 overflow-hidden" style={{ backgroundColor: "var(--sp-ink)", borderColor: "var(--sp-rule-d)" }}>
+      <section className="border-b py-4 overflow-hidden" style={{ backgroundColor: "var(--sp-ink)", borderColor: "var(--sp-rule-d)" }} aria-hidden="true">
         <div className="flex">
           <div className="flex gap-14 items-center animate-marquee whitespace-nowrap">
             {[
@@ -282,7 +282,7 @@ export default function Home({ onAuditClick }: { onAuditClick: () => void }) {
       <section className="section-dark border-b" style={{ borderColor: "var(--sp-rule-d)" }}>
         <div className="max-w-7xl mx-auto px-6 lg:px-12 py-24 lg:py-36">
           <FadeIn>
-            <p className="label mb-12" style={{ color: "rgba(247,244,240,0.35)" }}>Client Voice</p>
+            <p className="label mb-12" style={{ color: "rgba(247,244,240,0.7)" }}>Client Voice</p>
           </FadeIn>
           <FadeUp>
             <blockquote
@@ -293,7 +293,7 @@ export default function Home({ onAuditClick }: { onAuditClick: () => void }) {
             </blockquote>
           </FadeUp>
           <FadeIn delay={0.2}>
-            <p className="font-sans text-sm mt-8" style={{ color: "rgba(247,244,240,0.35)" }}>
+            <p className="font-sans text-sm mt-8" style={{ color: "rgba(247,244,240,0.7)" }}>
               Maria T., Owner — Urban Pizza · Growth Plan
             </p>
           </FadeIn>
@@ -412,7 +412,7 @@ export default function Home({ onAuditClick }: { onAuditClick: () => void }) {
       </section>
 
       {/* ── CLIENTS MARQUEE ── */}
-      <section className="border-b py-5 overflow-hidden" style={{ backgroundColor: "var(--sp-cream)", borderColor: "var(--sp-rule)" }}>
+      <section className="border-b py-5 overflow-hidden" style={{ backgroundColor: "var(--sp-cream)", borderColor: "var(--sp-rule)" }} aria-hidden="true">
         <div className="flex">
           <div className="flex gap-16 items-center animate-marquee whitespace-nowrap">
             {["Urban Pizza", "Summit Dental", "City Auto", "Harbor Café", "Metro Fitness", "Peak Real Estate", "Blue Ridge Bakery", "Coastal Law Group",
@@ -529,7 +529,7 @@ export default function Home({ onAuditClick }: { onAuditClick: () => void }) {
             </h2>
           </FadeUp>
           <FadeIn delay={0.2}>
-            <p className="font-sans text-sm leading-relaxed mb-10 max-w-md" style={{ color: "rgba(247,244,240,0.45)" }}>
+            <p className="font-sans text-sm leading-relaxed mb-10 max-w-md" style={{ color: "rgba(247,244,240,0.75)" }}>
               Your audit is free. Your results are real. Join 500+ local businesses who chose to go Beyond Basics.
             </p>
             <button onClick={onAuditClick} className="btn btn-white">

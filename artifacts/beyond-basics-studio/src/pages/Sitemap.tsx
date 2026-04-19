@@ -108,7 +108,7 @@ export default function Sitemap() {
       <section className="section-dark border-b" style={{ borderColor: "var(--sp-rule-d)" }}>
         <div className="max-w-7xl mx-auto px-6 lg:px-12 pt-36 pb-24">
           <FadeIn>
-            <p className="label mb-6" style={{ color: "rgba(247,244,240,0.35)" }}>Sitemap</p>
+            <p className="label mb-6" style={{ color: "rgba(247,244,240,0.7)" }}>Sitemap</p>
           </FadeIn>
           <motion.h1
             initial={{ opacity: 0, y: 24 }}

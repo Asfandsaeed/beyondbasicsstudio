@@ -3,8 +3,8 @@ import { Link } from "wouter";
 export default function Footer() {
   return (
     <footer style={{ backgroundColor: "var(--sp-ink)", color: "var(--sp-white)" }}>
-      {/* Big type */}
-      <div className="border-b overflow-hidden" style={{ borderColor: "var(--sp-rule-d)" }}>
+      {/* Decorative big type — hidden from screen readers */}
+      <div className="border-b overflow-hidden" style={{ borderColor: "var(--sp-rule-d)" }} aria-hidden="true">
         <p
           className="font-serif leading-none px-6 lg:px-12 py-16 lg:py-24 select-none"
           style={{ fontSize: "clamp(3rem, 9vw, 9rem)", color: "rgba(247,244,240,0.06)", whiteSpace: "nowrap" }}
@@ -22,7 +22,7 @@ export default function Footer() {
             <p className="font-serif text-2xl mb-4" style={{ color: "var(--sp-white)" }}>
               Beyond Basics<br />Studio
             </p>
-            <p className="font-sans text-sm leading-relaxed mb-6" style={{ color: "rgba(247,244,240,0.4)" }}>
+            <p className="font-sans text-sm leading-relaxed mb-6" style={{ color: "rgba(247,244,240,0.7)" }}>
               Your GBP Unfair Advantage.<br />500+ profiles managed worldwide.
             </p>
             <Link href="/contact" className="btn btn-white" style={{ display: "inline-flex", padding: "0.5rem 1.25rem", fontSize: "0.75rem" }}>
@@ -32,7 +32,7 @@ export default function Footer() {
 
           {/* Navigate */}
           <div>
-            <p className="label mb-5" style={{ color: "rgba(247,244,240,0.35)" }}>Navigate</p>
+            <p className="label mb-5" style={{ color: "rgba(247,244,240,0.65)" }}>Navigate</p>
             <ul className="space-y-3">
               {[
                 ["Home", "/"],
@@ -44,7 +44,7 @@ export default function Footer() {
                 ["Contact", "/contact"],
               ].map(([label, href]) => (
                 <li key={label}>
-                  <Link href={href} className="font-sans text-sm transition-opacity hover:opacity-80" style={{ color: "rgba(247,244,240,0.45)" }}>
+                  <Link href={href} className="font-sans text-sm transition-opacity hover:opacity-80" style={{ color: "rgba(247,244,240,0.7)" }}>
                     {label}
                   </Link>
                 </li>
@@ -54,7 +54,7 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <p className="label mb-5" style={{ color: "rgba(247,244,240,0.35)" }}>Services</p>
+            <p className="label mb-5" style={{ color: "rgba(247,244,240,0.65)" }}>Services</p>
             <ul className="space-y-3">
               {[
                 ["Basic — $200/mo", "/services"],
@@ -62,7 +62,7 @@ export default function Footer() {
                 ["Premium — $1k/mo", "/services"],
               ].map(([label, href]) => (
                 <li key={label}>
-                  <Link href={href} className="font-sans text-sm transition-opacity hover:opacity-80" style={{ color: "rgba(247,244,240,0.45)" }}>
+                  <Link href={href} className="font-sans text-sm transition-opacity hover:opacity-80" style={{ color: "rgba(247,244,240,0.7)" }}>
                     {label}
                   </Link>
                 </li>
@@ -72,7 +72,7 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <p className="label mb-5" style={{ color: "rgba(247,244,240,0.35)" }}>Contact</p>
+            <p className="label mb-5" style={{ color: "rgba(247,244,240,0.65)" }}>Contact</p>
             <ul className="space-y-3">
               {[
                 ["hello@beyondbasics.studio", "/contact"],
@@ -80,7 +80,7 @@ export default function Footer() {
                 ["Free GBP Audit", "/contact"],
               ].map(([label, href]) => (
                 <li key={label}>
-                  <Link href={href} className="font-sans text-sm transition-opacity hover:opacity-80" style={{ color: "rgba(247,244,240,0.45)" }}>
+                  <Link href={href} className="font-sans text-sm transition-opacity hover:opacity-80" style={{ color: "rgba(247,244,240,0.7)" }}>
                     {label}
                   </Link>
                 </li>
@@ -94,17 +94,17 @@ export default function Footer() {
           className="flex flex-col sm:flex-row justify-between gap-4 pt-8 border-t"
           style={{ borderColor: "var(--sp-rule-d)" }}
         >
-          <p className="font-sans text-xs" style={{ color: "rgba(247,244,240,0.2)" }}>
+          <p className="font-sans text-xs" style={{ color: "rgba(247,244,240,0.55)" }}>
             © 2026 Beyond Basics Studio. All rights reserved.
           </p>
           <div className="flex flex-wrap gap-6">
-            <Link href="/privacy" className="font-sans text-xs transition-opacity hover:opacity-60" style={{ color: "rgba(247,244,240,0.2)" }}>
+            <Link href="/privacy" className="font-sans text-xs transition-opacity hover:opacity-80" style={{ color: "rgba(247,244,240,0.55)" }}>
               Privacy Policy
             </Link>
-            <Link href="/terms" className="font-sans text-xs transition-opacity hover:opacity-60" style={{ color: "rgba(247,244,240,0.2)" }}>
+            <Link href="/terms" className="font-sans text-xs transition-opacity hover:opacity-80" style={{ color: "rgba(247,244,240,0.55)" }}>
               Terms &amp; Conditions
             </Link>
-            <Link href="/sitemap" className="font-sans text-xs transition-opacity hover:opacity-60" style={{ color: "rgba(247,244,240,0.2)" }}>
+            <Link href="/sitemap" className="font-sans text-xs transition-opacity hover:opacity-80" style={{ color: "rgba(247,244,240,0.55)" }}>
               Sitemap
             </Link>
           </div>

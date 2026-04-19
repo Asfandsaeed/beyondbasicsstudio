@@ -190,7 +190,7 @@ export default function PrivacyPolicy() {
       {/* Header */}
       <section className="section-dark border-b" style={{ borderColor: "var(--sp-rule-d)" }}>
         <div className="max-w-7xl mx-auto px-6 lg:px-12 pt-36 pb-20">
-          <FadeIn><p className="label mb-6" style={{ color: "rgba(247,244,240,0.35)" }}>Legal</p></FadeIn>
+          <FadeIn><p className="label mb-6" style={{ color: "rgba(247,244,240,0.7)" }}>Legal</p></FadeIn>
           <FadeUp>
             <h1
               className="font-serif leading-tight"
@@ -200,7 +200,7 @@ export default function PrivacyPolicy() {
             </h1>
           </FadeUp>
           <FadeIn delay={0.2}>
-            <p className="font-sans text-sm mt-5" style={{ color: "rgba(247,244,240,0.35)" }}>
+            <p className="font-sans text-sm mt-5" style={{ color: "rgba(247,244,240,0.7)" }}>
               Effective Date: April 12, 2026 · beyondbasicsstudio.com
             </p>
           </FadeIn>
