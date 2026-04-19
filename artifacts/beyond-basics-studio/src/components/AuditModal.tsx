@@ -114,7 +114,26 @@ export default function AuditModal({ isOpen, onClose }: AuditModalProps) {
                 <div key={key}>
                   <label className="label block mb-1">{label}</label>
                   <input
-                    {...register(key, required ? { required: "Required" } : {})}
+                    {...register(key, {
+                      ...(required ? { required: "Required" } : {}),
+                      ...(key === "gbpUrl" ? {
+                        validate: (val) => {
+                          if (!val) return true;
+                          try {
+                            const url = new URL(val.trim());
+                            const host = url.hostname.toLowerCase();
+                            const path = url.pathname.toLowerCase();
+                            const validMapsHost =
+                              (host === "maps.app.goo.gl") ||
+                              (host === "maps.google.com") ||
+                              ((host === "google.com" || host === "www.google.com") && path.startsWith("/maps"));
+                            return validMapsHost || "Please paste a valid Google Maps link (e.g. google.com/maps/...)";
+                          } catch {
+                            return "Please paste a valid Google Maps link (e.g. google.com/maps/...)";
+                          }
+                        },
+                      } : {}),
+                    })}
                     type={type}
                     placeholder={placeholder}
                     className={inputCls}
