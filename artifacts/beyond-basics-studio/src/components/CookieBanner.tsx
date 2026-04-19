@@ -19,6 +19,7 @@ export default function CookieBanner() {
 
   const accept = () => {
     localStorage.setItem(STORAGE_KEY, "accepted");
+    document.dispatchEvent(new CustomEvent("bbs-cookie-accept"));
     setVisible(false);
   };
 

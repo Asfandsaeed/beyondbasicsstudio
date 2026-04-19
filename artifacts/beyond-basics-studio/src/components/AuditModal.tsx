@@ -1,6 +1,7 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { X, CheckCircle, AlertCircle, ArrowRight } from "lucide-react";
 import { useForm } from "react-hook-form";
+import { trackEvent } from "../lib/analytics";
 
 const FORMSPREE_AUDIT_ID = (import.meta.env.VITE_FORMSPREE_AUDIT_ID || import.meta.env.VITE_FORMSPREE_ID) as string | undefined;
 
@@ -17,6 +18,17 @@ interface AuditModalProps {
 export default function AuditModal({ isOpen, onClose }: AuditModalProps) {
   const { register, handleSubmit, formState: { errors, isSubmitting }, reset } = useForm<FormValues>();
   const [submitState, setSubmitState] = useState<"idle" | "success" | "error">("idle");
+  const trackedOpenRef = useRef(false);
+
+  useEffect(() => {
+    if (isOpen && !trackedOpenRef.current) {
+      trackedOpenRef.current = true;
+      trackEvent("audit_modal_opened");
+    }
+    if (!isOpen) {
+      trackedOpenRef.current = false;
+    }
+  }, [isOpen]);
 
   const handleClose = useCallback(() => {
     reset();
@@ -31,6 +43,7 @@ export default function AuditModal({ isOpen, onClose }: AuditModalProps) {
     setSubmitState("idle");
     if (!FORMSPREE_AUDIT_ID) {
       await new Promise(r => setTimeout(r, 600));
+      trackEvent("audit_form_submitted");
       setSubmitState("success");
       return;
     }
@@ -41,6 +54,7 @@ export default function AuditModal({ isOpen, onClose }: AuditModalProps) {
         body: JSON.stringify({ ...data, _subject: "New Free GBP Audit Request" }),
       });
       if (res.ok) {
+        trackEvent("audit_form_submitted");
         setSubmitState("success");
       } else {
         setSubmitState("error");
