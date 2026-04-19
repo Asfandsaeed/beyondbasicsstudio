@@ -20,7 +20,7 @@ export default function Footer() {
               Beyond Basics<br />Studio
             </p>
             <p className="font-sans text-sm leading-relaxed mb-6" style={{ color: "rgba(247,244,240,0.7)" }}>
-              Your GBP Unfair Advantage.<br />500+ profiles managed across San Francisco, Toronto, London, Dubai, Beirut.
+              We genuinely give a sh*t.
             </p>
             <Link href="/contact" className="btn btn-white" style={{ display: "inline-flex", padding: "0.5rem 1.25rem", fontSize: "0.75rem" }}>
               Free Audit →
