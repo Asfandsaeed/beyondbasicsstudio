@@ -2,6 +2,7 @@ import { defineConfig, type Plugin } from "vite";
 import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 import path from "path";
+import fs from "fs";
 import runtimeErrorOverlay from "@replit/vite-plugin-runtime-error-modal";
 
 const rawPort = process.env.PORT;
@@ -24,6 +25,31 @@ if (!basePath) {
   throw new Error(
     "BASE_PATH environment variable is required but was not provided.",
   );
+}
+
+/**
+ * Injects the pre-generated content.json as an inline
+ * <script type="application/json" id="__bbs_content__"> into the HTML.
+ *
+ * JS-capable LLMs (and any script) can access the full site data via:
+ *   JSON.parse(document.getElementById('__bbs_content__').textContent)
+ *
+ * The file is written by scripts/generate-content.ts which runs as prebuild.
+ * In dev mode (no file present) the injection is silently skipped.
+ */
+function injectBBSContent(): Plugin {
+  return {
+    name: "inject-bbs-content",
+    apply: "build",
+    transformIndexHtml(html: string): string {
+      const contentPath = path.resolve(import.meta.dirname, "public", "content.json");
+      if (!fs.existsSync(contentPath)) return html;
+      const raw = fs.readFileSync(contentPath, "utf8");
+      // Inline just after <head> (before first <meta>)
+      const inlineScript = `<script type="application/json" id="__bbs_content__">${raw}</script>`;
+      return html.replace("</head>", `  ${inlineScript}\n</head>`);
+    },
+  };
 }
 
 /**
@@ -59,6 +85,7 @@ export default defineConfig({
   plugins: [
     react(),
     tailwindcss(),
+    injectBBSContent(),
     asyncStylesheetPlugin(),
     runtimeErrorOverlay(),
     ...(process.env.NODE_ENV !== "production" &&
