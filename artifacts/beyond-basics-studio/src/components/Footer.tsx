@@ -19,23 +19,41 @@ export default function Footer() {
             <p className="font-serif text-2xl mb-4" style={{ color: "var(--sp-white)" }}>
               Beyond Basics<br />Studio
             </p>
-            <p className="font-sans text-sm leading-relaxed mb-6" style={{ color: "rgba(247,244,240,0.7)" }}>
+            <p className="font-sans text-sm leading-relaxed mb-2" style={{ color: "rgba(247,244,240,0.7)" }}>
               We genuinely give a sh*t.
+            </p>
+            <p className="font-sans text-sm mb-6" style={{ color: "rgba(247,244,240,0.45)" }}>
+              SF · Toronto · London · Dubai · Beirut
             </p>
             <Link href="/contact" className="btn btn-white" style={{ display: "inline-flex", padding: "0.5rem 1.25rem", fontSize: "0.75rem" }}>
               Free Audit →
             </Link>
           </div>
 
-          {/* Navigate */}
+          {/* Pages */}
           <div>
-            <p className="label mb-5" style={{ color: "rgba(247,244,240,0.65)" }}>Navigate</p>
+            <p className="label mb-5" style={{ color: "rgba(247,244,240,0.65)" }}>Pages</p>
             <ul className="space-y-3">
               {[
                 ["Home", "/"],
                 ["Services", "/services"],
                 ["Work", "/case-studies"],
                 ["Customers", "/customers"],
+              ].map(([label, href]) => (
+                <li key={label}>
+                  <Link href={href} className="font-sans text-sm transition-opacity hover:opacity-80" style={{ color: "rgba(247,244,240,0.7)" }}>
+                    {label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Company */}
+          <div>
+            <p className="label mb-5" style={{ color: "rgba(247,244,240,0.65)" }}>Company</p>
+            <ul className="space-y-3">
+              {[
                 ["Journal", "/journal"],
                 ["About", "/about"],
                 ["Contact", "/contact"],
@@ -49,23 +67,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Contact */}
-          <div>
-            <p className="label mb-5" style={{ color: "rgba(247,244,240,0.65)" }}>Contact</p>
-            <ul className="space-y-3">
-              {[
-                ["hello@beyondbasics.studio", "/contact"],
-                ["SF · Toronto · London · Dubai · Beirut", "/contact"],
-                ["Free GBP Audit", "/contact"],
-              ].map(([label, href]) => (
-                <li key={label}>
-                  <Link href={href} className="font-sans text-sm transition-opacity hover:opacity-80" style={{ color: "rgba(247,244,240,0.7)" }}>
-                    {label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
         </div>
 
         {/* Bottom bar */}
