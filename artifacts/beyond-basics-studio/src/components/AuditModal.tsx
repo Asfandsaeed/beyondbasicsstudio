@@ -119,6 +119,12 @@ export default function AuditModal({ isOpen, onClose }: AuditModalProps) {
                       ...(key === "email" ? {
                         pattern: { value: /.+@.+\..+/, message: "Please enter a valid email address" },
                       } : {}),
+                      ...(key === "phone" ? {
+                        validate: (val) => {
+                          if (!val || !val.trim()) return true;
+                          return /^[+\d][\d\s\-().]{6,}$/.test(val.trim()) || "Please enter a valid phone number";
+                        },
+                      } : {}),
                       ...(key === "gbpUrl" ? {
                         validate: (val) => {
                           if (!val) return true;
