@@ -24,18 +24,18 @@ All plans are month-to-month with no lock-in. Upgrades and downgrades available 
 
 ## Pages
 
-- [Home](https://www.beyondbasicsstudio.com/) — Agency overview, services, hero message, stats, and CTA
-- [Services](https://www.beyondbasicsstudio.com/services) — Full pricing and feature breakdown for all three tiers
-- [Work / Case Studies](https://www.beyondbasicsstudio.com/case-studies) — Before/after results from 6 featured clients across restaurant, dental, auto, café, gym, and real estate
-- [Customers](https://www.beyondbasicsstudio.com/customers) — 30 detailed client stories across 18 industries with quotes and stats
-- [Journal](https://www.beyondbasicsstudio.com/journal) — 8+ long-form articles on GBP strategy, algorithm changes, review automation, and local SEO
-- [About](https://www.beyondbasicsstudio.com/about) — Founding story, team (4 members), values, and company stats
-- [Contact](https://www.beyondbasicsstudio.com/contact) — Contact form, email, office locations, 30-min Calendly booking, FAQ
+- [Home](https://beyondbasics.studio/) — Agency overview, services, hero message, stats, and CTA
+- [Services](https://beyondbasics.studio/services) — Full pricing and feature breakdown for all three tiers
+- [Work / Case Studies](https://beyondbasics.studio/case-studies) — Before/after results from 6 featured clients across restaurant, dental, auto, café, gym, and real estate
+- [Customers](https://beyondbasics.studio/customers) — 30 detailed client stories across 18 industries with quotes and stats
+- [Journal](https://beyondbasics.studio/journal) — 8+ long-form articles on GBP strategy, algorithm changes, review automation, and local SEO
+- [About](https://beyondbasics.studio/about) — Founding story, team (4 members), values, and company stats
+- [Contact](https://beyondbasics.studio/contact) — Contact form, email, office locations, 30-min Calendly booking, FAQ
 
 ## Contact
 
 - Email: hello@beyondbasics.studio
-- Free GBP Audit: https://www.beyondbasicsstudio.com/contact
+- Free GBP Audit: https://beyondbasics.studio/contact
 - Free 30-min strategy call: https://calendly.com/beyondbasicsstudio/30min
 - Offices: San Francisco · Toronto · London · Dubai · Beirut
 
@@ -45,21 +45,21 @@ Minimal, editorial, direct. No fluff — just results.
 
 ## Journal Articles (9 full-text articles)
 
-1. GBP Ranking Factors 2025: The Definitive Guide — https://www.beyondbasicsstudio.com/journal/gbp-ranking-factors-2025
-2. Review Velocity vs Review Quality: What Google Actually Weights — https://www.beyondbasicsstudio.com/journal/review-velocity-vs-quality
-3. The GBP Photo Audit That Tripled Our Client's Call Volume — https://www.beyondbasicsstudio.com/journal/gbp-photo-audit-guide
-4. How We Cracked Google's 'Zero Click' Local Pack — https://www.beyondbasicsstudio.com/journal/zero-click-local-pack
-5. From 0 to 5,000 Monthly Views: Case Study of a Restaurant's GBP Transformation — https://www.beyondbasicsstudio.com/journal/martas-kitchen-case-study
-6. The AI Review Response System That Boosts Ratings 0.8 Stars Without Writing a Word — https://www.beyondbasicsstudio.com/journal/ai-review-response-system
-7. Multi-Location GBP Domination: Managing 50 Profiles Without Losing Control — https://www.beyondbasicsstudio.com/journal/multi-location-gbp-domination
-8. Google Posts ROI Revealed: Which Content Types Drive 4× More Calls — https://www.beyondbasicsstudio.com/journal/google-posts-roi
-9. How to Suspend-Proof Your GBP: Lessons from Recovering 43 Suspended Profiles — https://www.beyondbasicsstudio.com/journal/suspend-proof-your-gbp
+1. GBP Ranking Factors 2025: The Definitive Guide — https://beyondbasics.studio/journal/gbp-ranking-factors-2025
+2. Review Velocity vs Review Quality: What Google Actually Weights — https://beyondbasics.studio/journal/review-velocity-vs-quality
+3. The GBP Photo Audit That Tripled Our Client's Call Volume — https://beyondbasics.studio/journal/gbp-photo-audit-guide
+4. How We Cracked Google's 'Zero Click' Local Pack — https://beyondbasics.studio/journal/zero-click-local-pack
+5. From 0 to 5,000 Monthly Views: Case Study of a Restaurant's GBP Transformation — https://beyondbasics.studio/journal/martas-kitchen-case-study
+6. The AI Review Response System That Boosts Ratings 0.8 Stars Without Writing a Word — https://beyondbasics.studio/journal/ai-review-response-system
+7. Multi-Location GBP Domination: Managing 50 Profiles Without Losing Control — https://beyondbasics.studio/journal/multi-location-gbp-domination
+8. Google Posts ROI Revealed: Which Content Types Drive 4× More Calls — https://beyondbasics.studio/journal/google-posts-roi
+9. How to Suspend-Proof Your GBP: Lessons from Recovering 43 Suspended Profiles — https://beyondbasics.studio/journal/suspend-proof-your-gbp
 
 ## Full Content for LLMs
 
-- [Full site content (all pages, all articles, all 30 customer stories — plain text)](https://www.beyondbasicsstudio.com/llms-full.txt)
-- [Full structured JSON (same content, machine-readable)](https://www.beyondbasicsstudio.com/content.json)
-- [XML Sitemap](https://www.beyondbasicsstudio.com/sitemap.xml)
+- [Full site content (all pages, all articles, all 30 customer stories — plain text)](https://beyondbasics.studio/llms-full.txt)
+- [Full structured JSON (same content, machine-readable)](https://beyondbasics.studio/content.json)
+- [XML Sitemap](https://beyondbasics.studio/sitemap.xml)
 
 ## JS-Accessible Content
 

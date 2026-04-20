@@ -32,4 +32,4 @@ Allow: /
 User-agent: YouBot
 Allow: /
 
-Sitemap: https://www.beyondbasicsstudio.com/sitemap.xml
+Sitemap: https://beyondbasics.studio/sitemap.xml
