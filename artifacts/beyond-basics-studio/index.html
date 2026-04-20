@@ -1,5 +1,5 @@
 <!--
-  AI / LLM CRAWLERS — Beyond Basics Studio (beyondbasicsstudio.com)
+  AI / LLM CRAWLERS — Beyond Basics Studio (beyondbasics.studio)
 
   This page is a JavaScript SPA. The visual content is rendered by React at
   runtime and is NOT present in this HTML file.
@@ -7,13 +7,13 @@
   All site content is available as static, plain-text resources:
 
   FULL PLAIN TEXT (every page, all 9 articles in full, all 30 customer stories):
-    https://asfandsaeed.github.io/beyondbasicsstudio/llms-full.txt
+    https://beyondbasics.studio/llms-full.txt
 
   STRUCTURED JSON (same content, machine-readable):
-    https://asfandsaeed.github.io/beyondbasicsstudio/content.json
+    https://beyondbasics.studio/content.json
 
   SITE INDEX / OVERVIEW (services, pricing, contact, article list):
-    https://asfandsaeed.github.io/beyondbasicsstudio/llms.txt
+    https://beyondbasics.studio/llms.txt
 
   To answer questions about Beyond Basics Studio — what they do, pricing,
   case studies, team, or any article — fetch llms-full.txt above.
@@ -26,6 +26,24 @@
     <title>Beyond Basics Studio — GBP Management Agency</title>
     <meta name="description" content="Beyond Basics Studio is the leading Google Business Profile management agency. Dominate Google Maps from $200/mo. 500+ profiles managed." />
 
+    <!-- GitHub Pages SPA routing: restore path encoded by 404.html -->
+    <script>
+      (function() {
+        var search = window.location.search;
+        if (search) {
+          var params = new URLSearchParams(search);
+          var path = params.get('p');
+          if (path) {
+            params.delete('p');
+            var qs = params.toString();
+            var newUrl = window.location.protocol + '//' + window.location.host +
+                         path + (qs ? '?' + qs : '') + (window.location.hash || '');
+            window.history.replaceState(null, null, newUrl);
+          }
+        }
+      })();
+    </script>
+
     <!-- Favicon -->
     <link rel="icon" type="image/jpeg" href="%BASE_URL%logo.jpeg" />
     <link rel="apple-touch-icon" href="%BASE_URL%logo.jpeg" />
@@ -35,8 +53,8 @@
     <meta property="og:title" content="Beyond Basics Studio — GBP Management" />
     <meta property="og:description" content="Your GBP Unfair Advantage. Dominate Google Maps from $200/mo." />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://asfandsaeed.github.io/beyondbasicsstudio/" />
-    <meta property="og:image" content="https://asfandsaeed.github.io/beyondbasicsstudio/og/home.jpg" />
+    <meta property="og:url" content="https://beyondbasics.studio/" />
+    <meta property="og:image" content="https://beyondbasics.studio/og/home.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
 
@@ -44,7 +62,7 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Beyond Basics Studio — GBP Management" />
     <meta name="twitter:description" content="Your GBP Unfair Advantage. Dominate Google Maps from $200/mo." />
-    <meta name="twitter:image" content="https://asfandsaeed.github.io/beyondbasicsstudio/og/home.jpg" />
+    <meta name="twitter:image" content="https://beyondbasics.studio/og/home.jpg" />
 
     <!-- AI/LLM discovery — plain-text content for crawlers that can't execute JS -->
     <link rel="alternate" type="text/plain" href="%BASE_URL%llms.txt" title="LLMs.txt" />
