@@ -192,80 +192,6 @@ const ABOUT_STATS = [
   { value: "2021", label: "Year Founded" },
 ];
 
-const CASE_STUDIES = [
-  {
-    business: "Urban Pizza",
-    type: "Restaurant",
-    location: "Chicago, IL",
-    tier: "Growth",
-    duration: "90 days",
-    highlight: "+3,250% profile views",
-    before: { views: "180/mo", rank: "#14", reviews: "12", calls: "8/mo" },
-    after: { views: "5,200/mo", rank: "#2", reviews: "214", calls: "268/mo" },
-    quote: "We went from 8 calls a month to 268. Best investment we've ever made.",
-    author: "Maria T., Owner",
-  },
-  {
-    business: "Summit Dental",
-    type: "Healthcare",
-    location: "Denver, CO",
-    tier: "Premium",
-    duration: "60 days",
-    highlight: "#1 in Local Map Pack",
-    before: { views: "320/mo", rank: "#9", reviews: "28", calls: "22/mo" },
-    after: { views: "8,100/mo", rank: "#1", reviews: "312", calls: "190/mo" },
-    quote: "From page-2 obscurity to the top spot. New patients up 750%.",
-    author: "Dr. James R., Practice Owner",
-  },
-  {
-    business: "City Auto Repair",
-    type: "Automotive",
-    location: "Austin, TX",
-    tier: "Growth",
-    duration: "120 days",
-    highlight: "+2,800% call volume",
-    before: { views: "95/mo", rank: "#11", reviews: "6", calls: "5/mo" },
-    after: { views: "3,800/mo", rank: "#3", reviews: "187", calls: "145/mo" },
-    quote: "I thought GBP was just a listing. It's now my biggest revenue driver.",
-    author: "Carlos M., Owner",
-  },
-  {
-    business: "Harbor Café",
-    type: "Café & Bakery",
-    location: "Portland, OR",
-    tier: "Premium",
-    duration: "75 days",
-    highlight: "400+ Google Reviews",
-    before: { views: "210/mo", rank: "#7", reviews: "19", calls: "12/mo" },
-    after: { views: "6,400/mo", rank: "#1", reviews: "401", calls: "98/mo" },
-    quote: "Our weekend wait times doubled. Best problem we've ever had.",
-    author: "Sarah L., Co-owner",
-  },
-  {
-    business: "Metro Fitness",
-    type: "Gym & Fitness",
-    location: "Miami, FL",
-    tier: "Premium",
-    duration: "90 days",
-    highlight: "5× membership signups",
-    before: { views: "440/mo", rank: "#8", reviews: "31", calls: "18/mo" },
-    after: { views: "9,200/mo", rank: "#2", reviews: "560", calls: "312/mo" },
-    quote: "New membership signups from Google Maps increased 5x. The ROI is insane.",
-    author: "Derek J., Marketing Director",
-  },
-  {
-    business: "Peak Real Estate",
-    type: "Real Estate",
-    location: "Seattle, WA",
-    tier: "Growth",
-    duration: "105 days",
-    highlight: "4 direct Map Pack closes",
-    before: { views: "120/mo", rank: "#15", reviews: "8", calls: "4/mo" },
-    after: { views: "4,100/mo", rank: "#3", reviews: "143", calls: "89/mo" },
-    quote: "We closed 4 listings in one month that came directly from Google Maps.",
-    author: "Amanda P., Principal Agent",
-  },
-];
 
 // ─── Content JSON ─────────────────────────────────────────────────────────────
 
@@ -313,19 +239,6 @@ const content = {
       pricing: SERVICES,
       howItWorks: HOW_IT_WORKS,
       faq: SERVICES_FAQ,
-    },
-    caseStudies: {
-      url: `${SITE.url}/case-studies`,
-      headline: "Proof, not pitches.",
-      description:
-        "Actual before/after results from real clients who chose to stop being invisible on Google Maps.",
-      stats: [
-        { value: "500+", label: "Active Clients" },
-        { value: "300%", label: "Avg Review Growth" },
-        { value: "12×", label: "Avg Call Increase" },
-        { value: "90", label: "Days to Top 3" },
-      ],
-      cases: CASE_STUDIES,
     },
     customers: {
       url: `${SITE.url}/customers`,
@@ -463,20 +376,6 @@ const txt = lines(
   "",
   "---",
   "",
-  "## CASE STUDIES PAGE",
-  `URL: ${SITE.url}/case-studies`,
-  "",
-  ...CASE_STUDIES.flatMap((c) => [
-    `### ${c.business} (${c.type}, ${c.location}) — ${c.tier} tier, ${c.duration}`,
-    `Highlight: ${c.highlight}`,
-    `Before: Views ${c.before.views} | Rank ${c.before.rank} | Reviews ${c.before.reviews} | Calls ${c.before.calls}`,
-    `After:  Views ${c.after.views} | Rank ${c.after.rank} | Reviews ${c.after.reviews} | Calls ${c.after.calls}`,
-    `Quote: "${c.quote}" — ${c.author}`,
-    "",
-  ]),
-  "",
-  "---",
-  "",
   "## CUSTOMERS PAGE (30 Stories)",
   `URL: ${SITE.url}/customers`,
   "",
@@ -558,7 +457,6 @@ const txt = lines(
   "## SITEMAP",
   `${SITE.url}/`,
   `${SITE.url}/services`,
-  `${SITE.url}/case-studies`,
   `${SITE.url}/customers`,
   `${SITE.url}/journal`,
   ...articles.map((a) => `${SITE.url}/journal/${a.slug}`),
@@ -592,7 +490,6 @@ const noscript = `
   <ul>
     <li><a href="${BASE}/">Home</a></li>
     <li><a href="${BASE}/services">Services &amp; Pricing</a></li>
-    <li><a href="${BASE}/case-studies">Case Studies</a></li>
     <li><a href="${BASE}/customers">Customer Stories</a></li>
     <li><a href="${BASE}/journal">Journal</a></li>
     <li><a href="${BASE}/about">About</a></li>
@@ -621,18 +518,6 @@ ${SERVICES.map((s) => `  <article>
     <h3>${esc(s.name)} — ${esc(s.price)} (${esc(s.locations)})${(s as any).badge ? " — " + esc((s as any).badge) : ""}</h3>
     <p>${esc(s.tagline)}</p>
     <ul>${s.features.map((f) => `<li>${esc(f)}</li>`).join("")}</ul>
-  </article>`).join("\n")}
-</section>
-
-<section id="bbs-case-studies">
-  <h2><a href="${BASE}/case-studies">Case Studies</a></h2>
-  <p>Actual before/after results from real clients.</p>
-${CASE_STUDIES.map((c) => `  <article>
-    <h3>${esc(c.business)} (${esc(c.type)}, ${esc(c.location)})</h3>
-    <p>Tier: ${esc(c.tier)} | Duration: ${esc(c.duration)} | Highlight: ${esc(c.highlight)}</p>
-    <p>Before: Views ${esc(c.before.views)}, Rank ${esc(c.before.rank)}, Reviews ${esc(c.before.reviews)}, Calls ${esc(c.before.calls)}</p>
-    <p>After: Views ${esc(c.after.views)}, Rank ${esc(c.after.rank)}, Reviews ${esc(c.after.reviews)}, Calls ${esc(c.after.calls)}</p>
-    <blockquote>${esc(c.quote)} — ${esc(c.author)}</blockquote>
   </article>`).join("\n")}
 </section>
 

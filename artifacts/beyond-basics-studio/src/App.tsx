@@ -13,7 +13,6 @@ import Home from "@/pages/Home";
 import SchemaMarkup from "@/components/SchemaMarkup";
 
 const Services = lazy(() => import("@/pages/Services"));
-const CaseStudies = lazy(() => import("@/pages/CaseStudies"));
 const About = lazy(() => import("@/pages/About"));
 const Contact = lazy(() => import("@/pages/Contact"));
 const Journal = lazy(() => import("@/pages/Journal"));
@@ -45,7 +44,6 @@ function Router({ onAuditClick }: { onAuditClick: () => void }) {
       <Switch>
         <Route path="/" component={() => <Home onAuditClick={onAuditClick} />} />
         <Route path="/services" component={() => <Services onAuditClick={onAuditClick} />} />
-        <Route path="/case-studies" component={() => <CaseStudies onAuditClick={onAuditClick} />} />
         <Route path="/about" component={() => <About onAuditClick={onAuditClick} />} />
         <Route path="/contact" component={() => <Contact />} />
         <Route path="/journal/:slug" component={() => <Journal onAuditClick={onAuditClick} />} />
@@ -97,38 +95,51 @@ function App() {
             {
               "@context": "https://schema.org",
               "@type": "WebSite",
-              "@id": "https://asfandsaeed.github.io/beyondbasicsstudio/#website",
-              "url": "https://asfandsaeed.github.io/beyondbasicsstudio/",
+              "@id": "https://www.beyondbasicsstudio.com/#website",
+              "url": "https://www.beyondbasicsstudio.com/",
               "name": "Beyond Basics Studio",
               "description": "Google Business Profile management agency — helping local businesses dominate Google Maps from $200/mo.",
-              "publisher": { "@id": "https://asfandsaeed.github.io/beyondbasicsstudio/#organization" },
+              "publisher": { "@id": "https://www.beyondbasicsstudio.com/#organization" },
+              "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://www.beyondbasicsstudio.com/journal?q={search_term_string}",
+                "query-input": "required name=search_term_string",
+              },
             },
             {
               "@context": "https://schema.org",
               "@type": "Organization",
-              "@id": "https://asfandsaeed.github.io/beyondbasicsstudio/#organization",
+              "@id": "https://www.beyondbasicsstudio.com/#organization",
               "name": "Beyond Basics Studio",
-              "url": "https://asfandsaeed.github.io/beyondbasicsstudio/",
+              "url": "https://www.beyondbasicsstudio.com/",
               "logo": {
                 "@type": "ImageObject",
-                "url": "https://asfandsaeed.github.io/beyondbasicsstudio/favicon.svg",
+                "url": "https://www.beyondbasicsstudio.com/favicon.svg",
                 "width": 512,
                 "height": 512,
               },
               "description": "Beyond Basics Studio is a data-driven Google Business Profile agency founded in 2021. We manage 500+ GBP profiles across San Francisco, Toronto, London, Dubai, and Beirut.",
               "foundingDate": "2021",
-              "areaServed": "San Francisco, Toronto, London, Dubai, Beirut",
+              "areaServed": ["San Francisco", "Toronto", "London", "Dubai", "Beirut"],
+              "email": "hello@beyondbasics.studio",
               "contactPoint": {
                 "@type": "ContactPoint",
                 "contactType": "customer service",
-                "email": "hello@beyondbasicsstudio.com",
+                "email": "hello@beyondbasics.studio",
                 "availableLanguage": "English",
               },
-              "offers": [
-                { "@type": "Offer", "name": "Basic GBP Management", "price": "200", "priceCurrency": "USD" },
-                { "@type": "Offer", "name": "Growth GBP Management", "price": "500", "priceCurrency": "USD" },
-                { "@type": "Offer", "name": "Premium GBP Management", "price": "1000", "priceCurrency": "USD" },
+              "sameAs": [
+                "https://asfandsaeed.github.io/beyondbasicsstudio/",
               ],
+              "hasOfferCatalog": {
+                "@type": "OfferCatalog",
+                "name": "GBP Management Plans",
+                "itemListElement": [
+                  { "@type": "Offer", "name": "Basic GBP Management", "price": "200", "priceCurrency": "USD", "description": "Single-location GBP management — audits, posts, reviews, monthly reporting." },
+                  { "@type": "Offer", "name": "Growth GBP Management", "price": "500", "priceCurrency": "USD", "description": "Up to 5 locations — review automation, competitor analysis, bi-weekly reporting." },
+                  { "@type": "Offer", "name": "Premium GBP Management", "price": "1000", "priceCurrency": "USD", "description": "Up to 50 locations — real-time monitoring, dedicated manager, custom KPI dashboard." },
+                ],
+              },
             },
           ]} />
           <ScrollToTop />

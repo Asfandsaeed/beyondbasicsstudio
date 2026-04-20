@@ -21,7 +21,6 @@ function FadeIn({ children, delay = 0 }: { children: React.ReactNode; delay?: nu
 const mainPages = [
   { label: "Home", href: "/", desc: "GBP management agency overview" },
   { label: "Services", href: "/services", desc: "Pricing tiers — Basic, Growth, Premium" },
-  { label: "Work", href: "/case-studies", desc: "Before/after stats across 6 client verticals" },
   { label: "Customers", href: "/customers", desc: "30 full narrative case studies from real clients" },
   { label: "Journal", href: "/journal", desc: "Expert articles on GBP strategy and local SEO" },
   { label: "About", href: "/about", desc: "Our story, team, and mission" },

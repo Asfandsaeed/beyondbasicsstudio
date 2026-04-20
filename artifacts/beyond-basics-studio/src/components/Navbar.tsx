@@ -25,7 +25,7 @@ export default function Navbar({ onAuditClick }: NavbarProps) {
     return () => { document.body.style.overflow = ""; };
   }, [menuOpen]);
 
-  const DARK_HERO_PAGES = ["/", "/services", "/case-studies", "/about", "/contact", "/journal", "/privacy", "/terms", "/sitemap", "/customers"];
+  const DARK_HERO_PAGES = ["/", "/services", "/about", "/contact", "/journal", "/privacy", "/terms", "/sitemap", "/customers"];
   useEffect(() => {
     setDarkHero(DARK_HERO_PAGES.includes(location));
     setMenuOpen(false);
@@ -34,7 +34,6 @@ export default function Navbar({ onAuditClick }: NavbarProps) {
   const links = [
     { href: "/", label: "Home" },
     { href: "/services", label: "Services" },
-    { href: "/case-studies", label: "Work" },
     { href: "/customers", label: "Customers" },
     { href: "/journal", label: "Journal" },
     { href: "/about", label: "About" },
