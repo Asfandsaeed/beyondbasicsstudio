@@ -21,7 +21,7 @@ mkdirSync(PUBLIC, { recursive: true });
 
 const SITE = {
   name: "Beyond Basics Studio",
-  url: "https://www.beyondbasicsstudio.com",
+  url: "https://beyondbasics.studio",
   email: "hello@beyondbasics.studio",
   phone: null,
   founded: "2021",
@@ -200,7 +200,7 @@ const content = {
     generated: new Date().toISOString(),
     version: "1.0",
     description:
-      "Complete structured content for beyondbasicsstudio.com. Available at window.__BBS_CONTENT__ when JS is executed on any page.",
+      "Complete structured content for beyondbasics.studio. Available at window.__BBS_CONTENT__ when JS is executed on any page.",
   },
   site: SITE,
   pages: {
@@ -329,7 +329,7 @@ const txt = lines(
   "# Beyond Basics Studio — Complete Site Content for LLMs",
   "",
   "> Generated: " + new Date().toISOString(),
-  "> Source: beyondbasicsstudio.com/content.json (structured JSON version)",
+  "> Source: beyondbasics.studio/content.json (structured JSON version)",
   "> This file contains 100% of the site's text content — all pages, all articles in full, all customer stories.",
   "",
   "---",
@@ -473,7 +473,7 @@ console.log("✓ public/llms-full.txt written");
 // Keeps the full-text content in llms-full.txt, but surfaces enough
 // structured HTML — with real <a> links — for crawlers to understand the site.
 
-const BASE = "https://asfandsaeed.github.io/beyondbasicsstudio";
+const BASE = "https://beyondbasics.studio";
 
 const esc = (s: string) =>
   s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");

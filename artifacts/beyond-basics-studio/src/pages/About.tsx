@@ -32,26 +32,26 @@ export default function About({ onAuditClick }: { onAuditClick: () => void }) {
           "@context": "https://schema.org",
           "@type": "BreadcrumbList",
           "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.beyondbasicsstudio.com/" },
-            { "@type": "ListItem", "position": 2, "name": "About", "item": "https://www.beyondbasicsstudio.com/about" }
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://beyondbasics.studio/" },
+            { "@type": "ListItem", "position": 2, "name": "About", "item": "https://beyondbasics.studio/about" }
           ]
         },
         {
           "@context": "https://schema.org",
           "@type": "AboutPage",
-          "url": "https://www.beyondbasicsstudio.com/about",
+          "url": "https://beyondbasics.studio/about",
           "name": "About Beyond Basics Studio — GBP Management Agency",
           "description": "Beyond Basics Studio is a data-driven Google Business Profile agency founded in 2021. We bring enterprise-level GBP expertise to local businesses across San Francisco, Toronto, London, Dubai, and Beirut.",
-          "isPartOf": { "@type": "WebSite", "url": "https://www.beyondbasicsstudio.com/" }
+          "isPartOf": { "@type": "WebSite", "url": "https://beyondbasics.studio/" }
         },
         {
           "@context": "https://schema.org",
           "@type": "Organization",
           "name": "Beyond Basics Studio",
-          "url": "https://www.beyondbasicsstudio.com/",
-          "logo": "https://www.beyondbasicsstudio.com/favicon.svg",
+          "url": "https://beyondbasics.studio/",
+          "logo": "https://beyondbasics.studio/favicon.svg",
           "foundingDate": "2021",
-          "email": "hello@beyondbasicsstudio.com",
+          "email": "hello@beyondbasics.studio",
           "description": "Google Business Profile management agency delivering data-driven local SEO, review generation, and map pack domination for businesses across San Francisco, Toronto, London, Dubai, and Beirut.",
           "employee": team.map(m => ({
             "@type": "Person",

@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-const SITE_BASE = "https://asfandsaeed.github.io/beyondbasicsstudio";
+const SITE_BASE = "https://beyondbasics.studio";
 
 interface PageMeta {
   title: string;

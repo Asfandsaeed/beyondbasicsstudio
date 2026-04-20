@@ -191,23 +191,23 @@ export default function Terms() {
           "@context": "https://schema.org",
           "@type": "BreadcrumbList",
           "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.beyondbasicsstudio.com/" },
-            { "@type": "ListItem", "position": 2, "name": "Terms & Conditions", "item": "https://www.beyondbasicsstudio.com/terms" }
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://beyondbasics.studio/" },
+            { "@type": "ListItem", "position": 2, "name": "Terms & Conditions", "item": "https://beyondbasics.studio/terms" }
           ]
         },
         {
           "@context": "https://schema.org",
           "@type": "WebPage",
-          "url": "https://www.beyondbasicsstudio.com/terms",
+          "url": "https://beyondbasics.studio/terms",
           "name": "Terms & Conditions — Beyond Basics Studio",
-          "description": "Terms and conditions governing the use of beyondbasicsstudio.com and Beyond Basics Studio GBP management services.",
+          "description": "Terms and conditions governing the use of beyondbasics.studio and Beyond Basics Studio GBP management services.",
           "datePublished": "2026-04-12",
           "dateModified": "2026-04-12",
-          "isPartOf": { "@type": "WebSite", "url": "https://www.beyondbasicsstudio.com/" },
+          "isPartOf": { "@type": "WebSite", "url": "https://beyondbasics.studio/" },
           "publisher": {
             "@type": "Organization",
             "name": "Beyond Basics Studio",
-            "url": "https://www.beyondbasicsstudio.com/"
+            "url": "https://beyondbasics.studio/"
           }
         }
       ]} />
@@ -226,7 +226,7 @@ export default function Terms() {
           </FadeUp>
           <FadeIn delay={0.2}>
             <p className="font-sans text-sm mt-5" style={{ color: "rgba(247,244,240,0.7)" }}>
-              Effective Date: April 12, 2026 · beyondbasicsstudio.com
+              Effective Date: April 12, 2026 · beyondbasics.studio
             </p>
           </FadeIn>
         </div>
@@ -237,7 +237,7 @@ export default function Terms() {
         <div className="max-w-3xl mx-auto px-6 lg:px-12 py-16">
           <FadeIn>
             <p className="font-sans text-sm leading-relaxed" style={{ color: "var(--sp-gray)" }}>
-              These Terms and Conditions ("Terms") govern your access to and use of beyondbasicsstudio.com (the "Site") and services offered by Beyond Basics Studio ("we," "us," "our"), including GBP management tiers (Basic $200/mo, Growth $500/mo, Premium $1,000/mo). By signing up, submitting forms, or making payment, you agree to these Terms.
+              These Terms and Conditions ("Terms") govern your access to and use of beyondbasics.studio (the "Site") and services offered by Beyond Basics Studio ("we," "us," "our"), including GBP management tiers (Basic $200/mo, Growth $500/mo, Premium $1,000/mo). By signing up, submitting forms, or making payment, you agree to these Terms.
             </p>
           </FadeIn>
         </div>
@@ -271,11 +271,11 @@ export default function Terms() {
               <p className="font-sans text-sm leading-relaxed" style={{ color: "var(--sp-gray)" }}>
                 For questions about these Terms, contact us at{" "}
                 <a
-                  href="mailto:hello@beyondbasicsstudio.com"
+                  href="mailto:hello@beyondbasics.studio"
                   className="underline underline-offset-2 transition-opacity hover:opacity-60"
                   style={{ color: "var(--sp-black)" }}
                 >
-                  hello@beyondbasicsstudio.com
+                  hello@beyondbasics.studio
                 </a>
               </p>
             </div>

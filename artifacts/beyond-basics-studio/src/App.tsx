@@ -95,26 +95,26 @@ function App() {
             {
               "@context": "https://schema.org",
               "@type": "WebSite",
-              "@id": "https://www.beyondbasicsstudio.com/#website",
-              "url": "https://www.beyondbasicsstudio.com/",
+              "@id": "https://beyondbasics.studio/#website",
+              "url": "https://beyondbasics.studio/",
               "name": "Beyond Basics Studio",
               "description": "Google Business Profile management agency — helping local businesses dominate Google Maps from $200/mo.",
-              "publisher": { "@id": "https://www.beyondbasicsstudio.com/#organization" },
+              "publisher": { "@id": "https://beyondbasics.studio/#organization" },
               "potentialAction": {
                 "@type": "SearchAction",
-                "target": "https://www.beyondbasicsstudio.com/journal?q={search_term_string}",
+                "target": "https://beyondbasics.studio/journal?q={search_term_string}",
                 "query-input": "required name=search_term_string",
               },
             },
             {
               "@context": "https://schema.org",
               "@type": "Organization",
-              "@id": "https://www.beyondbasicsstudio.com/#organization",
+              "@id": "https://beyondbasics.studio/#organization",
               "name": "Beyond Basics Studio",
-              "url": "https://www.beyondbasicsstudio.com/",
+              "url": "https://beyondbasics.studio/",
               "logo": {
                 "@type": "ImageObject",
-                "url": "https://www.beyondbasicsstudio.com/favicon.svg",
+                "url": "https://beyondbasics.studio/favicon.svg",
                 "width": 512,
                 "height": 512,
               },
@@ -128,9 +128,6 @@ function App() {
                 "email": "hello@beyondbasics.studio",
                 "availableLanguage": "English",
               },
-              "sameAs": [
-                "https://asfandsaeed.github.io/beyondbasicsstudio/",
-              ],
               "hasOfferCatalog": {
                 "@type": "OfferCatalog",
                 "name": "GBP Management Plans",

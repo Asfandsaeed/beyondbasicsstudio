@@ -215,8 +215,8 @@ export default function CaseStudies({ onAuditClick }: { onAuditClick: () => void
           "@context": "https://schema.org",
           "@type": "BreadcrumbList",
           "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.beyondbasicsstudio.com/" },
-            { "@type": "ListItem", "position": 2, "name": "Case Studies", "item": "https://www.beyondbasicsstudio.com/case-studies" }
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://beyondbasics.studio/" },
+            { "@type": "ListItem", "position": 2, "name": "Case Studies", "item": "https://beyondbasics.studio/case-studies" }
           ]
         },
         {
@@ -231,7 +231,7 @@ export default function CaseStudies({ onAuditClick }: { onAuditClick: () => void
               "headline": `${c.business} — ${c.highlight}`,
               "description": `${c.type} in ${c.location}. Profile views: ${c.before.views} → ${c.after.views}. Map rank: ${c.before.rank} → ${c.after.rank}. Reviews: ${c.before.reviews} → ${c.after.reviews}. Calls: ${c.before.calls} → ${c.after.calls}.`,
               "author": { "@type": "Organization", "name": "Beyond Basics Studio" },
-              "publisher": { "@type": "Organization", "name": "Beyond Basics Studio", "url": "https://www.beyondbasicsstudio.com/" }
+              "publisher": { "@type": "Organization", "name": "Beyond Basics Studio", "url": "https://beyondbasics.studio/" }
             }
           }))
         }

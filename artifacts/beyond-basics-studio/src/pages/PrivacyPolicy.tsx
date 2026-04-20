@@ -101,8 +101,8 @@ export default function PrivacyPolicy() {
       content: (
         <p className="font-sans text-sm leading-relaxed" style={{ color: "var(--sp-gray)" }}>
           We use HTTPS, encryption, access controls, and regular audits to protect your data. However, no system is 100% secure. For concerns, contact us at{" "}
-          <a href="mailto:hello@beyondbasicsstudio.com" className="underline underline-offset-2" style={{ color: "var(--sp-black)" }}>
-            hello@beyondbasicsstudio.com
+          <a href="mailto:hello@beyondbasics.studio" className="underline underline-offset-2" style={{ color: "var(--sp-black)" }}>
+            hello@beyondbasics.studio
           </a>.
         </p>
       ),
@@ -126,8 +126,8 @@ export default function PrivacyPolicy() {
           </ul>
           <p className="font-sans text-sm leading-relaxed" style={{ color: "var(--sp-gray)" }}>
             To make a request, email{" "}
-            <a href="mailto:hello@beyondbasicsstudio.com" className="underline underline-offset-2" style={{ color: "var(--sp-black)" }}>
-              hello@beyondbasicsstudio.com
+            <a href="mailto:hello@beyondbasics.studio" className="underline underline-offset-2" style={{ color: "var(--sp-black)" }}>
+              hello@beyondbasics.studio
             </a>. We respond within 30 days.
           </p>
         </>
@@ -166,23 +166,23 @@ export default function PrivacyPolicy() {
           "@context": "https://schema.org",
           "@type": "BreadcrumbList",
           "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.beyondbasicsstudio.com/" },
-            { "@type": "ListItem", "position": 2, "name": "Privacy Policy", "item": "https://www.beyondbasicsstudio.com/privacy" }
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://beyondbasics.studio/" },
+            { "@type": "ListItem", "position": 2, "name": "Privacy Policy", "item": "https://beyondbasics.studio/privacy" }
           ]
         },
         {
           "@context": "https://schema.org",
           "@type": "WebPage",
-          "url": "https://www.beyondbasicsstudio.com/privacy",
+          "url": "https://beyondbasics.studio/privacy",
           "name": "Privacy Policy — Beyond Basics Studio",
           "description": "How Beyond Basics Studio collects, uses, and protects your personal data in accordance with GDPR and applicable privacy laws.",
           "datePublished": "2026-04-12",
           "dateModified": "2026-04-12",
-          "isPartOf": { "@type": "WebSite", "url": "https://www.beyondbasicsstudio.com/" },
+          "isPartOf": { "@type": "WebSite", "url": "https://beyondbasics.studio/" },
           "publisher": {
             "@type": "Organization",
             "name": "Beyond Basics Studio",
-            "url": "https://www.beyondbasicsstudio.com/"
+            "url": "https://beyondbasics.studio/"
           }
         }
       ]} />
@@ -201,7 +201,7 @@ export default function PrivacyPolicy() {
           </FadeUp>
           <FadeIn delay={0.2}>
             <p className="font-sans text-sm mt-5" style={{ color: "rgba(247,244,240,0.7)" }}>
-              Effective Date: April 12, 2026 · beyondbasicsstudio.com
+              Effective Date: April 12, 2026 · beyondbasics.studio
             </p>
           </FadeIn>
         </div>
@@ -212,7 +212,7 @@ export default function PrivacyPolicy() {
         <div className="max-w-3xl mx-auto px-6 lg:px-12 py-16">
           <FadeIn>
             <p className="font-sans text-sm leading-relaxed" style={{ color: "var(--sp-gray)" }}>
-              At Beyond Basics Studio ("we," "us," or "our"), operating at beyondbasicsstudio.com (the "Site"), we prioritise your privacy. This Privacy Policy explains how we collect, use, disclose, and protect your personal information when you visit our Site, use our Google Business Profile (GBP) management services, or interact with us. By using our Site or services, you consent to these practices.
+              At Beyond Basics Studio ("we," "us," or "our"), operating at beyondbasics.studio (the "Site"), we prioritise your privacy. This Privacy Policy explains how we collect, use, disclose, and protect your personal information when you visit our Site, use our Google Business Profile (GBP) management services, or interact with us. By using our Site or services, you consent to these practices.
             </p>
           </FadeIn>
         </div>
@@ -246,11 +246,11 @@ export default function PrivacyPolicy() {
               <p className="font-sans text-sm leading-relaxed" style={{ color: "var(--sp-gray)" }}>
                 For any privacy-related questions or requests, reach us at{" "}
                 <a
-                  href="mailto:hello@beyondbasicsstudio.com"
+                  href="mailto:hello@beyondbasics.studio"
                   className="underline underline-offset-2 transition-opacity hover:opacity-60"
                   style={{ color: "var(--sp-black)" }}
                 >
-                  hello@beyondbasicsstudio.com
+                  hello@beyondbasics.studio
                 </a>
               </p>
             </div>

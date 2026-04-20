@@ -76,7 +76,7 @@ function SitemapGroup({
 }
 
 export default function Sitemap() {
-  usePageMeta({ title: "Sitemap — Beyond Basics Studio", description: "A complete index of all pages, service tiers, articles, and legal documents on beyondbasicsstudio.com.", ogImage: "home.jpg", url: "/sitemap" });
+  usePageMeta({ title: "Sitemap — Beyond Basics Studio", description: "A complete index of all pages, service tiers, articles, and legal documents on beyondbasics.studio.", ogImage: "home.jpg", url: "/sitemap" });
   const articleItems = [...articles].reverse().map((a) => ({
     label: a.title,
     href: "/journal",
@@ -89,17 +89,17 @@ export default function Sitemap() {
         {
           "@context": "https://schema.org",
           "@type": "WebPage",
-          "url": "https://www.beyondbasicsstudio.com/sitemap",
+          "url": "https://beyondbasics.studio/sitemap",
           "name": "Sitemap — Beyond Basics Studio",
-          "description": "A complete index of all pages, service tiers, articles, and legal documents on beyondbasicsstudio.com.",
-          "isPartOf": { "@type": "WebSite", "url": "https://www.beyondbasicsstudio.com/" },
+          "description": "A complete index of all pages, service tiers, articles, and legal documents on beyondbasics.studio.",
+          "isPartOf": { "@type": "WebSite", "url": "https://beyondbasics.studio/" },
         },
         {
           "@context": "https://schema.org",
           "@type": "BreadcrumbList",
           "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.beyondbasicsstudio.com/" },
-            { "@type": "ListItem", "position": 2, "name": "Sitemap", "item": "https://www.beyondbasicsstudio.com/sitemap" },
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://beyondbasics.studio/" },
+            { "@type": "ListItem", "position": 2, "name": "Sitemap", "item": "https://beyondbasics.studio/sitemap" },
           ],
         },
       ]} />
@@ -120,7 +120,7 @@ export default function Sitemap() {
           </motion.h1>
           <FadeIn delay={0.2}>
             <p className="font-sans text-sm leading-relaxed mt-8 max-w-md" style={{ color: "rgba(247,244,240,0.4)" }}>
-              A complete index of all pages, service tiers, articles, and legal documents on beyondbasicsstudio.com.
+              A complete index of all pages, service tiers, articles, and legal documents on beyondbasics.studio.
             </p>
           </FadeIn>
         </div>

@@ -46,12 +46,12 @@ export default function Home({ onAuditClick }: { onAuditClick: () => void }) {
         {
           "@context": "https://schema.org",
           "@type": "WebSite",
-          "url": "https://www.beyondbasicsstudio.com/",
+          "url": "https://beyondbasics.studio/",
           "name": "Beyond Basics Studio",
           "description": "Google Business Profile management agency helping local businesses dominate Google Maps.",
           "potentialAction": {
             "@type": "SearchAction",
-            "target": "https://www.beyondbasicsstudio.com/?q={search_term_string}",
+            "target": "https://beyondbasics.studio/?q={search_term_string}",
             "query-input": "required name=search_term_string"
           }
         },
@@ -59,11 +59,11 @@ export default function Home({ onAuditClick }: { onAuditClick: () => void }) {
           "@context": "https://schema.org",
           "@type": "ProfessionalService",
           "name": "Beyond Basics Studio",
-          "url": "https://www.beyondbasicsstudio.com/",
-          "logo": "https://www.beyondbasicsstudio.com/favicon.svg",
-          "image": "https://www.beyondbasicsstudio.com/opengraph.jpg",
+          "url": "https://beyondbasics.studio/",
+          "logo": "https://beyondbasics.studio/favicon.svg",
+          "image": "https://beyondbasics.studio/opengraph.jpg",
           "description": "Beyond Basics Studio is a Google Business Profile (GBP) management agency delivering data-driven local SEO, review generation, and map pack domination for businesses across San Francisco, Toronto, London, Dubai, and Beirut.",
-          "email": "hello@beyondbasicsstudio.com",
+          "email": "hello@beyondbasics.studio",
           "foundingDate": "2021",
           "areaServed": "San Francisco, Toronto, London, Dubai, Beirut",
           "serviceType": "Google Business Profile Management",
@@ -76,7 +76,7 @@ export default function Home({ onAuditClick }: { onAuditClick: () => void }) {
               "price": "200",
               "priceCurrency": "USD",
               "description": "Foundational GBP maintenance for single-location businesses. Daily audits, NAP monitoring, 1–2 posts/month.",
-              "url": "https://www.beyondbasicsstudio.com/services"
+              "url": "https://beyondbasics.studio/services"
             },
             {
               "@type": "Offer",
@@ -84,7 +84,7 @@ export default function Home({ onAuditClick }: { onAuditClick: () => void }) {
               "price": "500",
               "priceCurrency": "USD",
               "description": "Proactive growth for businesses targeting top-3 map pack. Up to 5 locations, review automation, competitor analysis.",
-              "url": "https://www.beyondbasicsstudio.com/services"
+              "url": "https://beyondbasics.studio/services"
             },
             {
               "@type": "Offer",
@@ -92,7 +92,7 @@ export default function Home({ onAuditClick }: { onAuditClick: () => void }) {
               "price": "1000",
               "priceCurrency": "USD",
               "description": "Enterprise-level GBP domination. Up to 50 locations, 24/7 monitoring, dedicated account manager.",
-              "url": "https://www.beyondbasicsstudio.com/services"
+              "url": "https://beyondbasics.studio/services"
             }
           ]
         }

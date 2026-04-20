@@ -225,8 +225,8 @@ export default function Services({ onAuditClick }: { onAuditClick: () => void })
           "@context": "https://schema.org",
           "@type": "BreadcrumbList",
           "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.beyondbasicsstudio.com/" },
-            { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://www.beyondbasicsstudio.com/services" }
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://beyondbasics.studio/" },
+            { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://beyondbasics.studio/services" }
           ]
         },
         {

@@ -6,7 +6,7 @@ import { articles, Article } from "@/data/articles";
 import SchemaMarkup from "@/components/SchemaMarkup";
 import { usePageMeta } from "@/hooks/usePageMeta";
 
-const BASE_URL = "https://asfandsaeed.github.io/beyondbasicsstudio";
+const BASE_URL = "https://beyondbasics.studio";
 
 const ease = [0.25, 0.1, 0.25, 1];
 

@@ -149,17 +149,17 @@ export default function Customers({ onAuditClick }: { onAuditClick: () => void }
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.beyondbasicsstudio.com/" },
-        { "@type": "ListItem", "position": 2, "name": "Customers", "item": "https://www.beyondbasicsstudio.com/customers" },
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://beyondbasics.studio/" },
+        { "@type": "ListItem", "position": 2, "name": "Customers", "item": "https://beyondbasics.studio/customers" },
       ],
     },
     {
       "@context": "https://schema.org",
       "@type": "WebPage",
-      "url": "https://www.beyondbasicsstudio.com/customers",
+      "url": "https://beyondbasics.studio/customers",
       "name": "Customer Stories — Beyond Basics Studio",
       "description": "30 detailed case studies from local businesses that dominated Google Maps with Beyond Basics Studio.",
-      "isPartOf": { "@type": "WebSite", "url": "https://www.beyondbasicsstudio.com/" },
+      "isPartOf": { "@type": "WebSite", "url": "https://beyondbasics.studio/" },
     },
     {
       "@context": "https://schema.org",
@@ -184,7 +184,7 @@ export default function Customers({ onAuditClick }: { onAuditClick: () => void }
       "itemReviewed": {
         "@type": "Organization",
         "name": "Beyond Basics Studio",
-        "url": "https://www.beyondbasicsstudio.com/",
+        "url": "https://beyondbasics.studio/",
       },
       "author": { "@type": "Person", "name": c.owner },
       "reviewBody": c.quote1,

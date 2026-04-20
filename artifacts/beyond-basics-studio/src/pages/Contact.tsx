@@ -73,22 +73,22 @@ export default function Contact() {
           "@context": "https://schema.org",
           "@type": "BreadcrumbList",
           "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.beyondbasicsstudio.com/" },
-            { "@type": "ListItem", "position": 2, "name": "Contact", "item": "https://www.beyondbasicsstudio.com/contact" }
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://beyondbasics.studio/" },
+            { "@type": "ListItem", "position": 2, "name": "Contact", "item": "https://beyondbasics.studio/contact" }
           ]
         },
         {
           "@context": "https://schema.org",
           "@type": "ContactPage",
-          "url": "https://www.beyondbasicsstudio.com/contact",
+          "url": "https://beyondbasics.studio/contact",
           "name": "Contact Beyond Basics Studio — Get Your Free GBP Audit",
           "description": "Request a free Google Business Profile audit from Beyond Basics Studio. We'll identify exactly what's holding your local ranking back — within 24 hours.",
-          "isPartOf": { "@type": "WebSite", "url": "https://www.beyondbasicsstudio.com/" },
+          "isPartOf": { "@type": "WebSite", "url": "https://beyondbasics.studio/" },
           "mainEntity": {
             "@type": "Organization",
             "name": "Beyond Basics Studio",
-            "email": "hello@beyondbasicsstudio.com",
-            "url": "https://www.beyondbasicsstudio.com/"
+            "email": "hello@beyondbasics.studio",
+            "url": "https://beyondbasics.studio/"
           }
         },
         {
@@ -159,8 +159,8 @@ export default function Contact() {
                     <AlertCircle className="w-4 h-4 shrink-0 mt-0.5" style={{ color: "var(--sp-black)" }} />
                     <p className="font-sans text-sm" style={{ color: "var(--sp-gray)" }}>
                       Something went wrong. Please try again or email us at{" "}
-                      <a href="mailto:hello@beyondbasicsstudio.com" className="underline underline-offset-2" style={{ color: "var(--sp-black)" }}>
-                        hello@beyondbasicsstudio.com
+                      <a href="mailto:hello@beyondbasics.studio" className="underline underline-offset-2" style={{ color: "var(--sp-black)" }}>
+                        hello@beyondbasics.studio
                       </a>.
                     </p>
                   </div>
