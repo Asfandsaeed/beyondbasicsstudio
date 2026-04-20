@@ -1,12 +1,12 @@
 {
   "meta": {
-    "generated": "2026-04-19T21:26:59.640Z",
+    "generated": "2026-04-20T17:15:48.434Z",
     "version": "1.0",
-    "description": "Complete structured content for beyondbasicsstudio.com. Available at window.__BBS_CONTENT__ when JS is executed on any page."
+    "description": "Complete structured content for beyondbasics.studio. Available at window.__BBS_CONTENT__ when JS is executed on any page."
   },
   "site": {
     "name": "Beyond Basics Studio",
-    "url": "https://www.beyondbasicsstudio.com",
+    "url": "https://beyondbasics.studio",
     "email": "hello@beyondbasics.studio",
     "phone": null,
     "founded": "2021",
@@ -22,7 +22,7 @@
   },
   "pages": {
     "home": {
-      "url": "https://www.beyondbasicsstudio.com/",
+      "url": "https://beyondbasics.studio/",
       "headline": "Stop Losing Customers to Competitors Who Show Up First on Google Maps.",
       "subheadline": "We manage, optimise, and dominate Google Business Profiles for local businesses ready to lead their market.",
       "services": [
@@ -62,7 +62,7 @@
       ]
     },
     "services": {
-      "url": "https://www.beyondbasicsstudio.com/services",
+      "url": "https://beyondbasics.studio/services",
       "headline": "GBP tiers from Basic to Domination.",
       "pricing": [
         {
@@ -158,165 +158,8 @@
         }
       ]
     },
-    "caseStudies": {
-      "url": "https://www.beyondbasicsstudio.com/case-studies",
-      "headline": "Proof, not pitches.",
-      "description": "Actual before/after results from real clients who chose to stop being invisible on Google Maps.",
-      "stats": [
-        {
-          "value": "500+",
-          "label": "Active Clients"
-        },
-        {
-          "value": "300%",
-          "label": "Avg Review Growth"
-        },
-        {
-          "value": "12×",
-          "label": "Avg Call Increase"
-        },
-        {
-          "value": "90",
-          "label": "Days to Top 3"
-        }
-      ],
-      "cases": [
-        {
-          "business": "Urban Pizza",
-          "type": "Restaurant",
-          "location": "Chicago, IL",
-          "tier": "Growth",
-          "duration": "90 days",
-          "highlight": "+3,250% profile views",
-          "before": {
-            "views": "180/mo",
-            "rank": "#14",
-            "reviews": "12",
-            "calls": "8/mo"
-          },
-          "after": {
-            "views": "5,200/mo",
-            "rank": "#2",
-            "reviews": "214",
-            "calls": "268/mo"
-          },
-          "quote": "We went from 8 calls a month to 268. Best investment we've ever made.",
-          "author": "Maria T., Owner"
-        },
-        {
-          "business": "Summit Dental",
-          "type": "Healthcare",
-          "location": "Denver, CO",
-          "tier": "Premium",
-          "duration": "60 days",
-          "highlight": "#1 in Local Map Pack",
-          "before": {
-            "views": "320/mo",
-            "rank": "#9",
-            "reviews": "28",
-            "calls": "22/mo"
-          },
-          "after": {
-            "views": "8,100/mo",
-            "rank": "#1",
-            "reviews": "312",
-            "calls": "190/mo"
-          },
-          "quote": "From page-2 obscurity to the top spot. New patients up 750%.",
-          "author": "Dr. James R., Practice Owner"
-        },
-        {
-          "business": "City Auto Repair",
-          "type": "Automotive",
-          "location": "Austin, TX",
-          "tier": "Growth",
-          "duration": "120 days",
-          "highlight": "+2,800% call volume",
-          "before": {
-            "views": "95/mo",
-            "rank": "#11",
-            "reviews": "6",
-            "calls": "5/mo"
-          },
-          "after": {
-            "views": "3,800/mo",
-            "rank": "#3",
-            "reviews": "187",
-            "calls": "145/mo"
-          },
-          "quote": "I thought GBP was just a listing. It's now my biggest revenue driver.",
-          "author": "Carlos M., Owner"
-        },
-        {
-          "business": "Harbor Café",
-          "type": "Café & Bakery",
-          "location": "Portland, OR",
-          "tier": "Premium",
-          "duration": "75 days",
-          "highlight": "400+ Google Reviews",
-          "before": {
-            "views": "210/mo",
-            "rank": "#7",
-            "reviews": "19",
-            "calls": "12/mo"
-          },
-          "after": {
-            "views": "6,400/mo",
-            "rank": "#1",
-            "reviews": "401",
-            "calls": "98/mo"
-          },
-          "quote": "Our weekend wait times doubled. Best problem we've ever had.",
-          "author": "Sarah L., Co-owner"
-        },
-        {
-          "business": "Metro Fitness",
-          "type": "Gym & Fitness",
-          "location": "Miami, FL",
-          "tier": "Premium",
-          "duration": "90 days",
-          "highlight": "5× membership signups",
-          "before": {
-            "views": "440/mo",
-            "rank": "#8",
-            "reviews": "31",
-            "calls": "18/mo"
-          },
-          "after": {
-            "views": "9,200/mo",
-            "rank": "#2",
-            "reviews": "560",
-            "calls": "312/mo"
-          },
-          "quote": "New membership signups from Google Maps increased 5x. The ROI is insane.",
-          "author": "Derek J., Marketing Director"
-        },
-        {
-          "business": "Peak Real Estate",
-          "type": "Real Estate",
-          "location": "Seattle, WA",
-          "tier": "Growth",
-          "duration": "105 days",
-          "highlight": "4 direct Map Pack closes",
-          "before": {
-            "views": "120/mo",
-            "rank": "#15",
-            "reviews": "8",
-            "calls": "4/mo"
-          },
-          "after": {
-            "views": "4,100/mo",
-            "rank": "#3",
-            "reviews": "143",
-            "calls": "89/mo"
-          },
-          "quote": "We closed 4 listings in one month that came directly from Google Maps.",
-          "author": "Amanda P., Principal Agent"
-        }
-      ]
-    },
     "customers": {
-      "url": "https://www.beyondbasicsstudio.com/customers",
+      "url": "https://beyondbasics.studio/customers",
       "headline": "Thirty stories. Zero guesswork.",
       "description": "Every story here is real. Every business, every number, every quote.",
       "stats": [
@@ -1301,7 +1144,7 @@
       ]
     },
     "journal": {
-      "url": "https://www.beyondbasicsstudio.com/journal",
+      "url": "https://beyondbasics.studio/journal",
       "headline": "Insights on GBP management and local SEO.",
       "articles": [
         {
@@ -1313,7 +1156,7 @@
           "title": "How We Achieved 347% Review Growth for 127 Local Businesses in 90 Days Using GBP Automation",
           "subtitle": "A Behind-the-Scenes Look at the Systems, Mistakes, and Surprises That Made It Happen",
           "excerpt": "Between January and April of last year, across 127 local businesses, we grew aggregate Google review counts by 347%. Not impressions. Not clicks. Actual, verified, customer-written reviews. Here's what actually happened — and how you replicate it.",
-          "url": "https://www.beyondbasicsstudio.com/journal/347-percent-review-growth",
+          "url": "https://beyondbasics.studio/journal/347-percent-review-growth",
           "sections": [
             {
               "heading": null,
@@ -1350,7 +1193,7 @@
           "title": "The 2026 Google Map Pack Algorithm: 17 Changes Local Businesses Must Adapt To Immediately",
           "subtitle": "We've Been Watching the Signals for Six Months. Here's What the Data Tells Us.",
           "excerpt": "Google has never published its local search ranking algorithm in plain language. So every year, the entire local SEO industry does what amounts to high-stakes detective work. After 18 months tracking 300 profiles across 22 industries, here are the 17 changes that matter.",
-          "url": "https://www.beyondbasicsstudio.com/journal/2026-map-pack-algorithm",
+          "url": "https://beyondbasics.studio/journal/2026-map-pack-algorithm",
           "sections": [
             {
               "heading": null,
@@ -1387,7 +1230,7 @@
           "title": "Why 92% of GBP Profiles Fail: Our 5-Point Audit Checklist That Fixed 500+ Profiles",
           "subtitle": "The Uncomfortable Truth About What's Actually Wrong — and How We Know",
           "excerpt": "Ninety-two percent of the Google Business Profiles we've audited contain at least one issue severe enough to meaningfully suppress local search performance. Not minor stylistic concerns — structural failures. Here's the five-point checklist that changed that for 500+ businesses.",
-          "url": "https://www.beyondbasicsstudio.com/journal/92-percent-gbp-profiles-fail",
+          "url": "https://beyondbasics.studio/journal/92-percent-gbp-profiles-fail",
           "sections": [
             {
               "heading": null,
@@ -1424,7 +1267,7 @@
           "title": "GBP Categories Master List: How We Ranked Clients #1 Using Hidden Secondary Categories",
           "subtitle": "The Categorization Tactics Your Competitors Haven't Found Yet — But Will",
           "excerpt": "Not all GBP categories are visible in the standard selection interface. There's a longer, more specific list in Google's backend — largely unknown to most business owners. Here's how we've used it to drive 180%+ visibility gains for our clients.",
-          "url": "https://www.beyondbasicsstudio.com/journal/gbp-categories-master-list",
+          "url": "https://beyondbasics.studio/journal/gbp-categories-master-list",
           "sections": [
             {
               "heading": null,
@@ -1457,7 +1300,7 @@
           "title": "From 0 to 5,000 Monthly Views: Case Study of a Restaurant's GBP Transformation",
           "subtitle": "Twelve Months Inside One Neighborhood Restaurant's Journey from Digital Afterthought to Local Anchor",
           "excerpt": "In October 2023, Marta's Kitchen received 174 views on their Google Business Profile. By October 2024, that number was 5,340. A 2,969% increase over 12 months. This is the full story — month by month — with the actual numbers.",
-          "url": "https://www.beyondbasicsstudio.com/journal/martas-kitchen-case-study",
+          "url": "https://beyondbasics.studio/journal/martas-kitchen-case-study",
           "sections": [
             {
               "heading": null,
@@ -1490,7 +1333,7 @@
           "title": "The AI Review Response System That Boosts Ratings 0.8 Stars Without Writing a Word",
           "subtitle": "On Automation, Authenticity, and Why the Best Review Responses Feel Human",
           "excerpt": "Between July 2023 and December 2024, across 89 client profiles, average star ratings increased by 0.8 stars using our MapMaster AI review response system. None of it came from generating reviews. All of it came from how businesses responded to the ones they had.",
-          "url": "https://www.beyondbasicsstudio.com/journal/ai-review-response-system",
+          "url": "https://beyondbasics.studio/journal/ai-review-response-system",
           "sections": [
             {
               "heading": null,
@@ -1519,7 +1362,7 @@
           "title": "Multi-Location GBP Domination: Managing 50 Profiles Without Losing Control",
           "subtitle": "The Operational Reality of Enterprise Local SEO — and the Systems That Make Sanity Possible",
           "excerpt": "Managing one profile well requires attention. Managing ten profiles requires systems. Managing 50 requires systems and governance. The difference between those two things is what most brands discover the hard way.",
-          "url": "https://www.beyondbasicsstudio.com/journal/multi-location-gbp-domination",
+          "url": "https://beyondbasics.studio/journal/multi-location-gbp-domination",
           "sections": [
             {
               "heading": null,
@@ -1552,7 +1395,7 @@
           "title": "Google Posts ROI Revealed: Which Content Types Drive 4X More Calls (Data from 300 Profiles)",
           "subtitle": "We Analyzed 18 Months of Post Performance Data. The Results Did Not Match Our Assumptions.",
           "excerpt": "Before we ran this analysis, most of our team had intuitive beliefs about which Google Post types perform best. We were wrong about the relative magnitude of the differences, and completely wrong about which post type drives phone call conversions.",
-          "url": "https://www.beyondbasicsstudio.com/journal/google-posts-roi",
+          "url": "https://beyondbasics.studio/journal/google-posts-roi",
           "sections": [
             {
               "heading": null,
@@ -1585,7 +1428,7 @@
           "title": "How to Suspend-Proof Your GBP: Lessons from Recovering 43 Suspended Profiles",
           "subtitle": "What We Learned From the Worst Moments in Our Clients' Local Search Lives",
           "excerpt": "Of all the things that happen in local SEO, a GBP suspension is the one that produces the most panic per square inch. Since 2021, we've managed recovery for 43 suspended profiles with a 91% success rate. Here's what those suspensions taught us about prevention.",
-          "url": "https://www.beyondbasicsstudio.com/journal/suspend-proof-your-gbp",
+          "url": "https://beyondbasics.studio/journal/suspend-proof-your-gbp",
           "sections": [
             {
               "heading": null,
@@ -1614,7 +1457,7 @@
           "title": "The $200/mo GBP Tier That Outperforms $5K Agency Packages: Our Basic Plan Breakdown",
           "subtitle": "A Candid Look at What Local Businesses Are Actually Paying For — and Whether They Need All of It",
           "excerpt": "We are about to make an argument that is not in our financial interest to make. Most local businesses do not need a $5,000-per-month local SEO retainer. They need about $200 worth of well-executed monthly GBP management — and for many of them, that $200 will drive better results.",
-          "url": "https://www.beyondbasicsstudio.com/journal/200-basic-plan-breakdown",
+          "url": "https://beyondbasics.studio/journal/200-basic-plan-breakdown",
           "sections": [
             {
               "heading": null,
@@ -1637,7 +1480,7 @@
       ]
     },
     "about": {
-      "url": "https://www.beyondbasicsstudio.com/about",
+      "url": "https://beyondbasics.studio/about",
       "headline": "Data-driven GBP experts since 2021.",
       "story": [
         "In 2021, our founder Marcus Chen left his role on Google's local team after witnessing firsthand how a well-managed Google Business Profile could transform a local business — and how poorly most businesses managed theirs.",
@@ -1700,7 +1543,7 @@
       ]
     },
     "contact": {
-      "url": "https://www.beyondbasicsstudio.com/contact",
+      "url": "https://beyondbasics.studio/contact",
       "headline": "Let's talk domination.",
       "email": "hello@beyondbasics.studio",
       "offices": [

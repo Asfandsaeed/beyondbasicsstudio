@@ -1,14 +1,14 @@
 # Beyond Basics Studio — Complete Site Content for LLMs
 
-> Generated: 2026-04-19T21:26:59.645Z
-> Source: beyondbasicsstudio.com/content.json (structured JSON version)
+> Generated: 2026-04-20T17:15:48.438Z
+> Source: beyondbasics.studio/content.json (structured JSON version)
 > This file contains 100% of the site's text content — all pages, all articles in full, all customer stories.
 
 ---
 
 ## SITE
 Name: Beyond Basics Studio
-URL: https://www.beyondbasicsstudio.com
+URL: https://beyondbasics.studio
 Email: hello@beyondbasics.studio
 Founded: 2021
 Offices: San Francisco · Toronto · London · Dubai · Beirut
@@ -17,7 +17,7 @@ Description: Beyond Basics Studio is a Google Business Profile (GBP) management 
 ---
 
 ## HOME PAGE
-URL: https://www.beyondbasicsstudio.com/
+URL: https://beyondbasics.studio/
 
 Headline: Stop Losing Customers to Competitors Who Show Up First on Google Maps.
 Subheadline: We manage, optimise, and dominate Google Business Profiles for local businesses ready to lead their market.
@@ -32,7 +32,7 @@ Services:
 ---
 
 ## SERVICES PAGE
-URL: https://www.beyondbasicsstudio.com/services
+URL: https://beyondbasics.studio/services
 
 ### Basic — $200/month (1 location)
 Foundational maintenance for single-location businesses.
@@ -91,50 +91,8 @@ A: Detailed performance reports covering: profile views, search impressions, dir
 
 ---
 
-## CASE STUDIES PAGE
-URL: https://www.beyondbasicsstudio.com/case-studies
-
-### Urban Pizza (Restaurant, Chicago, IL) — Growth tier, 90 days
-Highlight: +3,250% profile views
-Before: Views 180/mo | Rank #14 | Reviews 12 | Calls 8/mo
-After:  Views 5,200/mo | Rank #2 | Reviews 214 | Calls 268/mo
-Quote: "We went from 8 calls a month to 268. Best investment we've ever made." — Maria T., Owner
-
-### Summit Dental (Healthcare, Denver, CO) — Premium tier, 60 days
-Highlight: #1 in Local Map Pack
-Before: Views 320/mo | Rank #9 | Reviews 28 | Calls 22/mo
-After:  Views 8,100/mo | Rank #1 | Reviews 312 | Calls 190/mo
-Quote: "From page-2 obscurity to the top spot. New patients up 750%." — Dr. James R., Practice Owner
-
-### City Auto Repair (Automotive, Austin, TX) — Growth tier, 120 days
-Highlight: +2,800% call volume
-Before: Views 95/mo | Rank #11 | Reviews 6 | Calls 5/mo
-After:  Views 3,800/mo | Rank #3 | Reviews 187 | Calls 145/mo
-Quote: "I thought GBP was just a listing. It's now my biggest revenue driver." — Carlos M., Owner
-
-### Harbor Café (Café & Bakery, Portland, OR) — Premium tier, 75 days
-Highlight: 400+ Google Reviews
-Before: Views 210/mo | Rank #7 | Reviews 19 | Calls 12/mo
-After:  Views 6,400/mo | Rank #1 | Reviews 401 | Calls 98/mo
-Quote: "Our weekend wait times doubled. Best problem we've ever had." — Sarah L., Co-owner
-
-### Metro Fitness (Gym & Fitness, Miami, FL) — Premium tier, 90 days
-Highlight: 5× membership signups
-Before: Views 440/mo | Rank #8 | Reviews 31 | Calls 18/mo
-After:  Views 9,200/mo | Rank #2 | Reviews 560 | Calls 312/mo
-Quote: "New membership signups from Google Maps increased 5x. The ROI is insane." — Derek J., Marketing Director
-
-### Peak Real Estate (Real Estate, Seattle, WA) — Growth tier, 105 days
-Highlight: 4 direct Map Pack closes
-Before: Views 120/mo | Rank #15 | Reviews 8 | Calls 4/mo
-After:  Views 4,100/mo | Rank #3 | Reviews 143 | Calls 89/mo
-Quote: "We closed 4 listings in one month that came directly from Google Maps." — Amanda P., Principal Agent
-
-
----
-
 ## CUSTOMERS PAGE (30 Stories)
-URL: https://www.beyondbasicsstudio.com/customers
+URL: https://beyondbasics.studio/customers
 
 ### Apex Pizza (Restaurant, Chicago, IL) — Growth tier
 Owner: Marco DiSalvo
@@ -684,10 +642,10 @@ Stats: Overnight Calls (midnight–6 AM): +180% | Response System: 90-second, 24
 
 
 ## JOURNAL PAGE (Full Article Bodies)
-URL: https://www.beyondbasicsstudio.com/journal
+URL: https://beyondbasics.studio/journal
 
 ### Article 01: How We Achieved 347% Review Growth for 127 Local Businesses in 90 Days Using GBP Automation
-URL: https://www.beyondbasicsstudio.com/journal/347-percent-review-growth
+URL: https://beyondbasics.studio/journal/347-percent-review-growth
 Date: Nov 20, 2025 | Tag: Strategy | Read time: 9 min read
 Subtitle: A Behind-the-Scenes Look at the Systems, Mistakes, and Surprises That Made It Happen
 Excerpt: Between January and April of last year, across 127 local businesses, we grew aggregate Google review counts by 347%. Not impressions. Not clicks. Actual, verified, customer-written reviews. Here's what actually happened — and how you replicate it.
@@ -728,7 +686,7 @@ Invisibility isn't always chosen. For most local businesses, it's simply the def
 ---
 
 ### Article 02: The 2026 Google Map Pack Algorithm: 17 Changes Local Businesses Must Adapt To Immediately
-URL: https://www.beyondbasicsstudio.com/journal/2026-map-pack-algorithm
+URL: https://beyondbasics.studio/journal/2026-map-pack-algorithm
 Date: Dec 05, 2025 | Tag: Algorithm | Read time: 11 min read
 Subtitle: We've Been Watching the Signals for Six Months. Here's What the Data Tells Us.
 Excerpt: Google has never published its local search ranking algorithm in plain language. So every year, the entire local SEO industry does what amounts to high-stakes detective work. After 18 months tracking 300 profiles across 22 industries, here are the 17 changes that matter.
@@ -783,7 +741,7 @@ Here's the honest summary: the algorithm is rewarding active, engaged, consisten
 ---
 
 ### Article 03: Why 92% of GBP Profiles Fail: Our 5-Point Audit Checklist That Fixed 500+ Profiles
-URL: https://www.beyondbasicsstudio.com/journal/92-percent-gbp-profiles-fail
+URL: https://beyondbasics.studio/journal/92-percent-gbp-profiles-fail
 Date: Dec 20, 2025 | Tag: Audit | Read time: 8 min read
 Subtitle: The Uncomfortable Truth About What's Actually Wrong — and How We Know
 Excerpt: Ninety-two percent of the Google Business Profiles we've audited contain at least one issue severe enough to meaningfully suppress local search performance. Not minor stylistic concerns — structural failures. Here's the five-point checklist that changed that for 500+ businesses.
@@ -824,7 +782,7 @@ The five-point audit takes us roughly 90 minutes to complete properly for a sing
 ---
 
 ### Article 04: GBP Categories Master List: How We Ranked Clients #1 Using Hidden Secondary Categories
-URL: https://www.beyondbasicsstudio.com/journal/gbp-categories-master-list
+URL: https://beyondbasics.studio/journal/gbp-categories-master-list
 Date: Jan 16, 2026 | Tag: Strategy | Read time: 7 min read
 Subtitle: The Categorization Tactics Your Competitors Haven't Found Yet — But Will
 Excerpt: Not all GBP categories are visible in the standard selection interface. There's a longer, more specific list in Google's backend — largely unknown to most business owners. Here's how we've used it to drive 180%+ visibility gains for our clients.
@@ -862,7 +820,7 @@ There's something almost philosophical about the category architecture problem w
 ---
 
 ### Article 05: From 0 to 5,000 Monthly Views: Case Study of a Restaurant's GBP Transformation
-URL: https://www.beyondbasicsstudio.com/journal/martas-kitchen-case-study
+URL: https://beyondbasics.studio/journal/martas-kitchen-case-study
 Date: Jan 30, 2026 | Tag: Case Study | Read time: 8 min read
 Subtitle: Twelve Months Inside One Neighborhood Restaurant's Journey from Digital Afterthought to Local Anchor
 Excerpt: In October 2023, Marta's Kitchen received 174 views on their Google Business Profile. By October 2024, that number was 5,340. A 2,969% increase over 12 months. This is the full story — month by month — with the actual numbers.
@@ -904,7 +862,7 @@ What we'd do differently: we delayed the product catalog addition by five months
 ---
 
 ### Article 06: The AI Review Response System That Boosts Ratings 0.8 Stars Without Writing a Word
-URL: https://www.beyondbasicsstudio.com/journal/ai-review-response-system
+URL: https://beyondbasics.studio/journal/ai-review-response-system
 Date: Feb 14, 2026 | Tag: Technology | Read time: 7 min read
 Subtitle: On Automation, Authenticity, and Why the Best Review Responses Feel Human
 Excerpt: Between July 2023 and December 2024, across 89 client profiles, average star ratings increased by 0.8 stars using our MapMaster AI review response system. None of it came from generating reviews. All of it came from how businesses responded to the ones they had.
@@ -937,7 +895,7 @@ The 0.8-star improvement is an aggregate across 89 profiles of different sizes, 
 ---
 
 ### Article 07: Multi-Location GBP Domination: Managing 50 Profiles Without Losing Control
-URL: https://www.beyondbasicsstudio.com/journal/multi-location-gbp-domination
+URL: https://beyondbasics.studio/journal/multi-location-gbp-domination
 Date: Feb 28, 2026 | Tag: Operations | Read time: 8 min read
 Subtitle: The Operational Reality of Enterprise Local SEO — and the Systems That Make Sanity Possible
 Excerpt: Managing one profile well requires attention. Managing ten profiles requires systems. Managing 50 requires systems and governance. The difference between those two things is what most brands discover the hard way.
@@ -975,7 +933,7 @@ The restaurant chain from the Wednesday call now has 52 locations. They have a t
 ---
 
 ### Article 08: Google Posts ROI Revealed: Which Content Types Drive 4X More Calls (Data from 300 Profiles)
-URL: https://www.beyondbasicsstudio.com/journal/google-posts-roi
+URL: https://beyondbasics.studio/journal/google-posts-roi
 Date: Mar 12, 2026 | Tag: Research | Read time: 7 min read
 Subtitle: We Analyzed 18 Months of Post Performance Data. The Results Did Not Match Our Assumptions.
 Excerpt: Before we ran this analysis, most of our team had intuitive beliefs about which Google Post types perform best. We were wrong about the relative magnitude of the differences, and completely wrong about which post type drives phone call conversions.
@@ -1013,7 +971,7 @@ Tuesday and Wednesday posts at 8-9am local time consistently outperformed Friday
 ---
 
 ### Article 09: How to Suspend-Proof Your GBP: Lessons from Recovering 43 Suspended Profiles
-URL: https://www.beyondbasicsstudio.com/journal/suspend-proof-your-gbp
+URL: https://beyondbasics.studio/journal/suspend-proof-your-gbp
 Date: Mar 25, 2026 | Tag: Guide | Read time: 8 min read
 Subtitle: What We Learned From the Worst Moments in Our Clients' Local Search Lives
 Excerpt: Of all the things that happen in local SEO, a GBP suspension is the one that produces the most panic per square inch. Since 2021, we've managed recovery for 43 suspended profiles with a 91% success rate. Here's what those suspensions taught us about prevention.
@@ -1050,7 +1008,7 @@ The chiropractor was suspended because a new office manager had made six simulta
 ---
 
 ### Article 10: The $200/mo GBP Tier That Outperforms $5K Agency Packages: Our Basic Plan Breakdown
-URL: https://www.beyondbasicsstudio.com/journal/200-basic-plan-breakdown
+URL: https://beyondbasics.studio/journal/200-basic-plan-breakdown
 Date: Apr 08, 2026 | Tag: Pricing | Read time: 7 min read
 Subtitle: A Candid Look at What Local Businesses Are Actually Paying For — and Whether They Need All of It
 Excerpt: We are about to make an argument that is not in our financial interest to make. Most local businesses do not need a $5,000-per-month local SEO retainer. They need about $200 worth of well-executed monthly GBP management — and for many of them, that $200 will drive better results.
@@ -1088,7 +1046,7 @@ The honest version of local SEO pricing is that most businesses are significantl
 
 
 ## ABOUT PAGE
-URL: https://www.beyondbasicsstudio.com/about
+URL: https://beyondbasics.studio/about
 
 Our Story:
 In 2021, our founder Marcus Chen left his role on Google's local team after witnessing firsthand how a well-managed Google Business Profile could transform a local business — and how poorly most businesses managed theirs.
@@ -1113,7 +1071,7 @@ Values:
 ---
 
 ## CONTACT PAGE
-URL: https://www.beyondbasicsstudio.com/contact
+URL: https://beyondbasics.studio/contact
 
 Email: hello@beyondbasics.studio
 Offices: San Francisco · Toronto · London · Dubai · Beirut
@@ -1143,20 +1101,19 @@ MapMaster™ — Beyond Basics Studio's proprietary AI platform. Runs 24/7, cont
 ---
 
 ## SITEMAP
-https://www.beyondbasicsstudio.com/
-https://www.beyondbasicsstudio.com/services
-https://www.beyondbasicsstudio.com/case-studies
-https://www.beyondbasicsstudio.com/customers
-https://www.beyondbasicsstudio.com/journal
-https://www.beyondbasicsstudio.com/journal/347-percent-review-growth
-https://www.beyondbasicsstudio.com/journal/2026-map-pack-algorithm
-https://www.beyondbasicsstudio.com/journal/92-percent-gbp-profiles-fail
-https://www.beyondbasicsstudio.com/journal/gbp-categories-master-list
-https://www.beyondbasicsstudio.com/journal/martas-kitchen-case-study
-https://www.beyondbasicsstudio.com/journal/ai-review-response-system
-https://www.beyondbasicsstudio.com/journal/multi-location-gbp-domination
-https://www.beyondbasicsstudio.com/journal/google-posts-roi
-https://www.beyondbasicsstudio.com/journal/suspend-proof-your-gbp
-https://www.beyondbasicsstudio.com/journal/200-basic-plan-breakdown
-https://www.beyondbasicsstudio.com/about
-https://www.beyondbasicsstudio.com/contact
+https://beyondbasics.studio/
+https://beyondbasics.studio/services
+https://beyondbasics.studio/customers
+https://beyondbasics.studio/journal
+https://beyondbasics.studio/journal/347-percent-review-growth
+https://beyondbasics.studio/journal/2026-map-pack-algorithm
+https://beyondbasics.studio/journal/92-percent-gbp-profiles-fail
+https://beyondbasics.studio/journal/gbp-categories-master-list
+https://beyondbasics.studio/journal/martas-kitchen-case-study
+https://beyondbasics.studio/journal/ai-review-response-system
+https://beyondbasics.studio/journal/multi-location-gbp-domination
+https://beyondbasics.studio/journal/google-posts-roi
+https://beyondbasics.studio/journal/suspend-proof-your-gbp
+https://beyondbasics.studio/journal/200-basic-plan-breakdown
+https://beyondbasics.studio/about
+https://beyondbasics.studio/contact
