@@ -32,10 +32,9 @@ jobs:
           version: 9
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: pnpm install --no-frozen-lockfile
 
       - name: Build
-        working-directory: artifacts/beyond-basics-studio
         env:
           PORT: "3000"
           BASE_PATH: "/"
@@ -44,7 +43,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: artifacts/beyond-basics-studio/dist/public
+          path: dist/public
 
   deploy:
     environment:
