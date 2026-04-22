@@ -69,7 +69,7 @@
     <link rel="alternate" type="text/plain" href="/llms-full.txt" title="Full site content for LLMs" />
 
     <!-- Preload self-hosted DM Serif Display — available before any JS runs -->
-    <link rel="preload" href="/fonts/dm-serif-display.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/dm-serif-display.woff2" as="font" type="font/woff2" crossorigin fetchpriority="high" />
 
     <!-- Critical CSS: inlined — zero render-blocking, font available at parse time -->
     <style>
@@ -129,14 +129,27 @@
       }
     </style>
 
-    <!-- Google Analytics 4 — replace G-XXXXXXXXXX with your GA4 Measurement ID -->
-    <!-- To get your ID: analytics.google.com → Admin → Data Streams → your stream -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <!-- Google Analytics 4
+         Replace G-XXXXXXXXXX with your real GA4 Measurement ID to activate.
+         Loaded on idle so it never competes with critical render resources.
+         How to get your ID: analytics.google.com → Admin → Data Streams → your stream -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-XXXXXXXXXX');
+      // Defer script fetch until browser is idle — doesn't affect FCP/LCP
+      function loadGA() {
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX';
+        document.head.appendChild(s);
+      }
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(loadGA, { timeout: 4000 });
+      } else {
+        setTimeout(loadGA, 3000);
+      }
     </script>
 
     <!-- Satoshi: async (body text — not the LCP element) -->
@@ -154,17 +167,16 @@
     <noscript>
       <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500&display=swap" rel="stylesheet" />
     </noscript>
-    <link rel="modulepreload" crossorigin href="/assets/index-t4tjWM1X.js">
-    <script type="module" crossorigin src="/assets/index-t4tjWM1X.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/index-DvgIG0us.js">
+    <script type="module" crossorigin src="/assets/index-DvgIG0us.js"></script>
     <link rel="modulepreload" crossorigin href="/assets/vendor-react-CptSUhIx.js">
     <link rel="modulepreload" crossorigin href="/assets/vendor-router-DUbfarwA.js">
     <link rel="modulepreload" crossorigin href="/assets/vendor-query-HdBTlwa4.js">
     <link rel="modulepreload" crossorigin href="/assets/vendor-lenis-1Tb4z2zb.js">
-    <link rel="modulepreload" crossorigin href="/assets/vendor-icons-CDiqwJZY.js">
+    <link rel="modulepreload" crossorigin href="/assets/vendor-icons-bOI412I8.js">
     <link rel="modulepreload" crossorigin href="/assets/vendor-motion-DIkG0Rcd.js">
-    <link rel="modulepreload" crossorigin href="/assets/vendor-forms-BZk3ZBvo.js">
-    <link rel="preload" as="style" crossorigin href="/assets/index-Cymt5q8x.css" onload="this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" crossorigin href="/assets/index-Cymt5q8x.css"></noscript>
+    <link rel="preload" as="style" crossorigin href="/assets/index-CGTVZW21.css" fetchpriority="high" onload="this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" crossorigin href="/assets/index-CGTVZW21.css"></noscript>
   </head>
   <body>
     <div id="root">
