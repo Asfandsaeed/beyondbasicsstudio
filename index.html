@@ -140,30 +140,60 @@
     </script>
 
     <!-- Satoshi: async (body text — not the LCP element) -->
+    <!-- preconnect both origins: api serves the CSS, cdn serves the woff2 files -->
     <link rel="preconnect" href="https://api.fontshare.com" />
+    <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin />
+    <link rel="dns-prefetch" href="https://cdn.fontshare.com" />
+    <!-- Weight 300 is unused — load only 400 and 500 to reduce payload -->
     <link
-      href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500&display=swap"
+      href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500&display=swap"
       rel="stylesheet"
       media="print"
       onload="this.media='all'"
     />
     <noscript>
-      <link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500&display=swap" rel="stylesheet" />
+      <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500&display=swap" rel="stylesheet" />
     </noscript>
-    <link rel="modulepreload" crossorigin href="/assets/index-BqAVrm3R.js">
-    <script type="module" crossorigin src="/assets/index-BqAVrm3R.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/index-t4tjWM1X.js">
+    <script type="module" crossorigin src="/assets/index-t4tjWM1X.js"></script>
     <link rel="modulepreload" crossorigin href="/assets/vendor-react-CptSUhIx.js">
     <link rel="modulepreload" crossorigin href="/assets/vendor-router-DUbfarwA.js">
     <link rel="modulepreload" crossorigin href="/assets/vendor-query-HdBTlwa4.js">
     <link rel="modulepreload" crossorigin href="/assets/vendor-lenis-1Tb4z2zb.js">
-    <link rel="modulepreload" crossorigin href="/assets/vendor-icons-Dt3cGGw9.js">
+    <link rel="modulepreload" crossorigin href="/assets/vendor-icons-CDiqwJZY.js">
     <link rel="modulepreload" crossorigin href="/assets/vendor-motion-DIkG0Rcd.js">
     <link rel="modulepreload" crossorigin href="/assets/vendor-forms-BZk3ZBvo.js">
     <link rel="preload" as="style" crossorigin href="/assets/index-Cymt5q8x.css" onload="this.rel='stylesheet'">
     <noscript><link rel="stylesheet" crossorigin href="/assets/index-Cymt5q8x.css"></noscript>
   </head>
   <body>
-    <noscript id="bbs-crawler-noscript">
+    <div id="root">
+      <!--
+        Static hero shell — painted by the browser immediately at HTML parse time.
+        React replaces this on mount. This gives near-instant FCP and LCP
+        without waiting for any JavaScript.
+        aria-hidden so screen readers skip the duplicate (they'll read the React version).
+      -->
+      <div aria-hidden="true">
+        <nav id="bbs-shell-nav">
+          <div id="bbs-shell-logo">BBS<span>STUDIO</span></div>
+        </nav>
+        <section id="bbs-shell-hero">
+          <div id="bbs-shell-meta">
+            <span style="color:rgba(247,244,240,0.75)">GBP Management Agency</span>
+            <span style="color:rgba(247,244,240,0.65)">Est. 2025 — Worldwide</span>
+          </div>
+          <div id="bbs-shell-headline">
+            <!-- LCP element — visible immediately, correct font from preload -->
+            <!-- Using div (not h1) so React's own h1 is the sole H1 in the final DOM -->
+            <div id="bbs-lcp" role="heading" aria-level="1" aria-hidden="true">
+              Stop Losing Customers to Competitors Who Show Up First on Google Maps.
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  <noscript id="bbs-crawler-noscript">
 <section id="bbs-crawler-content" aria-label="Site content for non-JS crawlers">
 <header>
   <p><strong>Beyond Basics Studio | Google Business Profile Agency</strong></p>
@@ -989,31 +1019,5 @@ The honest version of local SEO pricing is that most businesses are significantl
 </section>
 </section>
 </noscript>
-<div id="root">
-      <!--
-        Static hero shell — painted by the browser immediately at HTML parse time.
-        React replaces this on mount. This gives near-instant FCP and LCP
-        without waiting for any JavaScript.
-        aria-hidden so screen readers skip the duplicate (they'll read the React version).
-      -->
-      <div aria-hidden="true">
-        <nav id="bbs-shell-nav">
-          <div id="bbs-shell-logo">BBS<span>STUDIO</span></div>
-        </nav>
-        <section id="bbs-shell-hero">
-          <div id="bbs-shell-meta">
-            <span style="color:rgba(247,244,240,0.75)">GBP Management Agency</span>
-            <span style="color:rgba(247,244,240,0.65)">Est. 2025 — Worldwide</span>
-          </div>
-          <div id="bbs-shell-headline">
-            <!-- LCP element — visible immediately, correct font from preload -->
-            <!-- Using div (not h1) so React's own h1 is the sole H1 in the final DOM -->
-            <div id="bbs-lcp" role="heading" aria-level="1" aria-hidden="true">
-              Stop Losing Customers to Competitors Who Show Up First on Google Maps.
-            </div>
-          </div>
-        </section>
-      </div>
-    </div>
-  </body>
+</body>
 </html>
