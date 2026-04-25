@@ -129,20 +129,16 @@
       }
     </style>
 
-    <!-- Google Analytics 4
-         Replace G-XXXXXXXXXX with your real GA4 Measurement ID to activate.
-         Loaded on idle so it never competes with critical render resources.
-         How to get your ID: analytics.google.com → Admin → Data Streams → your stream -->
+    <!-- Google Analytics 4 — loaded on idle so it never competes with FCP/LCP resources -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-XXXXXXXXXX');
-      // Defer script fetch until browser is idle — doesn't affect FCP/LCP
+      gtag('config', 'G-7LD5D0V87X');
       function loadGA() {
         var s = document.createElement('script');
         s.async = true;
-        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX';
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-7LD5D0V87X';
         document.head.appendChild(s);
       }
       if ('requestIdleCallback' in window) {
