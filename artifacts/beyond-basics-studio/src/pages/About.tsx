@@ -17,7 +17,7 @@ function FadeIn({ children, className, delay = 0 }: { children: React.ReactNode;
 }
 
 const team = [
-  { name: "Marcus Chen", role: "CEO & Founder", initials: "MC", bio: "Former Google local team lead with 10 years of algorithm expertise. Built Beyond Basics to give every local business the competitive intelligence only large brands enjoyed." },
+  { name: "Asfand Yar Saeed", role: "CEO & Founder", initials: "AY", bio: "Founder with 10 years of algorithm expertise. Built Beyond Basics to give every local business the competitive intelligence only large brands enjoyed." },
   { name: "Priya Sharma", role: "Head of GBP Operations", initials: "PS", bio: "Managed over 1,200 GBP profiles across 40+ industries. The engine behind our 98% client retention rate." },
   { name: "James O'Reilly", role: "AI Strategy Director", initials: "JO", bio: "Built MapMaster™ from the ground up. Data scientist by training, local SEO obsessive by nature." },
   { name: "Sofia Mendez", role: "Client Success Lead", initials: "SM", bio: "The reason clients stay. Sofia ensures every client feels heard, sees results, and grows with us long term." },
@@ -89,7 +89,7 @@ export default function About({ onAuditClick }: { onAuditClick: () => void }) {
             <FadeIn delay={0.15}>
               <div className="space-y-5">
                 {[
-                  "In 2021, our founder Marcus Chen left his role on Google's local team after witnessing firsthand how a well-managed Google Business Profile could transform a local business — and how poorly most businesses managed theirs.",
+                  "In 2021, our founder Asfand Yar Saeed started Beyond Basics Studio after witnessing firsthand how a well-managed Google Business Profile could transform a local business — and how poorly most businesses managed theirs.",
                   "The average local business leaves 70% of its Google Maps potential untouched. Not because they don't care — because they lack the time, expertise, and tools to do it right.",
                   "Beyond Basics Studio was built to fix that. Today we manage 500+ profiles across 30+ countries, delivering results that most business owners thought were impossible.",
                 ].map((p, i) => (
